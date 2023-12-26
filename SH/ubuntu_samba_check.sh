@@ -1,9 +1,12 @@
-#!/bin/bash
+﻿#!/bin/bash
 # -------------------------------------------------------------------
-# git_inatall.sh
+# ubuntu_samba_check.sh
 # -------------------------------------------------------------------
 
 #:begin
-sudo apt install git
+
+# проверим, что сервис smbd запустился
+sudo systemctl status smbd
 
 #:Exit
+

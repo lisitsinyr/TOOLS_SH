@@ -1,12 +1,13 @@
 #!/bin/bash
 # -------------------------------------------------------------------
-# ssh-keygen.sh
+# git_set_current.sh
 # -------------------------------------------------------------------
 
 #:begin
-ssh-keygen
-chmod 640 /home/lyr/.ssh/id_rsa
+git config user.name "lisitsinyr"
+
+git config user.email "lisitsinyr@gmail.com"
+
+git config --list > ~/DATA/GIT/git_config_set_current
 
 #:Exit
-
-

@@ -1,12 +1,12 @@
-#!/bin/bash
+﻿#!/bin/bash
 # -------------------------------------------------------------------
-# ssh-keygen.sh
+# ubuntu_install_keyutils.sh
 # -------------------------------------------------------------------
 
 #:begin
-ssh-keygen
-chmod 640 /home/lyr/.ssh/id_rsa
+
+# Установка keyutils
+sudo apt-get install keyutils
 
 #:Exit
-
 

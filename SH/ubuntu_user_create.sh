@@ -1,12 +1,12 @@
-#!/bin/bash
+﻿#!/bin/bash
 # -------------------------------------------------------------------
-# ssh-keygen.sh
+# ubuntu_user_create.sh
 # -------------------------------------------------------------------
 
 #:begin
-ssh-keygen
-chmod 640 /home/lyr/.ssh/id_rsa
+
+# Создаем пользователя в системе Linux
+sudo useradd lyr2
 
 #:Exit
-
 

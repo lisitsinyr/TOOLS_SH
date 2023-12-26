@@ -1,12 +1,12 @@
-#!/bin/bash
+﻿#!/bin/bash
 # -------------------------------------------------------------------
-# ssh-keygen.sh
+# ubuntu_samba_edit.sh
 # -------------------------------------------------------------------
 
 #:begin
-ssh-keygen
-chmod 640 /home/lyr/.ssh/id_rsa
+
+#
+sudo vi /etc/samba/smb.conf
 
 #:Exit
-
 

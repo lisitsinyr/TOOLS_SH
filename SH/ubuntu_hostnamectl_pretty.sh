@@ -1,12 +1,10 @@
-#!/bin/bash
+﻿#!/bin/bash
 # -------------------------------------------------------------------
-# ssh-keygen.sh
+# ubuntu_hostnamectl_pretty.sh
 # -------------------------------------------------------------------
 
 #:begin
-ssh-keygen
-chmod 640 /home/lyr/.ssh/id_rsa
+hostnamectl --pretty status
 
 #:Exit
-
 

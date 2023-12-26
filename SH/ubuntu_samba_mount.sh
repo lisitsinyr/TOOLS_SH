@@ -1,12 +1,12 @@
-#!/bin/bash
+﻿#!/bin/bash
 # -------------------------------------------------------------------
-# ssh-keygen.sh
+# ubuntu_samba_mount.sh
 # -------------------------------------------------------------------
 
 #:begin
-ssh-keygen
-chmod 640 /home/lyr/.ssh/id_rsa
+
+#
+sudo mount -t cifs -o username=lyr,password=Lozudasa100 //192.168.1.31/D /mnt/ASUS-W10P/WORK
 
 #:Exit
-
 

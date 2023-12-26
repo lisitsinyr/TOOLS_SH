@@ -1,12 +1,11 @@
-#!/bin/bash
+﻿#!/bin/bash
 # -------------------------------------------------------------------
-# ssh-keygen.sh
+# ubuntu_hostnamectl_ASUS-U2204-VB.sh
 # -------------------------------------------------------------------
 
 #:begin
-ssh-keygen
-chmod 640 /home/lyr/.ssh/id_rsa
+hostnamectl set-hostname ASUS-U2204-VB --static
+hostnamectl set-hostname "ASUS-U2204-VB" --pretty
 
 #:Exit
-
 
