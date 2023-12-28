@@ -1,5 +1,5 @@
 git add --all
-git commit -m "commit on exists"
+git commit -m "Git Bash commit update"
 
 git remote add origin git@github.com:lisitsinyr/TOOS.git
 git branch -M main
