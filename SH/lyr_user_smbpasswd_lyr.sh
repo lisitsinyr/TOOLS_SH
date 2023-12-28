@@ -1,12 +1,9 @@
 ﻿#!/bin/bash
 # -------------------------------------------------------------------
-# ubuntu_user_smbpasswd.sh
+# lyr_user_smbpasswd_lyr.sh
 # -------------------------------------------------------------------
 
 #:begin
-
-# Создадим пользователя в samba
-sudo smbpasswd -a lyr2
 
 # Создадим пользователя в samba
 sudo smbpasswd -a lyr
