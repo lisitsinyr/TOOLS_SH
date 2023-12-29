@@ -18,9 +18,9 @@ cd /DATA/public
 # Задаем права на созданный каталог
 sudo chmod -R 777 /DATA/public
 # Создать группу пользователей
-sudo groupadd DATA-public-w
+sudo groupadd DATA_public_w
 # Создать группу пользователей
-sudo groupadd DATA-public-r
+sudo groupadd DATA_public_r
 # Задаем владельца на созданный каталог
 sudo chown -R root:root /DATA/public
 # Добавить ранее созданного пользователя в эту группу:
