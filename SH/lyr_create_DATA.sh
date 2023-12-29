@@ -14,7 +14,8 @@ sudo chmod 775 /DATA
 # ------------------------------------------------------------------
 # Создаем каталог /DATA/public
 sudo mkdir -p /DATA/public
-cd /DATA/public
+echo "DATA_public" > /DATA/public/DATA_public.txt
+#cd /DATA/public
 # Задаем права на созданный каталог
 sudo chmod -R 777 /DATA/public
 # Создать группу пользователей
@@ -31,7 +32,8 @@ sudo chown -R root:root /DATA/public
 # ------------------------------------------------------------------
 # Создаем каталог /DATA/lyrs
 sudo mkdir -p /DATA/lyrs
-cd /DATA/lyrs
+echo "DATA_lyrs" > /DATA/public/DATA_lyrs.txt
+#cd /DATA/lyrs
 # Задаем права на созданный каталог
 sudo chmod 775 /DATA/lyrs
 # Создать группу пользователей
@@ -52,7 +54,8 @@ sudo usermod -a -G DATA_lyrs_r lyr2
 # ------------------------------------------------------------------
 # Создаем каталог /DATA/lyr
 sudo mkdir -p /DATA/lyr
-cd /DATA/lyr
+echo "DATA_lyr" > /DATA/public/DATA_lyr.txt
+#cd /DATA/lyr
 # Задаем права на созданный каталог
 sudo chmod -R 775 /DATA/lyr
 # Создать группу пользователей
