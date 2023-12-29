@@ -32,7 +32,7 @@ sudo chown -R root:root /DATA/public
 # ------------------------------------------------------------------
 # Создаем каталог /DATA/lyrs
 sudo mkdir -p /DATA/lyrs
-echo "DATA_lyrs" > /DATA/public/DATA_lyrs.txt
+echo "DATA_lyrs" > /DATA/lyrs/DATA_lyrs.txt
 #cd /DATA/lyrs
 # Задаем права на созданный каталог
 sudo chmod 775 /DATA/lyrs
@@ -54,7 +54,7 @@ sudo usermod -a -G DATA_lyrs_r lyr2
 # ------------------------------------------------------------------
 # Создаем каталог /DATA/lyr
 sudo mkdir -p /DATA/lyr
-echo "DATA_lyr" > /DATA/public/DATA_lyr.txt
+echo "DATA_lyr" > /DATA/lyr/DATA_lyr.txt
 #cd /DATA/lyr
 # Задаем права на созданный каталог
 sudo chmod -R 775 /DATA/lyr
