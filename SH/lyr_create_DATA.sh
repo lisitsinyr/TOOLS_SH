@@ -5,7 +5,7 @@
 
 #:begin
 
-sudo rm -R /DATA
+sudo rmdir -R /DATA
 # ------------------------------------------------------------------
 # Создаем каталог /DATA
 sudo mkdir -p /DATA
