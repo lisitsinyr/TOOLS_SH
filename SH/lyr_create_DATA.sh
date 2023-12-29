@@ -5,6 +5,7 @@
 
 #:begin
 
+sudo rm -R /DATA
 # ------------------------------------------------------------------
 # Создаем каталог /DATA
 sudo mkdir -p /DATA
@@ -14,7 +15,6 @@ sudo chmod 775 /DATA
 # ------------------------------------------------------------------
 # Создаем каталог /DATA/public
 sudo mkdir -p /DATA/public
-sudo echo "DATA_public" > /DATA/public/DATA_public.txt
 #cd /DATA/public
 # Задаем права на созданный каталог
 sudo chmod -R 777 /DATA/public
@@ -28,11 +28,11 @@ sudo chown -R root:root /DATA/public
 #sudo usermod -a -G DATA-public-w lyr
 # Добавить ранее созданного пользователя в эту группу:
 #sudo usermod -a -G DATA-public-r lyr
+sudo echo "DATA_public" > /DATA/public/DATA_public.txt
 
 # ------------------------------------------------------------------
 # Создаем каталог /DATA/lyrs
 sudo mkdir -p /DATA/lyrs
-sudo echo "DATA_lyrs" > /DATA/lyrs/DATA_lyrs.txt
 #cd /DATA/lyrs
 # Задаем права на созданный каталог
 sudo chmod 775 /DATA/lyrs
@@ -50,11 +50,11 @@ sudo chown -R lyr:DATA_lyrs_w /DATA/lyrs
 #sudo usermod -a -G DATA_lyrs_w lyr2
 # Добавить ранее созданного пользователя в эту группу:
 sudo usermod -a -G DATA_lyrs_r lyr2
+sudo echo "DATA_lyrs" > /DATA/lyrs/DATA_lyrs.txt
 
 # ------------------------------------------------------------------
 # Создаем каталог /DATA/lyr
 sudo mkdir -p /DATA/lyr
-sudo echo "DATA_lyr" > /DATA/lyr/DATA_lyr.txt
 #cd /DATA/lyr
 # Задаем права на созданный каталог
 sudo chmod -R 775 /DATA/lyr
@@ -72,5 +72,6 @@ sudo chown -R lyr:DATA_lyr_w /DATA/lyr
 sudo usermod -a -G DATA_lyr_w lyr2
 # Добавить ранее созданного пользователя в эту группу:
 #sudo usermod -a -G DATA_lyr_r lyr2
+sudo echo "DATA_lyr" > /DATA/lyr/DATA_lyr.txt
 
 #:Exit
