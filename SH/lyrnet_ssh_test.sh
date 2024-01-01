@@ -1,12 +1,12 @@
 #!/bin/bash
 # -------------------------------------------------------------------
-# ssh-test.sh
-# Attempts to ssh to GitHub
+# lyrnet_ssh_test.sh
 # -------------------------------------------------------------------
 
 #:begin
+echo "---------------------------------"
+echo " Attempts to ssh to GitHub       "
+echo "---------------------------------"
 ssh -T git@github.com
 
 #:Exit
-
-

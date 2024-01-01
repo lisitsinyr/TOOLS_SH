@@ -1,11 +1,12 @@
 ﻿#!/bin/bash
 # -------------------------------------------------------------------
-# ubuntu_set_keyboard.sh
+# lyrset_set_keyboard.sh
 # -------------------------------------------------------------------
 
 #:begin
-
-# <Ctrl>Shift_R
+echo "---------------------------------------------"
+echo " <Ctrl>Shift_R                               "
+echo "---------------------------------------------"
 gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Ctrl>Shift_R']"
 gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "['<Ctrl>Shift_R']"
 

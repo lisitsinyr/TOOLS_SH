@@ -1,10 +1,12 @@
 ﻿#!/bin/bash
 # -------------------------------------------------------------------
-# lyr_group_rename.sh
+# lyrug_group_rename.sh
 # -------------------------------------------------------------------
 
 #:begin
-
+echo "---------------------------------------------"
+echo "                                             "
+echo "---------------------------------------------"
 # Изменить имя группы с помощью команды groupmod
 sudo groupmod -n DATA_public_w DATA-public-w
 sudo groupmod -n DATA_public_r DATA-public-r
