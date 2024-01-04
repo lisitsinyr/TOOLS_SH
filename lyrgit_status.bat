@@ -8,5 +8,3 @@ chcp 1251
 git status
 
 :Exit
-
-

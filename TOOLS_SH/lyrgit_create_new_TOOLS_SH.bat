@@ -5,7 +5,17 @@ rem -------------------------------------------------------------------
 chcp 1251
 
 :begin
-echo "# TOOLS" > README.md
+
+touch .gitignore
+attrib +A +H .gitignore
+
+touch .gitmodules
+attrib +A +H .gitmodules
+
+touch .README.md
+attrib +A +H .README.md
+echo "# TOOLS" >> README.md
+
 git init
 
 git add --all

@@ -8,7 +8,6 @@ chcp 1251
 git remote -v
 
 rem git remote set-url origin https://github.com/lisitsinyr/TOOLS_SH.git
-rem git remote set-url origin git@github.com:lisitsinyr/TOOLS_SH.git
 git remote set-url origin git@github.com:lisitsinyr/TOOLS_SH.git
 
 git remote -v

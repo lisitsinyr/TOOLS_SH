@@ -24,5 +24,3 @@ chcp 1251
 git remote -v
 
 :Exit
-
-
