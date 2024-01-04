@@ -7,6 +7,6 @@
 echo "---------------------------------------------"
 echo "                                             "
 echo "---------------------------------------------"
-git config --list --show-origin --show-scope > ~/DATA/GIT/git_config
+git config --list --show-origin --show-scope > ~/DATA/GIT/GIT_CONFIG
 
 #:Exit

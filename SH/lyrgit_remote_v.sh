@@ -1,16 +1,12 @@
 #!/bin/bash
 # -------------------------------------------------------------------
-# lyrgit_set_current.sh
+# lyrgit_remote_v.sh
 # -------------------------------------------------------------------
 
 #:begin
 echo "---------------------------------------------"
 echo "                                             "
 echo "---------------------------------------------"
-git config user.name "lisitsinyr"
-
-git config user.email "lisitsinyr@gmail.com"
-
-git config --list > ~/DATA/GIT/GIT_CONFIG_set_current
+git remote -v
 
 #:Exit
