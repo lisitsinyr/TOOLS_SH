@@ -1,14 +1,14 @@
 @echo off
 rem -------------------------------------------------------------------
-rem lyrgit_update.bat
+rem lyrgit_set_current.bat
 rem -------------------------------------------------------------------
 chcp 1251
 
 :begin
-git add --all
+git config user.name "lisitsinyr"
 
-git commit -m "Git Bash commit update"
+git config user.email "lisitsinyr@gmail.com"
 
-git push -u origin main
+rem git config --list > ~/DATA/GIT/GIT_CONFIG_set_current
 
 :Exit
