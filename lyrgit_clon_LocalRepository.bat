@@ -1,8 +1,8 @@
 @echo off
 rem -------------------------------------------------------------------
-rem lyrgit_clon_GlobalRepository.bat
+rem lyrgit_clon_LocalRepository.bat
 rem ----------------------------------------------------------------------------
-rem РљР»РѕРЅРёСЂРѕРІР°С‚СЊ GlobalRepository РІ С‚РµРєСѓС‰РёР№ РєР°С‚Р°Р»РѕРі
+rem Клонировать GlobalRepository в заданный каталог
 rem ----------------------------------------------------------------------------
 rem usage: git clone [<options>] [--] <repo> [<dir>]
 rem 
@@ -67,20 +67,41 @@ chcp 1251
 
 rem -------------------------------------------------------------------
 :P1
+echo Проверка 1 параметра
 if "%1" == "" goto P1_Input
 SET GlobalRepository=%1
-goto Begin
+goto P2
 :P1_Input
+echo Ввод 1 параметра
 set /p GlobalRepository=GlobalRepository:
 if "%GlobalRepository%" == "" goto P1_Error
-goto Begin
+goto P2
 :P1_Error
-echo Р—РЅР°С‡РµРЅРёРµ РїР°СЂР°РјРµС‚СЂР° GlobalRepository РЅРµ СѓСЃС‚Р°РЅРѕРІР»РµРЅРѕ
+echo Значение параметра GlobalRepository не установлено
 goto Exit
 rem -------------------------------------------------------------------
 
-:begin
-echo %GlobalRepository%
+rem -------------------------------------------------------------------
+:P2
+echo Проверка 2 параметра
+if "%2" == "" goto P2_Input
+SET LocalRepository=%2
+goto Begin2
+:P2_Input
+echo Ввод 2 параметра
+set /p LocalRepository=LocalRepository:
+if "%LocalRepository%" == "" goto Begin1
+goto Begin2
+rem -------------------------------------------------------------------
+
+:Begin1
 git clone %GlobalRepository%
+goto Exit
+
+:Begin2
+echo %GlobalRepository%
+echo %LocalRepository%
+git clone %GlobalRepository% %LocalRepository%
+goto Exit
 
 :Exit

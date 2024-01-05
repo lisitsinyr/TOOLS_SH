@@ -27,6 +27,7 @@ chcp 1251
 rem -------------------------------------------------------------------
 :P1
 if "%1" == "" goto P1_Input
+SET PathName=%1
 goto Begin
 rem -------------------------------------------------------------------
 :P1_Input
@@ -35,8 +36,8 @@ if "%PathName%" == "" goto P1_Empty
 goto Begin
 rem -------------------------------------------------------------------
 :P1_Empty
-rem Значение параметра PathName не установлено
-rem Repository будет создан в текущем каталоге
+echo Значение параметра PathName не установлено
+echo Repository будет создан в текущем каталоге
 goto GIT_create_Repository
 
 rem -------------------------------------------------------------------
@@ -47,6 +48,7 @@ goto GIT_create_Repository
 
 rem -------------------------------------------------------------------
 :GIT_create_Repository
+echo %PathName%
 touch .gitignore
 attrib +A +H .gitignore
 
