@@ -1,18 +1,18 @@
 #!/bin/bash
 # -------------------------------------------------------------------
-# lyrgit_set_current.sh
+# lyrgit_set_local.sh
 # ----------------------------------------------------------------------------
-# ***SET_current
+# ***SET_local
 # ----------------------------------------------------------------------------
 
 #:begin
 echo "---------------------------------------------"
 echo "                                             "
 echo "---------------------------------------------"
-git config user.name "lisitsinyr"
+git config --global user.name "lisitsinyr"
 
-git config user.email "lisitsinyr@gmail.com"
+git config --global user.email "lisitsinyr@gmail.com"
 
-git config --list > ~/DATA/GIT/GIT_CONFIG_set_list_current
+git config --list > ~/DATA/GIT/GIT_CONFIG_set_list_local
 
 #:Exit

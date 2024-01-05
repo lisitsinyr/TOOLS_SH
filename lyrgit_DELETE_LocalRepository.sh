@@ -1,18 +1,23 @@
 #!/bin/bash
 # -------------------------------------------------------------------
-# lyrgit_set_current.sh
+# lyrgit_delete_LocalRepository.sh
 # ----------------------------------------------------------------------------
-# ***SET_current
+# Удаление локального репозитария в текущей папке
 # ----------------------------------------------------------------------------
 
 #:begin
 echo "---------------------------------------------"
 echo "                                             "
 echo "---------------------------------------------"
-git config user.name "lisitsinyr"
+RD /s/q .git
 
-git config user.email "lisitsinyr@gmail.com"
+attrib +A -H .gitignore
+del .gitignore
 
-git config --list > ~/DATA/GIT/GIT_CONFIG_set_list_current
+attrib +A -H .gitmodules
+del .gitmodules
+
+attrib +A -H .README.md
+del .README.md
 
 #:Exit
