@@ -1,16 +1,22 @@
 @echo off
 rem -------------------------------------------------------------------
-rem lyrgit_set_global.bat
+rem lyrgit_delete_LocalRepository.bat
 rem ----------------------------------------------------------------------------
-rem ***SET_global
+rem Удаление локального репозитария в текущей папке
 rem ----------------------------------------------------------------------------
 chcp 1251
 
 :begin
-git config --global user.name "lisitsinyr"
+RD /s/q .git
 
-git config --global user.email "lisitsinyr@gmail.com"
+attrib +A -H .gitignore
+del .gitignore
 
-git config --list --global > ./GIT_CONFIG_set_list_global
+attrib +A -H .gitmodules
+del .gitmodules
+
+attrib +A -H .README.md
+del .README.md
 
 :Exit
+

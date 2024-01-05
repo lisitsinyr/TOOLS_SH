@@ -1,16 +1,16 @@
 @echo off
 rem -------------------------------------------------------------------
-rem lyrgit_set_global.bat
+rem lyrgit_set_local.bat
 rem ----------------------------------------------------------------------------
-rem ***SET_global
+rem ***SET_local
 rem ----------------------------------------------------------------------------
 chcp 1251
 
 :begin
-git config --global user.name "lisitsinyr"
+git config --local user.name "lisitsinyr"
 
-git config --global user.email "lisitsinyr@gmail.com"
+git config --local user.email "lisitsinyr@gmail.com"
 
-git config --list --global > ./GIT_CONFIG_set_list_global
+git config --list --local > ./GIT_CONFIG_set_list_local
 
 :Exit
