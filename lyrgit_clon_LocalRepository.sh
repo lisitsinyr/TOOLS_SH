@@ -1,8 +1,7 @@
-#!/bin/bash
 # -------------------------------------------------------------------
-# lyrgit_clon_GlobalRepository.sh
+# lyrgit_clon_LocalRepository.bat
 # ----------------------------------------------------------------------------
-# Клонировать GlobalRepository в текущий каталог
+# Клонировать GlobalRepository в заданный каталог
 # ----------------------------------------------------------------------------
 # usage: git clone [<options>] [--] <repo> [<dir>]
 # 
@@ -69,6 +68,7 @@ echo "---------------------------------------------"
 echo "                                             "
 echo "---------------------------------------------"
 # -------------------------------------------------------------------
+echo "Check 1 parametr"
 if [ -n "$1" ]; then
     GlobalRepository=$1
 else
@@ -77,7 +77,26 @@ else
 fi
 # -------------------------------------------------------------------
 if [ ! -z $GlobalRepository ]; then
-    git clone $GlobalRepository
+    echo "Check 2 parametr"
+    if [ -n "$2" ]; then
+        PathName=$2
+    else
+        PathName=""
+        read -p "PathName: " PathName
+    fi
+
+    if [ ! -z $PathName ]; then
+        if [ -d "$PathName" ]; then
+            echo "$PathName does exist."
+            pwd
+            git clone $GlobalRepository $PathName
+        else
+            echo "$PathName does not exist."
+        fi
+    else
+        pwd
+        git clone $GlobalRepository
+    fi
 else
     echo "Значение параметра GlobalRepository не установлено"
 fi

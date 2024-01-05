@@ -2,13 +2,13 @@
 # -------------------------------------------------------------------
 # lyrgit_INIT.sh
 # ----------------------------------------------------------------------------
-# Инициализация репозитария в текущем катологе или в заданном каталоге       
+# Инициализация репозитария в текущем катологе или в заданном каталоге
 # ----------------------------------------------------------------------------
 # usage: git init [-q | --quiet] [--bare] [--template=<template-directory>]
 #                 [--separate-git-dir <git-dir>] [--object-format=<format>]
 #                 [-b <branch-name> | --initial-branch=<branch-name>]
 #                 [--shared[=<permissions>]] [<directory>]
-# 
+#
 #     --[no-]template <template-directory>
 #                           directory from which templates will be used
 #     --[no-]bare           create a bare repository
@@ -27,38 +27,46 @@
 echo "---------------------------------------------"
 echo "                                             "
 echo "---------------------------------------------"
+# ------------------------------------
+if [ -n "$1" ]; then
+    PathName=$1
+else
+    PathName=""
+    read -p "PathName: " PathName
+fi
+
+# ------------------------------------
+if [ ! -z $PathName ]; then
+    #if [ ! -d "$PathName" ]; then
+    #  echo "$DIRECTORY does not exist."
+    #fi
+    if [ -d "$PathName" ]; then
+        echo "$PathName does exist."
+        rm -R $PathName
+    else
+        echo "$PathName does not exist."
+    fi
+    mkdir $PathName
+    cd $PathName
+    echo "Переход в каталог " $PathName
+fi
+
+pwd
 
 # -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
+#:begin
 # -------------------------------------------------------------------
-:P1_Input
-set /p PathName=PathName:
-if "%PathName%" == "" goto P1_Empty
-goto Begin
-# -------------------------------------------------------------------
-:P1_Empty
-# Значение параметра PathName не установлено
-# Repository будет создан в текущем каталоге
-goto GIT_create_Repository
+#:GIT_create_Repository
+git config --global init.defaultBranch main
 
-# -------------------------------------------------------------------
-:begin
-echo Переход в каталог %PathName%
-cd %PathName%
-goto GIT_create_Repository
-
-# -------------------------------------------------------------------
-:GIT_create_Repository
 touch .gitignore
-attrib +A +H .gitignore
+chmod 664 .gitignore
 
 touch .gitmodules
-attrib +A +H .gitmodules
+chmod 664 .gitmodules
 
 touch .README.md
-attrib +A +H .README.md
+chmod 664 .README.md
 echo "*" >> .README.md
 
 git init
@@ -68,8 +76,6 @@ git add --all
 git commit -m "Git Bash commit update"
 
 git branch -M main
-
-:Exit
 
 #:Exit
 

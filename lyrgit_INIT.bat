@@ -26,8 +26,9 @@ chcp 1251
 
 rem -------------------------------------------------------------------
 :P1
+echo Check 1 parametr
 if "%1" == "" goto P1_Input
-SET PathName=%1
+SET /p PathName=%1
 goto Begin
 rem -------------------------------------------------------------------
 :P1_Input
@@ -36,13 +37,13 @@ if "%PathName%" == "" goto P1_Empty
 goto Begin
 rem -------------------------------------------------------------------
 :P1_Empty
-echo Значение параметра PathName не установлено
-echo Repository будет создан в текущем каталоге
+echo Parametr PathName not set
+echo Repository will create in current folder
 goto GIT_create_Repository
 
 rem -------------------------------------------------------------------
 :begin
-echo Переход в каталог %PathName%
+echo Go to folder %PathName%
 cd %PathName%
 goto GIT_create_Repository
 
