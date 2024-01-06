@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_add_all.bat
 # -------------------------------------------------------------------
@@ -32,9 +32,11 @@
 #                           read pathspec from file
 #     --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
 # -------------------------------------------------------------------
-#
 
 #:begin
+echo "---------------------------------------------"
+echo " git add --all                               "
+echo "---------------------------------------------"
 # git add -A
 git add --all
 

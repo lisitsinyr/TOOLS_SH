@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_pull_remote_refspec.bat
 # ----------------------------------------------------------------------------
@@ -68,34 +68,34 @@
 #                           check for forced-updates on all updated branches
 #     --[no-]set-upstream   set upstream for git pull/fetch
 # ----------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p remote=remote:
-if "%Commit_1%" == "" goto Error_1
-goto P2
-:Error_1
-echo Значение параметра remote не установлено
-goto Exit
-
-# -------------------------------------------------------------------
-:P2
-if "%2" == "" goto P2_Input
-goto Begin
-:P2_Input
-set /p refspec=refspec:
-if "%refspec%" == "" goto P2_Error
-goto Begin
-:P2_Error
-echo Значение параметра refspec не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git pull %remote% %refspec%
+echo "--------------------------------------------------"
+echo " git pull $remote $refspec                        "
+echo "--------------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    remote=$1
+else
+    remote=""
+    read -p "remote: " remote
+fi
+if [ -z $remote ]; then
+   echo "Parametr remote not set"
+fi
+echo "Check 2 parametr"
+if [ -n "$2" ]; then
+    refspec=$2
+else
+    refspec=""
+    read -p "refspec: " refspec
+fi
+if [ -z refspec ]; then
+   echo "Parametr refspec not set"
+fi
+
+if [ ! -z $remote && ! -z $refspec ]; then
+    git pull $remote $refspec
+fi
 
 #:exit

@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_branch_remote_fetch.bat
 # ----------------------------------------------------------------------------
@@ -57,34 +57,34 @@
 #     --[no-]format <format>
 #                           format to use for the output
 # --------------------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p remote=remote:
-if "%remote%" == "" goto Error_1
-goto P2
-:Error_1
-echo Значение параметра remote не установлено
-goto Exit
-
-# -------------------------------------------------------------------
-:P2
-if "%2" == "" goto P2_Input
-goto Begin
-:P2_Input
-set /p fetch=fetch:
-if "%fetch%" == "" goto P2_Error
-goto Begin
-:P2_Error
-echo Значение параметра fetch не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git branch %remote% %fetch%
+echo "--------------------------------------------------"
+echo " git branch %remote% %fetch%                      "
+echo "--------------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    remote=$1
+else
+    remote=""
+    read -p "remote: " remote
+fi
+if [ -z $remote ]; then
+   echo "Parametr remote not set"
+fi
+echo "Check 2 parametr"
+if [ -n "$2" ]; then
+    fetch=$2
+else
+    fetch=""
+    read -p "fetch: " fetch
+fi
+if [ -z fetch ]; then
+   echo "Parametr fetch not set"
+fi
+
+if [ ! -z $remote && ! -z $fetch ]; then
+    git branch $remote $fetch
+fi
 
 #:exit

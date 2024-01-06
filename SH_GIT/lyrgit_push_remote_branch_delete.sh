@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_push_remote_branch_delete.bat
 # ----------------------------------------------------------------------------
@@ -39,34 +39,34 @@
 #     -4, --ipv4            use IPv4 addresses only
 #     -6, --ipv6            use IPv6 addresses only
 # -------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p remote=remote:
-if "%remote%" == "" goto Error_1
-goto P2
-:Error_1
-echo Значение параметра remote не установлено
-goto Exit
-
-# -------------------------------------------------------------------
-:P2
-if "%2" == "" goto P2_Input
-goto Begin
-:P2_Input
-set /p branch=branch:
-if "%branch%" == "" goto P2_Error
-goto Begin
-:P2_Error
-echo Значение параметра branch не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git push %remote% --delete %branch%
+echo "--------------------------------------------------"
+echo " git push %remote% --delete %branch%              "
+echo "--------------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    remote=$1
+else
+    remote=""
+    read -p "remote: " remote
+fi
+if [ -z $remote ]; then
+   echo "Parametr remote not set"
+fi
+echo "Check 2 parametr"
+if [ -n "$2" ]; then
+    branch=$2
+else
+    branch=""
+    read -p "branch: " branch
+fi
+if [ -z branch ]; then
+   echo "Parametr branch not set"
+fi
+
+if [ ! -z $remote && ! -z $branch ]; then
+    git push $remote $branch
+fi
 
 #:exit

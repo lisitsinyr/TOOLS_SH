@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_remote_add_LocalRepository.bat
 # ----------------------------------------------------------------------------
@@ -20,35 +20,34 @@
 # 
 #     -v, --[no-]verbose    be verbose; must be placed before a subcommand
 # ----------------------------------------------------------------------------
-#
 
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto P2
-:P1_Input
-set /p LocalRepository=LocalRepository:
-if "%LocalRepository%" == "" goto P1_Error
-goto P2
-:P1_Error
-echo Значение параметра LocalRepository не установлено
-goto Exit
-# -------------------------------------------------------------------
+#:begin
+echo "-----------------------------------------------------"
+echo " git remote add %LocalRepository% %GlobalRepository% "
+echo "-----------------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    LocalRepository=$1
+else
+    LocalRepository=""
+    read -p "LocalRepository: " LocalRepository
+fi
+if [ -z $LocalRepository ]; then
+   echo "Parametr LocalRepository not set"
+fi
+echo "Check 2 parametr"
+if [ -n "$2" ]; then
+    GlobalRepository=$2
+else
+    GlobalRepository=""
+    read -p "GlobalRepository: " GlobalRepository
+fi
+if [ -z GlobalRepository ]; then
+   echo "Parametr GlobalRepository not set"
+fi
 
-# -------------------------------------------------------------------
-:P2
-if "%2" == "" goto P2_Input
-set /p GlobalRepository="%2"
-goto Begin1
-:P2_Input
-set /p GlobalRepository=GlobalRepository:
-if "%GlobalRepository%" == "" goto P2_Error
-goto Begin1
-:P2_Error
-echo Значение параметра GlobalRepository не установлено
-# -------------------------------------------------------------------
-
-#:begin1
-git remote add %LocalRepository% %GlobalRepository%
+if [ ! -z $LocalRepository && ! -z $GlobalRepository ]; then
+    git remote add $LocalRepository $GlobalRepository
+fi
 
 #:exit

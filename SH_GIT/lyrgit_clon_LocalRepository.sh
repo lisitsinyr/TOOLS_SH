@@ -67,7 +67,8 @@
 
 #:begin
 echo "---------------------------------------------"
-echo "                                             "
+echo " git clone $GlobalRepository           [***] "
+echo " git clone $GlobalRepository $PathName [***] "
 echo "---------------------------------------------"
 # -------------------------------------------------------------------
 echo "Check 1 parametr"
@@ -102,5 +103,5 @@ if [ ! -z $GlobalRepository ]; then
 else
     echo "Значение параметра GlobalRepository не установлено"
 fi
-# -------------------------------------------------------------------
+
 #:Exit

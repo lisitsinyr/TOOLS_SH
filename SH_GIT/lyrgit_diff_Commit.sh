@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_diff_Commit.bat
 # ----------------------------------------------------------------------------
@@ -11,22 +11,23 @@
 # git diff [<options>] <blob> <blob>
 # git diff [<options>] --no-index [--] <path> <path>
 # ----------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p Commit=Commit:
-if "%Commit%" == "" goto P1_Error
-goto Begin
-:P1_Error
-echo Значение параметра Commit не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git diff %Commit%
+echo "---------------------------------------------"
+echo " git diff %Commit%                           "
+echo "---------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    Commit=$1
+else
+    Commit=""
+    read -p "Commit: " Commit
+fi
+
+if [ ! -z $Commit ]; then
+    git diff $Commit
+else
+   echo "Parametr Commit not set"
+fi
 
 #:exit

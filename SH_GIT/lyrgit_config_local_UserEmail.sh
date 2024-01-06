@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_config_local_UserEmail.bat
 # ----------------------------------------------------------------------------
@@ -51,22 +51,23 @@
 #     --[no-]default <value>
 #                           with --get, use default value when missing entry
 # ----------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p UserEmail=UserEmail:
-if "%UserEmail%" == "" goto P1_Error
-goto Begin
-:P1_Error
-echo Значение параметра UserEmail не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git config --local user.email "%UserEmail%"
+echo "----------------------------------------------"
+echo " git config --local user.email "%UserEmail%"  "
+echo "----------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    UserEmail=$1
+else
+    UserEmail=""
+    read -p "UserEmail: " UserEmail
+fi
+
+if [ ! -z $UserEmail ]; then
+    git config --local user.email "$UserEmail"
+else
+   echo "Parametr UserEmail not set"
+fi
 
 #:exit

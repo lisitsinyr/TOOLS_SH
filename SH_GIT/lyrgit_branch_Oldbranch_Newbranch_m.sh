@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_branch_Oldbranch_Newbranch_m.bat
 # ----------------------------------------------------------------------------
@@ -57,34 +57,34 @@
 #     --[no-]format <format>
 #                           format to use for the output
 # --------------------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p OldBranch=OldBranch:
-if "%OldBranch%" == "" goto Error_1
-goto P2
-:Error_1
-echo Значение параметра OldBranch не установлено
-goto Exit
-
-# -------------------------------------------------------------------
-:P2
-if "%2" == "" goto P2_Input
-goto Begin
-:P2_Input
-set /p NewBranch=NewBranch:
-if "%NewBranch%" == "" goto P2_Error
-goto Begin
-:P2_Error
-echo Значение параметра NewBranch не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git branch -m %OldBranch% %NewBranch%
+echo "--------------------------------------------------"
+echo " git branch -m %OldBranch% %NewBranch%            "
+echo "--------------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    OldBranch=$1
+else
+    OldBranch=""
+    read -p "OldBranch: " OldBranch
+fi
+if [ -z $Remote ]; then
+   echo "Parametr OldBranch not set"
+fi
+echo "Check 2 parametr"
+if [ -n "$2" ]; then
+    NewBranch=$2
+else
+    NewBranch=""
+    read -p "Newbranch: " NewBranch
+fi
+if [ -z $NewBranch ]; then
+   echo "Parametr NewBranch not set"
+fi
+
+if [ ! -z $OldBranch && ! -z $NewBranch]; then
+    git branch -m $OldBranch $NewBranch
+fi
 
 #:exit

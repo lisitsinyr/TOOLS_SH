@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_remote_rename.bat
 # ----------------------------------------------------------------------------
@@ -20,35 +20,34 @@
 # 
 #     -v, --[no-]verbose    be verbose; must be placed before a subcommand
 # ----------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto P2
-:P1_Input
-set /p Repository_old=Repository_old:
-if "%Repository_old%" == "" goto P1_Error
-goto P2
-:P1_Error
-echo Значение параметра Repository_old не установлено
-goto Exit
-# -------------------------------------------------------------------
-
-# -------------------------------------------------------------------
-:P2
-if "%2" == "" goto P2_Input
-goto Begin
-:P2_Input
-set /p Repository_new=Repository_new:
-if "%Repository_new%" == "" goto P2_Error
-goto Begin
-:P2_Error
-echo Значение параметра Repository_new не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git remote rename %Repository_old% %Repository_new%
+echo "-----------------------------------------------------"
+echo " git remote rename %Repository_old% %Repository_new% "
+echo "-----------------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    Repository_old=$1
+else
+    Repository_old=""
+    read -p "Repository_old: " Repository_old
+fi
+if [ -z $Repository_old ]; then
+   echo "Parametr Repository_old not set"
+fi
+echo "Check 2 parametr"
+if [ -n "$2" ]; then
+    Repository_new=$2
+else
+    Repository_new=""
+    read -p "Repository_new: " Repository_new
+fi
+if [ -z Repository_new ]; then
+   echo "Parametr Repository_new not set"
+fi
+
+if [ ! -z $LocalRepository && ! -z $GlobalRepository ]; then
+    git remote rename $Repository_old $Repository_new
+fi
 
 #:exit

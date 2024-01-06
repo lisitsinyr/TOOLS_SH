@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_config_-l_--show-origin_--show-scope.bat
 # ----------------------------------------------------------------------------
@@ -51,9 +51,11 @@
 #     --[no-]default <value>
 #                           with --get, use default value when missing entry
 # ----------------------------------------------------------------------------
-#
 
 #:begin
+echo "-----------------------------------------------------"
+echo " git config -l --show-origin --show-scope            "
+echo "-----------------------------------------------------"
 # git config -l                                     > ./GIT_CONFIG_l_so_ss
 git config -l --show-origin --show-scope          > ./GIT_CONFIG_l_so_ss_current
 # git config -l --show-origin --show-scope --global > ./GIT_CONFIG_l_so_ss_global

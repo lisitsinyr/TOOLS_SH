@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_merge_Branch.bat
 # ----------------------------------------------------------------------------
@@ -48,22 +48,23 @@
 #     --no-verify           bypass pre-merge-commit and commit-msg hooks
 #     --verify              opposite of --no-verify
 # ----------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p branch=branch:
-if "%branch%" == "" goto P1_Error
-goto Begin
-:P1_Error
-echo Значение параметра branch не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git merge %branch%
+echo "---------------------------------------------"
+echo " git merge %branch%                          "
+echo "---------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    branch=$1
+else
+    branch=""
+    read -p "branch: " branch
+fi
+
+if [ ! -z $branch ]; then
+    git merge $branch
+else
+   echo "Parametr branch not set"
+fi
 
 #:exit

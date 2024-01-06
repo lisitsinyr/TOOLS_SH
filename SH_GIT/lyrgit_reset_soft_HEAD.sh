@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_reset_soft_HEAD.bat
 # ----------------------------------------------------------------------------"
@@ -30,9 +30,11 @@
 #     -z                    DEPRECATED (use --pathspec-file-nul instead): paths are separated with NUL character
 #     --[no-]stdin          DEPRECATED (use --pathspec-from-file=- instead): read paths from <stdin>
 # ----------------------------------------------------------------------------"
-#
 
 #:begin
+echo "--------------------------------------------------"
+echo "                                                  "
+echo "--------------------------------------------------"
 git reset --soft HEAD^
 
 #:exit

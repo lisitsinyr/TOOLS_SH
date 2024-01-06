@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_diff_Commit_Commit.bat
 # ----------------------------------------------------------------------------
@@ -11,34 +11,34 @@
 # git diff [<options>] <blob> <blob>
 # git diff [<options>] --no-index [--] <path> <path>
 # ----------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p Commit_1=Commit_1:
-if "%Commit_1%" == "" goto Error_1
-goto P2
-:Error_1
-echo Значение параметра Commit_1 не установлено
-goto Exit
-
-# -------------------------------------------------------------------
-:P2
-if "%2" == "" goto P2_Input
-goto Begin
-:P2_Input
-set /p Commit_2=Commit_2:
-if "%Commit_2%" == "" goto P2_Error
-goto Begin
-:P2_Error
-echo Значение параметра Commit_2 не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git diff %Commit_1% %Commit_2%
+echo "---------------------------------------------"
+echo " git diff %Commit_1% %Commit_2%              "
+echo "---------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    Commit_1=$1
+else
+    Commit=""
+    read -p "Commit_1: " Commit_1
+fi
+if [ -z $Commit_1 ]; then
+   echo "Parametr Commit_1 not set"
+fi
+echo "Check 2 parametr"
+if [ -n "$2" ]; then
+    Commit_2=$2
+else
+    Commit=""
+    read -p "Commit_2: " Commit_2
+fi
+if [ -z $Commit_2 ]; then
+   echo "Parametr Commit_2 not set"
+fi
+
+if [ ! -z $Commit_1 && ! -z $Commit_2]; then
+    git diff $Commit_1 $Commit_2
+fi
 
 #:exit

@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_push_Remote_Local_Name.bat
 # ----------------------------------------------------------------------------
@@ -39,47 +39,44 @@
 #     -4, --ipv4            use IPv4 addresses only
 #     -6, --ipv6            use IPv6 addresses only
 # -------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p Remote=Remote:
-if "%Remote%" == "" goto Error_1
-goto P2
-:Error_1
-echo Значение параметра Remote не установлено
-goto Exit
-
-# -------------------------------------------------------------------
-:P2
-if "%2" == "" goto P2_Input
-goto Begin
-:P2_Input
-set /p Local=Local:
-if "%Local%" == "" goto P2_Error
-goto P3
-:P2_Error
-echo Значение параметра Local не установлено
-goto Exit
-# -------------------------------------------------------------------
-
-# -------------------------------------------------------------------
-:P3
-if "%3" == "" goto P3_Input
-goto Begin
-:P3_Input
-set /p Name=Name:
-if "%Name%" == "" goto P3_Error
-goto Begin
-:P3_Error
-echo Значение параметра Name не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-echo git Name --track %Remote% %Local%:%Name%
+echo "--------------------------------------------------"
+echo " git Name --track %remote% %Local%:%Name%         "
+echo "--------------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    remote=$1
+else
+    remote=""
+    read -p "remote: " remote
+fi
+if [ -z $remote ]; then
+   echo "Parametr remote not set"
+fi
+echo "Check 2 parametr"
+if [ -n "$2" ]; then
+    Local=$2
+else
+    Local=""
+    read -p "Local: " Local
+fi
+if [ -z Local ]; then
+   echo "Parametr Local not set"
+fi
+echo "Check 3 parametr"
+if [ -n "$3" ]; then
+    Name=$3
+else
+    Name=""
+    read -p "Name: " Name
+fi
+if [ -z Name ]; then
+   echo "Parametr Name not set"
+fi
+
+if [ ! -z $remote && ! -z $branch && ! -z $Name ]; then
+    git Name --track $remote $Local:$Name
+fi
 
 #:exit

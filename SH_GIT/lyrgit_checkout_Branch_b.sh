@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_checkout_Branch_b.bat
 # ----------------------------------------------------------------------------
@@ -39,22 +39,23 @@
 #     --[no-]pathspec-file-nul
 #                           with --pathspec-from-file, pathspec elements are separated with NUL character
 # ----------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p branch=branch:
-if "%branch%" == "" goto P1_Error
-goto Begin
-:P1_Error
-echo Значение параметра branch не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git checkout -b %branch%
+echo "---------------------------------------------"
+echo " git checkout -b %branch%                    "
+echo "---------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    branch=$1
+else
+    branch=""
+    read -p "branch: " branch
+fi
+
+if [ ! -z $branch ]; then
+    git checkout -b $branch
+else
+   echo "Parametr branch not set"
+fi
 
 #:exit

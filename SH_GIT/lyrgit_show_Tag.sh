@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_show_Tag.bat
 # ----------------------------------------------------------------------------
@@ -19,22 +19,23 @@
 #     --[no-]decorate[=...] decorate options
 #     -L <range:file>       trace the evolution of line range <start>,<end> or function :<funcname> in <file>
 # ----------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p Tag=Tag:
-if "%Tag%" == "" goto P1_Error
-goto Begin
-:P1_Error
-echo Значение параметра Tag не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git show %Tag%
+echo "---------------------------------------------"
+echo " git show %Tag%                              "
+echo "---------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    Tag=$1
+else
+    Tag=""
+    read -p "Tag: " Tag
+fi
+
+if [ ! -z $Tag ]; then
+    git show $Tag
+else
+   echo "Parametr Tag not set"
+fi
 
 #:exit

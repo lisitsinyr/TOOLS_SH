@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_init_Sharedproject.bat
 # ----------------------------------------------------------------------------
@@ -22,9 +22,11 @@
 #     --[no-]object-format <hash>
 #                           specify the hash algorithm to use
 # ----------------------------------------------------------------------------
-#
 
 #:begin
+echo "---------------------------------------------"
+echo " git init -bare -share sharedproject.git     "
+echo "---------------------------------------------"
 git init -bare -share sharedproject.git
 
 #:exit

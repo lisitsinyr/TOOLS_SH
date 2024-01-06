@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_checkout_PathName.bat
 # ----------------------------------------------------------------------------
@@ -39,22 +39,28 @@
 #     --[no-]pathspec-file-nul
 #                           with --pathspec-from-file, pathspec elements are separated with NUL character
 # ----------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p PathName=PathName:
-if "%PathName%" == "" goto P1_Error
-goto Begin
-:P1_Error
-echo Значение параметра PathName не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git checkout %PathName%
+echo "---------------------------------------------"
+echo " git checkout %PathName%                     "
+echo "---------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    PathName=$1
+else
+    PathName=""
+    read -p "PathName: " PathName
+fi
+
+if [ ! -z $PathName ]; then
+    if [ -d "$PathName" ]; then
+        echo $PathName " does exist"
+        git checkout $PathName
+    else
+        echo $PathName " does not exist"
+    fi
+else
+   echo "Parametr ParhName not set"
+fi
 
 #:exit

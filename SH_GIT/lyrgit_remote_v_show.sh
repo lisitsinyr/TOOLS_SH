@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_remote_v_show.bat
 # ----------------------------------------------------------------------------
@@ -20,24 +20,25 @@
 # 
 #     -v, --[no-]verbose    be verbose; must be placed before a subcommand
 # ----------------------------------------------------------------------------
-#
 
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-set /p GlobalRepository="%1"
-goto Begin1
-:P1_Input
-set /p GlobalRepository=GlobalRepository:
-if "%GlobalRepository%" == "" goto P1_Error
-goto Begin1
-:P1_Error
-echo Значение параметра GlobalRepository не установлено
-# -------------------------------------------------------------------
+#:begin
+echo "-----------------------------------------------------"
+echo " git remote -v show %GlobalRepository%               "
+echo "-----------------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    GlobalRepository=$1
+else
+    GlobalRepository=""
+    read -p "GlobalRepository: " GlobalRepository
+fi
+if [ -z GlobalRepository ]; then
+   echo "Parametr GlobalRepository not set"
+fi
 
-#:begin1
-git remote -v
-
-git remote -v show %GlobalRepository%
+if [ ! -z $GlobalRepository ]; then
+    git remote -v
+    git remote -v show %GlobalRepository%
+fi
 
 #:exit

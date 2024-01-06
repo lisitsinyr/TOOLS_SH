@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_diff_Commit_cached.bat
 # ----------------------------------------------------------------------------
@@ -11,27 +11,23 @@
 # git diff [<options>] <blob> <blob>
 # git diff [<options>] --no-index [--] <path> <path>
 # ----------------------------------------------------------------------------
-#
 
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p Commit=Commit:
-if "%Commit%" == "" goto Begin1
-goto Begin2
-# :P1_Error
-# echo Значение параметра Commit не установлено
-# goto Exit
-# -------------------------------------------------------------------
+#:begin
+echo "---------------------------------------------"
+echo " git diff %Commit%                           "
+echo "---------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    Commit=$1
+else
+    Commit=""
+    read -p "Commit: " Commit
+fi
 
-#:begin1
-git diff --cached
-goto Exit
-
-#:begin2
-git diff --cached %Commit%
-goto Exit
+if [ ! -z $Commit ]; then
+    git diff --cached $Commit
+else
+    git diff --cached
+fi
 
 #:exit

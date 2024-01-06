@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_rm_FileName_f.bat
 # ----------------------------------------------------------------------------
@@ -20,22 +20,28 @@
 #     --[no-]pathspec-file-nul
 #                           with --pathspec-from-file, pathspec elements are separated with NUL character
 # ----------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p FileName=FileName:
-if "%FileName%" == "" goto P1_Error
-goto Begin
-:P1_Error
-echo Значение параметра FileName не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git rm -f %FileName%
+echo "---------------------------------------------"
+echo " git rm -f %FileName%                        "
+echo "---------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    FileName=$1
+else
+    FileName=""
+    read -p "FileName: " FileName
+fi
+
+if [ ! -z $FileName ]; then
+    if [ -f "$FileName" ]; then
+        echo $FileName " does exist"
+        git rm -f $FileName
+    else
+        echo $FileName " does not exist"
+    fi
+else
+   echo "Parametr FileName not set"
+fi
 
 #:exit

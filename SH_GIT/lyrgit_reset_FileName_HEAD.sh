@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_reset_FileName_HEAD.bat
 # ----------------------------------------------------------------------------
@@ -30,22 +30,23 @@
 #     -z                    DEPRECATED (use --pathspec-file-nul instead): paths are separated with NUL character
 #     --[no-]stdin          DEPRECATED (use --pathspec-from-file=- instead): read paths from <stdin>
 # ----------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p FileNames=FileNames:
-if "%FileNames%" == "" goto P1_Error
-goto Begin
-:P1_Error
-echo Значение параметра FileNames не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git reset HEAD %FileNames%
+echo "----------------------------------------------"
+echo " git reset HEAD %FileNames%                   "
+echo "----------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    FileNames=$1
+else
+    FileNames=""
+    read -p "FileNames: " FileNames
+fi
+
+if [ ! -z $FileNames ]; then
+    git reset HEAD $FileNames
+else
+   echo "Parametr UserEmail not set"
+fi
 
 #:exit

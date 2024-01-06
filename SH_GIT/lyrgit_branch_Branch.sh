@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_branch_Branch.bat
 # ----------------------------------------------------------------------------
@@ -57,22 +57,23 @@
 #     --[no-]format <format>
 #                           format to use for the output
 # --------------------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p branch=branch:
-if "%branch%" == "" goto P1_Error
-goto Begin
-:P1_Error
-echo Значение параметра branch не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git branch %branch%
+echo "---------------------------------------------"
+echo " git branch %branch%                         "
+echo "---------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    branch=$1
+else
+    branch=""
+    read -p "branch: " branch
+fi
+
+if [ ! -z $branch ]; then
+    git branch $branch
+else
+   echo "Parametr branch not set"
+fi
 
 #:exit

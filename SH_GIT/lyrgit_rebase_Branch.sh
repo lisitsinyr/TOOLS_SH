@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_rebase_Branch.bat
 # ----------------------------------------------------------------------------
@@ -64,22 +64,23 @@
 #     --[no-]reapply-cherry-picks
 #                           apply all changes, even those already present upstream
 # ----------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p upstream_branch=upstream_branch:
-if "%branch%" == "" goto P1_Error
-goto Begin
-:P1_Error
-echo Значение параметра upstream_branch не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git rebase %upstream_branch%
+echo "---------------------------------------------"
+echo " git rebase %upstream_branch%                "
+echo "---------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    upstream_branch=$1
+else
+    branch=""
+    read -p "upstream_branch: " upstream_branch
+fi
+
+if [ ! -z $upstream_branch ]; then
+    git rebase %upstream_branch%
+else
+   echo "Parametr upstream_branch not set"
+fi
 
 #:exit

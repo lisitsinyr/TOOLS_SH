@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_config_system_UserName.bat
 # ----------------------------------------------------------------------------
@@ -51,25 +51,23 @@
 #     --[no-]default <value>
 #                           with --get, use default value when missing entry
 # ----------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p UserName=UserName:
-if "%UserName%" == "" goto P1_Error
-goto Begin
-:P1_Error
-echo Значение параметра UserName не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-echo "----------------------------------------------------------------------------"
-echo ""
-echo "----------------------------------------------------------------------------"
-git config --system user.name "%UserName%"
+echo "----------------------------------------------"
+echo " git config --system user.name "%UserName%"   "
+echo "----------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    UserName=$1
+else
+    UserName=""
+    read -p "UserName: " UserName
+fi
+
+if [ ! -z $UserName ]; then
+    git config --system user.name "$UserName"
+else
+   echo "Parametr UserEmail not set"
+fi
 
 #:exit

@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_add_noall.bat
 # ----------------------------------------------------
@@ -32,9 +32,11 @@
 #                           read pathspec from file
 #     --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
 # -------------------------------------------------------------------
-#
 
 #:begin
+echo "---------------------------------------------"
+echo " git add --no-all .                          "
+echo "---------------------------------------------"
 git add --no-all .
 
 #:exit

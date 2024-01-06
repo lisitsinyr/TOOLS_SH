@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_config_--global core.excludesfile.bat
 # ----------------------------------------------------------------------------
@@ -51,9 +51,11 @@
 #     --[no-]default <value>
 #                           with --get, use default value when missing entry
 # ----------------------------------------------------------------------------
-#
 
 #:begin
+echo "---------------------------------------------------------"
+echo " git config --global core.excludesfile .gitignore_global "
+echo "---------------------------------------------------------"
 git config --global core.excludesfile .gitignore_global
 
 #:exit

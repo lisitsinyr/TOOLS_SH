@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_branch_NewBranch_Remote_Branch.bat
 # ----------------------------------------------------------------------------
@@ -57,47 +57,44 @@
 #     --[no-]format <format>
 #                           format to use for the output
 # --------------------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p Newbranch=Newbranch:
-if "%Newbranch%" == "" goto Error_1
-goto P2
-:Error_1
-echo Значение параметра Newbranch не установлено
-goto Exit
-
-# -------------------------------------------------------------------
-:P2
-if "%2" == "" goto P2_Input
-goto Begin
-:P2_Input
-set /p Remote=Remote:
-if "%Remote%" == "" goto P2_Error
-goto P3
-:P2_Error
-echo Значение параметра remote не установлено
-goto Exit
-# -------------------------------------------------------------------
-
-# -------------------------------------------------------------------
-:P3
-if "%3" == "" goto P3_Input
-goto Begin
-:P3_Input
-set /p branch=branch:
-if "%branch%" == "" goto P3_Error
-goto Begin
-:P3_Error
-echo Значение параметра branch не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git branch --track %Newbranch% %Remote%/%branch%
+echo "--------------------------------------------------"
+echo " git branch --track %Newbranch% %Remote%/%branch% "
+echo "--------------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    Newbranch=$1
+else
+    Newbranch=""
+    read -p "Newbranch: " Newbranch
+fi
+if [ -z $branch ]; then
+   echo "Parametr Newbranch not set"
+fi
+echo "Check 2 parametr"
+if [ -n "$2" ]; then
+    Remote=$2
+else
+    Remote=""
+    read -p "Remote: " Remote
+fi
+if [ -z $Remote ]; then
+   echo "Parametr Remote not set"
+fi
+echo "Check 3 parametr"
+if [ -n "$3" ]; then
+    branch=$3
+else
+    branch=""
+    read -p "branch: " branch
+fi
+if [ -z $branch ]; then
+   echo "Parametr branch not set"
+fi
+
+if [ ! -z $Newbranch && ! -z $Remote && ! -z $branch]; then
+    git branch --track %Newbranch% %Remote%/%branch%
+fi
 
 #:exit

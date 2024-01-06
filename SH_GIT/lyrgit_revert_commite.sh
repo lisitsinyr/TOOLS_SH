@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_revert_commite.bat
 # ----------------------------------------------------------------------------
@@ -28,22 +28,23 @@
 #                           GPG sign commit
 #     --[no-]reference      use the 'reference' format to refer to commits
 # ----------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p commite=commite:
-if "%branch%" == "" goto P1_Error
-goto Begin
-:P1_Error
-echo Значение параметра commite не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git revert %commite%
+echo "----------------------------------------------"
+echo " git revert %commite%                    "
+echo "----------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    commite=$1
+else
+    commite=""
+    read -p "commite: " commite
+fi
+
+if [ ! -z $commite ]; then
+    git revert $commite
+else
+   echo "Parametr UserEmail not set"
+fi
 
 #:exit

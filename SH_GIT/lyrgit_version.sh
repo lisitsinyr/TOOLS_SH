@@ -7,7 +7,7 @@
 
 #:begin
 echo "---------------------------------------------"
-echo "                                             "
+echo " git version --build-options                 "
 echo "---------------------------------------------"
 git version --build-options
 

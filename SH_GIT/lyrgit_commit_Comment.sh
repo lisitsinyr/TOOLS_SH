@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_commit_Comment.bat
 # ----------------------------------------------------------------------------
@@ -68,22 +68,23 @@
 #     --[no-]pathspec-file-nul
 #                           with --pathspec-from-file, pathspec elements are separated with NUL character
 # ----------------------------------------------------------------------------
-#
-
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p Comment=Комментарий:
-if "%Comment%" == "" goto P1_Error
-goto Begin
-:P1_Error
-echo Значение параметра "Comment" не установлено
-goto Exit
-# -------------------------------------------------------------------
 
 #:begin
-git commit -a -m "%Comment%"
+echo "---------------------------------------------"
+echo " git commit -a -m "%Comment%"                "
+echo "---------------------------------------------"
+echo "Check 1 parametr"
+if [ -n "$1" ]; then
+    Comment=$1
+else
+    Comment=""
+    read -p "Comment: " Comment
+fi
+
+if [ ! -z $branch ]; then
+    git commit -a -m "%Comment%"
+else
+   echo "Parametr Comment not set"
+fi
 
 #:exit
