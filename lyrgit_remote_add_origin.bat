@@ -26,18 +26,20 @@ rem -------------------------------------------------------------------
 :P1
 echo Check 1 parametr
 if "%1" == "" goto P1_Input
-set /p GlobalRepository="%1"
-goto Begin1
+set GlobalRepository="%1"
+goto Begin
 :P1_Input
 set /p GlobalRepository=GlobalRepository:
 if "%GlobalRepository%" == "" goto P1_Error
-goto Begin1
+goto Begin
 :P1_Error
 echo Parametr GlobalRepository not set
 rem -------------------------------------------------------------------
 
-:begin1
-echo %GlobalRepository%
+:begin
+echo ---------------------------------------------------------------
+echo git remote add origin %GlobalRepository%
+echo ---------------------------------------------------------------
 git remote add origin %GlobalRepository%
 
 :Exit

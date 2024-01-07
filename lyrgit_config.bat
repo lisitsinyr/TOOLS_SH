@@ -54,6 +54,9 @@ rem ----------------------------------------------------------------------------
 chcp 1251
 
 :begin
+echo ---------------------------------------------------------------
+echo git config --list --show-origin --show-scope
+echo ---------------------------------------------------------------
 git config --list --show-origin --show-scope > ./GIT_CONFIG_list_so_ss_current
 
 :Exit

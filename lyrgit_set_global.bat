@@ -7,6 +7,12 @@ rem ----------------------------------------------------------------------------
 chcp 1251
 
 :begin
+echo ---------------------------------------------------------------
+echo git config --global init.defaultBranch main
+echo git config --global user.name "lisitsinyr"
+echo git config --global user.email "lisitsinyr@gmail.com"
+echo git config --list
+echo ---------------------------------------------------------------
 git config --global init.defaultBranch main
 
 git config --global user.name "lisitsinyr"
