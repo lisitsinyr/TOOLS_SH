@@ -73,31 +73,33 @@ echo "---------------------------------------------"
 # -------------------------------------------------------------------
 echo "Check 1 parametr"
 if [ -n "$1" ]; then
-    GlobalRepository=$1
+    GlobalRepository="$1"
 else
     GlobalRepository=""
     read -p "GlobalRepository: " GlobalRepository
 fi
 # -------------------------------------------------------------------
-if [ ! -z $GlobalRepository ]; then
+if [ ! -z "$GlobalRepository" ]; then
     echo "Check 2 parametr"
     if [ -n "$2" ]; then
-        PathName=$2
+        PathName="$2"
     else
         PathName=""
         read -p "PathName: " PathName
     fi
 
-    if [ ! -z $PathName ]; then
+    if [ ! -z "$PathName" ]; then
         if [ -d "$PathName" ]; then
             echo "$PathName does exist."
             pwd
+	    echo "$GlobalRepository" "$PathName"
             git clone $GlobalRepository $PathName
         else
             echo "$PathName does not exist."
         fi
     else
         pwd
+	echo "$GlobalRepository"
         git clone $GlobalRepository
     fi
 else
