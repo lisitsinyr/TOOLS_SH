@@ -46,18 +46,18 @@ echo " git checkout %FileName%                     "
 echo "---------------------------------------------"
 echo "Check 1 parametr"
 if [ -n "$1" ]; then
-    FileName=$1
+    FileName="$1"
 else
     FileName=""
     read -p "FileName: " FileName
 fi
 
-if [ ! -z $FileName ]; then
+if [ ! -z "$FileName" ]; then
     if [ -f "$FileName" ]; then
-        echo $FileName " does exist"
-        git checkout $FileName
+        echo "$FileName" " does exist"
+        git checkout "$FileName"
     else
-        echo $FileName " does not exist"
+        echo "$FileName" " does not exist"
     fi
 else
    echo "Parametr FileName not set"

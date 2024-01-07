@@ -31,26 +31,23 @@ echo " Инициализация репозитария в текущем ка�
 echo "---------------------------------------------------------------------------"
 # ------------------------------------
 if [ -n "$1" ]; then
-    PathName=$1
+    PathName="$1"
 else
     PathName=""
     read -p "PathName: " PathName
 fi
 
 # ------------------------------------
-if [ ! -z $PathName ]; then
-    #if [ ! -d "$PathName" ]; then
-    #  echo "$DIRECTORY does not exist."
-    #fi
+if [ ! -z "$PathName" ]; then
     if [ -d "$PathName" ]; then
-        echo "$PathName does exist."
+        echo "$PathName" " does exist"
         rm -R $PathName
     else
-        echo "$PathName does not exist."
+        echo "$PathName" " does not exist"
     fi
-    mkdir $PathName
-    cd $PathName
-    echo "Переход в каталог " $PathName
+    mkdir "$PathName"
+    cd "$PathName"
+    echo "Переход в каталог " "$PathName"
 fi
 
 pwd

@@ -75,14 +75,14 @@ echo " git commit -a -m "%Comment%"                "
 echo "---------------------------------------------"
 echo "Check 1 parametr"
 if [ -n "$1" ]; then
-    Comment=$1
+    Comment="$1"
 else
     Comment=""
     read -p "Comment: " Comment
 fi
 
-if [ ! -z $branch ]; then
-    git commit -a -m "%Comment%"
+if [ ! -z "$Comment" ]; then
+    git commit -a -m "$Comment"
 else
    echo "Parametr Comment not set"
 fi

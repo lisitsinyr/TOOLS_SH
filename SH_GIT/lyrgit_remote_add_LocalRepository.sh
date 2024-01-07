@@ -27,27 +27,27 @@ echo " git remote add %LocalRepository% %GlobalRepository% "
 echo "-----------------------------------------------------"
 echo "Check 1 parametr"
 if [ -n "$1" ]; then
-    LocalRepository=$1
+    LocalRepository="$1"
 else
     LocalRepository=""
     read -p "LocalRepository: " LocalRepository
 fi
-if [ -z $LocalRepository ]; then
+if [ -z "$LocalRepository" ]; then
    echo "Parametr LocalRepository not set"
 fi
 echo "Check 2 parametr"
 if [ -n "$2" ]; then
-    GlobalRepository=$2
+    GlobalRepository="$2"
 else
     GlobalRepository=""
     read -p "GlobalRepository: " GlobalRepository
 fi
-if [ -z GlobalRepository ]; then
+if [ -z "$GlobalRepository" ]; then
    echo "Parametr GlobalRepository not set"
 fi
 
-if [ ! -z $LocalRepository && ! -z $GlobalRepository ]; then
-    git remote add $LocalRepository $GlobalRepository
+if [ ! -z "$LocalRepository" && ! -z "$GlobalRepository" ]; then
+    git remote add "$LocalRepository" "$GlobalRepository"
 fi
 
 #:exit

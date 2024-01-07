@@ -58,13 +58,13 @@ echo " git config --system user.email "%UserEmail%"  "
 echo "----------------------------------------------"
 echo "Check 1 parametr"
 if [ -n "$1" ]; then
-    UserEmail=$1
+    UserEmail="$1"
 else
     UserEmail=""
     read -p "UserEmail: " UserEmail
 fi
 
-if [ ! -z $UserEmail ]; then
+if [ ! -z "$UserEmail" ]; then
     git config --system user.email "$UserEmail"
 else
    echo "Parametr UserEmail not set"

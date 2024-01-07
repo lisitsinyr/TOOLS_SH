@@ -18,14 +18,14 @@ echo " git diff %branch%                           "
 echo "---------------------------------------------"
 echo "Check 1 parametr"
 if [ -n "$1" ]; then
-    branch=$1
+    branch="$1"
 else
     branch=""
     read -p "branch: " branch
 fi
 
-if [ ! -z $branch ]; then
-    git diff $branch
+if [ ! -z "$branch" ]; then
+    git diff "$branch"
 else
    echo "Parametr branch not set"
 fi

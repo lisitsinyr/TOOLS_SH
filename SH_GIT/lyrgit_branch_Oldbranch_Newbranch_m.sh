@@ -64,27 +64,27 @@ echo " git branch -m %OldBranch% %NewBranch%            "
 echo "--------------------------------------------------"
 echo "Check 1 parametr"
 if [ -n "$1" ]; then
-    OldBranch=$1
+    OldBranch="$1"
 else
     OldBranch=""
     read -p "OldBranch: " OldBranch
 fi
-if [ -z $Remote ]; then
+if [ -z "$Remote" ]; then
    echo "Parametr OldBranch not set"
 fi
 echo "Check 2 parametr"
 if [ -n "$2" ]; then
-    NewBranch=$2
+    NewBranch="$2"
 else
     NewBranch=""
     read -p "Newbranch: " NewBranch
 fi
-if [ -z $NewBranch ]; then
+if [ -z "$NewBranch" ]; then
    echo "Parametr NewBranch not set"
 fi
 
-if [ ! -z $OldBranch && ! -z $NewBranch]; then
-    git branch -m $OldBranch $NewBranch
+if [ ! -z "$OldBranch" && ! -z "$NewBranch" ]; then
+    git branch -m "$OldBranch" "$NewBranch"
 fi
 
 #:exit

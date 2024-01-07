@@ -46,37 +46,37 @@ echo " git Name --track %remote% %Local%:%Name%         "
 echo "--------------------------------------------------"
 echo "Check 1 parametr"
 if [ -n "$1" ]; then
-    remote=$1
+    remote="$1"
 else
     remote=""
     read -p "remote: " remote
 fi
-if [ -z $remote ]; then
+if [ -z "$remote" ]; then
    echo "Parametr remote not set"
 fi
 echo "Check 2 parametr"
 if [ -n "$2" ]; then
-    Local=$2
+    Local="$2"
 else
     Local=""
     read -p "Local: " Local
 fi
-if [ -z Local ]; then
+if [ -z "$Local" ]; then
    echo "Parametr Local not set"
 fi
 echo "Check 3 parametr"
 if [ -n "$3" ]; then
-    Name=$3
+    Name="$3"
 else
     Name=""
     read -p "Name: " Name
 fi
-if [ -z Name ]; then
+if [ -z "$Name" ]; then
    echo "Parametr Name not set"
 fi
 
-if [ ! -z $remote && ! -z $branch && ! -z $Name ]; then
-    git Name --track $remote $Local:$Name
+if [ ! -z "$remote" && ! -z "$branch" && ! -z "$Name" ]; then
+    git Name --track "$remote" "$Local":"$Name"
 fi
 
 #:exit

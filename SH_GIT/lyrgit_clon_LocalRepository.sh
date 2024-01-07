@@ -92,14 +92,14 @@ if [ ! -z "$GlobalRepository" ]; then
         if [ -d "$PathName" ]; then
             echo "$PathName does exist."
             pwd
-	    echo "$GlobalRepository" "$PathName"
+        echo "$GlobalRepository" "$PathName"
             git clone $GlobalRepository $PathName
         else
             echo "$PathName does not exist."
         fi
     else
         pwd
-	echo "$GlobalRepository"
+        echo "$GlobalRepository"
         git clone $GlobalRepository
     fi
 else

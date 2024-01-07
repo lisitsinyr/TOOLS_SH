@@ -27,16 +27,16 @@ echo " git remote add origin %GlobalRepository%            "
 echo "-----------------------------------------------------"
 echo "Check 1 parametr"
 if [ -n "$1" ]; then
-    GlobalRepository=$1
+    GlobalRepository="$1"
 else
     GlobalRepository=""
     read -p "GlobalRepository: " GlobalRepository
 fi
-if [ -z GlobalRepository ]; then
+if [ -z "$GlobalRepository" ]; then
    echo "Parametr GlobalRepository not set"
 fi
 
-if [ ! -z $GlobalRepository ]; then
+if [ ! -z "$GlobalRepository" ]; then
     git remote add origin $GlobalRepository
 fi
 

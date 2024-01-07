@@ -46,16 +46,16 @@ echo " git checkout %PathName%                     "
 echo "---------------------------------------------"
 echo "Check 1 parametr"
 if [ -n "$1" ]; then
-    PathName=$1
+    PathName="$1"
 else
     PathName=""
     read -p "PathName: " PathName
 fi
 
-if [ ! -z $PathName ]; then
+if [ ! -z "$PathName" ]; then
     if [ -d "$PathName" ]; then
-        echo $PathName " does exist"
-        git checkout $PathName
+        echo "$PathName" " does exist"
+        git checkout "$PathName"
     else
         echo $PathName " does not exist"
     fi

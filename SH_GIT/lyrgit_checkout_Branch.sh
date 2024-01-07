@@ -46,14 +46,14 @@ echo " git checkout %branch%                       "
 echo "---------------------------------------------"
 echo "Check 1 parametr"
 if [ -n "$1" ]; then
-    branch=$1
+    branch="$1"
 else
     branch=""
     read -p "branch: " branch
 fi
 
-if [ ! -z $branch ]; then
-    git checkout $branch
+if [ ! -z "$branch" ]; then
+    git checkout "$branch"
 else
    echo "Parametr branch not set"
 fi

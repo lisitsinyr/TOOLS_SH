@@ -75,27 +75,27 @@ echo " git pull $remote $refspec                        "
 echo "--------------------------------------------------"
 echo "Check 1 parametr"
 if [ -n "$1" ]; then
-    remote=$1
+    remote="$1"
 else
     remote=""
     read -p "remote: " remote
 fi
-if [ -z $remote ]; then
+if [ -z "$remote" ]; then
    echo "Parametr remote not set"
 fi
 echo "Check 2 parametr"
 if [ -n "$2" ]; then
-    refspec=$2
+    refspec="$2"
 else
     refspec=""
     read -p "refspec: " refspec
 fi
-if [ -z refspec ]; then
+if [ -z "$refspec" ]; then
    echo "Parametr refspec not set"
 fi
 
-if [ ! -z $remote && ! -z $refspec ]; then
-    git pull $remote $refspec
+if [ ! -z "$remote" && ! -z "$refspec" ]; then
+    git pull "$remote" "$refspec"
 fi
 
 #:exit

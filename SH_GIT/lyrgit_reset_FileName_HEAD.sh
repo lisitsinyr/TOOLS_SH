@@ -37,14 +37,14 @@ echo " git reset HEAD %FileNames%                   "
 echo "----------------------------------------------"
 echo "Check 1 parametr"
 if [ -n "$1" ]; then
-    FileNames=$1
+    FileNames="$1"
 else
     FileNames=""
     read -p "FileNames: " FileNames
 fi
 
-if [ ! -z $FileNames ]; then
-    git reset HEAD $FileNames
+if [ ! -z "$FileNames" ]; then
+    git reset HEAD "$FileNames"
 else
    echo "Parametr UserEmail not set"
 fi

@@ -55,14 +55,14 @@ echo " git merge %Commit%                          "
 echo "---------------------------------------------"
 echo "Check 1 parametr"
 if [ -n "$1" ]; then
-    Commit=$1
+    Commit="$1"
 else
     Commit=""
     read -p "Commit: " Commit
 fi
 
-if [ ! -z $Commit ]; then
-    git merge $Commit
+if [ ! -z "$Commit" ]; then
+    git merge "$Commit"
 else
    echo "Parametr Commit not set"
 fi

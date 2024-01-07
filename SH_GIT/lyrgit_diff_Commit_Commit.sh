@@ -18,7 +18,7 @@ echo " git diff %Commit_1% %Commit_2%              "
 echo "---------------------------------------------"
 echo "Check 1 parametr"
 if [ -n "$1" ]; then
-    Commit_1=$1
+    Commit_1="$1"
 else
     Commit=""
     read -p "Commit_1: " Commit_1
@@ -28,7 +28,7 @@ if [ -z $Commit_1 ]; then
 fi
 echo "Check 2 parametr"
 if [ -n "$2" ]; then
-    Commit_2=$2
+    Commit_2="$2"
 else
     Commit=""
     read -p "Commit_2: " Commit_2
@@ -37,8 +37,8 @@ if [ -z $Commit_2 ]; then
    echo "Parametr Commit_2 not set"
 fi
 
-if [ ! -z $Commit_1 && ! -z $Commit_2]; then
-    git diff $Commit_1 $Commit_2
+if [ ! -z "$Commit_1" && ! -z "$Commit_2" ]; then
+    git diff "$Commit_1" "$Commit_2"
 fi
 
 #:exit

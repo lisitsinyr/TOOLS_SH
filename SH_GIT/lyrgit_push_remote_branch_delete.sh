@@ -46,27 +46,27 @@ echo " git push %remote% --delete %branch%              "
 echo "--------------------------------------------------"
 echo "Check 1 parametr"
 if [ -n "$1" ]; then
-    remote=$1
+    remote="$1"
 else
     remote=""
     read -p "remote: " remote
 fi
-if [ -z $remote ]; then
+if [ -z "$remote" ]; then
    echo "Parametr remote not set"
 fi
 echo "Check 2 parametr"
 if [ -n "$2" ]; then
-    branch=$2
+    branch="$2"
 else
     branch=""
     read -p "branch: " branch
 fi
-if [ -z branch ]; then
+if [ -z "$branch" ]; then
    echo "Parametr branch not set"
 fi
 
-if [ ! -z $remote && ! -z $branch ]; then
-    git push $remote $branch
+if [ ! -z "$remote" && ! -z "$branch" ]; then
+    git push "$remote" "$branch"
 fi
 
 #:exit

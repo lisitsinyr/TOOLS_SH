@@ -26,14 +26,14 @@ echo " git show %Tag%                              "
 echo "---------------------------------------------"
 echo "Check 1 parametr"
 if [ -n "$1" ]; then
-    Tag=$1
+    Tag="$1"
 else
     Tag=""
     read -p "Tag: " Tag
 fi
 
-if [ ! -z $Tag ]; then
-    git show $Tag
+if [ ! -z "$Tag" ]; then
+    git show "$Tag"
 else
    echo "Parametr Tag not set"
 fi
