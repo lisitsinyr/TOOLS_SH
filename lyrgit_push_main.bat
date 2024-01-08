@@ -53,18 +53,18 @@ if "%Comment%" == "" goto P1_Error
 goto Begin
 :P1_Error
 echo Parametr Comment not set
-set Comment="Git Bash commit update"
+set Comment=Git Bash commit update
 echo %Comment%
 rem -------------------------------------------------------------------
 
 :begin
 echo ---------------------------------------------------------------
 echo git add --all
-echo git commit -m %Comment%
+echo git commit -m "%Comment%"
 echo git push -u origin main
 echo ---------------------------------------------------------------
 git add --all
-git commit -m %Comment%
+git commit -m "%Comment%"
 git push -u origin main
 
 :Exit
