@@ -41,13 +41,26 @@
 # -------------------------------------------------------------------
 
 #:begin
-echo "---------------------------------------------"
-echo " ***Отправить изменения                      "
-echo "---------------------------------------------"
-git add --all
+echo ---------------------------------------------
+echo Отправить изменения
+echo ---------------------------------------------
+echo Check 1 parametr
+if [ -n "$1" ]; then
+    Comment="$1"
+else
+    Comment=""
+    read -p "Comment: " Comment
+fi
 
-git commit -m "Git Bash commit update"
+if [ -z "$Comment" ]; then
+    echo Parametr Comment not specified
+    set Comment=Git Bash commit update
+fi
 
-git push -u origin main
+if [ ! -z "$Comment" ]; then
+    git add --all
+    git commit -m "$Comment"
+    git push -u origin main
+fi
 
 #:Exit
