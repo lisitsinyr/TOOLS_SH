@@ -59,10 +59,10 @@
 # --------------------------------------------------------------------------------------
 
 #:begin
-echo "--------------------------------------------------"
-echo " git branch %remote% %fetch%                      "
-echo "--------------------------------------------------"
-echo "Check 1 parametr"
+echo --------------------------------------------------
+echo git branch %remote% %fetch%
+echo --------------------------------------------------
+echo Check 1 parametr
 if [ -n "$1" ]; then
     remote="$1"
 else
@@ -70,9 +70,9 @@ else
     read -p "remote: " remote
 fi
 if [ -z "$remote" ]; then
-   echo "Parametr remote not set"
+   echo Parametr remote not specified
 fi
-echo "Check 2 parametr"
+echo Check 2 parametr
 if [ -n "$2" ]; then
     fetch="$2"
 else
@@ -80,7 +80,7 @@ else
     read -p "fetch: " fetch
 fi
 if [ -z "$fetch" ]; then
-   echo "Parametr fetch not set"
+   echo Parametr fetch not specified
 fi
 
 if [ ! -z "$remote" && ! -z "$fetch" ]; then

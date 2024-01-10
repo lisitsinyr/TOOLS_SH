@@ -24,9 +24,9 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo "---------------------------------------------"
-echo " git init -bare -share sharedproject.git     "
-echo "---------------------------------------------"
+echo ---------------------------------------------
+echo git init -bare -share sharedproject.git
+echo ---------------------------------------------
 git init -bare -share sharedproject.git
 
 #:exit

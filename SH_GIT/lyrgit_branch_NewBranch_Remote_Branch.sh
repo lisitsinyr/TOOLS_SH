@@ -59,10 +59,10 @@
 # --------------------------------------------------------------------------------------
 
 #:begin
-echo "--------------------------------------------------"
-echo " git branch --track %Newbranch% %Remote%/%branch% "
-echo "--------------------------------------------------"
-echo "Check 1 parametr"
+echo --------------------------------------------------
+echo git branch --track %Newbranch% %Remote%/%branch%
+echo --------------------------------------------------
+echo Check 1 parametr
 if [ -n "$1" ]; then
     Newbranch="$1"
 else
@@ -70,9 +70,9 @@ else
     read -p "Newbranch: " Newbranch
 fi
 if [ -z "$branch" ]; then
-   echo "Parametr Newbranch not set"
+   echo Parametr Newbranch not specified
 fi
-echo "Check 2 parametr"
+echo Check 2 parametr
 if [ -n "$2" ]; then
     Remote="$2"
 else
@@ -80,9 +80,9 @@ else
     read -p "Remote: " Remote
 fi
 if [ -z "$Remote" ]; then
-   echo "Parametr Remote not set"
+   echo Parametr Remote not specified
 fi
-echo "Check 3 parametr"
+echo Check 3 parametr
 if [ -n "$3" ]; then
     branch="$3"
 else
@@ -90,11 +90,11 @@ else
     read -p "branch: " branch
 fi
 if [ -z "$branch" ]; then
-   echo "Parametr branch not set"
+   echo Parametr branch not specified
 fi
 
 if [ ! -z "$Newbranch" && ! -z "$Remote" && ! -z "$branch" ]; then
-    git branch --track "%Newbranch%" "%Remote%"/"%branch%"
+    git branch --track "$Newbranch" "$Remote"/"$branch"
 fi
 
 #:exit

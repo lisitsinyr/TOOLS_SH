@@ -30,10 +30,10 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo "----------------------------------------------"
-echo " git revert %commite%                    "
-echo "----------------------------------------------"
-echo "Check 1 parametr"
+echo ----------------------------------------------
+echo git revert %commite%
+echo ----------------------------------------------
+echo Check 1 parametr
 if [ -n "$1" ]; then
     commite="$1"
 else
@@ -44,7 +44,7 @@ fi
 if [ ! -z "$commite" ]; then
     git revert "$commite"
 else
-   echo "Parametr UserEmail not set"
+   echo Parametr UserEmail not specified
 fi
 
 #:exit

@@ -1,9 +1,9 @@
 #!/bin/bash
 # -------------------------------------------------------------------
 # lyrgit_reset_hard.bat
-# ----------------------------------------------------------------------------"
+# ----------------------------------------------------------------------------
 # Сопоставляет рабочую область и индекс с локальным деревом [git reset --hard]
-# ----------------------------------------------------------------------------"
+# ----------------------------------------------------------------------------
 # usage: git reset [--mixed | --soft | --hard | --merge | --keep] [-q] [<commit>]
 #    or: git reset [-q] [<tree-ish>] [--] <pathspec>...
 #    or: git reset [-q] [--pathspec-from-file [--pathspec-file-nul]] [<tree-ish>]
@@ -29,12 +29,12 @@
 #                           with --pathspec-from-file, pathspec elements are separated with NUL character
 #     -z                    DEPRECATED (use --pathspec-file-nul instead): paths are separated with NUL character
 #     --[no-]stdin          DEPRECATED (use --pathspec-from-file=- instead): read paths from <stdin>
-# ----------------------------------------------------------------------------"
+# ----------------------------------------------------------------------------
 
 #:begin
-echo "----------------------------------------------"
-echo " git reset --hard                             "
-echo "----------------------------------------------"
+echo ----------------------------------------------
+echo git reset --hard
+echo ----------------------------------------------
 git reset --hard
 
 #:exit

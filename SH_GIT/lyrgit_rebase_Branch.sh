@@ -66,10 +66,10 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo "---------------------------------------------"
-echo " git rebase %upstream_branch%                "
-echo "---------------------------------------------"
-echo "Check 1 parametr"
+echo ---------------------------------------------
+echo git rebase %upstream_branch%
+echo ---------------------------------------------
+echo Check 1 parametr
 if [ -n "$1" ]; then
     upstream_branch="$1"
 else
@@ -80,7 +80,7 @@ fi
 if [ ! -z "$upstream_branch" ]; then
     git rebase "$upstream_branch"
 else
-   echo "Parametr upstream_branch not set"
+   echo Parametr upstream_branch not specified
 fi
 
 #:exit
