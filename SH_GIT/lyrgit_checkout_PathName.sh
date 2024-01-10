@@ -41,10 +41,10 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo ---------------------------------------------
-echo git checkout %PathName%
-echo ---------------------------------------------
-echo Check 1 parametr
+echo '---------------------------------------------'
+echo ' git checkout $PathName'
+echo '---------------------------------------------'
+echo 'Check 1 parametr'
 if [ -n "$1" ]; then
     PathName="$1"
 else
@@ -57,10 +57,10 @@ if [ ! -z "$PathName" ]; then
         echo "$PathName" not exist
         git checkout "$PathName"
     else
-        echo "$PathName" not exist
+        echo "$PathName" 'not exist'
     fi
 else
-   echo Parametr ParhName not specified
+   echo 'Parametr $ParhName not specified'
 fi
 
 #:exit

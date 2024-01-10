@@ -50,10 +50,10 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo ---------------------------------------------
-echo git merge %branch%
-echo ---------------------------------------------
-echo Check 1 parametr
+echo '---------------------------------------------'
+echo ' git merge $branch'
+echo '---------------------------------------------'
+echo 'Check 1 parametr'
 if [ -n "$1" ]; then
     branch="$1"
 else
@@ -64,7 +64,7 @@ fi
 if [ ! -z "$branch" ]; then
     git merge "$branch"
 else
-   echo Parametr branch not specified
+   echo 'Parametr $branch not specified'
 fi
 
 #:exit

@@ -53,10 +53,10 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo ----------------------------------------------
-echo git config --system user.email %UserEmail%
-echo ----------------------------------------------
-echo Check 1 parametr
+echo '----------------------------------------------'
+echo ' git config --system user.email $UserEmail'
+echo '----------------------------------------------'
+echo 'Check 1 parametr'
 if [ -n "$1" ]; then
     UserEmail="$1"
 else
@@ -67,7 +67,7 @@ fi
 if [ ! -z "$UserEmail" ]; then
     git config --system user.email "$UserEmail"
 else
-   echo Parametr UserEmail not specified
+   echo 'Parametr $UserEmail not specified'
 fi
 
 #:exit

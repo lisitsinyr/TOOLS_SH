@@ -32,10 +32,10 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo --------------------------------------------------
-echo git reset %remote% %branch% 
-echo --------------------------------------------------
-echo Check 1 parametr
+echo '--------------------------------------------------'
+echo ' git reset $remote $branch'
+echo '--------------------------------------------------'
+echo 'Check 1 parametr'
 if [ -n "$1" ]; then
     remote="$1"
 else
@@ -43,7 +43,7 @@ else
     read -p "remote: " remote
 fi
 if [ -z "$remote" ]; then
-   echo Parametr remote not specified
+   echo 'Parametr $remote not specified'
 fi
 echo Check 2 parametr
 if [ -n "$2" ]; then
@@ -53,7 +53,7 @@ else
     read -p "branch: " branch
 fi
 if [ -z "$branch" ]; then
-   echo Parametr branch not specified
+   echo 'Parametr $branch not specified'
 fi
 
 if [ ! -z "$remote" && ! -z "$branch" ]; then

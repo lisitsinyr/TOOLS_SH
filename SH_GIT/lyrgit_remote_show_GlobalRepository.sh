@@ -22,10 +22,10 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo -----------------------------------------------------
-echo git remote show %GlobalRepository%
-echo -----------------------------------------------------
-echo Check 1 parametr
+echo '-----------------------------------------------------'
+echo ' git remote show %GlobalRepository'
+echo '-----------------------------------------------------'
+echo 'Check 1 parametr'
 if [ -n "$1" ]; then
     GlobalRepository="$1"
 else
@@ -33,7 +33,7 @@ else
     read -p "GlobalRepository: " GlobalRepository
 fi
 if [ -z "$GlobalRepository" ]; then
-   echo Parametr GlobalRepository not specified
+   echo 'Parametr $GlobalRepository not specified'
 fi
 
 if [ ! -z "$GlobalRepository" ]; then

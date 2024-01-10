@@ -53,9 +53,9 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo -----------------------------------------------------
-echo git config -l --show-origin
-echo -----------------------------------------------------
+echo '-----------------------------------------------------'
+echo ' git config -l --show-origin'
+echo '-----------------------------------------------------'
 # git config -l                        > ./GIT_CONFIG_l_so_so
 git config -l --show-origin          > ./GIT_CONFIG_l_so_so_current
 # git config -l --show-origin --global > ./GIT_CONFIG_l_so_so_global

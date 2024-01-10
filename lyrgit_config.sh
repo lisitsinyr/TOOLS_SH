@@ -53,9 +53,9 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo ----------------------------------------------
-echo git config --list --show-origin --show-scope
-echo ----------------------------------------------
+echo '----------------------------------------------'
+echo ' git config --list --show-origin --show-scope'
+echo '----------------------------------------------'
 git config --list --show-origin --show-scope > ~/DATA/GIT/GIT_CONFIG_list_so_ss_current
 
 #:Exit

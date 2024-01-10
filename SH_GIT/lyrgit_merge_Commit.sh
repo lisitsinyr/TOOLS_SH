@@ -50,10 +50,10 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo ---------------------------------------------
-echo git merge %Commit%
-echo ---------------------------------------------
-echo Check 1 parametr
+echo '---------------------------------------------'
+echo ' git merge $Commit'
+echo '---------------------------------------------'
+echo 'Check 1 parametr'
 if [ -n "$1" ]; then
     Commit="$1"
 else
@@ -64,7 +64,7 @@ fi
 if [ ! -z "$Commit" ]; then
     git merge "$Commit"
 else
-   echo Parametr Commit not specified
+   echo 'Parametr $Commit not specified'
 fi
 
 #:exit

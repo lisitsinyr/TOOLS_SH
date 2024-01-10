@@ -25,10 +25,13 @@
 #                           specify the hash algorithm to use
 # ----------------------------------------------------------------------------
 
+# -------------------------------------------------------------------
 #:begin
-echo ---------------------------------------------------------------------------
-echo Инициализация репозитария в текущем катологе или в заданном каталоге
-echo ---------------------------------------------------------------------------
+# -------------------------------------------------------------------
+echo '---------------------------------------------------------------------------'
+echo ' Инициализация репозитария в текущем катологе или в заданном каталоге'
+echo '---------------------------------------------------------------------------'
+echo 'Check 1 parametr'
 if [ -n "$1" ]; then
     PathName="$1"
 else
@@ -37,21 +40,32 @@ else
 fi
 if [ ! -z "$PathName" ]; then
     if [ -d "$PathName" ]; then
-        echo "$PathName" not exist
+        echo "$PathName" 'not exist'
         rm -R "$PathName"
     else
-        echo "$PathName" not exist
+        echo "$PathName" 'not exist'
     fi
     mkdir "$PathName"
     cd "$PathName"
-    echo goto "$PathName"
+    echo 'goto' "$PathName"
 fi
 pwd
 
-# -------------------------------------------------------------------
-#:begin
-# -------------------------------------------------------------------
+echo 'Check 2 parametr'
+if [ -n "$2" ]; then
+    Comment="$2"
+else
+    Comment=""
+    read -p "Comment: " Comment
+fi
+if [ -z $Comment ]; then
+    echo 'Parametr $Comment not specified'
+    set Comment='Git Bash commit update'
+    echo $Comment
+fi
+
 #:GIT_create_Repository
+
 git config --global init.defaultBranch main
 
 touch .gitignore
@@ -62,15 +76,11 @@ chmod 664 .gitmodules
 
 touch .README.md
 chmod 664 .README.md
-echo "*" >> .README.md
+echo '*' >> .README.md
 
 git init
-
 git add --all
-
-git commit -m "Git Bash commit update"
-
+git commit -m "$Comment"
 git branch -M main
 
 #:Exit
-

@@ -59,10 +59,10 @@
 # --------------------------------------------------------------------------------------
 
 #:begin
-echo --------------------------------------------------
-echo git branch -m %OldBranch% %NewBranch%
-echo --------------------------------------------------
-echo Check 1 parametr
+echo '--------------------------------------------------'
+echo ' git branch -m $OldBranch $NewBranch'
+echo '--------------------------------------------------'
+echo 'Check 1 parametr'
 if [ -n "$1" ]; then
     OldBranch="$1"
 else
@@ -70,9 +70,9 @@ else
     read -p "OldBranch: " OldBranch
 fi
 if [ -z "$Remote" ]; then
-   echo Parametr OldBranch not specified
+   echo 'Parametr $OldBranch not specified'
 fi
-echo Check 2 parametr
+echo 'Check 2 parametr'
 if [ -n "$2" ]; then
     NewBranch="$2"
 else
@@ -80,7 +80,7 @@ else
     read -p "Newbranch: " NewBranch
 fi
 if [ -z "$NewBranch" ]; then
-   echo Parametr NewBranch not specified
+   echo 'Parametr $NewBranch not specified'
 fi
 
 if [ ! -z "$OldBranch" && ! -z "$NewBranch" ]; then

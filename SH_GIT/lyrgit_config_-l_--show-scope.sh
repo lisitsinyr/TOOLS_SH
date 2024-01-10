@@ -53,9 +53,9 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo -----------------------------------------------------
-echo git config -l --show-scope
-echo -----------------------------------------------------
+echo '-----------------------------------------------------'
+echo ' git config -l --show-scope'
+echo '-----------------------------------------------------'
 # git config -l                       > ./GIT_CONFIG_l_ss_ss
 git config -l --show-scope          > ./GIT_CONFIG_l_ss_ss_current
 # git config -l --show-scope --global > ./GIT_CONFIG_l_ss_ss_global

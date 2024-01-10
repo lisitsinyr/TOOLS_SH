@@ -52,10 +52,10 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo ---------------------------------------------
-echo git tag %Tag%
-echo ---------------------------------------------
-echo Check 1 parametr
+echo '---------------------------------------------'
+echo ' git tag $Tag'
+echo '---------------------------------------------'
+echo 'Check 1 parametr'
 if [ -n "$1" ]; then
     Tag="$1"
 else
@@ -66,7 +66,7 @@ fi
 if [ ! -z "$Tag" ]; then
     git tag "$Tag"
 else
-   echo Parametr Tag not specified
+   echo 'Parametr $Tag not specified'
 fi
 
 #:exit

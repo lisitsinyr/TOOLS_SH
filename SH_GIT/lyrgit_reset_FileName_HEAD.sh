@@ -32,10 +32,10 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo ----------------------------------------------
-echo git reset HEAD %FileNames%
-echo ----------------------------------------------
-echo Check 1 parametr
+echo '----------------------------------------------'
+echo ' git reset HEAD $FileNames'
+echo '----------------------------------------------'
+echo 'Check 1 parametr'
 if [ -n "$1" ]; then
     FileNames="$1"
 else
@@ -46,7 +46,7 @@ fi
 if [ ! -z "$FileNames" ]; then
     git reset HEAD "$FileNames"
 else
-   echo Parametr UserEmail not specified
+   echo 'Parametr $UserEmail not specified'
 fi
 
 #:exit

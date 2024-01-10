@@ -70,10 +70,10 @@
 # ----------------------------------------------------------------------------
 
 #:begin
+echo '---------------------------------------------'
+echo 'git commit -a -m $Comment'
 echo ---------------------------------------------
-echo git commit -a -m %Comment%
-echo ---------------------------------------------
-echo Check 1 parametr
+echo 'Check 1 parametr'
 if [ -n "$1" ]; then
     Comment="$1"
 else
@@ -84,7 +84,7 @@ fi
 if [ ! -z "$Comment" ]; then
     git commit -a -m "$Comment"
 else
-   echo Parametr Comment not specified
+   echo 'Parametr $Comment not specified'
 fi
 
 #:exit

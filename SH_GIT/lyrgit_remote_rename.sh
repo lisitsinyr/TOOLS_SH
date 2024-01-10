@@ -22,10 +22,10 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo -----------------------------------------------------
-echo git remote rename %Repository_old% %Repository_new%
-echo -----------------------------------------------------
-echo Check 1 parametr
+echo '-----------------------------------------------------'
+echo ' git remote rename $Repository_old $Repository_new'
+echo '-----------------------------------------------------'
+echo 'Check 1 parametr'
 if [ -n "$1" ]; then
     Repository_old="$1"
 else
@@ -33,9 +33,10 @@ else
     read -p "Repository_old: " Repository_old
 fi
 if [ -z "$Repository_old" ]; then
-   echo Parametr Repository_old not specified
+   echo 'Parametr $Repository_old not specified'
 fi
-echo Check 2 parametr
+
+echo 'Check 2 parametr'
 if [ -n "$2" ]; then
     Repository_new="$2"
 else
@@ -43,7 +44,7 @@ else
     read -p "Repository_new: " Repository_new
 fi
 if [ -z "$Repository_new" ]; then
-   echo Parametr Repository_new not specified
+   echo 'Parametr $Repository_new not specified'
 fi
 
 if [ ! -z "$LocalRepository" && ! -z "$GlobalRepository" ]; then

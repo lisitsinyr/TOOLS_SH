@@ -53,9 +53,9 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo ---------------------------------------------------------
-echo git config --global core.excludesfile .gitignore_global
-echo ---------------------------------------------------------
+echo '---------------------------------------------------------'
+echo ' git config --global core.excludesfile .gitignore_global'
+echo '---------------------------------------------------------'
 git config --global core.excludesfile .gitignore_global
 
 #:exit

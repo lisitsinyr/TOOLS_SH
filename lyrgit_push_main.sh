@@ -41,10 +41,13 @@
 # -------------------------------------------------------------------
 
 #:begin
-echo ---------------------------------------------
-echo Отправить изменения
-echo ---------------------------------------------
-echo Check 1 parametr
+echo '---------------------------------------------'
+echo ' Отправить изменения'
+echo '     git add --all'
+echo '     git commit -m "$Comment"'
+echo '     git push -u origin main'
+echo '---------------------------------------------'
+echo 'Check 1 parametr'
 if [ -n "$1" ]; then
     Comment="$1"
 else
@@ -53,8 +56,8 @@ else
 fi
 
 if [ -z "$Comment" ]; then
-    echo Parametr Comment not specified
-    set Comment=Git Bash commit update
+    echo 'Parametr $Comment not specified'
+    set Comment='Git Bash commit update'
 fi
 
 if [ ! -z "$Comment" ]; then

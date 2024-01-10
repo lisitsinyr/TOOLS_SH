@@ -13,35 +13,33 @@
 #     --[no-]sparse         allow updating entries outside of the sparse-checkout cone
 # ----------------------------------------------------------------------------
 
-# -------------------------------------------------------------------
-:P1
-if "%1" == "" goto P1_Input
-goto Begin
-:P1_Input
-set /p source=source:
-if "%source%" == "" goto Error_1
-goto P2
-:Error_1
-echo Значение параметра source не установлено
-goto Exit
-
-# -------------------------------------------------------------------
-:P2
-if "%2" == "" goto P2_Input
-goto Begin
-:P2_Input
-set /p destination=destination:
-if "%destination%" == "" goto P2_Error
-goto Begin
-:P2_Error
-echo Значение параметра не установлено
-goto Exit
-# -------------------------------------------------------------------
-
 #:begin
-echo ---------------------------------------------
-echo git mv %source% %destination%
-echo ---------------------------------------------
-git mv %source% %destination%
+echo '---------------------------------------------'
+echo ' git mv $source $destination'
+echo '---------------------------------------------'
+echo 'Check 1 parametr'
+if [ -n "$1" ]; then
+    source="$1"
+else
+    source=""
+    read -p "source: " source
+fi
+if [ -z $source ]; then
+   echo 'Parametr $source not specified'
+fi
+echo 'Check 2 parametr'
+if [ -n "$2" ]; then
+    destination="$2"
+else
+    destination=""
+    read -p "destination: " destination
+fi
+if [ -z $Commit_2 ]; then
+    echo 'Parametr $destination not specified'
+fi
+
+if [ ! -z "$source" && ! -z "$destination" ]; then
+    git mv $source $destination
+fi
 
 #:exit

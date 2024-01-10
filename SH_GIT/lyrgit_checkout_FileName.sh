@@ -41,10 +41,10 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo ---------------------------------------------
-echo git checkout %FileName%
-echo ---------------------------------------------
-echo Check 1 parametr
+echo '---------------------------------------------'
+echo ' git checkout $FileName'
+echo '---------------------------------------------'
+echo 'Check 1 parametr'
 if [ -n "$1" ]; then
     FileName="$1"
 else
@@ -57,10 +57,10 @@ if [ ! -z "$FileName" ]; then
         echo "$FileName" not exist
         git checkout "$FileName"
     else
-        echo "$FileName" not exist
+        echo "$FileName" 'not exist'
     fi
 else
-   echo Parametr FileName not specified
+   echo 'Parametr $FileName not specified'
 fi
 
 #:exit

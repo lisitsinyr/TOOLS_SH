@@ -22,9 +22,9 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo ---------------------------------------------
-echo git rm -cached %FileName%
-echo ---------------------------------------------
+echo '---------------------------------------------'
+echo ' git rm -cached $FileName'
+echo '---------------------------------------------'
 echo Check 1 parametr
 if [ -n "$1" ]; then
     FileName="$1"
@@ -35,13 +35,13 @@ fi
 
 if [ ! -z "$FileName" ]; then
     if [ -f "$FileName" ]; then
-        echo "$FileName" not exist
+        echo "$FileName" 'not exist'
         git rm -cached "$FileName"
     else
-        echo "$FileName" not exist
+        echo "$FileName" 'not exist'
     fi
 else
-   echo Parametr FileName not specified
+    echo 'Parametr $FileName not specified'
 fi
 
 #:exit

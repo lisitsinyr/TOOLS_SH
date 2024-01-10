@@ -34,10 +34,10 @@
 # -------------------------------------------------------------------
 
 #:begin
-echo ---------------------------------------------
-echo git add %PathName%
-echo ---------------------------------------------
-echo Check 1 parametr
+echo '---------------------------------------------'
+echo ' git add $PathName'
+echo '---------------------------------------------'
+echo 'Check 1 parametr'
 if [ -n "$1" ]; then
     PathName="$1"
 else
@@ -47,13 +47,13 @@ fi
 
 if [ ! -z "$PathName" ]; then
     if [ -d "$PathName" ]; then
-        echo "$PathName" not exist
+        echo "$PathName" 'not exist'
         git add "$PathName"
     else
-        echo "$PathName" not exist
+        echo "$PathName" 'not exist'
     fi
 else
-   echo Parametr ParhName not specified
+    echo 'Parametr $PathName not specified'
 fi
 
 #:exit

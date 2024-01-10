@@ -66,12 +66,11 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo ---------------------------------------------
-echo git clone $GlobalRepository
-echo git clone $GlobalRepository $PathName
-echo ---------------------------------------------
-# -------------------------------------------------------------------
-echo Check 1 parametr
+echo '---------------------------------------------'
+echo ' git clone $GlobalRepository'
+echo ' git clone $GlobalRepository $PathName'
+echo '---------------------------------------------'
+echo 'Check 1 parametr'
 if [ -n "$1" ]; then
     GlobalRepository="$1"
 else
@@ -80,7 +79,7 @@ else
 fi
 # -------------------------------------------------------------------
 if [ ! -z "$GlobalRepository" ]; then
-    echo Check 2 parametr
+    echo 'Check 2 parametr'
     if [ -n "$2" ]; then
         PathName="$2"
     else
@@ -90,12 +89,12 @@ if [ ! -z "$GlobalRepository" ]; then
 
     if [ ! -z "$PathName" ]; then
         if [ -d "$PathName" ]; then
-            echo "$PathName" does exist
+            echo "$PathName" 'does exist'
             pwd
         echo "$GlobalRepository" "$PathName"
             git clone "$GlobalRepository" "$PathName"
         else
-            echo "$PathName" not exist
+            echo "$PathName" 'not exist'
         fi
     else
         pwd
@@ -103,7 +102,7 @@ if [ ! -z "$GlobalRepository" ]; then
         git clone "$GlobalRepository"
     fi
 else
-    echo Parametr GlobalRepository not specified
+    echo 'Parametr $GlobalRepository not specified'
 fi
 
 #:Exit
