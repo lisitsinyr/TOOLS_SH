@@ -4,11 +4,11 @@
 # -------------------------------------------------------------------
 
 #:begin
-echo "---------------------------------------------"
-echo "                                             "
-echo "---------------------------------------------"
+echo '---------------------------------------------'
+echo '                                             '
+echo '---------------------------------------------'
 hostnamectl set-hostname ASUS-U2204-VM --static
-hostnamectl set-hostname "ASUS-U2204-VM" --pretty
+hostnamectl set-hostname 'ASUS-U2204-VM' --pretty
 
 #:Exit
 

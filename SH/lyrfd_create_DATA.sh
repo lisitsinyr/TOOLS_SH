@@ -4,9 +4,9 @@
 # -------------------------------------------------------------------
 
 #:begin
-echo "---------------------------------------------"
-echo "                                             "
-echo "---------------------------------------------"
+echo '---------------------------------------------'
+echo ' create_DATA                                 '
+echo '---------------------------------------------'
 sudo rm -R /DATA
 # ------------------------------------------------------------------
 # Создаем каталог /DATA
@@ -30,7 +30,7 @@ sudo chown -R root:root /DATA/public
 #sudo usermod -a -G DATA-public-w lyr
 # Добавить ранее созданного пользователя в эту группу:
 #sudo usermod -a -G DATA-public-r lyr
-sudo echo "DATA_public" > /DATA/public/DATA_public.txt
+sudo echo 'DATA_public' > /DATA/public/DATA_public.txt
 
 # ------------------------------------------------------------------
 # Создаем каталог /DATA/lyrs
@@ -52,7 +52,7 @@ sudo chown -R lyr:DATA_lyrs_w /DATA/lyrs
 #sudo usermod -a -G DATA_lyrs_w lyr2
 # Добавить ранее созданного пользователя в эту группу:
 sudo usermod -a -G DATA_lyrs_r lyr2
-sudo echo "DATA_lyrs" > /DATA/lyrs/DATA_lyrs.txt
+sudo echo 'DATA_lyrs' > /DATA/lyrs/DATA_lyrs.txt
 
 # ------------------------------------------------------------------
 # Создаем каталог /DATA/lyr
@@ -74,6 +74,6 @@ sudo chown -R lyr:DATA_lyr_w /DATA/lyr
 sudo usermod -a -G DATA_lyr_w lyr2
 # Добавить ранее созданного пользователя в эту группу:
 #sudo usermod -a -G DATA_lyr_r lyr2
-sudo echo "DATA_lyr" > /DATA/lyr/DATA_lyr.txt
+sudo echo 'DATA_lyr' > /DATA/lyr/DATA_lyr.txt
 
 #:Exit
