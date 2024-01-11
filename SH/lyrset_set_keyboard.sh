@@ -5,7 +5,7 @@
 
 #:begin
 echo '---------------------------------------------'
-echo ' <Ctrl>Shift_R                               '
+echo ' set_keyboard <Ctrl>Shift_R '
 echo '---------------------------------------------'
 gsettings set org.gnome.desktop.wm.keybindings switch-input-source '['<Ctrl>Shift_R']'
 gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward '['<Ctrl>Shift_R']'

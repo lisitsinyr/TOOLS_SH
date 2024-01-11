@@ -5,7 +5,7 @@
 
 #:begin
 echo '------------------------------------'
-echo ' Установка chrony                   '
+echo ' Установка chrony '
 echo '------------------------------------'
 sudo apt-get install chrony
 

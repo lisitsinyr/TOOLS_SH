@@ -1,17 +1,16 @@
 ﻿#!/bin/bash
 # -------------------------------------------------------------------
-# lyrspm_install_grub.sh
+# lyrspm_install_app_java.sh
 # -------------------------------------------------------------------
 
 #:begin
 echo '---------------------------------------------'
-echo ' install_grub '
+echo ' Установка JDK '
 echo '---------------------------------------------'
-sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+java --version
 
-sudo apt-get update
+sudo apt update && sudo apt install default-jdk
 
-sudo apt install grub-customizer
+java --version
 
 #:Exit
-

@@ -5,7 +5,7 @@
 
 #:begin
 echo '---------------------------------------------'
-echo '                                             '
+echo ' set_iptables '
 echo '---------------------------------------------'
 # порт 445 используется для samba
 sudo iptables -I INPUT -p tcp --dport 445 -j ACCEPT

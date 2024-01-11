@@ -5,7 +5,7 @@
 
 #:begin
 echo '---------------------------------'
-echo ' Attempts to ssh to GitHub       '
+echo ' Attempts to ssh to GitHub '
 echo '---------------------------------'
 ssh -T git@github.com
 

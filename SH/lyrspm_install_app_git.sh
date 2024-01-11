@@ -5,8 +5,12 @@
 
 #:begin
 echo '---------------------------------------------'
-echo ' Установка git                               '
+echo ' Установка git '
 echo '---------------------------------------------'
+git --version
+
 sudo apt install git
+
+git --version
 
 #:Exit

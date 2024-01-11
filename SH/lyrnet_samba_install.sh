@@ -5,7 +5,7 @@
 
 #:begin
 echo '---------------------------------'
-echo ' Установка samba                 '
+echo ' Установка samba'
 echo '---------------------------------'
 sudo apt-get install samba
 

@@ -5,7 +5,7 @@
 
 #:begin
 echo '---------------------------------------------'
-echo '                                             '
+echo ' hostnamectl --pretty status '
 echo '---------------------------------------------'
 hostnamectl --pretty status
 

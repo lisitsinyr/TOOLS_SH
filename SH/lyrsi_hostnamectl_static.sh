@@ -5,7 +5,7 @@
 
 #:begin
 echo '---------------------------------------------'
-echo '                                             '
+echo ' hostnamectl --static status '
 echo '---------------------------------------------'
 hostnamectl --static status
 

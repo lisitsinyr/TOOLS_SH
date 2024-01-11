@@ -5,7 +5,7 @@
 
 #:begin
 echo '---------------------------------'
-echo '                                 '
+echo ' sudo systemctl restart smbd '
 echo '---------------------------------'
 sudo systemctl restart smbd
 

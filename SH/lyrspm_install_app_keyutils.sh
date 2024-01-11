@@ -5,7 +5,7 @@
 
 #:begin
 echo '---------------------------------------------'
-echo ' Установка keyutils                          '
+echo ' Установка keyutils '
 echo '---------------------------------------------'
 sudo apt-get install keyutils
 

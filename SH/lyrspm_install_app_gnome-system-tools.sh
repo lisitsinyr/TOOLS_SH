@@ -5,7 +5,7 @@
 
 #:begin
 echo '---------------------------------------------'
-echo '                                             '
+echo ' sudo apt-get install gnome-system-tools '
 echo '---------------------------------------------'
 sudo apt-get install gnome-system-tools
 
