@@ -41,23 +41,23 @@ rem     -6, --ipv6            use IPv6 addresses only
 rem -------------------------------------------------------------------
 chcp 1251
 
-rem -------------------------------------------------------------------
-:P1
+:begin
+echo ---------------------------------------------------------------
 echo Check 1 parametr
+echo ---------------------------------------------------------------
+:P1
 if "%1" == "" goto P1_Input
 set Comment="%1"
-goto Begin
+goto begin_git
 :P1_Input
 set /p Comment=Comment:
 if "%Comment%" == "" goto P1_Error
-goto Begin
+goto begin_git
 :P1_Error
 echo Parametr Comment not set
 set Comment=Git Bash commit update
-echo %Comment%
-rem -------------------------------------------------------------------
 
-:begin
+:begin_git
 echo ---------------------------------------------------------------
 echo git add --all
 echo git commit -m "%Comment%"

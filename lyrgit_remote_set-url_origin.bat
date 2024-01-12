@@ -22,22 +22,23 @@ rem     -v, --[no-]verbose    be verbose; must be placed before a subcommand
 rem ----------------------------------------------------------------------------
 chcp 1251
 
-rem -------------------------------------------------------------------
-:P1
+:begin
+echo ---------------------------------------------------------------
 echo Check 1 parametr
+echo ---------------------------------------------------------------
+:P1
 if "%1" == "" goto P1_Input
 set GlobalRepository="%1"
-goto Begin
+goto begin_git
 :P1_Input
 set /p GlobalRepository=GlobalRepository:
 if "%GlobalRepository%" == "" goto P1_Error
-goto Begin
+goto begin_git
 :P1_Error
 echo Parametr GlobalRepository not set
 goto Exit
-rem -------------------------------------------------------------------
 
-:begin
+:begin_git
 echo ---------------------------------------------------------------
 echo git remote -v
 echo git remote set-url origin %GlobalRepository%
