@@ -61,6 +61,7 @@ if [ -z "$Comment" ]; then
 fi
 
 if [ ! -z "$Comment" ]; then
+    echo $Comment
     git add --all
     git commit -m "$Comment"
     git push -u origin main

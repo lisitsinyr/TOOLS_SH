@@ -74,9 +74,9 @@ chmod 664 .gitignore
 touch .gitmodules
 chmod 664 .gitmodules
 
-touch .README.md
-chmod 664 .README.md
-echo '*' >> .README.md
+touch README.md
+chmod 664 README.md
+echo '*' >> README.md
 
 git init
 git add --all
