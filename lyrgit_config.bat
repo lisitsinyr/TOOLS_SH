@@ -53,10 +53,22 @@ rem                           with --get, use default value when missing entry
 rem ----------------------------------------------------------------------------
 chcp 1251
 
+rem -------------------------------------------------------------------
+rem PROJECTS
+rem -------------------------------------------------------------------
+rem set PROJECTS="D:\PROJECTS_LYR\CHECK_LIST\01_OS\03_UNIX\PROJECTS_UNIX"
+set PROJECTS=%~p0
+set LOG_BATFileName=%~f0
+set BASENAME=%~n0%~x0
+rem set LOG_File=%~d0%PROJECTS%LOGS\%BASENAME%.log
+set LOG_File=%~d0%~p0LOGS\%~n0%~x0.log
+echo %LOG_File%
+
 :begin
 echo ---------------------------------------------------------------
 echo git config --list --show-origin --show-scope
 echo ---------------------------------------------------------------
-git config --list --show-origin --show-scope > ./GIT_CONFIG_list_so_ss_current
+rem git config --list --show-origin --show-scope > GIT_CONFIG_list_so_ss_current & type GIT_CONFIG_list_so_ss_current > %LOG_File% 
+git config --list --show-origin --show-scope > GIT_CONFIG_list_so_ss_current
 
 :Exit

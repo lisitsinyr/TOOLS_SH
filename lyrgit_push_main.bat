@@ -41,6 +41,18 @@ rem     -6, --ipv6            use IPv6 addresses only
 rem -------------------------------------------------------------------
 chcp 1251
 
+rem -------------------------------------------------------------------
+rem PROJECTS
+rem -------------------------------------------------------------------
+rem set PROJECTS="D:\PROJECTS_LYR\CHECK_LIST\01_OS\03_UNIX\PROJECTS_UNIX"
+set PROJECTS=%~p0
+set LOG_BATFileName=%~f0
+set BASENAME=%~n0%~x0
+rem set LOG_File=%~d0%PROJECTS%LOGS\%BASENAME%.log
+set LOG_File=%~d0%~p0LOGS\%~n0%~x0.log
+echo %LOG_File%
+echo "***" > %LOG_File%
+
 :begin
 echo ---------------------------------------------------------------
 echo Check 1 parametr
@@ -59,12 +71,20 @@ set Comment=Git Bash commit update
 
 :begin_git
 echo ---------------------------------------------------------------
-echo git add --all
-echo git commit -m "%Comment%"
-echo git push -u origin main
+echo ...git add --all
+git add --all >> %LOG_File% 
+
 echo ---------------------------------------------------------------
-git add --all
-git commit -m "%Comment%"
-git push -u origin main
+echo ...git commit -m "%Comment%"
+git commit -m "%Comment%" >> %LOG_File% 
+
+echo ---------------------------------------------------------------
+echo ...git push -u origin main
+git push -u origin main >> %LOG_File% 
+echo ---------------------------------------------------------------
+
+rem type %LOG_File%
+
+pause
 
 :Exit
