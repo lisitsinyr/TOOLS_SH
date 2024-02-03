@@ -9,7 +9,7 @@ echo ' Установка git '
 echo '---------------------------------------------'
 git --version
 
-sudo apt install git
+sudo apt update && sudo apt install git
 
 git --version
 

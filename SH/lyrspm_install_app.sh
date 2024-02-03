@@ -8,4 +8,6 @@ echo '---------------------------------'
 echo ' install_app '
 echo '---------------------------------'
 
+#sudo apt update && sudo apt install ...
+
 #:Exit

@@ -7,6 +7,6 @@
 echo '---------------------------------------------'
 echo ' Установка ranger '
 echo '---------------------------------------------'
-sudo apt install ranger
+sudo apt update && sudo apt install ranger
 
 #:Exit
