@@ -19,21 +19,22 @@ source $PROJECTS/LYR/LYRLog.sh
 # -------------------------------------------------------------------
 # LOG по умолчанию
 # -------------------------------------------------------------------
-LOG_PATH="$PROJECTS"
-#LOG_PATH="$PROJECTS_UNIX/COMMANDS/00.[sh]SHELL/bash - Bourne Again Shell/3.3.Функции оболочки/fname"
 SHFile=$0
 SHDir=$(ExtractFileDir "$0")
 SHFileName=$(ExtractFileName "$0")
 SHFileNameWithoutExt=$(ExtractFileNameWithoutExt "$SHFileName")
 SHFileExt=$(ExtractFileExt "$SHFileName")
 
-LOG_File="$0.log"
-LOG_SHFileName=$(basename "$0")
+LOG_DIR="$PROJECTS"
+#LOG_DIR="$PROJECTS_UNIX/COMMANDS/00.[sh]SHELL/bash - Bourne Again Shell/3.3.Функции оболочки/fname"
+LOG_FILE="$0.log"
+LOG_SHFILENAME=$(basename "$0")
+LOG_OPT="1 1"
 
 # -------------------------------------------------------------------
 # StartLogFile
 # -------------------------------------------------------------------
-StartLogFile "$LOG_File"
+StartLogFile "$LOG_FILE"
 # -------------------------------------------------------------------
 
 #:begin
