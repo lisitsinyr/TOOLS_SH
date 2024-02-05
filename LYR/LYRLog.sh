@@ -49,9 +49,15 @@
 #   exec 1> "$LOG_FILE"  # STDOUT
 # -------------------------------------------------------------------
 
+SHDir=$(ExtractFileDir "$SHFile")
+SHFileName=$(ExtractFileName "$")
+SHFileNameWithoutExt=$(ExtractFileNameWithoutExt "$SHFileName")
+SHFileExt=$(ExtractFileExt "$SHFileName")
 
-LOG_File=''
-LOG_SHFileName=''
+LOG_DIR="$PROJECTS"
+LOG_DIR="$SHDir"
+LOG_File="$SHFile.log"
+LOG_SHFileName=$(basename "$SHFile")
 LOG_Str=''
 
 format='%Y-%m-%d %H:%M:%S %N'
@@ -83,6 +89,31 @@ ctlsEND='>'
 ctlsPROCESS='P'
 ctlsDEBUGTEXT='T'
 ctlsTEXT=''
+
+#-------------------------------------------------
+# loStandard=0
+# loTextFile=1
+# loAll=2
+#-------------------------------------------------
+# AddLog $loAll $NOTSET 'NOTSET'
+# AddLog $loAll $DEBUG 'DEBUG'
+# AddLog $loAll $INFO 'INFO'
+# AddLog $loAll $WARNING 'WARNING'
+# AddLog $loAll $ERROR 'ERROR'
+# AddLog $loAll $CRITICAL 'CRITICAL'
+# AddLog $loAll $DEBUGTEXT 'DEBUGTEXT'
+# AddLog $loAll $BEGIN 'BEGIN'
+# AddLog $loAll $END 'END'
+# AddLog $loAll $PROCESS 'PROCESS'
+# AddLog $loAll $TEXT 'TEXT'
+
+# AddLog $loAll $TEXT '--------------------------------------'
+# str=''
+# str=""
+# result=$('')
+# AddLog $loAll $TEXT 'str:'"$str"
+# AddLog $loAll $TEXT 'result:'"$result"
+# AddLog $loAll $TEXT '--------------------------------------'
 
 #--------------------------------------------------------------------------------
 # FormatStr
