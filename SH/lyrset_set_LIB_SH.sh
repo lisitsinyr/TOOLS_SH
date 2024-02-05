@@ -13,7 +13,7 @@ case "$UNAME" in
         LIB_SH='/d/PROJECTS_LYR/CHECK_LIST/01_OS/03_UNIX/TOOLS_SH'
         ;;
     'ASUS-U2204-VB')
-        LIB_SH='/home/lyr/PROJECTS_LYR/CHECK_LIST/01_OS/03_UNIX/TOOLS_SH'
+        LIB_SH='/home/lyr/TOOLS_SH'
         ;;
     *)
         echo "Компьютер не определен...!"
