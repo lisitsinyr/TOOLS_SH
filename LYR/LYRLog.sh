@@ -284,24 +284,6 @@ function StartLogFile { # (AFileName: str):
     # echo "SHFileNameWithoutExt=$SHFileNameWithoutExt"
     SHFileExt=$(ExtractFileExt "$SHFileName")
     # echo "SHFileExt=$SHFileExt"
-    # Файл скрипта: имя
-    LOG_SHBASENAME=$(basename "$SHFile" .sh)
-    # echo "LOG_SHBASENAME=$LOG_SHBASENAME"
-    # Файл скрипта: имя+расширение
-    LOG_SHFILENAME=$(basename "$SHFile")
-    # echo "LOG_SHFILENAME=$LOG_SHFILENAME"
-    # Каталог журналов
-    if [[ -z "$LOG_DIR" ]] ; then
-        LOG_DIR="$SHDir"
-    fi
-    # echo "LOG_DIR=$LOG_DIR"
-    # Файл журнала: каталог+имя+расширение
-    if [[ -z "$LOG_FILE" ]] ; then
-        LOG_FILE="$SHFile.log"
-    else
-        LOG_FILE="$LOG_DIR/$LOG_FILE"
-    fi
-    # echo "LOG_FILE=$LOG_FILE"
     # Параметры журнала
     if [[ -z "$LOG_OPT" ]] ; then
         # echo "LOG_OPT=$LOG_OPT"
@@ -327,9 +309,38 @@ function StartLogFile { # (AFileName: str):
     else
         LOG_FILE_DT=0
     fi
-    # echo "LOG_FILE_ADD=$LOG_FILE_ADD"
-    # echo "LOG_FILE_DT=$LOG_FILE_DT"
-    
+    echo "LOG_FILE_ADD=$LOG_FILE_ADD"
+    echo "LOG_FILE_DT=$LOG_FILE_DT"
+    # Файл скрипта: имя
+    LOG_SHBASENAME=$(basename "$SHFile" .sh)
+    # echo "LOG_SHBASENAME=$LOG_SHBASENAME"
+    # Файл скрипта: имя+расширение
+    LOG_SHFILENAME=$(basename "$SHFile")
+    # echo "LOG_SHFILENAME=$LOG_SHFILENAME"
+
+    # Каталог журналов
+    if [[ -z "$LOG_DIR" ]] ; then
+        LOG_DIR="$SHDir"
+    fi
+    # echo "LOG_DIR=$LOG_DIR"
+    # Файл журнала: каталог+имя+расширение
+    if [[ -z "$LOG_FILE" ]] ; then
+        if [[ "$LOG_FILE_DT" -eq 1 ]] ; then
+            DT=$(YYYYMMDDHHMMSS)
+            LOG_FILE="$LOG_DIR"/"$DT"_"$LOG_SHFILENAME".log
+        else
+            LOG_FILE="$SHFile.log"
+        fi
+    else
+        if [[ "$LOG_FILE_DT" -eq 1 ]] ; then
+            DT=$(YYYYMMDDHHMMSS)
+            LOG_FILE="$LOG_DIR"/"$DT"_"$LOG_FILE"
+        else
+            LOG_FILE="$LOG_DIR"/"$LOG_FILE"
+        fi
+    fi
+    echo "LOG_FILE=$LOG_FILE"
+  
     # 
     LOG_STR=""
     
