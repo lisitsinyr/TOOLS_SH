@@ -51,7 +51,9 @@
 #   exec 1> "$LOG_FILE"  # STDOUT
 # -------------------------------------------------------------------
 
-LOG_OPT_DEFAULT="1 1"
+LOG_OPT_DEFAULT="11"
+LOG_FILE_ADD=0
+LOG_FILE_DT=0
 
 # --------------------------------
 FORMAT='%Y-%m-%d %H:%M:%S %N'
@@ -309,7 +311,15 @@ function StartLogFile { # (AFileName: str):
             LOG_OPT="$LOG_OPT_DEFAULT"
         fi
     fi
-    # echo "LOG_OPT=$LOG_OPT"
+    echo "LOG_OPT=$LOG_OPT"
+
+    LOG_OPT_1=${LOG_OPT:0:1}
+    LOG_OPT_2=${LOG_OPT:1:1}
+    echo "LOG_OPT_1=$LOG_OPT_1"
+    echo "LOG_OPT_2=$LOG_OPT_2"
+
+    echo "LOG_FILE_ADD=$LOG_FILE_ADD"
+    echo "LOG_FILE_DT=$LOG_FILE_DT"
     
     # 
     LOG_STR=""
