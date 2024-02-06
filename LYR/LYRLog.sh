@@ -117,50 +117,12 @@ ctlsTEXT=''
 #--------------------------------------------------------------------------------
 function FormatStr { # Anamesh: str, Alevel: int, Amessage: str
 #beginfunction
-    #echo 'FormatStr...'
+    # echo 'FormatStr...'
     Lnamesh=$1
     Llevel=$2
     Lmessage=$3
 
-    #15/01/2024 14:48:36 [TEST_LUStrUtils] INFO       ssssssssssssssssssssssssssssssssssssssssss
     printf -v asctime '%(%Y/%m/%d %H:%M:%S)T' -1
-
-    # if [ $Llevel -eq $NOTSET ] ; then
-    #     Linfo='NOTSET'
-    #     printf -v LOG_STR "%-s [%-15s] %2d %-10s %-s" "$asctime" "$Lnamesh" "$Llevel" "$Linfo" "$Lmessage"
-    # elif [ $Llevel -eq $DEBUG ] ; then
-    #     Linfo='DEBUG'
-    #     printf -v LOG_STR "%-s [%-15s] %2d %-10s %-s" "$asctime" "$Lnamesh" "$Llevel" "$Linfo" "$Lmessage"
-    # elif [ $Llevel -eq $INFO ] ; then
-    #     Linfo='INFO'
-    #     printf -v LOG_STR "%-s [%-15s] %2d %-10s %-s" "$asctime" "$Lnamesh" "$Llevel" "$Linfo" "$Lmessage"
-    # elif [ $Llevel -eq $WARNING ] ; then
-    #     Linfo='WARNING'
-    #     printf -v LOG_STR "%-s [%-15s] %2d %-10s %-s" "$asctime" "$Lnamesh" "$Llevel" "$Linfo" "$Lmessage"
-    # elif [ $Llevel -eq $ERROR ] ; then
-    #     Linfo='ERROR'
-    #     printf -v LOG_STR "%-s [%-15s] %2d %-10s %-s" "$asctime" "$Lnamesh" "$Llevel" "$Linfo" "$Lmessage"
-    # elif [ $Llevel -eq $CRITICAL ] ; then
-    #     Linfo='CRITICAL'
-    #     printf -v LOG_STR "%-s [%-15s] %2d %-10s %-s" "$asctime" "$Lnamesh" "$Llevel" "$Linfo" "$Lmessage"
-    # elif [ $Llevel -eq $DEBUGTEXT ] ; then
-    #     Linfo='DEBUGTEXT'
-    #     printf -v LOG_STR "%-s" "$Lmessage"
-    # elif [ $Llevel -eq $BEGIN ] ; then
-    #     Linfo='BEGIN'
-    #     printf -v LOG_STR "%-s" "$Lmessage"
-    # elif [ $Llevel -eq $END ] ; then
-    #     Linfo='END'
-    #     printf -v LOG_STR "%-s" "$Lmessage"
-    # elif [ $Llevel -eq $PROCESS ] ; then
-    #     Linfo='PROCESS'
-    #     printf -v LOG_STR "%-s" "$Lmessage"
-    # elif [ $Llevel -eq $TEXT ] ; then
-    #     Linfo='TEXT'
-    #     printf -v LOG_STR "%-s" "$Lmessage"
-    # else
-    #     Linfo=''
-    # fi
 
     case "$Llevel" in
     $NOTSET)
@@ -220,22 +182,19 @@ function FormatStr { # Anamesh: str, Alevel: int, Amessage: str
 #--------------------------------------------------
 function AddLog { # Aout: int, Alevel: int, Value: str
 #beginfunction
-    #echo 'AddLog...'
+    # echo 'AddLog...'
     Lout=$1
     Llevel=$2
     LValue=$3
     FormatStr "$LOG_SHFILENAME" "$Llevel" "$LValue"
-
-    #if self.LogEnabled:
-    #    self._Execute(T)
     if [ $Lout -eq 0 ] ; then
         echo "$LOG_STR"
     elif [ $Lout -eq 1 ] ; then
-        #echo "$LOG_STR" >&3
+        # echo "$LOG_STR" >&3
         echo "$LOG_STR" >> "$LOG_FILE"
     elif [ $Lout -eq 2 ] ; then
-        #echo "$LOG_STR"
-        #echo "$LOG_STR" >&3
+        # echo "$LOG_STR"
+        # echo "$LOG_STR" >&3
         echo "$LOG_STR" | tee -a "$LOG_FILE"
     else
         echo 'ERROR' $Lout
@@ -248,14 +207,14 @@ function AddLog { # Aout: int, Alevel: int, Value: str
 #--------------------------------------------------
 function AddLogFile { # Aout: int, AFileName: str
 #beginfunction
-    echo 'AddLogFile...'
+    # echo 'AddLogFile...'
     Lout=$1
     LFileName="$2"
     if [ -r "$LFileName" ] ; then
         # чтения файла построчно
-        #while IFS= read -r LValue; do
-        #    AddLog $Lout $TEXT "$LValue"
-        #done < "$LFileName"
+        # while IFS= read -r LValue; do
+        #     AddLog $Lout $TEXT "$LValue"
+        # done < "$LFileName"
 
         # Использование дескриптора файла
         # Вы также можете предоставить ввод в цикл, используя дескриптор файла:
@@ -274,8 +233,7 @@ function AddLogFile { # Aout: int, AFileName: str
 #--------------------------------------------------------------------------------
 function StartLogFile { # (AFileName: str):
 #beginfunction
-    #echo 'StartLogFile...'
-
+    # echo 'StartLogFile...'
     # Файл скрипта: каталог+имя+расширение
     SHFile="$1"
     # echo "SHFile=$SHFile"
@@ -287,7 +245,10 @@ function StartLogFile { # (AFileName: str):
     # echo "SHFileNameWithoutExt=$SHFileNameWithoutExt"
     SHFileExt=$(ExtractFileExt "$SHFileName")
     # echo "SHFileExt=$SHFileExt"
+    
+    #------------------------------------------------------
     # Параметры журнала
+    #------------------------------------------------------
     if [[ -z "$LOG_OPT" ]] ; then
         LOG_OPT=$2
         # echo "LOG_OPT=$LOG_OPT"
@@ -296,20 +257,9 @@ function StartLogFile { # (AFileName: str):
         fi
     fi
     # echo "LOG_OPT=$LOG_OPT"
-
-    # Формат DT
-    if [[ -z "$LOG_DT_FORMAT" ]] ; then
-        LOG_DT_FORMAT=$3
-        # echo "LOG_DT_FORMAT=$LOG_DT_FORMAT"
-        if [[ -z "$LOG_DT_FORMAT" ]] ; then
-            LOG_DT_FORMAT="$LOG_DT_FORMAT_DEFAULT"
-        fi
-    fi
-    # echo "LOG_DT_FORMAT=$LOG_DT_FORMAT"
-
     LOG_OPT_1=${LOG_OPT:0:1}
-    LOG_OPT_2=${LOG_OPT:1:1}
     # echo "LOG_OPT_1=$LOG_OPT_1"
+    LOG_OPT_2=${LOG_OPT:1:1}
     # echo "LOG_OPT_2=$LOG_OPT_2"
     if [[ "$LOG_OPT_1" -eq '1' ]] ; then
         LOG_FILE_ADD=1
@@ -321,21 +271,45 @@ function StartLogFile { # (AFileName: str):
     else
         LOG_FILE_DT=0
     fi
-    echo "LOG_FILE_ADD=$LOG_FILE_ADD"
-    echo "LOG_FILE_DT=$LOG_FILE_DT"
+    # echo "LOG_FILE_ADD=$LOG_FILE_ADD"
+    # echo "LOG_FILE_DT=$LOG_FILE_DT"
+
+    #------------------------------------------------------
+    # Формат DT
+    #------------------------------------------------------
+    if [[ -z "$LOG_DT_FORMAT" ]] ; then
+        LOG_DT_FORMAT=$3
+        # echo "LOG_DT_FORMAT=$LOG_DT_FORMAT"
+        if [[ -z "$LOG_DT_FORMAT" ]] ; then
+            LOG_DT_FORMAT="$LOG_DT_FORMAT_DEFAULT"
+        fi
+    fi
+    # echo "LOG_DT_FORMAT=$LOG_DT_FORMAT"
+
+    #------------------------------------------------------
     # Файл скрипта: имя
+    #------------------------------------------------------
     LOG_SHBASENAME=$(basename "$SHFile" .sh)
     # echo "LOG_SHBASENAME=$LOG_SHBASENAME"
+
+    #------------------------------------------------------
     # Файл скрипта: имя+расширение
+    #------------------------------------------------------
     LOG_SHFILENAME=$(basename "$SHFile")
     # echo "LOG_SHFILENAME=$LOG_SHFILENAME"
+    #------------------------------------------------------
 
+    #------------------------------------------------------
     # Каталог журналов
+    #------------------------------------------------------
     if [[ -z "$LOG_DIR" ]] ; then
         LOG_DIR="$SHDir"
     fi
     # echo "LOG_DIR=$LOG_DIR"
+
+    #------------------------------------------------------
     # Файл журнала: каталог+имя+расширение
+    #------------------------------------------------------
     if [[ -z "$LOG_FILE" ]] ; then
         if [[ "$LOG_FILE_DT" -eq 1 ]] ; then
             DT=$(YYYYMMDDHHMMSS)
@@ -352,22 +326,29 @@ function StartLogFile { # (AFileName: str):
             LOG_FILE="$LOG_DIR"/"$LOG_FILE"
         fi
     fi
-    echo "LOG_FILE=$LOG_FILE"
+    # echo "LOG_FILE=$LOG_FILE"
   
-    # 
+    #------------------------------------------------------
+    # LOG_STR
+    #------------------------------------------------------
     LOG_STR=""
     
+    #------------------------------------------------------
+    # Открытие файла журнала
+    #------------------------------------------------------
     if [[ "$LOG_FILE_ADD" -eq 1 ]] ; then
         LFileName="$LOG_FILE"
         if [ -r "$LFileName" ] ; then
-            echo "$LFileName"
+            # echo "$LFileName"
             rm "$LFileName"
         fi
         touch "$LFileName"
     fi
     exec 3>>"$LFileName"
+
     # -------------------------------------------------------------------
     AddLog $loAll $INFO "Старт: $(date +"$FORMAT")"
+    # -------------------------------------------------------------------
 }
 #endfunction
 
@@ -376,9 +357,10 @@ function StartLogFile { # (AFileName: str):
 #--------------------------------------------------------------------------------
 function StopLogFile { # ():
 #beginfunction
-    #echo 'StopLogFile...'
+    # echo 'StopLogFile...'
     # -------------------------------------------------------------------
     AddLog $loAll $INFO "Стоп: $(date +"$FORMAT")"
+    # -------------------------------------------------------------------
     exec 3>&-
 }
 #endfunction

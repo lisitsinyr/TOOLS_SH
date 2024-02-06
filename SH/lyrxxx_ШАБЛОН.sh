@@ -3,67 +3,55 @@
 # lyrxxx_ШАБЛОН.sh
 # -----------------------------------------------
 
+PROJECTS='PROJECTS_UNIX'
 # -------------------------------------------------------------------
-# PROJECTS
-# -------------------------------------------------------------------
-PROJECTS='/d/PROJECTS_LYR/CHECK_LIST/01_OS/03_UNIX/PROJECTS_UNIX'
-
+CURRENT_SYSTEM=$(uname -a)
+UNAME=$(uname -n)
+USERNAME=$(whoami)
 # -------------------------------------------------------------------
 # БИБЛИОТЕКА LYR
 # -------------------------------------------------------------------
-# . /d/PROJECTS_LYR/CHECK_LIST/01_OS/03_UNIX/PROJECTS_UNIX/LYR/LYRFileUtils.sh
-source $PROJECTS/LYR/LYRFileUtils.sh
-source $PROJECTS/LYR/LYRLog.sh
+UNAME=$(uname -n)
+if [[ -z "$LIB_SH" ]] ; then
+    case "$UNAME" in
+        'ASUS-W10P')
+            PROJECTS_LYR_DIR='/d/PROJECTS_LYR'
+            ;;
+        'ASUS-U2204-VB' | 'ASUS-U2204-VM' | 'ASUS-U2310-VB' | 'ASUS-U2310-VB' | 'ASUS-U2310')
+            PROJECTS_LYR_DIR='/home/lyr/PROJECTS_LYR'
+            ;;
+        *)
+            echo "Компьютер не определен...!"
+            exit 1
+            ;;
+    esac
+    PROJECTS_DIR="$PROJECTS_LYR_DIR/CHECK_LIST/01_OS/03_UNIX/$PROJECTS"
+    LIB_SH="$PROJECTS_LYR_DIR/CHECK_LIST/01_OS/03_UNIX/$PROJECTS/LYR"
+fi
+# echo "Каталог проектов LYR: $PROJECTS_DIR"
+# echo "Каталог библиотеки LYR: $LIB_SH"
+if [[ ! -d "$LIB_SH" ]] ; then
+    echo 'Каталог библиотеки LYR'"$LIB_SH"' не существует...'
+    exit 1
+fi
 # -------------------------------------------------------------------
-
+# запуск скриптов БИБЛИОТЕКИ LYR
 # -------------------------------------------------------------------
-# LOG по умолчанию
-# -------------------------------------------------------------------
-SHFile=$0
-SHDir=$(ExtractFileDir "$0")
-SHFileName=$(ExtractFileName "$0")
-SHFileNameWithoutExt=$(ExtractFileNameWithoutExt "$SHFileName")
-SHFileExt=$(ExtractFileExt "$SHFileName")
-
-LOG_DIR="$PROJECTS"
-#LOG_DIR="$PROJECTS_UNIX/COMMANDS/00.[sh]SHELL/bash - Bourne Again Shell/3.3.Функции оболочки/fname"
-LOG_FILE="$0.log"
-LOG_SHFILENAME=$(basename "$0")
-LOG_OPT="1 1"
-
+source "$LIB_SH/LYRFileUtils.sh"
+source "$LIB_SH/LYRLog.sh"
+source "$LIB_SH/LYRConst.sh"
+source "$LIB_SH/LYRDateTime.sh"
+source "$LIB_SH/LYRDateTime.txt"
+source "$LIB_SH/LYRSupport.sh"
 # -------------------------------------------------------------------
 # StartLogFile
 # -------------------------------------------------------------------
-StartLogFile "$LOG_FILE"
+StartLogFile "$0" "" ""
 # -------------------------------------------------------------------
 
 #:begin
 
-# AddLog $loAll $TEXT '01.НАЗВАНИЕ'
-# AddLog $loAll $TEXT '    *** - ***'
-# AddLog $loAll $TEXT '02.СИНТАКСИС'
-# AddLog $loAll $TEXT '    *** [параметры] ***'
-# AddLog $loAll $TEXT '03.ОПИСАНИЕ'
-# AddLog $loAll $TEXT '    ***'
-# AddLog $loAll $TEXT '04.ПАРАМЕТРЫ'
-# AddLog $loAll $TEXT '    [параметры]'
-# AddLog $loAll $TEXT '05.ЗАМЕЧАНИЕ'
-# AddLog $loAll $TEXT '    ***'
-# AddLog $loAll $TEXT '06.НАСТРОЙКА'
-# AddLog $loAll $TEXT '    ***'
-# AddLog $loAll $TEXT '07.ФАЙЛЫ'
-# AddLog $loAll $TEXT '    ***'
-# AddLog $loAll $TEXT '08.ВОЗВРАЩАЕМЫЕ ЗНАЧЕНИЯ'
-# AddLog $loAll $TEXT '    ***'
-# AddLog $loAll $TEXT '09.СМОТРИТЕ ТАКЖЕ'
-# AddLog $loAll $TEXT '    ***'
-# AddLog $loAll $TEXT '10.ПРИМЕРЫ'
-# AddLog $loAll $TEXT '    ***'
-#-------------------------------------------------
-# loStandard=0
-# loTextFile=1
-# loAll=2
-#-------------------------------------------------
+#=================================================
 # AddLog $loAll $NOTSET 'NOTSET'
 # AddLog $loAll $DEBUG 'DEBUG'
 # AddLog $loAll $INFO 'INFO'
@@ -75,7 +63,9 @@ StartLogFile "$LOG_FILE"
 # AddLog $loAll $END 'END'
 # AddLog $loAll $PROCESS 'PROCESS'
 # AddLog $loAll $TEXT 'TEXT'
+#=================================================
 
+#=================================================
 # AddLog $loAll $TEXT '--------------------------------------'
 # str=''
 # str=""
@@ -83,6 +73,7 @@ StartLogFile "$LOG_FILE"
 # AddLog $loAll $TEXT 'str:'"$str"
 # AddLog $loAll $TEXT 'result:'"$result"
 # AddLog $loAll $TEXT '--------------------------------------'
+#=================================================
 
 #:end
 
@@ -91,5 +82,7 @@ StartLogFile "$LOG_FILE"
 # -------------------------------------------------------------------
 StopLogFile
 # -------------------------------------------------------------------
+
 exit 0
+
 #:Exit
