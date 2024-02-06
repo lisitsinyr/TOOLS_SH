@@ -14,5 +14,8 @@ git config user.name "lisitsinyr"
 git config user.email "lisitsinyr@gmail.com"
 
 git config --list > ~/DATA/GIT/GIT_CONFIG_set_list_current
+#:end
 
-#:Exit
+exit 0
+
+#:exit

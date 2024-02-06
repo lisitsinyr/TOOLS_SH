@@ -14,5 +14,8 @@ git config --global user.name "lisitsinyr"
 git config --global user.email "lisitsinyr@gmail.com"
 
 git config --list > ~/DATA/GIT/GIT_CONFIG_set_list_global
+#:end
 
-#:Exit
+exit 0
+
+#:exit

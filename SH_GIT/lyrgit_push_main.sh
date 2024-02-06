@@ -66,5 +66,8 @@ if [ ! -z "$Comment" ]; then
     git commit -m "$Comment"
     git push -u origin main
 fi
+#:end
 
-#:Exit
+exit 0
+
+#:exit

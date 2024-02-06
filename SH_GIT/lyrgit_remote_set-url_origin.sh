@@ -41,5 +41,8 @@ if [ ! -z "$GlobalRepository" ]; then
     git remote set-url origin "$GlobalRepository"
     git remote -v
 fi
+#:end
+
+exit 0
 
 #:exit

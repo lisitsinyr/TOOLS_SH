@@ -39,5 +39,8 @@ fi
 if [ ! -z "$GlobalRepository" ]; then
     git remote add origin "$GlobalRepository"
 fi
+#:end
+
+exit 0
 
 #:exit

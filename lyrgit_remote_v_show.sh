@@ -40,5 +40,8 @@ if [ ! -z "$GlobalRepository" ]; then
     git remote -v
     git remote -v show "$GlobalRepository"
 fi
+#:end
+
+exit 0
 
 #:exit
