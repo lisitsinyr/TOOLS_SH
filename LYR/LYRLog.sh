@@ -51,7 +51,7 @@
 #   exec 1> "$LOG_FILE"  # STDOUT
 # -------------------------------------------------------------------
 
-LOG_OPT_DEFAULT="01"
+LOG_OPT_DEFAULT="10"
 LOG_FILE_ADD=0
 LOG_FILE_DT=0
 
