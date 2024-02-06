@@ -51,7 +51,7 @@
 #   exec 1> "$LOG_FILE"  # STDOUT
 # -------------------------------------------------------------------
 
-LOG_OPT_DEFAULT="11"
+LOG_OPT_DEFAULT="01"
 LOG_FILE_ADD=0
 LOG_FILE_DT=0
 
@@ -311,29 +311,29 @@ function StartLogFile { # (AFileName: str):
             LOG_OPT="$LOG_OPT_DEFAULT"
         fi
     fi
-    echo "LOG_OPT=$LOG_OPT"
+    # echo "LOG_OPT=$LOG_OPT"
 
     LOG_OPT_1=${LOG_OPT:0:1}
     LOG_OPT_2=${LOG_OPT:1:1}
-    echo "LOG_OPT_1=$LOG_OPT_1"
-    echo "LOG_OPT_2=$LOG_OPT_2"
-    if [[ "$LOG_OPT_1 -eq '1'" ]] ; then
+    # echo "LOG_OPT_1=$LOG_OPT_1"
+    # echo "LOG_OPT_2=$LOG_OPT_2"
+    if [[ "$LOG_OPT_1" -eq '1' ]] ; then
         LOG_FILE_ADD=1
     else
         LOG_FILE_ADD=0
     fi
-    if [[ "$LOG_OPT_2 -eq '1'" ]] ; then
+    if [[ "$LOG_OPT_2" -eq '1' ]] ; then
         LOG_FILE_DT=1
     else
         LOG_FILE_DT=0
     fi
-    echo "LOG_FILE_ADD=$LOG_FILE_ADD"
-    echo "LOG_FILE_DT=$LOG_FILE_DT"
+    # echo "LOG_FILE_ADD=$LOG_FILE_ADD"
+    # echo "LOG_FILE_DT=$LOG_FILE_DT"
     
     # 
     LOG_STR=""
     
-    if [[ "$LOG_FILE_ADD -eq 1" ]] ; then
+    if [[ "$LOG_FILE_ADD" -eq 1 ]] ; then
         LFileName="$LOG_FILE"
         if [ -r "$LFileName" ] ; then
             echo "$LFileName"
