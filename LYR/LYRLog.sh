@@ -11,6 +11,7 @@
 # echo '    LOG_DIR='
 # echo '    LOG_FILE='
 # echo '    LOG_OPT='
+# echo '    LOG_FILE_DT_FORMAT'
 
 # echo '03.ОПИСАНИЕ'
 # echo '    ***'
@@ -51,9 +52,11 @@
 #   exec 1> "$LOG_FILE"  # STDOUT
 # -------------------------------------------------------------------
 
-LOG_OPT_DEFAULT="10"
+LOG_OPT_DEFAULT="11"
 LOG_FILE_ADD=0
 LOG_FILE_DT=0
+#LOG_DT_FORMAT_DEFAULT='%Y%m%d%H%M%S'
+LOG_DT_FORMAT_DEFAULT='%Y%m%d'
 
 # --------------------------------
 FORMAT='%Y-%m-%d %H:%M:%S %N'
@@ -286,14 +289,23 @@ function StartLogFile { # (AFileName: str):
     # echo "SHFileExt=$SHFileExt"
     # Параметры журнала
     if [[ -z "$LOG_OPT" ]] ; then
-        # echo "LOG_OPT=$LOG_OPT"
         LOG_OPT=$2
-        # echo "LOG_OPT=$2"
+        # echo "LOG_OPT=$LOG_OPT"
         if [[ -z "$LOG_OPT" ]] ; then
             LOG_OPT="$LOG_OPT_DEFAULT"
         fi
     fi
     # echo "LOG_OPT=$LOG_OPT"
+
+    # Формат DT
+    if [[ -z "$LOG_DT_FORMAT" ]] ; then
+        LOG_DT_FORMAT=$3
+        # echo "LOG_DT_FORMAT=$LOG_DT_FORMAT"
+        if [[ -z "$LOG_DT_FORMAT" ]] ; then
+            LOG_DT_FORMAT="$LOG_DT_FORMAT_DEFAULT"
+        fi
+    fi
+    # echo "LOG_DT_FORMAT=$LOG_DT_FORMAT"
 
     LOG_OPT_1=${LOG_OPT:0:1}
     LOG_OPT_2=${LOG_OPT:1:1}
@@ -327,7 +339,8 @@ function StartLogFile { # (AFileName: str):
     if [[ -z "$LOG_FILE" ]] ; then
         if [[ "$LOG_FILE_DT" -eq 1 ]] ; then
             DT=$(YYYYMMDDHHMMSS)
-            LOG_FILE="$LOG_DIR"/"$DT"_"$LOG_SHFILENAME".log
+            DT=$(DateTime $LOG_DT_FORMAT)
+            LOG_FILE="$LOG_DIR"/"$DT".log
         else
             LOG_FILE="$SHFile.log"
         fi

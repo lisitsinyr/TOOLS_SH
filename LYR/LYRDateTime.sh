@@ -22,4 +22,14 @@ function YYYYMMDDHHMMSS { #
 }
 #endfunction
 
+#--------------------------------------------------------------------------------
+# 
+#--------------------------------------------------------------------------------
+function DateTime { # format: str
+#beginfunction
+    FORMAT="$1"
+    printf "%($FORMAT)T"
+}
+#endfunction
+
 #:Exit
