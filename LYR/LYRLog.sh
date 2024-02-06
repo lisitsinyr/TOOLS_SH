@@ -8,7 +8,9 @@
 # echo '    *** - ***'
 
 # echo '02.СИНТАКСИС'
-# echo '    *** [параметры] ***'
+# echo '    LOG_DIR='
+# echo '    LOG_FILE='
+# echo '    LOG_OPT='
 
 # echo '03.ОПИСАНИЕ'
 # echo '    ***'
@@ -48,6 +50,8 @@
 #   exec $> "$LOG_FILE"  # STDOUT и STDERR
 #   exec 1> "$LOG_FILE"  # STDOUT
 # -------------------------------------------------------------------
+
+LOG_OPT_DEFAULT="1 1"
 
 # --------------------------------
 FORMAT='%Y-%m-%d %H:%M:%S %N'
@@ -278,23 +282,37 @@ function StartLogFile { # (AFileName: str):
     # echo "SHFileNameWithoutExt=$SHFileNameWithoutExt"
     SHFileExt=$(ExtractFileExt "$SHFileName")
     # echo "SHFileExt=$SHFileExt"
-    # Каталог журналов
-    LOG_DIR="$SHDir"
-    # echo "LOG_DIR=$LOG_DIR"
-    # Файл журнала: каталог+имя+расширение
-    LOG_FILE="$SHFile.log"
-    # echo "LOG_FILE=$LOG_FILE"
     # Файл скрипта: имя
     LOG_SHBASENAME=$(basename "$SHFile" .sh)
     # echo "LOG_SHBASENAME=$LOG_SHBASENAME"
     # Файл скрипта: имя+расширение
     LOG_SHFILENAME=$(basename "$SHFile")
     # echo "LOG_SHFILENAME=$LOG_SHFILENAME"
+    # Каталог журналов
+    if [[ -z "$LOG_DIR" ]] ; then
+        LOG_DIR="$SHDir"
+    fi
+    # echo "LOG_DIR=$LOG_DIR"
+    # Файл журнала: каталог+имя+расширение
+    if [[ -z "$LOG_FILE" ]] ; then
+        LOG_FILE="$SHFile.log"
+    else
+        LOG_FILE="$LOG_DIR/$LOG_FILE"
+    fi
+    # echo "LOG_FILE=$LOG_FILE"
     # Параметры журнала
-    LOG_OPT="$2"
+    if [[ -z "$LOG_OPT" ]] ; then
+        # echo "LOG_OPT=$LOG_OPT"
+        LOG_OPT=$2
+        # echo "LOG_OPT=$2"
+        if [[ -z "$LOG_OPT" ]] ; then
+            LOG_OPT="$LOG_OPT_DEFAULT"
+        fi
+    fi
     # echo "LOG_OPT=$LOG_OPT"
+    
     # 
-    LOG_STR=''
+    LOG_STR=""
     
     LFileName="$LOG_FILE"
     if [ -r "$LFileName" ] ; then
