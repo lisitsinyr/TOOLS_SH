@@ -5,4 +5,4 @@ config
 .vscode/
 
 *.log
-
+LOGS/
