@@ -1,8 +1,21 @@
-﻿GIT_CONFIG*
-config
-
-### VS Code ###
+﻿### VS Code ###
 .vscode/
+.vs/
 
+### PyCharm ###
+.idea/
+__pycache__/
+
+### ФАЙЛЫ ###
+/GIT_CONFIG*
+/PROJECTS_LYR*
+/config*
 *.log
+/lyrgit*.bat
+/lyrgit*.sh
+
+### КАТАЛОГИ ###
+LOGS
 LOGS/
+LOG/
+out/
