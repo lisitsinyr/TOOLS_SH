@@ -3,6 +3,7 @@
 # lyrxxx_ШАБЛОН.sh
 # -----------------------------------------------
 
+#====================================================================
 PROJECTS='PROJECTS_UNIX'
 # -------------------------------------------------------------------
 CURRENT_SYSTEM=$(uname -a)
@@ -26,7 +27,7 @@ if [[ -z "$LIB_SH" ]] ; then
             ;;
     esac
     PROJECTS_DIR="$PROJECTS_LYR_DIR/CHECK_LIST/01_OS/03_UNIX/$PROJECTS"
-    LIB_SH="$PROJECTS_LYR_DIR/CHECK_LIST/01_OS/03_UNIX/$PROJECTS/LYR"
+    LIB_SH="$PROJECTS_LYR_DIR/CHECK_LIST/01_OS/03_UNIX/$PROJECTS/LIB"
 fi
 # echo "Каталог проектов LYR: $PROJECTS_DIR"
 # echo "Каталог библиотеки LYR: $LIB_SH"
@@ -43,6 +44,8 @@ source "$LIB_SH/LYRConst.sh"
 source "$LIB_SH/LYRDateTime.sh"
 source "$LIB_SH/LYRDateTime.txt"
 source "$LIB_SH/LYRSupport.sh"
+#====================================================================
+
 # -------------------------------------------------------------------
 # StartLogFile
 # -------------------------------------------------------------------
@@ -50,7 +53,6 @@ StartLogFile "$0" "" ""
 # -------------------------------------------------------------------
 
 #:begin
-
 #=================================================
 # AddLog $loAll $NOTSET 'NOTSET'
 # AddLog $loAll $DEBUG 'DEBUG'
@@ -74,7 +76,6 @@ StartLogFile "$0" "" ""
 # AddLog $loAll $TEXT 'result:'"$result"
 # AddLog $loAll $TEXT '--------------------------------------'
 #=================================================
-
 #:end
 
 # -------------------------------------------------------------------
