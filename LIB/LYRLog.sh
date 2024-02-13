@@ -289,13 +289,13 @@ function StartLogFile { # (AFileName: str):
     #------------------------------------------------------
     # Файл скрипта: имя
     #------------------------------------------------------
-    LOG_SHBASENAME=$(basename "$SHFile" .sh)
+    SHBASENAME=$(basename "$SHFile" .sh)
     # echo "LOG_SHBASENAME=$LOG_SHBASENAME"
 
     #------------------------------------------------------
     # Файл скрипта: имя+расширение
     #------------------------------------------------------
-    LOG_SHFILENAME=$(basename "$SHFile")
+    SHFILENAME=$(basename "$SHFile")
     # echo "LOG_SHFILENAME=$LOG_SHFILENAME"
     #------------------------------------------------------
 
