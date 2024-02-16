@@ -126,7 +126,7 @@ function __SET_VAR_PROJECTS { #
     #PROJECTS='PROJECTS_BAT'
     echo PROJECTS: $PROJECTS
     # -------------------------------------------------------------------
-    set CURRENT_SYSTEM=$(uname -a)
+    CURRENT_SYSTEM=$(uname -a)
     echo CURRENT_SYSTEM: $CURRENT_SYSTEM
     # -------------------------------------------------------------------
     UNAME=$(uname -n)
