@@ -58,29 +58,26 @@ source "$LIB_SH/LYRFileUtils.sh"
 source "$LIB_SH/LYRLog.sh"
 source "$LIB_SH/LYRConst.sh"
 source "$LIB_SH/LYRDateTime.sh"
-source "$LIB_SH/LYRDateTime.txt"
 source "$LIB_SH/LYRSupport.sh"
 #====================================================================
 
 __SET_VAR_PROJECTS
+# SH_DIR=D:\TOOLS\TOOLS_BAT
+__SET_BAT_DIR
+__SET_VAR_SCRIPT $0
+__SET_VAR_DEFAULT
+__SET_VAR_PROJECTS
+# __SET_CHECK_REPO
+__SET_LOG
 
 echo ==================================================================
-echo SET %0 ...
+echo SET $0 ...
 echo ==================================================================
 # CURRENT_DIR - Текущий каталог
 CURRENT_DIR=$(pwd)
 echo CURRENT_DIR: $CURRENT_DIR
 DIR_SAVE=$CURRENT_DIR
 echo DIR_SAVE: $DIR_SAVE
-# SH_DIR=D:\TOOLS\TOOLS_BAT
-# __SET_BAT_DIR
-# __SET_VAR_SCRIPT %0
-# __SET_VAR_DEFAULT
-# __SET_VAR_PROJECTS
-# __SET_CHECK_REPO
-# __SET_LOG
-# __START_LOG
-
 
 # -------------------------------------------------------------------
 # StartLogFile
