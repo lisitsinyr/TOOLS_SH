@@ -234,17 +234,6 @@ function AddLogFile { # Aout: int, AFileName: str
 function StartLogFile { # (AFileName: str):
 #beginfunction
     # echo 'StartLogFile...'
-    # Файл скрипта: каталог+имя+расширение
-    SHFile="$1"
-    # echo "SHFile=$SHFile"
-    SHDir=$(ExtractFileDir "$SHFile")
-    # echo "SHDir=$SHDir"
-    SHFileName=$(ExtractFileName "$SHFile")
-    # echo "SHFileName=$SHFileName"
-    SHFileNameWithoutExt=$(ExtractFileNameWithoutExt "$SHFileName")
-    # echo "SHFileNameWithoutExt=$SHFileNameWithoutExt"
-    SHFileExt=$(ExtractFileExt "$SHFileName")
-    # echo "SHFileExt=$SHFileExt"
     
     #------------------------------------------------------
     # Параметры журнала
