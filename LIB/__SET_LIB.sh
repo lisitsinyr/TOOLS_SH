@@ -135,10 +135,10 @@ function __SET_VAR_PROJECTS { #
     USERNAME=$(whoami)
     echo USERNAME: $USERNAME
     # -------------------------------------------------------------------
-    PROJECTS_LYR_DIR='D:\PROJECTS_LYR'
+    #PROJECTS_LYR_DIR='D:\PROJECTS_LYR'
     echo PROJECTS_LYR_DIR: $PROJECTS_LYR_DIR
     # -------------------------------------------------------------------
-    PROJECTS_DIR='%PROJECTS_LYR_DIR%\CHECK_LIST\03_SCRIPT\04_BAT\%PROJECTS%'
+    #PROJECTS_DIR='%PROJECTS_LYR_DIR%\CHECK_LIST\03_SCRIPT\04_BAT\%PROJECTS%'
     echo PROJECTS_DIR: $PROJECTS_DIR
 }
 # endfunction

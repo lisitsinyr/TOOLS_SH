@@ -38,12 +38,14 @@ if [[ -z "$LIB_SH" ]] ; then
             ;;
     esac
     PROJECTS_DIR="$PROJECTS_LYR_DIR/CHECK_LIST/01_OS/03_UNIX/$PROJECTS"
-    echo PROJECTS_DIR: $PROJECTS_DIR
+    #echo PROJECTS_DIR: $PROJECTS_DIR
     LIB_SH="$PROJECTS_LYR_DIR/CHECK_LIST/01_OS/03_UNIX/$PROJECTS/TOOLS_SH/LIB"
-    echo LIB_SH: $LIB_SH
+    #echo LIB_SH: $LIB_SH
 fi
+
 echo Каталог проектов LYR: $PROJECTS_DIR
 echo Каталог библиотеки LYR: $LIB_SH
+
 if [[ ! -d "$LIB_SH" ]] ; then
     echo Каталог библиотеки LYR $LIB_SH не существует...
     exit 1
@@ -59,6 +61,8 @@ source "$LIB_SH/LYRDateTime.sh"
 source "$LIB_SH/LYRDateTime.txt"
 source "$LIB_SH/LYRSupport.sh"
 #====================================================================
+
+__SET_VAR_PROJECTS
 
 echo ==================================================================
 echo SET %0 ...
