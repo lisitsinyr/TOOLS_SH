@@ -56,7 +56,7 @@ function __SET_BAT_DIR { #
     # echo __SET_BAT_DIR
     # echo ---------------------------------------------------------------
     # Каталог BAT_DIR: каталог
-    BAT_DIR=
+    BAT_DIR=""
     #if "%BAT_DIR%" == "" (
     #    set BAT_DIR=D:\TOOLS\TOOLS_BAT
     #    set BAT_DIR=D:\PROJECTS_LYR\CHECK_LIST\03_SCRIPT\04_BAT\TOOLS_BAT
@@ -82,7 +82,7 @@ function __SET_VAR_DEFAULT { #
     # echo    %LOG_OPT%
     # echo -------------------------------------------------------
     # LOG_FILENAME - Файл журнала [имя]
-    LOG_FILENAME=
+    LOG_FILENAME=""
     echo LOG_FILENAME: $LOG_FILENAME
 
     # DATETIME_STAMP - формат имени файла журнала [YYYYMMDDHHMMSS]
@@ -91,7 +91,7 @@ function __SET_VAR_DEFAULT { #
     echo DATETIME_STAMP [YYYYMMDDHHMMSS]: $DATETIME_STAMP
     
     # LOG_FILENAME_FORMAT - Формат имени файла журнала [FILENAME,DT,...]
-    LOG_FILENAME_FORMAT=
+    LOG_FILENAME_FORMAT=""
     #if "%LOG_FILENAME_FORMAT%"=="" (
     #LOG_FILENAME_FORMAT='FILENAME'
     #LOG_FILENAME_FORMAT='DATETIME'
@@ -99,7 +99,7 @@ function __SET_VAR_DEFAULT { #
     echo LOG_FILENAME_FORMAT [FILENAME,DT,...]: $LOG_FILENAME_FORMAT
 
     # LOG_OPT - Параметры журнала [11]
-    LOG_OPT=
+    LOG_OPT=""
     #if "%LOG_OPT%"=="" (
     #    LOG_OPT=11
     #)
@@ -146,7 +146,7 @@ function __SET_VAR_PROJECTS { #
 # --------------------------------------------------------------------------------
 # function __SET_CHECK_REPO { #
 # --------------------------------------------------------------------------------
-function __SET_CHECK_REPO
+function __SET_CHECK_REPO { #
 # beginfunction
     # echo ---------------------------------------------------------------
     # echo __SET_CHECK_REPO
@@ -156,7 +156,7 @@ function __SET_CHECK_REPO
     # echo    %REPO_NAME%
     # echo -------------------------------------------------------
     # REPO_NAME - Имя репозитария
-    REPO_NAME=
+    REPO_NAME=""
     # -------------------------------------------------------------------
     # REPO_INI - Файл с параметрами репозитария
     REPO_INI='REPO.ini'
