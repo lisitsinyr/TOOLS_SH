@@ -1,7 +1,78 @@
 #!/bin/bash
 # -----------------------------------------------
-# LYRConst.sh
+# __SET_LIB.sh
 # -----------------------------------------------
+
+# -------------------------------------------------------------------
+# :__SET_VAR_SCRIPT
+# SCRIPT_FULLFILENAME - Файл скрипта [каталог+имя+расширение]
+#     SCRIPT_FULLFILENAME=
+# SCRIPT_BASEFILENAME - Файл скрипта [имя+расширение]
+#     SCRIPT_BASEFILENAME=
+# SCRIPT_FILENAME - Файл скрипта [имя]
+#     SCRIPT_FILENAME=
+# -------------------------------------------------------------------
+# :__SET_SCRIPTS_DIR
+# SCRIPTS_DIR - Каталог скриптов
+#     SCRIPTS_DIR=
+# -------------------------------------------------------------------
+# :__SET_VAR_DEFAULT
+# LOG_FILENAME - Файл журнала [имя]
+#     LOG_FILENAME=
+# DATETIME_STAMP - формат имени файла журнала [YYYYMMDDHHMMSS]
+#     DATETIME_STAMP=%date:~6,4%%date:~3,2%%date:~0,2%%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%
+# LOG_FILENAME_FORMAT - Формат имени файла журнала [FILENAME,DT,...]
+#     LOG_FILENAME_FORMAT=FILENAME
+# LOG_OPT - Параметры журнала [11]
+#     LOG_OPT=11
+# -------------------------------------------------------------------
+# :__SET_VAR_PROJECTS
+# PROJECTS -
+#     PROJECTS=
+# CURRENT_SYSTEM -
+#     CURRENT_SYSTEM=
+# UNAME -
+#     UNAME=
+# USERNAME -
+#     USERNAME=
+# PROJECTS_LYR_DIR -
+#     PROJECTS_LYR_DIR=
+# PROJECTS_DIR -
+#     PROJECTS_DIR=
+# CURRENT_DIR - Текущий каталог
+#     CURRENT_DIR=
+# -------------------------------------------------------------------
+# :__SET_CHECK_REPO
+# REPO_NAME - Имя репозитария
+#     REPO_NAME=
+# REPO_INI - Файл с параметрами репозитария
+#     REPO_INI=REPO.ini
+# -------------------------------------------------------------------
+# :__SET_LOG
+# LOG_DIR - Каталог журнала
+#     LOG_DIR=
+# LOG_BASEFILENAME - Файл журнала [имя+расширение]
+#     LOG_BASEFILENAME=
+# LOG_FILENAME - Файл журнала [имя]
+#     LOG_FILENAME=
+# LOG_FILENAME_FORMAT - Формат имени файла журнала [FILENAME,DT,...]
+#     LOG_FILENAME_FORMAT=
+# LOG_OPT - Параметры журнала [11]
+#     LOG_OPT=11
+# -------------------------------------------------------------------
+
+# -------------------------------------------------------------------
+# KIX_DIR - Каталог с файлами .KIX
+#     KIX_DIR=
+# APP_KIX_DIR - каталог APP_KIX
+#     APP_KIX_DIR=
+# APP_KIX - Скрипт APP_KIX [имя+расширение]
+#     APP_KIX=lyrxxx_ШАБЛОН.kix
+# -------------------------------------------------------------------
+# LIB_KIX - Каталог библиотеки KIX
+#     LIB_KIX=
+# -------------------------------------------------------------------
+
 # -------------------------------------------------------------------
 # ФУНКЦИИ
 #     function __SET_VAR_SCRIPT

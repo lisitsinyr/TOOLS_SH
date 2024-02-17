@@ -3,22 +3,20 @@
 # [lyrxxx_]PATTERN.sh
 # -----------------------------------------------
 
-# -------------------------------------------------------------------
-# Каталог журнала: каталог
-#     LOG_DIR=
-# Файл журнала: имя+расширение
-#     LOG_BASEFILENAME=
-# Файл журнала: имя
-#     LOG_FILENAME=
-# Формат имени файлф журнала: FILENAME,DT,...
-#     LOG_FILENAME_FORMAT=
-# Параметры журнала
-#     LOG_OPT=11
-# -------------------------------------------------------------------
-
-#====================================================================
+# PROJECTS - проект
 PROJECTS='PROJECTS_UNIX'
-# -------------------------------------------------------------------
+# SCRIPT_FULLFILENAME - Файл скрипта [каталог+имя+расширение]
+SCRIPT_FULLFILENAME=$0
+# echo SCRIPT_FULLFILENAME: %SCRIPT_FULLFILENAME%
+
+# SCRIPTS_DIR - Каталог скриптов
+#if "%SCRIPTS_DIR%" == "" (
+#    SCRIPTS_DIR=D:\TOOLS\TOOLS_BAT
+#    SCRIPTS_DIR=D:\PROJECTS_LYR\CHECK_LIST\03_SCRIPT\04_BAT\TOOLS_BAT
+#    SCRIPTS_DIR=D:\PROJECTS_LYR\CHECK_LIST\03_SCRIPT\04_BAT\PROJECTS_BAT\TOOLS_BAT
+#)
+# echo SCRIPTS_DIR: %SCRIPTS_DIR%
+
 # -------------------------------------------------------------------
 # БИБЛИОТЕКА LYR
 # -------------------------------------------------------------------
@@ -28,9 +26,14 @@ if [[ -z "$LIB_SH" ]] ; then
     case "$UNAME" in
         'ASUS-W10P')
             PROJECTS_LYR_DIR='/d/PROJECTS_LYR'
+            SCRIPTS_DIR='/d/PROJECTS_LYR/CHECK_LIST/01_OS/03_UNIX/PROJECTS_UNIX/TOOLS_SH'
             ;;
+
+
+
         'ASUS-U2204-VB' | 'ASUS-U2204-VM' | 'ASUS-U2310-VB' | 'ASUS-U2310-VB' | 'ASUS-U2310')
             PROJECTS_LYR_DIR='/home/lyr/PROJECTS_LYR'
+            SCRIPTS_DIR='/home/lyr/PROJECTS_LYR/CHECK_LIST/01_OS/03_UNIX/PROJECTS_UNIX/TOOLS_SH'
             ;;
         *)
             echo "Компьютер не определен...!"
@@ -38,9 +41,9 @@ if [[ -z "$LIB_SH" ]] ; then
             ;;
     esac
     PROJECTS_DIR="$PROJECTS_LYR_DIR/CHECK_LIST/01_OS/03_UNIX/$PROJECTS"
-    #echo PROJECTS_DIR: $PROJECTS_DIR
-    LIB_SH="$PROJECTS_LYR_DIR/CHECK_LIST/01_OS/03_UNIX/$PROJECTS/TOOLS_SH/LIB"
-    #echo LIB_SH: $LIB_SH
+    echo PROJECTS_DIR: $PROJECTS_DIR
+    LIB_SH="$SCRIPTS_DIR/LIB"
+    echo LIB_SH: $LIB_SH
 fi
 
 echo Каталог проектов LYR: $PROJECTS_DIR
@@ -61,23 +64,23 @@ source "$LIB_SH/LYRDateTime.sh"
 source "$LIB_SH/LYRSupport.sh"
 #====================================================================
 
+echo ==================================================================
+echo SET %SCRIPT_FULLFILENAME% ...
+echo ==================================================================
 __SET_VAR_PROJECTS
-# SH_DIR=D:\TOOLS\TOOLS_BAT
-__SET_BAT_DIR
 __SET_VAR_SCRIPT $0
 __SET_VAR_DEFAULT
 __SET_VAR_PROJECTS
-# __SET_CHECK_REPO
 __SET_LOG
 
-echo ==================================================================
-echo SET $0 ...
-echo ==================================================================
-# CURRENT_DIR - Текущий каталог
-CURRENT_DIR=$(pwd)
-echo CURRENT_DIR: $CURRENT_DIR
-DIR_SAVE=$CURRENT_DIR
-echo DIR_SAVE: $DIR_SAVE
+#--------------------------------------------------------------------------------
+#
+#--------------------------------------------------------------------------------
+function MAIN { #
+#beginfunction
+    echo MAIN, hello!
+}
+#endfunction
 
 # -------------------------------------------------------------------
 # StartLogFile
@@ -85,7 +88,30 @@ echo DIR_SAVE: $DIR_SAVE
 # StartLogFile "$0" "" ""
 # -------------------------------------------------------------------
 
-#:begin
+#echo ================================================================= >> %LOG_FULLFILENAME%
+#echo START %SCRIPT_BASEFILENAME% ... >> %LOG_FULLFILENAME%
+#echo ================================================================== >> %LOG_FULLFILENAME%
+# CURRENT_DIR - Текущий каталог
+CURRENT_DIR=$(pwd)
+echo CURRENT_DIR: $CURRENT_DIR
+DIR_SAVE=$CURRENT_DIR
+echo DIR_SAVE: $DIR_SAVE
+
+MAIN
+
+#echo ================================================================= >> %LOG_FULLFILENAME%
+#echo STOP %SCRIPT_BASEFILENAME% ... >> %LOG_FULLFILENAME%
+#echo ================================================================== >> %LOG_FULLFILENAME%
+
+#cd /D %DIR_SAVE%
+#rem far -v %LOG_FULLFILENAME%
+
+# -------------------------------------------------------------------
+# StopLogFile
+# -------------------------------------------------------------------
+# StopLogFile
+# -------------------------------------------------------------------
+
 #=================================================
 # AddLog $loAll $NOTSET 'NOTSET'
 # AddLog $loAll $DEBUG 'DEBUG'
@@ -99,7 +125,6 @@ echo DIR_SAVE: $DIR_SAVE
 # AddLog $loAll $PROCESS 'PROCESS'
 # AddLog $loAll $TEXT 'TEXT'
 #=================================================
-
 #=================================================
 # AddLog $loAll $TEXT '--------------------------------------'
 # str=''
@@ -109,14 +134,8 @@ echo DIR_SAVE: $DIR_SAVE
 # AddLog $loAll $TEXT 'result:'"$result"
 # AddLog $loAll $TEXT '--------------------------------------'
 #=================================================
-#:end
 
-# -------------------------------------------------------------------
-# StopLogFile
-# -------------------------------------------------------------------
-# StopLogFile
-# -------------------------------------------------------------------
+#rem Выход из сценария. Дальше - только функции.
+#:Exit
 
 exit 0
-
-#:Exit
