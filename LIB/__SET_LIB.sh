@@ -92,7 +92,7 @@ function __SET_VAR_SCRIPT { #
     # Файл скрипта: имя+расширение
     #SHFileName=$(ExtractFileName "$SHFile")
     #echo SHFileName: $SHFileName
-    SCRIPT_BASEFILENAME=$(ExtractFileName "$SHFile")
+    SCRIPT_BASEFILENAME=$(ExtractFileName "$SCRIPT_FULLFILENAME")
     echo SCRIPT_BASEFILENAME: $SCRIPT_BASEFILENAME
     
     # Файл скрипта: имя
@@ -138,7 +138,7 @@ function __SET_VAR_DEFAULT { #
     # set LOG_FILENAME_FORMAT=
     if [ -z $LOG_FILENAME_FORMAT ] ; then
         LOG_FILENAME_FORMAT=FILENAME
-        rem LOG_FILENAME_FORMAT=DATETIME
+        #LOG_FILENAME_FORMAT=DATETIME
     fi
     echo LOG_FILENAME_FORMAT [FILENAME,DATETIME,...]: $LOG_FILENAME_FORMAT
     # -------------------------------------------------------------------
@@ -238,50 +238,52 @@ function __SET_LOG { #
     #if "%__SET_LOG__%"=="1" (echo __SET_LOG__: %__SET_LOG__% && exit /b 0) else (set __SET_LOG__=1)
 
     # LOG_DIR - Каталог журнала [каталог]
-    #if "%LOG_DIR%"=="" (
-    #    set LOG_DIR=%PROJECTS_LYR_DIR%\LOGS
-    #)
-    # echo LOG_DIR: %LOG_DIR%
-    #if not exist %LOG_DIR% (
-    #    echo ERROR: Dir %LOG_DIR% not exist
-    #    exit /b 1
-    #)
+    if [ -z "$LOG_DIR" ] ; then
+        LOG_DIR="$PROJECTS_LYR_DIR/LOGS"
+    fi
+    echo LOG_DIR: $LOG_DIR
+    if [[ ! -d "$LOG_DIRH" ]] ; then
+        echo 'ERROR: Dir '"$LOG_DIR"' not exist...'
+        echo 'Каталог '"$LOG_DIR"' не существует...'
+        exit 1
+    fi
     # LOG_FILENAME - Файл журнала [имя]
-    #if "%LOG_FILENAME%"=="" (
-    #    if "%LOG_FILENAME_FORMAT%"=="FILENAME" (
-    #        set LOG_FILENAME=%SCRIPT_FILENAME%
-    #    ) else (
-    #        if "%LOG_FILENAME_FORMAT%"=="DATETIME" (
-    #            set LOG_FILENAME=%DATETIME_STAMP%
-    #        ) else (
-    #            echo ERROR: LOG_FILENAME not set 
-    #            exit /b 1
-    #        )
-    #    )
-    #)
-    # echo LOG_FILENAME: %LOG_FILENAME%
+    if [ -z "$LOG_FILENAME" ] ; then
+        if "$LOG_FILENAME_FORMAT" = FILENAME (
+            LOG_FILENAME=$SCRIPT_FILENAME
+        else
+            if "$LOG_FILENAME_FORMAT" = DATETIME (
+                LOG_FILENAME=$DATETIME_STAMP
+            else
+                echo 'ERROR: LOG_FILENAME not set...'
+                exit 1
+            fi
+        fi
+    fi
+    echo LOG_FILENAME: $LOG_FILENAME
     # -------------------------------------------------------------------
     # LOG_FULLFILENAME - Файл журнала [каталог+имя+расширение]
-    #if "%REPO_NAME%"=="" (
-    #    set LOG_FULLFILENAME=%LOG_DIR%\%LOG_FILENAME%.log
-    #) else (
-    #    set LOG_FULLFILENAME=%LOG_DIR%\%REPO_NAME%_%LOG_FILENAME%.log
-    #)
-    # echo LOG_FULLFILENAME: %LOG_FULLFILENAME%
+    if [ -z "$REPO_NAME" ] ; then
+        LOG_FULLFILENAME=$LOG_DIR/$LOG_FILENAME.log
+    else
+        LOG_FULLFILENAME=$LOG_DIR/$REPO_NAME_$LOG_FILENAME.log
+    fi
+    echo LOG_FULLFILENAME: $LOG_FULLFILENAME
     # -------------------------------------------------------------------
     # LOG_OPT1 - Параметр журнала [1]
-    #set LOG_OPT1=%LOG_OPT:~0,1%
-    #if "%LOG_OPT1%"=="" (
-    #    set LOG_OPT1=1
-    #)
-    # echo LOG_OPT1 [1]: %LOG_OPT1%
+    set LOG_OPT1=$LOG_OPT #:~0,1%
+    if [ -z "$LOG_OPT1" ] ; then
+        LOG_OPT1=1
+    fi
+    echo LOG_OPT1 [1]: $LOG_OPT1
     # -------------------------------------------------------------------
     # LOG_OPT2 - Параметры журнала [1]
-    #set LOG_OPT2=%LOG_OPT:~1,1%
-    #if "%LOG_OPT2%"=="" (
-    #    set LOG_OPT2=1
-    #)
-    # echo LOG_OPT2 [1]: %LOG_OPT2%
+    set LOG_OPT2=$LOG_OPT #:~1,1%
+    if [ -z "$LOG_OPT2" ] ; then
+        LOG_OPT2=1
+    fi
+    echo LOG_OPT2 [1]: $LOG_OPT2
+
     #exit 0
 }
 # endfunction
