@@ -52,12 +52,6 @@
 #   exec 1> "$LOG_FILE"  # STDOUT
 # -------------------------------------------------------------------
 
-LOG_OPT_DEFAULT="11"
-LOG_FILE_ADD=0
-LOG_FILE_DT=0
-#LOG_DT_FORMAT_DEFAULT='%Y%m%d%H%M%S'
-LOG_DT_FORMAT_DEFAULT='%Y%m%d'
-
 # --------------------------------
 FORMAT='%Y-%m-%d %H:%M:%S %N'
 # --------------------------------
@@ -235,92 +229,8 @@ function StartLogFile { # (AFileName: str):
 #beginfunction
     # echo 'StartLogFile...'
     
-    #------------------------------------------------------
-    # Параметры журнала
-    #------------------------------------------------------
-    if [[ -z "$LOG_OPT" ]] ; then
-        LOG_OPT=$2
-        # echo "LOG_OPT=$LOG_OPT"
-        if [[ -z "$LOG_OPT" ]] ; then
-            LOG_OPT="$LOG_OPT_DEFAULT"
-        fi
-    fi
-    # echo "LOG_OPT=$LOG_OPT"
-    LOG_OPT_1=${LOG_OPT:0:1}
-    # echo "LOG_OPT_1=$LOG_OPT_1"
-    LOG_OPT_2=${LOG_OPT:1:1}
-    # echo "LOG_OPT_2=$LOG_OPT_2"
-    if [[ "$LOG_OPT_1" -eq '1' ]] ; then
-        LOG_FILE_ADD=1
-    else
-        LOG_FILE_ADD=0
-    fi
-    if [[ "$LOG_OPT_2" -eq '1' ]] ; then
-        LOG_FILE_DT=1
-    else
-        LOG_FILE_DT=0
-    fi
-    # echo "LOG_FILE_ADD=$LOG_FILE_ADD"
-    # echo "LOG_FILE_DT=$LOG_FILE_DT"
 
-    #------------------------------------------------------
-    # Формат DT
-    #------------------------------------------------------
-    if [[ -z "$LOG_DT_FORMAT" ]] ; then
-        LOG_DT_FORMAT=$3
-        # echo "LOG_DT_FORMAT=$LOG_DT_FORMAT"
-        if [[ -z "$LOG_DT_FORMAT" ]] ; then
-            LOG_DT_FORMAT="$LOG_DT_FORMAT_DEFAULT"
-        fi
-    fi
-    # echo "LOG_DT_FORMAT=$LOG_DT_FORMAT"
 
-    #------------------------------------------------------
-    # Файл скрипта: имя
-    #------------------------------------------------------
-    SHBASENAME=$(basename "$SHFile" .sh)
-    # echo "LOG_SHBASENAME=$LOG_SHBASENAME"
-
-    #------------------------------------------------------
-    # Файл скрипта: имя+расширение
-    #------------------------------------------------------
-    SHFILENAME=$(basename "$SHFile")
-    # echo "LOG_SHFILENAME=$LOG_SHFILENAME"
-    #------------------------------------------------------
-
-    #------------------------------------------------------
-    # Каталог журналов
-    #------------------------------------------------------
-    if [[ -z "$LOG_DIR" ]] ; then
-        LOG_DIR="$SHDir"
-    fi
-    # echo "LOG_DIR=$LOG_DIR"
-
-    #------------------------------------------------------
-    # Файл журнала: каталог+имя+расширение
-    #------------------------------------------------------
-    if [[ -z "$LOG_FILE" ]] ; then
-        if [[ "$LOG_FILE_DT" -eq 1 ]] ; then
-            DT=$(YYYYMMDDHHMMSS)
-            DT=$(DateTime $LOG_DT_FORMAT)
-            LOG_FILE="$LOG_DIR"/"$DT".log
-        else
-            LOG_FILE="$SHFile.log"
-        fi
-    else
-        if [[ "$LOG_FILE_DT" -eq 1 ]] ; then
-            DT=$(YYYYMMDDHHMMSS)
-            LOG_FILE="$LOG_DIR"/"$DT"_"$LOG_FILE"
-        else
-            LOG_FILE="$LOG_DIR"/"$LOG_FILE"
-        fi
-    fi
-    # echo "LOG_FILE=$LOG_FILE"
-  
-    #------------------------------------------------------
-    # LOG_STR
-    #------------------------------------------------------
-    LOG_STR=""
     
     #------------------------------------------------------
     # Открытие файла журнала

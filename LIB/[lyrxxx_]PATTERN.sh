@@ -3,23 +3,18 @@
 # [lyrxxx_]PATTERN.sh
 # -----------------------------------------------
 
+# -------------------------------------------------------------------
 # PROJECTS - проект
 PROJECTS='PROJECTS_UNIX'
+# -------------------------------------------------------------------
 # SCRIPT_FULLFILENAME - Файл скрипта [каталог+имя+расширение]
 SCRIPT_FULLFILENAME=$0
 # echo SCRIPT_FULLFILENAME: %SCRIPT_FULLFILENAME%
-
+# -------------------------------------------------------------------
+# PROJECTS_LYR_DIR -
+# PROJECTS_DIR -
 # SCRIPTS_DIR - Каталог скриптов
-#if "%SCRIPTS_DIR%" == "" (
-#    SCRIPTS_DIR=D:\TOOLS\TOOLS_BAT
-#    SCRIPTS_DIR=D:\PROJECTS_LYR\CHECK_LIST\03_SCRIPT\04_BAT\TOOLS_BAT
-#    SCRIPTS_DIR=D:\PROJECTS_LYR\CHECK_LIST\03_SCRIPT\04_BAT\PROJECTS_BAT\TOOLS_BAT
-#)
-# echo SCRIPTS_DIR: %SCRIPTS_DIR%
-
-# -------------------------------------------------------------------
-# БИБЛИОТЕКА LYR
-# -------------------------------------------------------------------
+# LIB_SH - 
 UNAME=$(uname -n)
 UNAME=$(uname -n)
 if [[ -z "$LIB_SH" ]] ; then
@@ -41,14 +36,12 @@ if [[ -z "$LIB_SH" ]] ; then
             ;;
     esac
     PROJECTS_DIR="$PROJECTS_LYR_DIR/CHECK_LIST/01_OS/03_UNIX/$PROJECTS"
-    #echo PROJECTS_DIR: $PROJECTS_DIR
     LIB_SH="$SCRIPTS_DIR/LIB"
-    #echo LIB_SH: $LIB_SH
 fi
-
-#echo Каталог проектов LYR: $PROJECTS_DIR
-#echo Каталог библиотеки LYR: $LIB_SH
-
+#echo PROJECTS_LYR_DIR: $PROJECTS_LYR_DIR
+#echo PROJECTS_DIR: $PROJECTS_DIR
+#echo SCRIPTS_DIR: $SCRIPTS_DIR
+#echo LIB_SH: $LIB_SH
 if [[ ! -d "$LIB_SH" ]] ; then
     echo Каталог библиотеки LYR $LIB_SH не существует...
     exit 1
@@ -67,11 +60,25 @@ source "$LIB_SH/LYRSupport.sh"
 echo ==================================================================
 echo SET $SCRIPT_FULLFILENAME ...
 echo ==================================================================
-__SET_VAR_PROJECTS
 __SET_VAR_SCRIPT $SCRIPT_FULLFILENAME
 __SET_VAR_DEFAULT
 __SET_VAR_PROJECTS
 __SET_CHECK_REPO
+# -------------------------------------------------------------------
+# LOG_DT_FORMAT -
+LOG_DT_FORMAT=
+# -------------------------------------------------------------------
+# LOG_FILENAME_FORMAT - Формат имени файла журнала [FILENAME,DATETIME,...]
+LOG_FILENAME_FORMAT=
+# -------------------------------------------------------------------
+# LOG_OPT - Параметры журнала [11]
+LOG_OPT=
+# -------------------------------------------------------------------
+# LOG_DIR - Каталог журнала [каталог]
+LOG_DIR=
+# -------------------------------------------------------------------
+# LOG_FILENAME - Файл журнала [имя]
+LOG_FILENAME=
 __SET_LOG
 
 #--------------------------------------------------------------------------------
@@ -80,7 +87,7 @@ __SET_LOG
 function MAIN_01 { #
 #beginfunction
     echo MAIN_01, hello!
-    exit 0
+    return 0
 }
 #endfunction
 
@@ -91,7 +98,7 @@ function MAIN { #
 #beginfunction
     echo MAIN, hello!
     MAIN_01
-    exit 0
+    return 0
 }
 #endfunction
 
