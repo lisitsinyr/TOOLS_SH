@@ -41,13 +41,13 @@ if [[ -z "$LIB_SH" ]] ; then
             ;;
     esac
     PROJECTS_DIR="$PROJECTS_LYR_DIR/CHECK_LIST/01_OS/03_UNIX/$PROJECTS"
-    echo PROJECTS_DIR: $PROJECTS_DIR
+    #echo PROJECTS_DIR: $PROJECTS_DIR
     LIB_SH="$SCRIPTS_DIR/LIB"
-    echo LIB_SH: $LIB_SH
+    #echo LIB_SH: $LIB_SH
 fi
 
-echo Каталог проектов LYR: $PROJECTS_DIR
-echo Каталог библиотеки LYR: $LIB_SH
+#echo Каталог проектов LYR: $PROJECTS_DIR
+#echo Каталог библиотеки LYR: $LIB_SH
 
 if [[ ! -d "$LIB_SH" ]] ; then
     echo Каталог библиотеки LYR $LIB_SH не существует...
@@ -65,7 +65,7 @@ source "$LIB_SH/LYRSupport.sh"
 #====================================================================
 
 echo ==================================================================
-echo SET %SCRIPT_FULLFILENAME% ...
+echo SET $SCRIPT_FULLFILENAME ...
 echo ==================================================================
 __SET_VAR_PROJECTS
 __SET_VAR_SCRIPT $0
@@ -76,9 +76,21 @@ __SET_LOG
 #--------------------------------------------------------------------------------
 #
 #--------------------------------------------------------------------------------
+function MAIN_01 { #
+#beginfunction
+    echo MAIN_01, hello!
+    exit 0
+}
+#endfunction
+
+#--------------------------------------------------------------------------------
+#
+#--------------------------------------------------------------------------------
 function MAIN { #
 #beginfunction
     echo MAIN, hello!
+    MAIN_01
+    exit 0
 }
 #endfunction
 
@@ -88,23 +100,22 @@ function MAIN { #
 # StartLogFile "$0" "" ""
 # -------------------------------------------------------------------
 
-#echo ================================================================= >> %LOG_FULLFILENAME%
-#echo START %SCRIPT_BASEFILENAME% ... >> %LOG_FULLFILENAME%
-#echo ================================================================== >> %LOG_FULLFILENAME%
+#echo ================================================================= >> $LOG_FULLFILENAME
+#echo START $SCRIPT_BASEFILENAME ... >> $LOG_FULLFILENAME
+#echo ================================================================== >> $LOG_FULLFILENAME
 # CURRENT_DIR - Текущий каталог
 CURRENT_DIR=$(pwd)
-echo CURRENT_DIR: $CURRENT_DIR
+#echo CURRENT_DIR: $CURRENT_DIR
 DIR_SAVE=$CURRENT_DIR
-echo DIR_SAVE: $DIR_SAVE
+#echo DIR_SAVE: $DIR_SAVE
 
 MAIN
 
-#echo ================================================================= >> %LOG_FULLFILENAME%
-#echo STOP %SCRIPT_BASEFILENAME% ... >> %LOG_FULLFILENAME%
-#echo ================================================================== >> %LOG_FULLFILENAME%
+#echo ================================================================= >> $LOG_FULLFILENAME
+#echo STOP $SCRIPT_BASEFILENAME ... >> $LOG_FULLFILENAME
+#echo ================================================================== >> $LOG_FULLFILENAME
 
-#cd /D %DIR_SAVE%
-#rem far -v %LOG_FULLFILENAME%
+cd /D $DIR_SAVE
 
 # -------------------------------------------------------------------
 # StopLogFile
@@ -135,7 +146,5 @@ MAIN
 # AddLog $loAll $TEXT '--------------------------------------'
 #=================================================
 
-#rem Выход из сценария. Дальше - только функции.
-#:Exit
-
 exit 0
+#:Exit

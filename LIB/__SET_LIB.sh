@@ -96,25 +96,26 @@ function __SET_VAR_SCRIPT { #
     # echo __SET_VAR_SCRIPT ...
     # echo ---------------------------------------------------------------
     SHFile="$1"
-    echo SHFile: $SHFile
+    #echo SHFile: $SHFile
     SHDir=$(ExtractFileDir "$SHFile")
-    echo SHDir: $SHDir
+    #echo SHDir: $SHDir
     SHFileName=$(ExtractFileName "$SHFile")
-    echo SHFileName: $SHFileName
+    #echo SHFileName: $SHFileName
     SHFileNameWithoutExt=$(ExtractFileNameWithoutExt "$SHFileName")
-    echo SHFileNameWithoutExt: $SHFileNameWithoutExt
+    #echo SHFileNameWithoutExt: $SHFileNameWithoutExt
     SHFileExt=$(ExtractFileExt "$SHFileName")
-    echo SHFileExt: $SHFileExt
+    #echo SHFileExt: $SHFileExt
 
     # Файл скрипта: каталог+имя+расширение
     SCRIPT_FULLFILENAME="$1"
-    echo SCRIPT_FULLFILENAME: $SCRIPT_FULLFILENAME
+    #echo SCRIPT_FULLFILENAME: $SCRIPT_FULLFILENAME
     # Файл скрипта: имя+расширение
-    set SCRIPT_BASEFILENAME=$(ExtractFileName "$SHFile")
-    echo SCRIPT_BASEFILENAME: $SCRIPT_BASEFILENAME
+    SCRIPT_BASEFILENAME=$(ExtractFileName "$SHFile")
+    #echo SCRIPT_BASEFILENAME: $SCRIPT_BASEFILENAME
     # Файл скрипта: имя
-    set SCRIPT_FILENAME==$(ExtractFileNameWithoutExt "$SHFileName")
-    echo SCRIPT_FILENAME: $SCRIPT_FILENAME
+    SCRIPT_FILENAME=$(ExtractFileNameWithoutExt "$SHFileName")
+    #echo SCRIPT_FILENAME: $SCRIPT_FILENAME
+    #exit 0
 }
 # endfunction
 
@@ -132,7 +133,8 @@ function __SET_BAT_DIR { #
     #    set BAT_DIR=D:\TOOLS\TOOLS_BAT
     #    set BAT_DIR=D:\PROJECTS_LYR\CHECK_LIST\03_SCRIPT\04_BAT\TOOLS_BAT
     #)
-    echo BAT_DIR: $BAT_DIR
+    #echo BAT_DIR: $BAT_DIR
+    #exit 0
 }
 # endfunction
 
@@ -154,12 +156,12 @@ function __SET_VAR_DEFAULT { #
     # echo -------------------------------------------------------
     # LOG_FILENAME - Файл журнала [имя]
     LOG_FILENAME=""
-    echo LOG_FILENAME: $LOG_FILENAME
+    #echo LOG_FILENAME: $LOG_FILENAME
 
     # DATETIME_STAMP - формат имени файла журнала [YYYYMMDDHHMMSS]
     DATETIME_STAMP=%date:~6,4%%date:~3,2%%date:~0,2%%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%
     #DATETIME_STAMP=%date:~6,4%%date:~3,2%%date:~0,2%%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%
-    echo DATETIME_STAMP [YYYYMMDDHHMMSS]: $DATETIME_STAMP
+    #echo DATETIME_STAMP [YYYYMMDDHHMMSS]: $DATETIME_STAMP
     
     # LOG_FILENAME_FORMAT - Формат имени файла журнала [FILENAME,DT,...]
     LOG_FILENAME_FORMAT=""
@@ -167,14 +169,15 @@ function __SET_VAR_DEFAULT { #
     #LOG_FILENAME_FORMAT='FILENAME'
     #LOG_FILENAME_FORMAT='DATETIME'
     #)
-    echo LOG_FILENAME_FORMAT [FILENAME,DT,...]: $LOG_FILENAME_FORMAT
+    #echo LOG_FILENAME_FORMAT [FILENAME,DT,...]: $LOG_FILENAME_FORMAT
 
     # LOG_OPT - Параметры журнала [11]
     LOG_OPT=""
     #if "%LOG_OPT%"=="" (
     #    LOG_OPT=11
     #)
-    echo LOG_OPT [11]: $LOG_OPT
+    #echo LOG_OPT [11]: $LOG_OPT
+    #exit 0
 }
 # endfunction
 
@@ -195,22 +198,23 @@ function __SET_VAR_PROJECTS { #
     # echo    %PROJECTS_DIR%
     # echo -------------------------------------------------------
     #PROJECTS='PROJECTS_BAT'
-    echo PROJECTS: $PROJECTS
+    #echo PROJECTS: $PROJECTS
     # -------------------------------------------------------------------
     CURRENT_SYSTEM=$(uname -a)
-    echo CURRENT_SYSTEM: $CURRENT_SYSTEM
+    #echo CURRENT_SYSTEM: $CURRENT_SYSTEM
     # -------------------------------------------------------------------
     UNAME=$(uname -n)
-    echo UNAME: $UNAME
+    #echo UNAME: $UNAME
     # -------------------------------------------------------------------
     USERNAME=$(whoami)
-    echo USERNAME: $USERNAME
+    #echo USERNAME: $USERNAME
     # -------------------------------------------------------------------
     #PROJECTS_LYR_DIR='D:\PROJECTS_LYR'
-    echo PROJECTS_LYR_DIR: $PROJECTS_LYR_DIR
+    #echo PROJECTS_LYR_DIR: $PROJECTS_LYR_DIR
     # -------------------------------------------------------------------
     #PROJECTS_DIR='%PROJECTS_LYR_DIR%\CHECK_LIST\03_SCRIPT\04_BAT\%PROJECTS%'
-    echo PROJECTS_DIR: $PROJECTS_DIR
+    #echo PROJECTS_DIR: $PROJECTS_DIR
+    #exit 0
 }
 # endfunction
 
@@ -231,7 +235,7 @@ function __SET_CHECK_REPO { #
     # -------------------------------------------------------------------
     # REPO_INI - Файл с параметрами репозитария
     REPO_INI='REPO.ini'
-    echo REPO_INI [REPO.ini]: $REPO_INI
+    #echo REPO_INI [REPO.ini]: $REPO_INI
     # -------------------------------------------------------------------
     # Проверка существования файла REPO.ini
     #if not exist %REPO_INI% (
@@ -245,7 +249,8 @@ function __SET_CHECK_REPO { #
     #        # echo %%i: %%%j%
     #    )
     #)
-    echo REPO_NAME: $REPO_NAME
+    #echo REPO_NAME: $REPO_NAME
+    #exit 0
 }
 # endfunction
 
@@ -312,6 +317,7 @@ function __SET_LOG { #
     #    set LOG_OPT2=1
     #)
     # echo LOG_OPT2 [1]: %LOG_OPT2%
+    #exit 0
 }
 # endfunction
 
