@@ -4,7 +4,7 @@
 # -----------------------------------------------
 
 # -------------------------------------------------------------------
-# :__SET_VAR_SCRIPT
+# __SET_VAR_SCRIPT
 # SCRIPT_FULLFILENAME - Файл скрипта [каталог+имя+расширение]
 #     SCRIPT_FULLFILENAME=
 # SCRIPT_BASEFILENAME - Файл скрипта [имя+расширение]
@@ -12,11 +12,11 @@
 # SCRIPT_FILENAME - Файл скрипта [имя]
 #     SCRIPT_FILENAME=
 # -------------------------------------------------------------------
-# :__SET_SCRIPTS_DIR
+# __SET_SCRIPTS_DIR
 # SCRIPTS_DIR - Каталог скриптов
 #     SCRIPTS_DIR=
 # -------------------------------------------------------------------
-# :__SET_VAR_DEFAULT
+# __SET_VAR_DEFAULT
 # LOG_FILENAME - Файл журнала [имя]
 #     LOG_FILENAME=
 # DATETIME_STAMP - формат имени файла журнала [YYYYMMDDHHMMSS]
@@ -26,7 +26,7 @@
 # LOG_OPT - Параметры журнала [11]
 #     LOG_OPT=11
 # -------------------------------------------------------------------
-# :__SET_VAR_PROJECTS
+# __SET_VAR_PROJECTS
 # PROJECTS -
 #     PROJECTS=
 # CURRENT_SYSTEM -
@@ -42,13 +42,13 @@
 # CURRENT_DIR - Текущий каталог
 #     CURRENT_DIR=
 # -------------------------------------------------------------------
-# :__SET_CHECK_REPO
+# __SET_CHECK_REPO
 # REPO_NAME - Имя репозитария
 #     REPO_NAME=
 # REPO_INI - Файл с параметрами репозитария
 #     REPO_INI=REPO.ini
 # -------------------------------------------------------------------
-# :__SET_LOG
+# __SET_LOG
 # LOG_DIR - Каталог журнала
 #     LOG_DIR=
 # LOG_BASEFILENAME - Файл журнала [имя+расширение]
@@ -59,18 +59,6 @@
 #     LOG_FILENAME_FORMAT=
 # LOG_OPT - Параметры журнала [11]
 #     LOG_OPT=11
-# -------------------------------------------------------------------
-
-# -------------------------------------------------------------------
-# KIX_DIR - Каталог с файлами .KIX
-#     KIX_DIR=
-# APP_KIX_DIR - каталог APP_KIX
-#     APP_KIX_DIR=
-# APP_KIX - Скрипт APP_KIX [имя+расширение]
-#     APP_KIX=lyrxxx_ШАБЛОН.kix
-# -------------------------------------------------------------------
-# LIB_KIX - Каталог библиотеки KIX
-#     LIB_KIX=
 # -------------------------------------------------------------------
 
 # -------------------------------------------------------------------
@@ -95,45 +83,36 @@ function __SET_VAR_SCRIPT { #
     # echo ---------------------------------------------------------------
     # echo __SET_VAR_SCRIPT ...
     # echo ---------------------------------------------------------------
-    SHFile="$1"
-    #echo SHFile: $SHFile
-    SHDir=$(ExtractFileDir "$SHFile")
-    #echo SHDir: $SHDir
-    SHFileName=$(ExtractFileName "$SHFile")
-    #echo SHFileName: $SHFileName
-    SHFileNameWithoutExt=$(ExtractFileNameWithoutExt "$SHFileName")
-    #echo SHFileNameWithoutExt: $SHFileNameWithoutExt
-    SHFileExt=$(ExtractFileExt "$SHFileName")
-    #echo SHFileExt: $SHFileExt
-
     # Файл скрипта: каталог+имя+расширение
+    #SHFile="$1"
+    #echo SHFile: $SHFile
     SCRIPT_FULLFILENAME="$1"
-    #echo SCRIPT_FULLFILENAME: $SCRIPT_FULLFILENAME
-    # Файл скрипта: имя+расширение
-    SCRIPT_BASEFILENAME=$(ExtractFileName "$SHFile")
-    #echo SCRIPT_BASEFILENAME: $SCRIPT_BASEFILENAME
-    # Файл скрипта: имя
-    SCRIPT_FILENAME=$(ExtractFileNameWithoutExt "$SHFileName")
-    #echo SCRIPT_FILENAME: $SCRIPT_FILENAME
-    #exit 0
-}
-# endfunction
+    echo SCRIPT_FULLFILENAME: $SCRIPT_FULLFILENAME
 
-# --------------------------------------------------------------------------------
-# function __SET_BAT_DIR
-# --------------------------------------------------------------------------------
-function __SET_BAT_DIR { #
-# beginfunction
-    # echo ---------------------------------------------------------------
-    # echo __SET_BAT_DIR
-    # echo ---------------------------------------------------------------
-    # Каталог BAT_DIR: каталог
-    BAT_DIR=""
-    #if "%BAT_DIR%" == "" (
-    #    set BAT_DIR=D:\TOOLS\TOOLS_BAT
-    #    set BAT_DIR=D:\PROJECTS_LYR\CHECK_LIST\03_SCRIPT\04_BAT\TOOLS_BAT
-    #)
-    #echo BAT_DIR: $BAT_DIR
+    # Файл скрипта: имя+расширение
+    #SHFileName=$(ExtractFileName "$SHFile")
+    #echo SHFileName: $SHFileName
+    SCRIPT_BASEFILENAME=$(ExtractFileName "$SHFile")
+    echo SCRIPT_BASEFILENAME: $SCRIPT_BASEFILENAME
+    
+    # Файл скрипта: имя
+    #SHFileNameWithoutExt=$(ExtractFileNameWithoutExt "$SHFileName")
+    #echo SHFileNameWithoutExt: $SHFileNameWithoutExt
+    SCRIPT_FILENAME=$(ExtractFileNameWithoutExt "$SCRIPT_BASEFILENAME")
+    echo SCRIPT_FILENAME: $SCRIPT_FILENAME
+    
+    # Файл скрипта: каталог
+    #SHDir=$(ExtractFileDir "$SHFile")
+    #echo SHDir: $SHDir
+    SCRIPT_FILEDIR=$(ExtractFileDir "$SCRIPT_FULLFILENAME")
+    echo SCRIPT_FILEDIR: $SCRIPT_FILEDIR
+
+    # Файл скрипта: расширение
+    #SHFileExt=$(ExtractFileExt "$SHFileName")
+    #echo SHFileExt: $SHFileExt
+    SCRIPT_FILEEXT=$(ExtractFileExt "$SCRIPT_BASEFILENAME")
+    echo SCRIPT_FILEEXT: $SCRIPT_FILEEXT
+
     #exit 0
 }
 # endfunction
@@ -146,37 +125,29 @@ function __SET_VAR_DEFAULT { #
     # echo ---------------------------------------------------------------
     # echo __SET_VAR_DEFAULT
     # echo ---------------------------------------------------------------
-    # echo -------------------------------------------------------
-    # echo 1.Переменные по умолчанию
-    # echo    %LOG_DIR%
-    # echo    %LOG_FILENAME%
-    # echo    %DATETIME_STAMP%
-    # echo    %LOG_FILENAME_FORMAT%
-    # echo    %LOG_OPT%
-    # echo -------------------------------------------------------
     # LOG_FILENAME - Файл журнала [имя]
+    LOG_FILENAME="$REPO_NAME_xxxxxxxxxxxxxxxxxx"
     LOG_FILENAME=""
-    #echo LOG_FILENAME: $LOG_FILENAME
-
+    echo LOG_FILENAME: $LOG_FILENAME
+    # -------------------------------------------------------------------
     # DATETIME_STAMP - формат имени файла журнала [YYYYMMDDHHMMSS]
-    DATETIME_STAMP=%date:~6,4%%date:~3,2%%date:~0,2%%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%
-    #DATETIME_STAMP=%date:~6,4%%date:~3,2%%date:~0,2%%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%
-    #echo DATETIME_STAMP [YYYYMMDDHHMMSS]: $DATETIME_STAMP
-    
-    # LOG_FILENAME_FORMAT - Формат имени файла журнала [FILENAME,DT,...]
-    LOG_FILENAME_FORMAT=""
-    #if "%LOG_FILENAME_FORMAT%"=="" (
-    #LOG_FILENAME_FORMAT='FILENAME'
-    #LOG_FILENAME_FORMAT='DATETIME'
-    #)
-    #echo LOG_FILENAME_FORMAT [FILENAME,DT,...]: $LOG_FILENAME_FORMAT
-
+    DATETIME_STAMP=$(printf "%(%Y%m%d%H%M%S)T")
+    echo DATETIME_STAMP [YYYYMMDDHHMMSS]: $DATETIME_STAMP
+    # -------------------------------------------------------------------
+    # LOG_FILENAME_FORMAT - Формат имени файла журнала [FILENAME,DATETIME,...]
+    # set LOG_FILENAME_FORMAT=
+    if [ -z $LOG_FILENAME_FORMAT ] ; then
+        LOG_FILENAME_FORMAT=FILENAME
+        rem LOG_FILENAME_FORMAT=DATETIME
+    fi
+    echo LOG_FILENAME_FORMAT [FILENAME,DATETIME,...]: $LOG_FILENAME_FORMAT
+    # -------------------------------------------------------------------
     # LOG_OPT - Параметры журнала [11]
-    LOG_OPT=""
-    #if "%LOG_OPT%"=="" (
-    #    LOG_OPT=11
-    #)
-    #echo LOG_OPT [11]: $LOG_OPT
+    if [ -z $LOG_OPT ] ; then
+        LOG_OPT=11
+    fi
+    echo LOG_OPT [11]: $LOG_OPT
+
     #exit 0
 }
 # endfunction
@@ -189,31 +160,32 @@ function __SET_VAR_PROJECTS { #
     # echo ---------------------------------------------------------------
     # echo __SET_VAR_PROJECTS
     # echo ---------------------------------------------------------------
-    # echo -------------------------------------------------------
-    # echo 2.Проект [PROJECTS]
-    # echo    %PROJECTS%
-    # echo    %UNAME%
-    # echo    %USERNAME%
-    # echo    %PROJECTS_LYR_DIR%
-    # echo    %PROJECTS_DIR%
-    # echo -------------------------------------------------------
-    #PROJECTS='PROJECTS_BAT'
+    # PROJECTS - проект
+    #PROJECTS=
     #echo PROJECTS: $PROJECTS
     # -------------------------------------------------------------------
+    # PROJECTS_LYR_DIR -
+    #PROJECTS_LYR_DIR=
+    #echo PROJECTS_LYR_DIR: $PROJECTS_LYR_DIR
+    # -------------------------------------------------------------------
+    # PROJECTS_DIR -
+    #PROJECTS_DIR=
+    #echo PROJECTS_DIR: $PROJECTS_DIR
+    # -------------------------------------------------------------------
+    # CURRENT_SYSTEM -
     CURRENT_SYSTEM=$(uname -a)
     #echo CURRENT_SYSTEM: $CURRENT_SYSTEM
     # -------------------------------------------------------------------
+    # UNAME - COMPUTERNAME
     UNAME=$(uname -n)
     #echo UNAME: $UNAME
     # -------------------------------------------------------------------
+    # USERNAME - USERNAME
     USERNAME=$(whoami)
     #echo USERNAME: $USERNAME
-    # -------------------------------------------------------------------
-    #PROJECTS_LYR_DIR='D:\PROJECTS_LYR'
-    #echo PROJECTS_LYR_DIR: $PROJECTS_LYR_DIR
-    # -------------------------------------------------------------------
-    #PROJECTS_DIR='%PROJECTS_LYR_DIR%\CHECK_LIST\03_SCRIPT\04_BAT\%PROJECTS%'
-    #echo PROJECTS_DIR: $PROJECTS_DIR
+    # CURRENT_DIR - Текущий каталог
+    CURRENT_DIR=$(pwd)
+    #echo CURRENT_DIR: CURRENT_DIR
     #exit 0
 }
 # endfunction
@@ -262,13 +234,6 @@ function __SET_LOG { #
     echo ---------------------------------------------------------------
     echo __SET_LOG
     echo ---------------------------------------------------------------
-    # echo -------------------------------------------------------
-    # echo 4.Настройка Каталога журналов и имени журнала 
-    # echo    %LOG_DIR%
-    # echo    %LOG_FILENAME%
-    # echo    %LOG_OPT1%
-    # echo    %LOG_OPT2%
-    # echo -------------------------------------------------------
 
     #if "%__SET_LOG__%"=="1" (echo __SET_LOG__: %__SET_LOG__% && exit /b 0) else (set __SET_LOG__=1)
 

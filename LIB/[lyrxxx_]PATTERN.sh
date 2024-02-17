@@ -68,7 +68,7 @@ echo ==================================================================
 echo SET $SCRIPT_FULLFILENAME ...
 echo ==================================================================
 __SET_VAR_PROJECTS
-__SET_VAR_SCRIPT $0
+__SET_VAR_SCRIPT $SCRIPT_FULLFILENAME
 __SET_VAR_DEFAULT
 __SET_VAR_PROJECTS
 __SET_LOG
