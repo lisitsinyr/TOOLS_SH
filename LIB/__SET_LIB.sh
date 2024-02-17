@@ -186,6 +186,7 @@ function __SET_VAR_PROJECTS { #
     # CURRENT_DIR - Текущий каталог
     CURRENT_DIR=$(pwd)
     #echo CURRENT_DIR: CURRENT_DIR
+
     #exit 0
 }
 # endfunction
@@ -198,16 +199,13 @@ function __SET_CHECK_REPO { #
     # echo ---------------------------------------------------------------
     # echo __SET_CHECK_REPO
     # echo ---------------------------------------------------------------
-    # echo -------------------------------------------------------
-    # echo 3.Наличие репозитария
-    # echo    %REPO_NAME%
-    # echo -------------------------------------------------------
     # REPO_NAME - Имя репозитария
     REPO_NAME=""
+    #echo REPO_NAME: $REPO_NAME
     # -------------------------------------------------------------------
     # REPO_INI - Файл с параметрами репозитария
     REPO_INI='REPO.ini'
-    #echo REPO_INI [REPO.ini]: $REPO_INI
+    echo REPO_INI [REPO.ini]: $REPO_INI
     # -------------------------------------------------------------------
     # Проверка существования файла REPO.ini
     #if not exist %REPO_INI% (
@@ -221,7 +219,8 @@ function __SET_CHECK_REPO { #
     #        # echo %%i: %%%j%
     #    )
     #)
-    #echo REPO_NAME: $REPO_NAME
+    echo REPO_NAME: $REPO_NAME
+
     #exit 0
 }
 # endfunction
@@ -231,9 +230,9 @@ function __SET_CHECK_REPO { #
 # --------------------------------------------------------------------------------
 function __SET_LOG { #
 # beginfunction
-    echo ---------------------------------------------------------------
-    echo __SET_LOG
-    echo ---------------------------------------------------------------
+    #echo ---------------------------------------------------------------
+    #echo __SET_LOG
+    #echo ---------------------------------------------------------------
 
     #if "%__SET_LOG__%"=="1" (echo __SET_LOG__: %__SET_LOG__% && exit /b 0) else (set __SET_LOG__=1)
 
@@ -242,17 +241,17 @@ function __SET_LOG { #
         LOG_DIR="$PROJECTS_LYR_DIR/LOGS"
     fi
     echo LOG_DIR: $LOG_DIR
-    if [[ ! -d "$LOG_DIRH" ]] ; then
+    if [[ ! -d "$LOG_DIR" ]] ; then
         echo 'ERROR: Dir '"$LOG_DIR"' not exist...'
-        echo 'Каталог '"$LOG_DIR"' не существует...'
+        echo 'ERROR: Каталог '"$LOG_DIR"' не существует...'
         exit 1
     fi
     # LOG_FILENAME - Файл журнала [имя]
     if [ -z "$LOG_FILENAME" ] ; then
-        if "$LOG_FILENAME_FORMAT" = FILENAME (
+        if [ "$LOG_FILENAME_FORMAT" = FILENAME ] ; then
             LOG_FILENAME=$SCRIPT_FILENAME
         else
-            if "$LOG_FILENAME_FORMAT" = DATETIME (
+            if [ "$LOG_FILENAME_FORMAT" = DATETIME ] ; then
                 LOG_FILENAME=$DATETIME_STAMP
             else
                 echo 'ERROR: LOG_FILENAME not set...'
@@ -271,14 +270,14 @@ function __SET_LOG { #
     echo LOG_FULLFILENAME: $LOG_FULLFILENAME
     # -------------------------------------------------------------------
     # LOG_OPT1 - Параметр журнала [1]
-    set LOG_OPT1=$LOG_OPT #:~0,1%
+    LOG_OPT1=${LOG_OPT:0:1} #:~0,1%
     if [ -z "$LOG_OPT1" ] ; then
         LOG_OPT1=1
     fi
     echo LOG_OPT1 [1]: $LOG_OPT1
     # -------------------------------------------------------------------
     # LOG_OPT2 - Параметры журнала [1]
-    set LOG_OPT2=$LOG_OPT #:~1,1%
+    LOG_OPT2=${LOG_OPT:1:1} #:~1,1%
     if [ -z "$LOG_OPT2" ] ; then
         LOG_OPT2=1
     fi
