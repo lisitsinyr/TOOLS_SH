@@ -53,9 +53,9 @@
 #     LOG_DT_FORMAT=
 # LOG_FILENAME_FORMAT - Формат имени файла журнала [FILENAME,DATETIME,...]
 #     LOG_FILENAME_FORMAT=
-# LOG_OPT - Параметры журнала [11]
-#     LOG_OPT=11
+# LOG_FILE_ADD - Параметры журнала [1]
 #     LOG_FILE_ADD=  
+# LOG_FILE_DT - Параметры журнала [0]
 #     LOG_FILE_DT=
 # LOG_DIR - Каталог журнала
 #     LOG_DIR=
@@ -261,17 +261,7 @@ function __SET_LOG { #
     echo LOG_FILENAME_FORMAT [FILENAME,DATETIME,...]: $LOG_FILENAME_FORMAT
 
     # -------------------------------------------------------------------
-    # LOG_OPT - Параметры журнала [11]
-    LOG_OPT_DEFAULT="10"
-    if [ -z $LOG_OPT ] ; then
-        LOG_OPT=$LOG_OPT_DEFAULT
-    fi
-    echo LOG_OPT [10]: $LOG_OPT
-
-    # -------------------------------------------------------------------
     # LOG_FILE_ADD - 1 добавлять к файлу, 0 - с начала файла
-    LOG_FILE_ADD=0
-    LOG_FILE_ADD=${LOG_OPT:0:1} #:~0,1%
     if [ -z "$LOG_FILE_ADD" ] ; then
         LOG_FILE_ADD=1
     fi
@@ -279,8 +269,6 @@ function __SET_LOG { #
 
     # -------------------------------------------------------------------
     # LOG_FILE_DT - 1 добавлять к имени файла префикс DATETIME_STAMP
-    LOG_FILE_DT=0
-    LOG_FILE_DT=${LOG_OPT:1:1} #:~1,1%
     if [ -z "$LOG_FILE_DT" ] ; then
         LOG_FILE_DT=0
     fi
