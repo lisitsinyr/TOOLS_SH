@@ -114,9 +114,9 @@ function MAIN { #
 #echo ================================================================== >> $LOG_FULLFILENAME
 # CURRENT_DIR - Текущий каталог
 CURRENT_DIR=$(pwd)
-#echo CURRENT_DIR: $CURRENT_DIR
+echo CURRENT_DIR: $CURRENT_DIR
 DIR_SAVE=$CURRENT_DIR
-#echo DIR_SAVE: $DIR_SAVE
+echo DIR_SAVE: $DIR_SAVE
 
 MAIN
 
@@ -124,7 +124,7 @@ MAIN
 #echo STOP $SCRIPT_BASEFILENAME ... >> $LOG_FULLFILENAME
 #echo ================================================================== >> $LOG_FULLFILENAME
 
-cd /D $DIR_SAVE
+cd $DIR_SAVE
 
 # -------------------------------------------------------------------
 # StopLogFile
@@ -156,4 +156,5 @@ cd /D $DIR_SAVE
 #=================================================
 
 exit 0
+
 #:Exit

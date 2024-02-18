@@ -262,11 +262,11 @@ function __SET_LOG { #
 
     # -------------------------------------------------------------------
     # LOG_OPT - Параметры журнала [11]
-    LOG_OPT_DEFAULT="11"
+    LOG_OPT_DEFAULT="10"
     if [ -z $LOG_OPT ] ; then
         LOG_OPT=$LOG_OPT_DEFAULT
     fi
-    echo LOG_OPT [11]: $LOG_OPT
+    echo LOG_OPT [10]: $LOG_OPT
 
     # -------------------------------------------------------------------
     # LOG_FILE_ADD - 1 добавлять к файлу, 0 - с начала файла
@@ -282,7 +282,7 @@ function __SET_LOG { #
     LOG_FILE_DT=0
     LOG_FILE_DT=${LOG_OPT:1:1} #:~1,1%
     if [ -z "$LOG_FILE_DT" ] ; then
-        LOG_FILE_DT=1
+        LOG_FILE_DT=0
     fi
     echo "LOG_FILE_DT=$LOG_FILE_DT"
 
@@ -311,8 +311,8 @@ function __SET_LOG { #
                 exit 1
             fi
         fi
-    else
     fi
+
     if [ "$LOG_FILENAME_FORMAT" = FILENAME ] ; then
         if [[ "$LOG_FILE_DT" -eq 1 ]] ; then
             LOG_FILENAME="$DATETIME_STAMP"_"$LOG_FILENAME"
