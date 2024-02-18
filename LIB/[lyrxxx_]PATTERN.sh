@@ -11,11 +11,14 @@ PROJECTS='PROJECTS_UNIX'
 SCRIPT_FULLFILENAME=$0
 # echo SCRIPT_FULLFILENAME: %SCRIPT_FULLFILENAME%
 # -------------------------------------------------------------------
-# PROJECTS_LYR_DIR -
-# PROJECTS_DIR -
-# SCRIPTS_DIR - Каталог скриптов
-# LIB_SH - 
-UNAME=$(uname -n)
+# PROJECTS_LYR_DIR - каталог проектов
+# -------------------------------------------------------------------
+# PROJECTS_DIR - каталог проекта
+# -------------------------------------------------------------------
+# SCRIPTS_DIR - каталог скриптов
+# -------------------------------------------------------------------
+# LIB_SH - каталог библиотеки скриптов
+# -------------------------------------------------------------------
 UNAME=$(uname -n)
 if [[ -z "$LIB_SH" ]] ; then
     case "$UNAME" in
@@ -23,15 +26,12 @@ if [[ -z "$LIB_SH" ]] ; then
             PROJECTS_LYR_DIR='/d/PROJECTS_LYR'
             SCRIPTS_DIR='/d/PROJECTS_LYR/CHECK_LIST/01_OS/03_UNIX/PROJECTS_UNIX/TOOLS_SH'
             ;;
-
-
-
         'ASUS-U2204-VB' | 'ASUS-U2204-VM' | 'ASUS-U2310-VB' | 'ASUS-U2310-VB' | 'ASUS-U2310')
             PROJECTS_LYR_DIR='/home/lyr/PROJECTS_LYR'
             SCRIPTS_DIR='/home/lyr/PROJECTS_LYR/CHECK_LIST/01_OS/03_UNIX/PROJECTS_UNIX/TOOLS_SH'
             ;;
         *)
-            echo "Компьютер не определен...!"
+            echo "ERROR: Компьютер не определен...!"
             exit 1
             ;;
     esac
@@ -43,7 +43,7 @@ fi
 #echo SCRIPTS_DIR: $SCRIPTS_DIR
 #echo LIB_SH: $LIB_SH
 if [[ ! -d "$LIB_SH" ]] ; then
-    echo Каталог библиотеки LYR $LIB_SH не существует...
+    echo ERROR: Каталог библиотеки LYR $LIB_SH не существует...
     exit 1
 fi
 # -------------------------------------------------------------------
@@ -79,6 +79,7 @@ LOG_DIR=
 # -------------------------------------------------------------------
 # LOG_FILENAME - Файл журнала [имя]
 LOG_FILENAME=
+
 __SET_LOG
 
 #--------------------------------------------------------------------------------

@@ -49,16 +49,18 @@
 #     REPO_INI=REPO.ini
 # -------------------------------------------------------------------
 # __SET_LOG
-# LOG_DIR - Каталог журнала
-#     LOG_DIR=
-# LOG_BASEFILENAME - Файл журнала [имя+расширение]
-#     LOG_BASEFILENAME=
-# LOG_FILENAME - Файл журнала [имя]
-#     LOG_FILENAME=
-# LOG_FILENAME_FORMAT - Формат имени файла журнала [FILENAME,DT,...]
+# LOG_DT_FORMAT -
+#     LOG_DT_FORMAT=
+# LOG_FILENAME_FORMAT - Формат имени файла журнала [FILENAME,DATETIME,...]
 #     LOG_FILENAME_FORMAT=
 # LOG_OPT - Параметры журнала [11]
 #     LOG_OPT=11
+#     LOG_FILE_ADD=  
+#     LOG_FILE_DT=
+# LOG_DIR - Каталог журнала
+#     LOG_DIR=
+# LOG_FILENAME - Файл журнала [имя]
+#     LOG_FILENAME=
 # LOG_STR -
 #     LOG_STR=
 # -------------------------------------------------------------------
@@ -267,40 +269,22 @@ function __SET_LOG { #
     echo LOG_OPT [11]: $LOG_OPT
 
     # -------------------------------------------------------------------
-    # LOG_OPT1 - Параметр журнала [1]
-    LOG_OPT1=${LOG_OPT:0:1} #:~0,1%
-    if [ -z "$LOG_OPT1" ] ; then
-        LOG_OPT1=1
-    fi
-    #echo LOG_OPT1 [1]: $LOG_OPT1
-
-    # -------------------------------------------------------------------
-    # LOG_FILE_ADD -
+    # LOG_FILE_ADD - 1 добавлять к файлу, 0 - с начала файла
     LOG_FILE_ADD=0
-    if [[ "$LOG_OPT1" -eq '1' ]] ; then
+    LOG_FILE_ADD=${LOG_OPT:0:1} #:~0,1%
+    if [ -z "$LOG_FILE_ADD" ] ; then
         LOG_FILE_ADD=1
-    else
-        LOG_FILE_ADD=0
     fi
-    #echo "LOG_FILE_ADD=$LOG_FILE_ADD"
+    echo "LOG_FILE_ADD=$LOG_FILE_ADD"
 
     # -------------------------------------------------------------------
-    # LOG_OPT2 - Параметры журнала [1]
-    LOG_OPT2=${LOG_OPT:1:1} #:~1,1%
-    if [ -z "$LOG_OPT2" ] ; then
-        LOG_OPT2=1
-    fi
-    echo LOG_OPT2 [1]: $LOG_OPT2
-
-    # -------------------------------------------------------------------
-    # LOG_FILE_DT - Параметры журнала [1]
+    # LOG_FILE_DT - 1 добавлять к имени файла префикс DATETIME_STAMP
     LOG_FILE_DT=0
-    if [[ "$LOG_OPT2" -eq '1' ]] ; then
+    LOG_FILE_DT=${LOG_OPT:1:1} #:~1,1%
+    if [ -z "$LOG_FILE_DT" ] ; then
         LOG_FILE_DT=1
-    else
-        LOG_FILE_DT=0
     fi
-    #echo "LOG_FILE_DT=$LOG_FILE_DT"
+    echo "LOG_FILE_DT=$LOG_FILE_DT"
 
     # -------------------------------------------------------------------
     # LOG_DIR - Каталог журнала [каталог]
@@ -317,16 +301,9 @@ function __SET_LOG { #
     # -------------------------------------------------------------------
     # LOG_FILENAME - Файл журнала [имя]
     if [ -z "$LOG_FILENAME" ] ; then
-
         if [ "$LOG_FILENAME_FORMAT" = FILENAME ] ; then
             LOG_FILENAME=$SCRIPT_FILENAME
         else
-            if [[ "$LOG_FILE_DT" -eq 1 ]] ; then
-                LOG_FILENAME=$DATETIME_STAMP
-            else
-                LOG_FILENAME=$DATETIME_STAMP
-            fi
-
             if [ "$LOG_FILENAME_FORMAT" = DATETIME ] ; then
                 LOG_FILENAME=$DATETIME_STAMP
             else
@@ -335,10 +312,10 @@ function __SET_LOG { #
             fi
         fi
     else
+    fi
+    if [ "$LOG_FILENAME_FORMAT" = FILENAME ] ; then
         if [[ "$LOG_FILE_DT" -eq 1 ]] ; then
             LOG_FILENAME="$DATETIME_STAMP"_"$LOG_FILENAME"
-        else
-            LOG_FILENAME=$SCRIPT_FILENAME
         fi
     fi
     echo LOG_FILENAME: $LOG_FILENAME

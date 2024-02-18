@@ -228,10 +228,6 @@ function AddLogFile { # Aout: int, AFileName: str
 function StartLogFile { # (AFileName: str):
 #beginfunction
     # echo 'StartLogFile...'
-    
-
-
-    
     #------------------------------------------------------
     # Открытие файла журнала
     #------------------------------------------------------
