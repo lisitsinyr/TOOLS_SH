@@ -19,7 +19,7 @@
 function LYRSupport { #
 #beginfunction
     echo LYRSupport
-    #exit 0
+    return 0
 }
 #endfunction
 
@@ -27,9 +27,9 @@ function Check_P {
 #echo ---------------------------------------------------------------
 #echo Check_P [P_Name,P_Value]
 #echo ---------------------------------------------------------------
-    P_Name=%1
+    P_Name=$1
     echo P_Name: $P_Name
-    P_Value=%2
+    P_Value=$2
     echo P_Value: $P_Value
 
 #if $P_Value%=="" (
@@ -43,7 +43,7 @@ function Check_P {
 #) else (
 #    set %P_Name%=%Input%
 #)
-    #exit 0
+    return 0
 }
 #endfunction
 

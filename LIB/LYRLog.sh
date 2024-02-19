@@ -107,10 +107,58 @@ ctlsTEXT=''
 # AddLog $loAll $TEXT '--------------------------------------'
 #-------------------------------------------------
 
+# --------------------------------------------------------------------------------
+# :SHORTLevel Alevel:
+# --------------------------------------------------------------------------------
+function SHORTLevel { # Alevel:
+# beginfunction
+    # echo ---------------------------------------------------------------
+    # echo SHORTLevel ...
+    # echo ---------------------------------------------------------------
+    SHORTLevel=SHORTLevel
+    # echo SHORTLevel: $SHORTLevel
+
+    Llevel=$1
+    # echo Llevel: %Llevel%
+    SHORTLevelName=
+    if [ "$Llevel" = "$INFO" ] ; then
+        SHORTLevelName=$ctlsINFO
+    fi
+    if [ "$Llevel" = "$WARNING" ] ; then
+        SHORTLevelName=$ctlsWARNING
+    fi
+    if [ "$Llevel" = "$ERROR" ] ; then
+        SHORTLevelName=$ctlsERROR
+    fi
+    if [ "$Llevel" = "CRITICAL" ] ; then
+        SHORTLevelName=$ctlsCRITICAL
+    fi
+    if [ "$Llevel" = "$DEBUG" ] ; then
+        SHORTLevelName=$ctlsDEBUG
+    fi
+    if [ "$Llevel" = "$TEXT" ] ; then
+        SHORTLevelName=$ctlsTEXT
+    fi
+    if [ "$Llevel" = "$DEBUGTEXT" ] ; then
+        SHORTLevelName=$ctlsDEBUGTEXT
+    fi
+    if [ "$Llevel" = "$BEGIN" ] ; then
+        SHORTLevelName=$ctlsBEGIN
+    fi
+    if [ "$Llevel" = "$END" ] ; then
+        SHORTLevelName=$ctlsEND
+    fi
+    if [ "$Llevel" = "$PROCESS" ] ; then
+        SHORTLevelName=$ctlsPROCESS
+    fi
+    return 0
+}
+# endfunction
+
 #--------------------------------------------------------------------------------
 # FormatStr
 #--------------------------------------------------------------------------------
-function FormatStr { # Alevel: s1: s1: s1: s1: s1: s1:
+function FormatStr { # Alevel: s1: s2: s3: s4: s5: s6:
 #beginfunction
     # echo 'FormatStr...'
 
@@ -120,46 +168,49 @@ function FormatStr { # Alevel: s1: s1: s1: s1: s1: s1:
     Llevel=$1
     Lmessage="$2 $3 $4 $5 $6 $7 $8 $9"
     printf -v asctime '%(%Y/%m/%d %H:%M:%S)T' -1
+
+    SHORTLevel $Llevel
+
     case "$Llevel" in
     $NOTSET)
         Linfo='NOTSET'
-        printf -v LOG_STR "%-s %-10s %-s" "$asctime" "$Linfo" "$Lmessage"
+        printf -v LOG_STR "%-s %-s %-s" "$asctime" "$SHORTLevelName" "$Lmessage"
         ;;
     $DEBUG)
         Linfo='DEBUG'
-        printf -v LOG_STR "%-s %-10s %-s" "$asctime" "$Linfo" "$Lmessage"
+        printf -v LOG_STR "%-s %-s %-s" "$asctime" "$SHORTLevelName" "$Lmessage"
         ;;
     $INFO)
         Linfo='INFO'
-        printf -v LOG_STR "%-s %-10s %-s" "$asctime" "$Linfo" "$Lmessage"
+        printf -v LOG_STR "%-s %-s %-s" "$asctime" "$SHORTLevelName" "$Lmessage"
         ;;
     $WARNING)
         Linfo='WARNING'
-        printf -v LOG_STR "%-s %-10s %-s" "$asctime" "$Linfo" "$Lmessage"
+        printf -v LOG_STR "%-s %-s %-s" "$asctime" "$SHORTLevelName" "$Lmessage"
         ;;
     $ERROR)
         Linfo='ERROR'
-        printf -v LOG_STR "%-s %-10s %-s" "$asctime" "$Linfo" "$Lmessage"
+        printf -v LOG_STR "%-s %-s %-s" "$asctime" "$SHORTLevelName" "$Lmessage"
         ;;
     $CRITICAL)
         Linfo='CRITICAL'
-        printf -v LOG_STR "%-s %2d %-10s %-s" "$asctime" "$Linfo" "$Lmessage"
+        printf -v LOG_STR "%-s %-s %-s" "$asctime" "$SHORTLevelName" "$Lmessage"
         ;;
     $DEBUGTEXT)
         Linfo='DEBUGTEXT'
-        printf -v LOG_STR "%-s" "$Lmessage"
+        printf -v LOG_STR "%-s %-s" "$SHORTLevelName" "$Lmessage"
         ;;
     $BEGIN)
         Linfo='BEGIN'
-        printf -v LOG_STR "%-s" "$Lmessage"
+        printf -v LOG_STR "%-s %-s %-s" "$asctime" "$SHORTLevelName" "$Lmessage"
         ;;
     $END)
         Linfo='END'
-        printf -v LOG_STR "%-s" "$Lmessage"
+        printf -v LOG_STR "%-s %-s %-s" "$asctime" "$SHORTLevelName" "$Lmessage"
         ;;
     $PROCESS)
         Linfo='PROCESS'
-        printf -v LOG_STR "%-s" "$Lmessage"
+        printf -v LOG_STR "%-s %-s %-s" "$asctime" "$SHORTLevelName" "$Lmessage"
         ;;
     $TEXT)
         Linfo='TEXT'
@@ -169,6 +220,7 @@ function FormatStr { # Alevel: s1: s1: s1: s1: s1: s1:
         Linfo=''
         ;;
     esac
+    return 0
 }
 #endfunction
 
@@ -198,6 +250,7 @@ function AddLog { # Aout: int, Alevel: int, Value: str
     else
         echo 'ERROR' $Lout
     fi
+    return 0
 }
 #endfunction
 
@@ -228,6 +281,7 @@ function AddLogFile { # Aout: int, AFileName: str
     else
         AddLog $Lout $ERROR "$LFileName"
     fi
+    return 0
 }
 #endfunction
 
@@ -259,6 +313,7 @@ function StartLogFile { #
     AddLog $loAll $INFO Старт: $SCRIPT_BASEFILENAME
     AddLog $loAll $TEXT $S01
     # -------------------------------------------------------------------
+    return 0
 }
 #endfunction
 
@@ -277,6 +332,7 @@ function StopLogFile { # ():
     AddLog $loAll $TEXT $S01
     # -------------------------------------------------------------------
     exec 3>&-
+    return 0
 }
 #endfunction
 

@@ -258,28 +258,28 @@ function __SET_LOG { #
         LOG_FILENAME_FORMAT=FILENAME
         #LOG_FILENAME_FORMAT=DATETIME
     fi
-    echo LOG_FILENAME_FORMAT [FILENAME,DATETIME,...]: $LOG_FILENAME_FORMAT
+    #echo LOG_FILENAME_FORMAT [FILENAME,DATETIME,...]: $LOG_FILENAME_FORMAT
 
     # -------------------------------------------------------------------
     # LOG_FILE_ADD - 1 добавлять к файлу, 0 - с начала файла
     if [ -z "$LOG_FILE_ADD" ] ; then
         LOG_FILE_ADD=1
     fi
-    echo "LOG_FILE_ADD=$LOG_FILE_ADD"
+    #echo "LOG_FILE_ADD=$LOG_FILE_ADD"
 
     # -------------------------------------------------------------------
     # LOG_FILE_DT - 1 добавлять к имени файла префикс DATETIME_STAMP
     if [ -z "$LOG_FILE_DT" ] ; then
         LOG_FILE_DT=0
     fi
-    echo "LOG_FILE_DT=$LOG_FILE_DT"
+    #echo "LOG_FILE_DT=$LOG_FILE_DT"
 
     # -------------------------------------------------------------------
     # LOG_DIR - Каталог журнала [каталог]
     if [ -z "$LOG_DIR" ] ; then
         LOG_DIR="$PROJECTS_LYR_DIR/LOGS"
     fi
-    echo LOG_DIR: $LOG_DIR
+    #echo LOG_DIR: $LOG_DIR
     if [[ ! -d "$LOG_DIR" ]] ; then
         echo 'ERROR: Dir '"$LOG_DIR"' not exist...'
         echo 'ERROR: Каталог '"$LOG_DIR"' не существует...'
@@ -306,7 +306,7 @@ function __SET_LOG { #
             LOG_FILENAME="$DATETIME_STAMP"_"$LOG_FILENAME"
         fi
     fi
-    echo LOG_FILENAME: $LOG_FILENAME
+    #echo LOG_FILENAME: $LOG_FILENAME
 
     # -------------------------------------------------------------------
     # LOG_FULLFILENAME - Файл журнала [каталог+имя+расширение]
@@ -315,7 +315,7 @@ function __SET_LOG { #
     else
         LOG_FULLFILENAME="$LOG_DIR"/"$REPO_NAME"_"$LOG_FILENAME.log"
     fi
-    echo LOG_FULLFILENAME: $LOG_FULLFILENAME
+    #echo LOG_FULLFILENAME: $LOG_FULLFILENAME
 
     return 0
 }

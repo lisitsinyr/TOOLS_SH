@@ -9,6 +9,7 @@
 function LYRConst { #
 #beginfunction
     echo LYRConst
+    return 0
 }
 #endfunction
 

@@ -19,6 +19,7 @@
 function YYYYMMDDHHMMSS { #
 #beginfunction
     printf "%(%Y%m%d%H%M%S)T"
+    return 0
 }
 #endfunction
 
@@ -29,6 +30,7 @@ function DateTime { # format: str
 #beginfunction
     FORMAT="$1"
     printf "%($FORMAT)T"
+    return 0
 }
 #endfunction
 
