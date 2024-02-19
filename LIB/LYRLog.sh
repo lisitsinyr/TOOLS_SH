@@ -54,6 +54,7 @@
 
 # --------------------------------
 FORMAT='%Y-%m-%d %H:%M:%S %N'
+S01=------------------------------------------------------
 # --------------------------------
 loStandard=0
 loTextFile=1
@@ -109,39 +110,40 @@ ctlsTEXT=''
 #--------------------------------------------------------------------------------
 # FormatStr
 #--------------------------------------------------------------------------------
-function FormatStr { # Anamesh: str, Alevel: int, Amessage: str
+function FormatStr { # Alevel: s1: s1: s1: s1: s1: s1:
 #beginfunction
     # echo 'FormatStr...'
-    Lnamesh=$1
-    Llevel=$2
-    Lmessage=$3
 
+    #------------------------------------------------------
+    #
+    #------------------------------------------------------
+    Llevel=$1
+    Lmessage="$2 $3 $4 $5 $6 $7 $8 $9"
     printf -v asctime '%(%Y/%m/%d %H:%M:%S)T' -1
-
     case "$Llevel" in
     $NOTSET)
         Linfo='NOTSET'
-        printf -v LOG_STR "%-s [%-15s] %2d %-10s %-s" "$asctime" "$Lnamesh" "$Llevel" "$Linfo" "$Lmessage"
+        printf -v LOG_STR "%-s %-10s %-s" "$asctime" "$Linfo" "$Lmessage"
         ;;
     $DEBUG)
         Linfo='DEBUG'
-        printf -v LOG_STR "%-s [%-15s] %2d %-10s %-s" "$asctime" "$Lnamesh" "$Llevel" "$Linfo" "$Lmessage"
+        printf -v LOG_STR "%-s %-10s %-s" "$asctime" "$Linfo" "$Lmessage"
         ;;
     $INFO)
         Linfo='INFO'
-        printf -v LOG_STR "%-s [%-15s] %2d %-10s %-s" "$asctime" "$Lnamesh" "$Llevel" "$Linfo" "$Lmessage"
+        printf -v LOG_STR "%-s %-10s %-s" "$asctime" "$Linfo" "$Lmessage"
         ;;
     $WARNING)
         Linfo='WARNING'
-        printf -v LOG_STR "%-s [%-15s] %2d %-10s %-s" "$asctime" "$Lnamesh" "$Llevel" "$Linfo" "$Lmessage"
+        printf -v LOG_STR "%-s %-10s %-s" "$asctime" "$Linfo" "$Lmessage"
         ;;
     $ERROR)
         Linfo='ERROR'
-        printf -v LOG_STR "%-s [%-15s] %2d %-10s %-s" "$asctime" "$Lnamesh" "$Llevel" "$Linfo" "$Lmessage"
+        printf -v LOG_STR "%-s %-10s %-s" "$asctime" "$Linfo" "$Lmessage"
         ;;
     $CRITICAL)
         Linfo='CRITICAL'
-        printf -v LOG_STR "%-s [%-15s] %2d %-10s %-s" "$asctime" "$Lnamesh" "$Llevel" "$Linfo" "$Lmessage"
+        printf -v LOG_STR "%-s %2d %-10s %-s" "$asctime" "$Linfo" "$Lmessage"
         ;;
     $DEBUGTEXT)
         Linfo='DEBUGTEXT'
@@ -167,7 +169,6 @@ function FormatStr { # Anamesh: str, Alevel: int, Amessage: str
         Linfo=''
         ;;
     esac
-
 }
 #endfunction
 
@@ -177,19 +178,23 @@ function FormatStr { # Anamesh: str, Alevel: int, Amessage: str
 function AddLog { # Aout: int, Alevel: int, Value: str
 #beginfunction
     # echo 'AddLog...'
+
+    #------------------------------------------------------
+    #
+    #------------------------------------------------------
     Lout=$1
     Llevel=$2
-    LValue=$3
-    FormatStr "$LOG_SHFILENAME" "$Llevel" "$LValue"
+    FormatStr "$Llevel" $3 $4 $5 $6 $7 $8 $9
     if [ $Lout -eq 0 ] ; then
         echo "$LOG_STR"
     elif [ $Lout -eq 1 ] ; then
         # echo "$LOG_STR" >&3
-        echo "$LOG_STR" >> "$LOG_FILE"
+        echo "$LOG_STR" >> "$LOG_FULLFILENAME"
     elif [ $Lout -eq 2 ] ; then
-        # echo "$LOG_STR"
+        echo "$LOG_STR"
+        echo "$LOG_STR" >> "$LOG_FULLFILENAME"
         # echo "$LOG_STR" >&3
-        echo "$LOG_STR" | tee -a "$LOG_FILE"
+        # echo "$LOG_STR" | tee -a "$LOG_FULLFILENAME"
     else
         echo 'ERROR' $Lout
     fi
@@ -202,6 +207,10 @@ function AddLog { # Aout: int, Alevel: int, Value: str
 function AddLogFile { # Aout: int, AFileName: str
 #beginfunction
     # echo 'AddLogFile...'
+
+    #------------------------------------------------------
+    #
+    #------------------------------------------------------
     Lout=$1
     LFileName="$2"
     if [ -r "$LFileName" ] ; then
@@ -217,7 +226,7 @@ function AddLogFile { # Aout: int, AFileName: str
         done 9< "$LFileName"
         exec 9>&-
     else
-        echo 'ERROR' "$LFileName"
+        AddLog $Lout $ERROR "$LFileName"
     fi
 }
 #endfunction
@@ -225,24 +234,30 @@ function AddLogFile { # Aout: int, AFileName: str
 #--------------------------------------------------------------------------------
 # StartLogFile (AFileName: str):
 #--------------------------------------------------------------------------------
-function StartLogFile { # (AFileName: str):
+function StartLogFile { #
 #beginfunction
     # echo 'StartLogFile...'
+
     #------------------------------------------------------
     # Открытие файла журнала
     #------------------------------------------------------
     if [[ "$LOG_FILE_ADD" -eq 1 ]] ; then
-        LFileName="$LOG_FILE"
+        LFileName="$LOG_FULLFILENAME"
         if [ -r "$LFileName" ] ; then
-            # echo "$LFileName"
+            #echo "LFileName: $LFileName"
             rm "$LFileName"
         fi
         touch "$LFileName"
+    else
+        if [ ! -r "$LFileName" ] ; then
+            touch "$LFileName"
+        fi
     fi
-    exec 3>>"$LFileName"
-
+    #exec 3>>"$LFileName"
     # -------------------------------------------------------------------
-    AddLog $loAll $INFO "Старт: $(date +"$FORMAT")"
+    AddLog $loAll $TEXT $S01
+    AddLog $loAll $INFO Старт: $SCRIPT_BASEFILENAME
+    AddLog $loAll $TEXT $S01
     # -------------------------------------------------------------------
 }
 #endfunction
@@ -253,8 +268,13 @@ function StartLogFile { # (AFileName: str):
 function StopLogFile { # ():
 #beginfunction
     # echo 'StopLogFile...'
-    # -------------------------------------------------------------------
-    AddLog $loAll $INFO "Стоп: $(date +"$FORMAT")"
+
+    #------------------------------------------------------
+    #
+    #------------------------------------------------------
+    AddLog $loAll $TEXT $S01
+    AddLog $loAll $INFO Стоп: $SCRIPT_BASEFILENAME
+    AddLog $loAll $TEXT $S01
     # -------------------------------------------------------------------
     exec 3>&-
 }

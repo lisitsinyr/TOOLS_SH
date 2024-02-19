@@ -82,7 +82,6 @@ LOG_DIR=
 # -------------------------------------------------------------------
 # LOG_FILENAME - Файл журнала [имя]
 LOG_FILENAME=
-
 __SET_LOG
 
 #--------------------------------------------------------------------------------
@@ -106,58 +105,20 @@ function MAIN { #
 }
 #endfunction
 
-# -------------------------------------------------------------------
-# StartLogFile
-# -------------------------------------------------------------------
-# StartLogFile "$0" "" ""
-# -------------------------------------------------------------------
-
-#echo ================================================================= >> $LOG_FULLFILENAME
-#echo START $SCRIPT_BASEFILENAME ... >> $LOG_FULLFILENAME
-#echo ================================================================== >> $LOG_FULLFILENAME
-# CURRENT_DIR - Текущий каталог
-CURRENT_DIR=$(pwd)
-echo CURRENT_DIR: $CURRENT_DIR
+#--------------------------------------------------------------------------------
+#
+#--------------------------------------------------------------------------------
 DIR_SAVE=$CURRENT_DIR
-echo DIR_SAVE: $DIR_SAVE
+
+StartLogFile
 
 MAIN
 
-#echo ================================================================= >> $LOG_FULLFILENAME
-#echo STOP $SCRIPT_BASEFILENAME ... >> $LOG_FULLFILENAME
-#echo ================================================================== >> $LOG_FULLFILENAME
+StopLogFile
 
+# Выход из сценария. Дальше - только функции.
 cd $DIR_SAVE
 
-# -------------------------------------------------------------------
-# StopLogFile
-# -------------------------------------------------------------------
-# StopLogFile
-# -------------------------------------------------------------------
-
-#=================================================
-# AddLog $loAll $NOTSET 'NOTSET'
-# AddLog $loAll $DEBUG 'DEBUG'
-# AddLog $loAll $INFO 'INFO'
-# AddLog $loAll $WARNING 'WARNING'
-# AddLog $loAll $ERROR 'ERROR'
-# AddLog $loAll $CRITICAL 'CRITICAL'
-# AddLog $loAll $DEBUGTEXT 'DEBUGTEXT'
-# AddLog $loAll $BEGIN 'BEGIN'
-# AddLog $loAll $END 'END'
-# AddLog $loAll $PROCESS 'PROCESS'
-# AddLog $loAll $TEXT 'TEXT'
-#=================================================
-#=================================================
-# AddLog $loAll $TEXT '--------------------------------------'
-# str=''
-# str=""
-# result=$('')
-# AddLog $loAll $TEXT 'str:'"$str"
-# AddLog $loAll $TEXT 'result:'"$result"
-# AddLog $loAll $TEXT '--------------------------------------'
-#=================================================
+#:Exit
 
 exit 0
-
-#:Exit
