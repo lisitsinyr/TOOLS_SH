@@ -23,7 +23,7 @@ function LYRSupport { #
 }
 #endfunction
 
-function Check_P {
+function Check_P { # P_Name,P_Value
 #echo ---------------------------------------------------------------
 #echo Check_P [P_Name,P_Value]
 #echo ---------------------------------------------------------------
@@ -32,17 +32,20 @@ function Check_P {
     P_Value=$2
     echo P_Value: $P_Value
 
-#if $P_Value%=="" (
-#    set /p Input=%P_Name%[!%P_Name%!]:
-#) else (
-#    set %P_Name%=%P_Value%
-#    exit 0
-#)
-#if "%Input%"=="" (
-#    set %P_Name%=!%P_Name%!
-#) else (
-#    set %P_Name%=%Input%
-#)
+    if [ -z $P_Value ] ; then
+        Input=
+        echo ${P_Name}[${!P_Name}]:
+        read Input
+    else
+        eval ${P_Name}=$P_Value
+        return 0
+    fi
+    echo Input: $Input
+    if [ -z $Input ] ; then
+        eval ${P_Name}=${!P_Name}
+    else
+        eval ${P_Name}=$Input
+    fi
     return 0
 }
 #endfunction
