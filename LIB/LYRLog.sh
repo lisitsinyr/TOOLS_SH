@@ -108,9 +108,9 @@ ctlsTEXT=''
 #-------------------------------------------------
 
 # --------------------------------------------------------------------------------
-# :SHORTLevel Alevel:
+# procedure SHORTLevel Alevel $2 $3 $4 $5 $6 $7 $8 $9
 # --------------------------------------------------------------------------------
-function SHORTLevel { # Alevel:
+function SHORTLevel {
 # beginfunction
     # echo ---------------------------------------------------------------
     # echo SHORTLevel ...
@@ -156,9 +156,9 @@ function SHORTLevel { # Alevel:
 # endfunction
 
 #--------------------------------------------------------------------------------
-# FormatStr
+# procedure FormatStr Alevel $2 $3 $4 $5 $6 $7 $8 $9
 #--------------------------------------------------------------------------------
-function FormatStr { # Alevel: s1: s2: s3: s4: s5: s6:
+function FormatStr {
 #beginfunction
     # echo 'FormatStr...'
 
@@ -225,9 +225,9 @@ function FormatStr { # Alevel: s1: s2: s3: s4: s5: s6:
 #endfunction
 
 #--------------------------------------------------
-#
+# procedure AddLog Aout Alevel $3 $4 $5 $6 $7 $8 $9
 #--------------------------------------------------
-function AddLog { # Aout: int, Alevel: int, Value: str
+function AddLog { # 
 #beginfunction
     # echo 'AddLog...'
 
@@ -255,9 +255,9 @@ function AddLog { # Aout: int, Alevel: int, Value: str
 #endfunction
 
 #--------------------------------------------------
-#
+# procedure AddLogFile Aout AFileName
 #--------------------------------------------------
-function AddLogFile { # Aout: int, AFileName: str
+function AddLogFile {
 #beginfunction
     # echo 'AddLogFile...'
 
@@ -286,9 +286,9 @@ function AddLogFile { # Aout: int, AFileName: str
 #endfunction
 
 #--------------------------------------------------------------------------------
-# StartLogFile (AFileName: str):
+# procedure StartLogFile
 #--------------------------------------------------------------------------------
-function StartLogFile { #
+function StartLogFile {
 #beginfunction
     # echo 'StartLogFile...'
 
@@ -318,12 +318,11 @@ function StartLogFile { #
 #endfunction
 
 #--------------------------------------------------------------------------------
-# StopLogFile ():
+# procedure StopLogFile
 #--------------------------------------------------------------------------------
-function StopLogFile { # ():
+function StopLogFile {
 #beginfunction
     # echo 'StopLogFile...'
-
     #------------------------------------------------------
     #
     #------------------------------------------------------
@@ -332,6 +331,7 @@ function StopLogFile { # ():
     AddLog $loAll $TEXT $S01
     # -------------------------------------------------------------------
     exec 3>&-
+
     return 0
 }
 #endfunction

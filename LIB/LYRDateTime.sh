@@ -14,22 +14,24 @@
 # echo '    ***'
 
 #--------------------------------------------------------------------------------
-# 
+# function YYYYMMDDHHMMSS
 #--------------------------------------------------------------------------------
-function YYYYMMDDHHMMSS { #
+function YYYYMMDDHHMMSS {
 #beginfunction
     printf "%(%Y%m%d%H%M%S)T"
+
     return 0
 }
 #endfunction
 
 #--------------------------------------------------------------------------------
-# 
+# function DateTime format
 #--------------------------------------------------------------------------------
-function DateTime { # format: str
+function DateTime {
 #beginfunction
     FORMAT="$1"
     printf "%($FORMAT)T"
+
     return 0
 }
 #endfunction

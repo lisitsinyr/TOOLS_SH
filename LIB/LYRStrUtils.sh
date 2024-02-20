@@ -14,11 +14,12 @@
 # echo '    ***'
 
 #--------------------------------------------------------------------------------
-# 
+# procedure LYRStrUtils
 #--------------------------------------------------------------------------------
-function LYRStrUtils { #
+function LYRStrUtils {
 #beginfunction
     echo LYRStrUtils
+
     return 0
 }
 #endfunction

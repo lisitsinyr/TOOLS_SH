@@ -14,19 +14,21 @@
 # echo '    ***'
 
 #--------------------------------------------------------------------------------
-# 
+# procedure LYRSupport
 #--------------------------------------------------------------------------------
-function LYRSupport { #
+function LYRSupport {
 #beginfunction
     echo LYRSupport
+
     return 0
 }
 #endfunction
 
-function Check_P { # P_Name,P_Value
-#echo ---------------------------------------------------------------
-#echo Check_P [P_Name,P_Value]
-#echo ---------------------------------------------------------------
+#--------------------------------------------------------------------------------
+# procedure Check_P P_Name P_Value
+#--------------------------------------------------------------------------------
+function Check_P {
+#beginfunction
     P_Name=$1
     echo P_Name: $P_Name
     P_Value=$2
@@ -46,6 +48,7 @@ function Check_P { # P_Name,P_Value
     else
         eval ${P_Name}=$Input
     fi
+
     return 0
 }
 #endfunction
