@@ -50,9 +50,9 @@ fi
 # запуск скриптов БИБЛИОТЕКИ LYR
 # -------------------------------------------------------------------
 source "$LIB_SH/__SET_LIB.sh"
-source "$LIB_SH/LYRFileUtils.sh"
 source "$LIB_SH/LYRLog.sh"
 source "$LIB_SH/LYRConst.sh"
+source "$LIB_SH/LYRFileUtils.sh"
 source "$LIB_SH/LYRDateTime.sh"
 source "$LIB_SH/LYRSupport.sh"
 #====================================================================

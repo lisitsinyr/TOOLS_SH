@@ -254,7 +254,7 @@ function __SET_LOG { #
     # -------------------------------------------------------------------
     # LOG_FILENAME_FORMAT - Формат имени файла журнала [FILENAME,DATETIME,...]
     # set LOG_FILENAME_FORMAT=
-    if [ -z $LOG_FILENAME_FORMAT ] ; then
+    if [ -z "$LOG_FILENAME_FORMAT" ] ; then
         LOG_FILENAME_FORMAT=FILENAME
         #LOG_FILENAME_FORMAT=DATETIME
     fi
@@ -291,9 +291,11 @@ function __SET_LOG { #
     if [ -z "$LOG_FILENAME" ] ; then
         if [ "$LOG_FILENAME_FORMAT" = FILENAME ] ; then
             LOG_FILENAME=$SCRIPT_FILENAME
+            #echo LOG_FILENAME FILENAME: $LOG_FILENAME
         else
             if [ "$LOG_FILENAME_FORMAT" = DATETIME ] ; then
                 LOG_FILENAME=$DATETIME_STAMP
+                #echo LOG_FILENAME DATETIME: $LOG_FILENAME
             else
                 echo 'ERROR: LOG_FILENAME not set...'
                 exit 1
