@@ -14,9 +14,9 @@
 # echo '    ***'
 
 #--------------------------------------------------------------------------------
-# procedure LYRStrUtils
+# procedure LYRStrUtils ()
 #--------------------------------------------------------------------------------
-function LYRStrUtils {
+function LYRStrUtils () {
 #beginfunction
     echo LYRStrUtils
 

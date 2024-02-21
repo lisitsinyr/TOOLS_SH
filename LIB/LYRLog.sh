@@ -108,9 +108,9 @@ ctlsTEXT=''
 #-------------------------------------------------
 
 # --------------------------------------------------------------------------------
-# procedure SHORTLevel Alevel $2 $3 $4 $5 $6 $7 $8 $9
+# procedure SHORTLevel (Alevel $2 $3 $4 $5 $6 $7 $8 $9)
 # --------------------------------------------------------------------------------
-function SHORTLevel {
+function SHORTLevel () {
 # beginfunction
     # echo ---------------------------------------------------------------
     # echo SHORTLevel ...
@@ -156,9 +156,9 @@ function SHORTLevel {
 # endfunction
 
 #--------------------------------------------------------------------------------
-# procedure FormatStr Alevel $2 $3 $4 $5 $6 $7 $8 $9
+# procedure FormatStr (Alevel $2 $3 $4 $5 $6 $7 $8 $9)
 #--------------------------------------------------------------------------------
-function FormatStr {
+function FormatStr () {
 #beginfunction
     # echo 'FormatStr...'
 
@@ -225,9 +225,9 @@ function FormatStr {
 #endfunction
 
 #--------------------------------------------------
-# procedure AddLog Aout Alevel $3 $4 $5 $6 $7 $8 $9
+# procedure AddLog (Aout Alevel $3 $4 $5 $6 $7 $8 $9)
 #--------------------------------------------------
-function AddLog { # 
+function AddLog () { 
 #beginfunction
     # echo 'AddLog...'
 
@@ -255,9 +255,9 @@ function AddLog { #
 #endfunction
 
 #--------------------------------------------------
-# procedure AddLogFile Aout AFileName
+# procedure AddLogFile (Aout AFileName)
 #--------------------------------------------------
-function AddLogFile {
+function AddLogFile () {
 #beginfunction
     # echo 'AddLogFile...'
 
@@ -286,9 +286,9 @@ function AddLogFile {
 #endfunction
 
 #--------------------------------------------------------------------------------
-# procedure StartLogFile
+# procedure StartLogFile ()
 #--------------------------------------------------------------------------------
-function StartLogFile {
+function StartLogFile () {
 #beginfunction
     # echo 'StartLogFile...'
 
@@ -318,9 +318,9 @@ function StartLogFile {
 #endfunction
 
 #--------------------------------------------------------------------------------
-# procedure StopLogFile
+# procedure StopLogFile ()
 #--------------------------------------------------------------------------------
-function StopLogFile {
+function StopLogFile () {
 #beginfunction
     # echo 'StopLogFile...'
     #------------------------------------------------------

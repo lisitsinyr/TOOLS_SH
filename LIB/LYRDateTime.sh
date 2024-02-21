@@ -14,9 +14,9 @@
 # echo '    ***'
 
 #--------------------------------------------------------------------------------
-# function YYYYMMDDHHMMSS
+# function YYYYMMDDHHMMSS ()
 #--------------------------------------------------------------------------------
-function YYYYMMDDHHMMSS {
+function YYYYMMDDHHMMSS () {
 #beginfunction
     printf "%(%Y%m%d%H%M%S)T"
 
@@ -25,9 +25,9 @@ function YYYYMMDDHHMMSS {
 #endfunction
 
 #--------------------------------------------------------------------------------
-# function DateTime format
+# function DateTime (FORMAT)
 #--------------------------------------------------------------------------------
-function DateTime {
+function DateTime () {
 #beginfunction
     FORMAT="$1"
     printf "%($FORMAT)T"

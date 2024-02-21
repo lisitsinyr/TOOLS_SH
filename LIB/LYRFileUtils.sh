@@ -14,21 +14,22 @@
 # echo '    ***'
 
 #--------------------------------------------------------------------------------
-# function ExtractFileDir APath
+# function ExtractFileDir (APath)
 #--------------------------------------------------------------------------------
 function ExtractFileDir () {
 #beginfunction
     local LResult=
+    LError=0
     LPath=$1
     # fspec=/path/to/some/file.txt
     # echo ${fspec%/*}
     # fspec=/path/to/some/
-
-    LError=0
+    LResult=${LPath%/*}
     if [ -z "$LResult" ] ; then
         LError=1
     else
         echo $LResult               # работает всегда
+        #printf $LResult
     fi
     return $(( $LError ))
     #echo $(( $LResult ))       # работает, если LResult 0..255
@@ -38,18 +39,17 @@ function ExtractFileDir () {
 #endfunction
 
 #--------------------------------------------------------------------------------
-# function ExtractFileName APath
+# function ExtractFileName (APath)
 #--------------------------------------------------------------------------------
 function ExtractFileName () {
 #beginfunction
     local LResult=
+    LError=0
     LPath=$1
     # fspec=/path/to/some/file.txt
     # echo ${fspec##*/}
     # file.txt
     LResult=${LPath##*/}
-
-    LError=0
     if [ -z "$LResult" ] ; then
         LError=1
     else
@@ -61,15 +61,14 @@ function ExtractFileName () {
 
 
 #-------------------------------------------------------------------------------
-# function ExtractFileNameWithoutExt AFileName
+# function ExtractFileNameWithoutExt (AFileName)
 #-------------------------------------------------------------------------------
 function ExtractFileNameWithoutExt () {
 #beginfunction
     local LResult=
+    LError=0
     LFileName=$1
     LResult=${LFileName%%.*}
-    
-    LError=0
     if [ -z "$LResult" ] ; then
         LError=1
     else
@@ -80,15 +79,14 @@ function ExtractFileNameWithoutExt () {
 #endfunction
 
 #--------------------------------------------------------------------------------
-# function ExtractFileExt AFileName
+# function ExtractFileExt (AFileName)
 #--------------------------------------------------------------------------------
 function ExtractFileExt () {
 #beginfunction
     local LResult=
+    LError=0
     LFileName=$1
     LResult=${LFileName#*.}
-
-    LError=0
     if [ -z "$LResult" ] ; then
         LError=1
     else

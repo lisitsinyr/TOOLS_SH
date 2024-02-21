@@ -80,9 +80,9 @@
 # =================================================
 
 # --------------------------------------------------------------------------------
-# function __SET_VAR_SCRIPT [%1]
+# procedure __SET_VAR_SCRIPT (FULLFILENAME)
 # --------------------------------------------------------------------------------
-function __SET_VAR_SCRIPT { # %1
+function __SET_VAR_SCRIPT () {
 # beginfunction
     # echo ---------------------------------------------------------------
     # echo __SET_VAR_SCRIPT ...
@@ -106,7 +106,7 @@ function __SET_VAR_SCRIPT { # %1
     # -------------------------------------------------------------------
     # Файл скрипта: каталог
     SCRIPT_FILEDIR=$(ExtractFileDir "$SCRIPT_FULLFILENAME")
-    #echo SCRIPT_FILEDIR: $SCRIPT_FILEDIR
+    echo SCRIPT_FILEDIR: $SCRIPT_FILEDIR
 
     # -------------------------------------------------------------------
     # Файл скрипта: расширение
@@ -118,9 +118,9 @@ function __SET_VAR_SCRIPT { # %1
 # endfunction
 
 # --------------------------------------------------------------------------------
-# function __SET_VAR_DEFAULT
+# procedure __SET_VAR_DEFAULT ()
 # --------------------------------------------------------------------------------
-function __SET_VAR_DEFAULT { #
+function __SET_VAR_DEFAULT () {
 # beginfunction
     # echo ---------------------------------------------------------------
     # echo __SET_VAR_DEFAULT
@@ -139,19 +139,14 @@ function __SET_VAR_DEFAULT { #
     DATETIME_STAMP=$(printf "%(%Y%m%d%H%M%S)T")
     #echo DATETIME_STAMP [YYYYMMDDHHMMSS]: $DATETIME_STAMP
 
-    #------------------------------------------------------
-    # LOG_STR
-    #------------------------------------------------------
-    LOG_STR=""
-
     return 0
 }
 # endfunction
 
 # --------------------------------------------------------------------------------
-# function __SET_VAR_PROJECTS
+# procedure __SET_VAR_PROJECTS ()
 # --------------------------------------------------------------------------------
-function __SET_VAR_PROJECTS { #
+function __SET_VAR_PROJECTS () {
 # beginfunction
     # echo ---------------------------------------------------------------
     # echo __SET_VAR_PROJECTS
@@ -197,9 +192,9 @@ function __SET_VAR_PROJECTS { #
 # endfunction
 
 # --------------------------------------------------------------------------------
-# function __SET_CHECK_REPO { #
+# procedure __SET_CHECK_REPO ()
 # --------------------------------------------------------------------------------
-function __SET_CHECK_REPO { #
+function __SET_CHECK_REPO () {
 # beginfunction
     # echo ---------------------------------------------------------------
     # echo __SET_CHECK_REPO
@@ -234,9 +229,9 @@ function __SET_CHECK_REPO { #
 # endfunction
 
 # --------------------------------------------------------------------------------
-# function __SET_LOG
+# procedure __SET_LOG ()
 # --------------------------------------------------------------------------------
-function __SET_LOG { #
+function __SET_LOG () {
 # beginfunction
     #echo ---------------------------------------------------------------
     #echo __SET_LOG
@@ -318,6 +313,11 @@ function __SET_LOG { #
         LOG_FULLFILENAME="$LOG_DIR"/"$REPO_NAME"_"$LOG_FILENAME.log"
     fi
     #echo LOG_FULLFILENAME: $LOG_FULLFILENAME
+
+    #------------------------------------------------------
+    # LOG_STR
+    #------------------------------------------------------
+    LOG_STR=""
 
     return 0
 }

@@ -14,9 +14,9 @@
 # echo '    ***'
 
 #--------------------------------------------------------------------------------
-# procedure LYRSupport
+# procedure LYRSupport ()
 #--------------------------------------------------------------------------------
-function LYRSupport {
+function LYRSupport () {
 #beginfunction
     echo LYRSupport
 
@@ -25,9 +25,9 @@ function LYRSupport {
 #endfunction
 
 #--------------------------------------------------------------------------------
-# procedure Check_P P_Name P_Value
+# procedure Check_P (P_Name P_Value)
 #--------------------------------------------------------------------------------
-function Check_P {
+function Check_P () {
 #beginfunction
     P_Name=$1
     echo P_Name: $P_Name

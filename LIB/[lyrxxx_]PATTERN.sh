@@ -50,9 +50,9 @@ fi
 # запуск скриптов БИБЛИОТЕКИ LYR
 # -------------------------------------------------------------------
 source "$LIB_SH/__SET_LIB.sh"
+source "$LIB_SH/LYRFileUtils.sh"
 source "$LIB_SH/LYRLog.sh"
 source "$LIB_SH/LYRConst.sh"
-source "$LIB_SH/LYRFileUtils.sh"
 source "$LIB_SH/LYRDateTime.sh"
 source "$LIB_SH/LYRSupport.sh"
 #====================================================================
@@ -100,23 +100,19 @@ function MAIN_01 () { #
 #--------------------------------------------------------------------------------
 # MAIN
 #--------------------------------------------------------------------------------
-function MAIN { #
+function MAIN () { #
 #beginfunction
     echo MAIN, hello!
+
     MAIN_01 P1 P2
 
     P1=P1_default
     # Check_P P1 $1
     Check_P P1 TEST
-
-    # call :AddLog %loStandard% %TEXT% "P1: %P1%" || exit /b 1
-    # call :AddLog %loTextFile% %TEXT% "P1: %P1%" || exit /b 1
     AddLog $loAll $TEXT P1: $P1
     AddLog $loAll $INFO P1: $P1
-
     # F=LYRLog.txt
     # AddLogFile $loAll $F
-
     return 0
 }
 #endfunction
