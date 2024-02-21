@@ -57,8 +57,9 @@ source "$LIB_SH/LYRDateTime.sh"
 source "$LIB_SH/LYRSupport.sh"
 #====================================================================
 
-#====================================================================
-echo SET $SCRIPT_FULLFILENAME ...
+echo -------------------------------------------
+echo SET ...
+echo -------------------------------------------
 __SET_VAR_DEFAULT 0
 __SET_VAR_SCRIPT $SCRIPT_FULLFILENAME
 __SET_VAR_PROJECTS
@@ -86,6 +87,22 @@ __SET_LOG
 #--------------------------------------------------------------------------------
 # procedure MAIN_SYNTAX ()
 #--------------------------------------------------------------------------------
+function MAIN_CHECK_PARAMETR () {
+#beginfunction
+    echo 'procedure MAIN_CHECK_PARAMETR ...' >$(tty)
+
+    P1=P1_default
+    Check_P P1 $1
+    AddLog $loAll $TEXT P1: $P1
+    AddLog $loAll $INFO P1: $P1
+
+    return 0
+}
+#endfunction
+
+#--------------------------------------------------------------------------------
+# procedure MAIN_SYNTAX ()
+#--------------------------------------------------------------------------------
 function MAIN_SYNTAX () {
 #beginfunction
     echo 'procedure MAIN_SYNTAX ...' >$(tty)
@@ -101,14 +118,6 @@ function MAIN () { #
 #beginfunction
     echo 'procedure MAIN ...' >$(tty)
 
-    P1=P1_default
-    # Check_P P1 $1
-    Check_P P1 TEST
-    AddLog $loAll $TEXT P1: $P1
-    AddLog $loAll $INFO P1: $P1
-    # F=LYRLog.txt
-    # AddLogFile $loAll $F
-
     return 0
 }
 #endfunction
@@ -118,6 +127,7 @@ function MAIN () { #
 #--------------------------------------------------------------------------------
 DIR_SAVE=$CURRENT_DIR
 StartLogFile
+MAIN_CHECK_PARAMETR
 MAIN_SYNTAX
 MAIN
 StopLogFile
