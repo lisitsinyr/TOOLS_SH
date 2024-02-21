@@ -80,16 +80,17 @@
 # =================================================
 
 # --------------------------------------------------------------------------------
-# procedure __SET_VAR_DEFAULT ()
+# procedure __SET_VAR_DEFAULT (DEBUG)
 # --------------------------------------------------------------------------------
 function __SET_VAR_DEFAULT () {
 # beginfunction
-    echo __SET_VAR_SCRIPT ... >$(tty)
-
     # -------------------------------------------------------------------
     # DEBUG 1-включить DEBUG 0-выключить DEBUG
-    DEBUG=0
-    #echo DEBUG: $DEBUG
+    DEBUG=$1
+    echo DEBUG: $DEBUG
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: __SET_VAR_SCRIPT ... >$(tty)
+    fi
 
     # -------------------------------------------------------------------
     # LOG_DT_FORMAT_DEFAULT -

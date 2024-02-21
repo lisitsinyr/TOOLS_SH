@@ -57,11 +57,9 @@ source "$LIB_SH/LYRDateTime.sh"
 source "$LIB_SH/LYRSupport.sh"
 #====================================================================
 
-echo ==================================================================
+#====================================================================
 echo SET $SCRIPT_FULLFILENAME ...
-echo ==================================================================
-__SET_VAR_DEFAULT
-DEBUG=1
+__SET_VAR_DEFAULT 0
 __SET_VAR_SCRIPT $SCRIPT_FULLFILENAME
 __SET_VAR_PROJECTS
 __SET_CHECK_REPO
