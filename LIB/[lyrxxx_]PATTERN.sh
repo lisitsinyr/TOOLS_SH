@@ -87,8 +87,11 @@ __SET_LOG
 #--------------------------------------------------------------------------------
 # MAIN_01
 #--------------------------------------------------------------------------------
-function MAIN_01 { #
+function MAIN_01 () { #
 #beginfunction
+    # n=$0
+    echo $*
+    echo $1
     echo MAIN_01, hello!
     return 0
 }
@@ -100,7 +103,7 @@ function MAIN_01 { #
 function MAIN { #
 #beginfunction
     echo MAIN, hello!
-    MAIN_01
+    MAIN_01 P1 P2
 
     P1=P1_default
     # Check_P P1 $1

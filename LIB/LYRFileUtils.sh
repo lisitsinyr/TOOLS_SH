@@ -16,7 +16,7 @@
 #--------------------------------------------------------------------------------
 # function ExtractFileDir APath
 #--------------------------------------------------------------------------------
-function ExtractFileDir {
+function ExtractFileDir () {
 #beginfunction
     local LResult=
     LPath=$1
@@ -24,21 +24,23 @@ function ExtractFileDir {
     # echo ${fspec%/*}
     # fspec=/path/to/some/
 
-    LResult=${LPath%/*}
-
+    LError=0
+    if [ -z "$LResult" ] ; then
+        LError=1
+    else
+        echo $LResult               # работает всегда
+    fi
+    return $(( $LError ))
     #echo $(( $LResult ))       # работает, если LResult 0..255
     #return $(( $LResult ))     # работает, если LResult 0..255
     #return $LResult            # работает, если LResult 0..255
-    echo $LResult               # работает всегда
-
-    return 0
 }
 #endfunction
 
 #--------------------------------------------------------------------------------
 # function ExtractFileName APath
 #--------------------------------------------------------------------------------
-function ExtractFileName {
+function ExtractFileName () {
 #beginfunction
     local LResult=
     LPath=$1
@@ -47,12 +49,13 @@ function ExtractFileName {
     # file.txt
     LResult=${LPath##*/}
 
-    #echo $(( $LResult ))       # работает, если LResult 0..255
-    #return $(( $LResult ))     # работает, если LResult 0..255
-    #return $LResult            # работает, если LResult 0..255
-    echo $LResult               # работает всегда
-
-    return 0
+    LError=0
+    if [ -z "$LResult" ] ; then
+        LError=1
+    else
+        echo $LResult               # работает всегда
+    fi
+    return $(( $LError ))
 }
 #endfunction
 
@@ -60,36 +63,38 @@ function ExtractFileName {
 #-------------------------------------------------------------------------------
 # function ExtractFileNameWithoutExt AFileName
 #-------------------------------------------------------------------------------
-function ExtractFileNameWithoutExt {
+function ExtractFileNameWithoutExt () {
 #beginfunction
     local LResult=
     LFileName=$1
     LResult=${LFileName%%.*}
     
-    #echo $(( $LResult ))       # работает, если LResult 0..255
-    #return $(( $LResult ))     # работает, если LResult 0..255
-    #return $LResult            # работает, если LResult 0..255
-    echo $LResult               # работает всегда
-
-    return 0
+    LError=0
+    if [ -z "$LResult" ] ; then
+        LError=1
+    else
+        echo $LResult               # работает всегда
+    fi
+    return $(( $LError ))
 }
 #endfunction
 
 #--------------------------------------------------------------------------------
 # function ExtractFileExt AFileName
 #--------------------------------------------------------------------------------
-function ExtractFileExt {
+function ExtractFileExt () {
 #beginfunction
     local LResult=
     LFileName=$1
     LResult=${LFileName#*.}
 
-    #echo $(( $LResult ))       # работает, если LResult 0..255
-    #return $(( $LResult ))     # работает, если LResult 0..255
-    #return $LResult            # работает, если LResult 0..255
-    echo $LResult               # работает всегда
-
-    return 0
+    LError=0
+    if [ -z "$LResult" ] ; then
+        LError=1
+    else
+        echo $LResult               # работает всегда
+    fi
+    return $(( $LError ))
 }
 #endfunction
 
