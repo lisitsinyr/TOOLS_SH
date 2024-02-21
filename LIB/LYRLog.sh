@@ -251,12 +251,12 @@ function AddLog () {
     Llevel=$2
     FormatStr "$Llevel" $3 $4 $5 $6 $7 $8 $9
     if [ $Lout -eq 0 ] ; then
-        echo "$LOG_STR"
+        echo "$LOG_STR" >$(tty)
     elif [ $Lout -eq 1 ] ; then
         # echo "$LOG_STR" >&3
         echo "$LOG_STR" >> "$LOG_FULLFILENAME"
     elif [ $Lout -eq 2 ] ; then
-        echo "$LOG_STR"
+        echo "$LOG_STR" >$(tty)
         echo "$LOG_STR" >> "$LOG_FULLFILENAME"
         # echo "$LOG_STR" >&3
         # echo "$LOG_STR" | tee -a "$LOG_FULLFILENAME"
