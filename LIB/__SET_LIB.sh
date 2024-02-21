@@ -80,54 +80,16 @@
 # =================================================
 
 # --------------------------------------------------------------------------------
-# procedure __SET_VAR_SCRIPT (FULLFILENAME)
-# --------------------------------------------------------------------------------
-function __SET_VAR_SCRIPT () {
-# beginfunction
-    # echo ---------------------------------------------------------------
-    # echo __SET_VAR_SCRIPT ...
-    # echo ---------------------------------------------------------------
-
-    # -------------------------------------------------------------------
-    # Файл скрипта: каталог+имя+расширение
-    SCRIPT_FULLFILENAME="$1"
-    #echo SCRIPT_FULLFILENAME: $SCRIPT_FULLFILENAME
-
-    # -------------------------------------------------------------------
-    # Файл скрипта: имя+расширение
-    SCRIPT_BASEFILENAME=$(ExtractFileName "$SCRIPT_FULLFILENAME")
-    #echo SCRIPT_BASEFILENAME: $SCRIPT_BASEFILENAME
-    
-    # -------------------------------------------------------------------
-    # Файл скрипта: имя
-    SCRIPT_FILENAME=$(ExtractFileNameWithoutExt "$SCRIPT_BASEFILENAME")
-    #echo SCRIPT_FILENAME: $SCRIPT_FILENAME
-    
-    # -------------------------------------------------------------------
-    # Файл скрипта: каталог
-    SCRIPT_FILEDIR=$(ExtractFileDir "$SCRIPT_FULLFILENAME")
-    echo SCRIPT_FILEDIR: $SCRIPT_FILEDIR
-
-    # -------------------------------------------------------------------
-    # Файл скрипта: расширение
-    SCRIPT_FILEEXT=$(ExtractFileExt "$SCRIPT_BASEFILENAME")
-    #echo SCRIPT_FILEEXT: $SCRIPT_FILEEXT
-
-    return 0
-}
-# endfunction
-
-# --------------------------------------------------------------------------------
 # procedure __SET_VAR_DEFAULT ()
 # --------------------------------------------------------------------------------
 function __SET_VAR_DEFAULT () {
 # beginfunction
-    # echo ---------------------------------------------------------------
-    # echo __SET_VAR_DEFAULT
-    # echo ---------------------------------------------------------------
+    echo __SET_VAR_SCRIPT ... >$(tty)
+
     # -------------------------------------------------------------------
     # DEBUG 1-включить DEBUG 0-выключить DEBUG
     DEBUG=0
+    #echo DEBUG: $DEBUG
 
     # -------------------------------------------------------------------
     # LOG_DT_FORMAT_DEFAULT -
@@ -147,13 +109,51 @@ function __SET_VAR_DEFAULT () {
 # endfunction
 
 # --------------------------------------------------------------------------------
+# procedure __SET_VAR_SCRIPT (FULLFILENAME)
+# --------------------------------------------------------------------------------
+function __SET_VAR_SCRIPT () {
+# beginfunction
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: __SET_VAR_SCRIPT ... >$(tty)
+    fi
+
+    # -------------------------------------------------------------------
+    # Файл скрипта: каталог+имя+расширение
+    SCRIPT_FULLFILENAME="$1"
+    #echo SCRIPT_FULLFILENAME: $SCRIPT_FULLFILENAME
+
+    # -------------------------------------------------------------------
+    # Файл скрипта: имя+расширение
+    SCRIPT_BASEFILENAME=$(ExtractFileName "$SCRIPT_FULLFILENAME")
+    #echo SCRIPT_BASEFILENAME: $SCRIPT_BASEFILENAME
+    
+    # -------------------------------------------------------------------
+    # Файл скрипта: имя
+    SCRIPT_FILENAME=$(ExtractFileNameWithoutExt "$SCRIPT_BASEFILENAME")
+    #echo SCRIPT_FILENAME: $SCRIPT_FILENAME
+    
+    # -------------------------------------------------------------------
+    # Файл скрипта: каталог
+    SCRIPT_FILEDIR=$(ExtractFileDir "$SCRIPT_FULLFILENAME")
+    # echo SCRIPT_FILEDIR: $SCRIPT_FILEDIR
+
+    # -------------------------------------------------------------------
+    # Файл скрипта: расширение
+    SCRIPT_FILEEXT=$(ExtractFileExt "$SCRIPT_BASEFILENAME")
+    #echo SCRIPT_FILEEXT: $SCRIPT_FILEEXT
+
+    return 0
+}
+# endfunction
+
+# --------------------------------------------------------------------------------
 # procedure __SET_VAR_PROJECTS ()
 # --------------------------------------------------------------------------------
 function __SET_VAR_PROJECTS () {
 # beginfunction
-    # echo ---------------------------------------------------------------
-    # echo __SET_VAR_PROJECTS
-    # echo ---------------------------------------------------------------
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: __SET_VAR_PROJECTS ... >$(tty)
+    fi
 
     # -------------------------------------------------------------------
     # PROJECTS - проект
@@ -199,9 +199,9 @@ function __SET_VAR_PROJECTS () {
 # --------------------------------------------------------------------------------
 function __SET_CHECK_REPO () {
 # beginfunction
-    # echo ---------------------------------------------------------------
-    # echo __SET_CHECK_REPO
-    # echo ---------------------------------------------------------------
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: __SET_CHECK_REPO ... >$(tty)
+    fi
 
     # -------------------------------------------------------------------
     # REPO_NAME - Имя репозитария
@@ -211,7 +211,7 @@ function __SET_CHECK_REPO () {
     # -------------------------------------------------------------------
     # REPO_INI - Файл с параметрами репозитария
     REPO_INI='REPO.ini'
-    echo REPO_INI [REPO.ini]: $REPO_INI
+    #echo REPO_INI [REPO.ini]: $REPO_INI
     # -------------------------------------------------------------------
     # Проверка существования файла REPO.ini
     #if not exist %REPO_INI% (
@@ -225,7 +225,7 @@ function __SET_CHECK_REPO () {
     #        # echo %%i: %%%j%
     #    )
     #)
-    echo REPO_NAME: $REPO_NAME
+    #echo REPO_NAME: $REPO_NAME
 
     return 0
 }
@@ -236,9 +236,9 @@ function __SET_CHECK_REPO () {
 # --------------------------------------------------------------------------------
 function __SET_LOG () {
 # beginfunction
-    #echo ---------------------------------------------------------------
-    #echo __SET_LOG
-    #echo ---------------------------------------------------------------
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: __SET_LOG ... >$(tty)
+    fi
 
     #if "%__SET_LOG__%"=="1" (echo __SET_LOG__: %__SET_LOG__% && exit /b 0) else (set __SET_LOG__=1)
 

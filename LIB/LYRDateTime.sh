@@ -19,7 +19,7 @@
 function LYRDateTime () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo LYRDateTime ... >$(tty)
+        echo DEBUG: LYRDateTime ... >$(tty)
     fi
 
     return 0

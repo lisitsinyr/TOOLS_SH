@@ -19,7 +19,7 @@
 function LYRFileUtils () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo LYRFileUtils ... >$(tty)
+        echo DEBUG: LYRFileUtils ... >$(tty)
     fi
 
     return 0
@@ -32,7 +32,7 @@ function LYRFileUtils () {
 function ExtractFileDir () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo ExtractFileDir ... >$(tty)
+        echo DEBUG: ExtractFileDir ... >$(tty)
     fi
 
     local LResult=

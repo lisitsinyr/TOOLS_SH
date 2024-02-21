@@ -19,7 +19,7 @@
 function LYRSupport () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo LYRSupport ... >$(tty)
+        echo DEBUG: LYRSupport ... >$(tty)
     fi
 
     return 0

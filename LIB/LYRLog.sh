@@ -113,7 +113,7 @@ ctlsTEXT=''
 function LYRLog () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo LYRLog ... >$(tty)
+        echo DEBUG: LYRLog ... >$(tty)
     fi
 
     return 0
