@@ -88,17 +88,18 @@ __SET_LOG
 #--------------------------------------------------------------------------------
 function MAIN_SYNTAX () {
 #beginfunction
-    echo MAIN_SYNTAX... >$(tty)
+    echo 'procedure MAIN_SYNTAX ...' >$(tty)
+
     return 0
 }
 #endfunction
 
 #--------------------------------------------------------------------------------
-# MAIN
+# procedure MAIN ()
 #--------------------------------------------------------------------------------
 function MAIN () { #
 #beginfunction
-    echo MAIN... >$(tty)
+    echo 'procedure MAIN ...' >$(tty)
 
     P1=P1_default
     # Check_P P1 $1
