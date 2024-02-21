@@ -60,8 +60,9 @@ source "$LIB_SH/LYRSupport.sh"
 echo ==================================================================
 echo SET $SCRIPT_FULLFILENAME ...
 echo ==================================================================
-__SET_VAR_SCRIPT $SCRIPT_FULLFILENAME
 __SET_VAR_DEFAULT
+DEBUG=1
+__SET_VAR_SCRIPT $SCRIPT_FULLFILENAME
 __SET_VAR_PROJECTS
 __SET_CHECK_REPO
 # -------------------------------------------------------------------
@@ -85,14 +86,11 @@ LOG_FILENAME=
 __SET_LOG
 
 #--------------------------------------------------------------------------------
-# MAIN_01
+# procedure MAIN_SYNTAX ()
 #--------------------------------------------------------------------------------
-function MAIN_01 () { #
+function MAIN_SYNTAX () {
 #beginfunction
-    # n=$0
-    echo $*
-    echo $1
-    echo MAIN_01, hello!
+    echo MAIN_SYNTAX... >$(tty)
     return 0
 }
 #endfunction
@@ -102,9 +100,7 @@ function MAIN_01 () { #
 #--------------------------------------------------------------------------------
 function MAIN () { #
 #beginfunction
-    echo MAIN, hello!
-
-    MAIN_01 P1 P2
+    echo MAIN... >$(tty)
 
     P1=P1_default
     # Check_P P1 $1
@@ -113,6 +109,7 @@ function MAIN () { #
     AddLog $loAll $INFO P1: $P1
     # F=LYRLog.txt
     # AddLogFile $loAll $F
+
     return 0
 }
 #endfunction
@@ -122,6 +119,7 @@ function MAIN () { #
 #--------------------------------------------------------------------------------
 DIR_SAVE=$CURRENT_DIR
 StartLogFile
+MAIN_SYNTAX
 MAIN
 StopLogFile
 

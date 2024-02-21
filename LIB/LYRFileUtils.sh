@@ -14,10 +14,27 @@
 # echo '    ***'
 
 #--------------------------------------------------------------------------------
+# procedure LYRFileUtils ()
+#--------------------------------------------------------------------------------
+function LYRFileUtils () {
+#beginfunction
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo LYRFileUtils ... >$(tty)
+    fi
+
+    return 0
+}
+#endfunction
+
+#--------------------------------------------------------------------------------
 # function ExtractFileDir (APath)
 #--------------------------------------------------------------------------------
 function ExtractFileDir () {
 #beginfunction
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo ExtractFileDir ... >$(tty)
+    fi
+
     local LResult=
     LError=0
     LPath=$1

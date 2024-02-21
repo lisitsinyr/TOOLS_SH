@@ -8,7 +8,9 @@
 #--------------------------------------------------------------------------------
 function LYRConst () {
 #beginfunction
-    echo LYRConst
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo LYRConst ... >$(tty)
+    fi
 
     return 0
 }
