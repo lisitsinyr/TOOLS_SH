@@ -9,7 +9,7 @@
 function LYRConst () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: LYRConst ... >$(tty)
+        echo DEBUG: $FUNCNAME ... >$(tty)
     fi
 
     return 0

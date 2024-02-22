@@ -19,7 +19,7 @@
 function LYRSupport () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: LYRSupport ... >$(tty)
+        echo DEBUG: $FUNCNAME ... >$(tty)
     fi
 
     return 0
@@ -31,6 +31,10 @@ function LYRSupport () {
 #--------------------------------------------------------------------------------
 function Check_P () {
 #beginfunction
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: $FUNCNAME ... >$(tty)
+    fi
+
     P_Name=$1
     echo P_Name: $P_Name
     P_Value=$2

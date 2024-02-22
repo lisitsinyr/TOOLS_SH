@@ -19,7 +19,7 @@
 function LYRStrUtils () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: LYRStrUtils ... >$(tty)
+        echo DEBUG: $FUNCNAME ... >$(tty)
     fi
 
     return 0

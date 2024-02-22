@@ -84,12 +84,8 @@
 # --------------------------------------------------------------------------------
 function __SET_VAR_DEFAULT () {
 # beginfunction
-    # -------------------------------------------------------------------
-    # DEBUG 1-включить DEBUG 0-выключить DEBUG
-    DEBUG=$1
-    echo DEBUG: $DEBUG
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: __SET_VAR_DEFAULT ... >$(tty)
+        echo DEBUG: $FUNCNAME ... >$(tty)
     fi
 
     # -------------------------------------------------------------------
@@ -115,7 +111,7 @@ function __SET_VAR_DEFAULT () {
 function __SET_VAR_SCRIPT () {
 # beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: __SET_VAR_SCRIPT ... >$(tty)
+        echo DEBUG: $FUNCNAME ... >$(tty)
     fi
 
     # -------------------------------------------------------------------
@@ -153,7 +149,7 @@ function __SET_VAR_SCRIPT () {
 function __SET_VAR_PROJECTS () {
 # beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: __SET_VAR_PROJECTS ... >$(tty)
+        echo DEBUG: $FUNCNAME ... >$(tty)
     fi
 
     # -------------------------------------------------------------------
@@ -201,7 +197,7 @@ function __SET_VAR_PROJECTS () {
 function __SET_CHECK_REPO () {
 # beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: __SET_CHECK_REPO ... >$(tty)
+        echo DEBUG: $FUNCNAME ... >$(tty)
     fi
 
     # -------------------------------------------------------------------
@@ -238,7 +234,7 @@ function __SET_CHECK_REPO () {
 function __SET_LOG () {
 # beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: __SET_LOG ... >$(tty)
+        echo DEBUG: $FUNCNAME ... >$(tty)
     fi
 
     #if "%__SET_LOG__%"=="1" (echo __SET_LOG__: %__SET_LOG__% && exit /b 0) else (set __SET_LOG__=1)

@@ -113,7 +113,7 @@ ctlsTEXT=''
 function LYRLog () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: LYRLog ... >$(tty)
+        echo DEBUG: $FUNCNAME ... >$(tty)
     fi
 
     return 0
@@ -125,11 +125,9 @@ function LYRLog () {
 # --------------------------------------------------------------------------------
 function SHORTLevel () {
 # beginfunction
-    # echo ---------------------------------------------------------------
-    # echo SHORTLevel ...
-    # echo ---------------------------------------------------------------
-    SHORTLevel=SHORTLevel
-    # echo SHORTLevel: $SHORTLevel
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: $FUNCNAME ... >$(tty)
+    fi
 
     Llevel=$1
     # echo Llevel: %Llevel%
@@ -173,7 +171,9 @@ function SHORTLevel () {
 #--------------------------------------------------------------------------------
 function FormatStr () {
 #beginfunction
-    # echo 'FormatStr...'
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: $FUNCNAME ... >$(tty)
+    fi
 
     #------------------------------------------------------
     #
@@ -242,7 +242,9 @@ function FormatStr () {
 #--------------------------------------------------
 function AddLog () { 
 #beginfunction
-    # echo 'AddLog...'
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: $FUNCNAME ... >$(tty)
+    fi
 
     #------------------------------------------------------
     #
@@ -272,7 +274,9 @@ function AddLog () {
 #--------------------------------------------------
 function AddLogFile () {
 #beginfunction
-    # echo 'AddLogFile...'
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: $FUNCNAME ... >$(tty)
+    fi
 
     #------------------------------------------------------
     #
@@ -303,7 +307,9 @@ function AddLogFile () {
 #--------------------------------------------------------------------------------
 function StartLogFile () {
 #beginfunction
-    # echo 'StartLogFile...'
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: $FUNCNAME ... >$(tty)
+    fi
 
     #------------------------------------------------------
     # Открытие файла журнала
@@ -335,7 +341,10 @@ function StartLogFile () {
 #--------------------------------------------------------------------------------
 function StopLogFile () {
 #beginfunction
-    # echo 'StopLogFile...'
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: $FUNCNAME ... >$(tty)
+    fi
+
     #------------------------------------------------------
     #
     #------------------------------------------------------

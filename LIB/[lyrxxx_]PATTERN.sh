@@ -8,11 +8,13 @@
 # -----------------------------------------------
 function MAIN_INIT () {
 #beginfunction
-    echo 'procedure MAIN_INIT ...' >$(tty)
-
     # -------------------------------------------------------------------
     # DEBUG 1-включить DEBUG 0-выключить DEBUG
     DEBUG=$2
+    #echo DEBUG: $DEBUG
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: $FUNCNAME ... >$(tty)
+    fi
 
     # -------------------------------------------------------------------
     # PROJECTS - проект
@@ -74,7 +76,9 @@ function MAIN_INIT () {
 # -----------------------------------------------
 function MAIN_SET () {
 #beginfunction
-    echo 'procedure MAIN_SET ...' >$(tty)
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: $FUNCNAME ... >$(tty)
+    fi
 
     __SET_VAR_DEFAULT 0
     __SET_VAR_SCRIPT $SCRIPT_FULLFILENAME
@@ -107,7 +111,9 @@ function MAIN_SET () {
 #--------------------------------------------------------------------------------
 function MAIN_CHECK_PARAMETR () {
 #beginfunction
-    echo 'procedure MAIN_CHECK_PARAMETR ...' >$(tty)
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: $FUNCNAME ... >$(tty)
+    fi
 
     P1=P1_default
     #Check_P P1 $1
@@ -124,7 +130,9 @@ function MAIN_CHECK_PARAMETR () {
 #--------------------------------------------------------------------------------
 function MAIN_SYNTAX () {
 #beginfunction
-    echo 'procedure MAIN_SYNTAX ...' >$(tty)
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: $FUNCNAME ... >$(tty)
+    fi
 
     return 0
 }
@@ -135,7 +143,9 @@ function MAIN_SYNTAX () {
 #--------------------------------------------------------------------------------
 function MAIN () {
 #beginfunction
-    echo 'procedure MAIN ...' >$(tty)
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: $FUNCNAME ... >$(tty)
+    fi
 
     return 0
 }

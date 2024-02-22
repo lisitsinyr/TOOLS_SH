@@ -19,7 +19,7 @@
 function LYRFileUtils () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: LYRFileUtils ... >$(tty)
+        echo DEBUG: $FUNCNAME ... >$(tty)
     fi
 
     return 0
@@ -32,7 +32,7 @@ function LYRFileUtils () {
 function ExtractFileDir () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: ExtractFileDir ... >$(tty)
+        echo DEBUG: $FUNCNAME ... >$(tty)
     fi
 
     local LResult=
@@ -60,6 +60,9 @@ function ExtractFileDir () {
 #--------------------------------------------------------------------------------
 function ExtractFileName () {
 #beginfunction
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: $FUNCNAME ... >$(tty)
+    fi
     local LResult=
     LError=0
     LPath=$1
@@ -82,6 +85,9 @@ function ExtractFileName () {
 #-------------------------------------------------------------------------------
 function ExtractFileNameWithoutExt () {
 #beginfunction
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: $FUNCNAME ... >$(tty)
+    fi
     local LResult=
     LError=0
     LFileName=$1
@@ -100,6 +106,9 @@ function ExtractFileNameWithoutExt () {
 #--------------------------------------------------------------------------------
 function ExtractFileExt () {
 #beginfunction
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: $FUNCNAME ... >$(tty)
+    fi
     local LResult=
     LError=0
     LFileName=$1

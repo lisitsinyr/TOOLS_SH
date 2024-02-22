@@ -19,7 +19,7 @@
 function LYRDateTime () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: LYRDateTime ... >$(tty)
+        echo DEBUG: $FUNCNAME ... >$(tty)
     fi
 
     return 0
@@ -31,6 +31,10 @@ function LYRDateTime () {
 #--------------------------------------------------------------------------------
 function YYYYMMDDHHMMSS () {
 #beginfunction
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: $FUNCNAME ... >$(tty)
+    fi
+
     printf "%(%Y%m%d%H%M%S)T"
 
     return 0
@@ -42,6 +46,10 @@ function YYYYMMDDHHMMSS () {
 #--------------------------------------------------------------------------------
 function DateTime () {
 #beginfunction
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: $FUNCNAME ... >$(tty)
+    fi
+
     FORMAT="$1"
     printf "%($FORMAT)T"
 
