@@ -89,7 +89,7 @@ function __SET_VAR_DEFAULT () {
     DEBUG=$1
     echo DEBUG: $DEBUG
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: __SET_VAR_SCRIPT ... >$(tty)
+        echo DEBUG: __SET_VAR_DEFAULT ... >$(tty)
     fi
 
     # -------------------------------------------------------------------
