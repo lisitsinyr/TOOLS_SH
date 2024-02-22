@@ -16,7 +16,7 @@ function MAIN_INIT () {
     # -------------------------------------------------------------------
     # SCRIPT_FULLFILENAME - Файл скрипта [каталог+имя+расширение]
     SCRIPT_FULLFILENAME=$0
-    # echo SCRIPT_FULLFILENAME: %SCRIPT_FULLFILENAME%
+    # echo SCRIPT_FULLFILENAME: $SCRIPT_FULLFILENAME
     # -------------------------------------------------------------------
     # PROJECTS_LYR_DIR - каталог проектов
     # -------------------------------------------------------------------
@@ -129,7 +129,7 @@ function MAIN_SYNTAX () {
 #--------------------------------------------------------------------------------
 # procedure MAIN ()
 #--------------------------------------------------------------------------------
-function MAIN () { #
+function MAIN () {
 #beginfunction
     echo 'procedure MAIN ...' >$(tty)
 
