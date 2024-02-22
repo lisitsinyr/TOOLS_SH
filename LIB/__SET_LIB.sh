@@ -118,22 +118,18 @@ function __SET_VAR_SCRIPT () {
     # Файл скрипта: каталог+имя+расширение
     SCRIPT_FULLFILENAME="$1"
     #echo SCRIPT_FULLFILENAME: $SCRIPT_FULLFILENAME
-
     # -------------------------------------------------------------------
     # Файл скрипта: имя+расширение
     SCRIPT_BASEFILENAME=$(ExtractFileName "$SCRIPT_FULLFILENAME")
     #echo SCRIPT_BASEFILENAME: $SCRIPT_BASEFILENAME
-    
     # -------------------------------------------------------------------
     # Файл скрипта: имя
     SCRIPT_FILENAME=$(ExtractFileNameWithoutExt "$SCRIPT_BASEFILENAME")
     #echo SCRIPT_FILENAME: $SCRIPT_FILENAME
-    
     # -------------------------------------------------------------------
     # Файл скрипта: каталог
     SCRIPT_FILEDIR=$(ExtractFileDir "$SCRIPT_FULLFILENAME")
     # echo SCRIPT_FILEDIR: $SCRIPT_FILEDIR
-
     # -------------------------------------------------------------------
     # Файл скрипта: расширение
     SCRIPT_FILEEXT=$(ExtractFileExt "$SCRIPT_BASEFILENAME")
@@ -156,27 +152,22 @@ function __SET_VAR_PROJECTS () {
     # PROJECTS - проект
     #PROJECTS=
     #echo PROJECTS: $PROJECTS
-
     # -------------------------------------------------------------------
     # PROJECTS_LYR_DIR -
     #PROJECTS_LYR_DIR=
     #echo PROJECTS_LYR_DIR: $PROJECTS_LYR_DIR
-
     # -------------------------------------------------------------------
     # PROJECTS_DIR -
     #PROJECTS_DIR=
     #echo PROJECTS_DIR: $PROJECTS_DIR
-
     # -------------------------------------------------------------------
     # CURRENT_SYSTEM -
     CURRENT_SYSTEM=$(uname -a)
     #echo CURRENT_SYSTEM: $CURRENT_SYSTEM
-
     # -------------------------------------------------------------------
     # UNAME - COMPUTERNAME
     UNAME=$(uname -n)
     #echo UNAME: $UNAME
-
     # -------------------------------------------------------------------
     # USERNAME - USERNAME
     USERNAME=$(whoami)
@@ -204,7 +195,6 @@ function __SET_CHECK_REPO () {
     # REPO_NAME - Имя репозитария
     REPO_NAME=""
     #echo REPO_NAME: $REPO_NAME
-
     # -------------------------------------------------------------------
     # REPO_INI - Файл с параметрами репозитария
     REPO_INI='REPO.ini'
@@ -245,7 +235,6 @@ function __SET_LOG () {
         LOG_DT_FORMAT=$LOG_DT_FORMAT_DEFAULT
     fi
     # echo "LOG_DT_FORMAT=$LOG_DT_FORMAT"
-
     # -------------------------------------------------------------------
     # LOG_FILENAME_FORMAT - Формат имени файла журнала [FILENAME,DATETIME,...]
     # set LOG_FILENAME_FORMAT=
@@ -254,21 +243,18 @@ function __SET_LOG () {
         #LOG_FILENAME_FORMAT=DATETIME
     fi
     #echo LOG_FILENAME_FORMAT [FILENAME,DATETIME,...]: $LOG_FILENAME_FORMAT
-
     # -------------------------------------------------------------------
     # LOG_FILE_ADD - 1 добавлять к файлу, 0 - с начала файла
     if [ -z "$LOG_FILE_ADD" ] ; then
         LOG_FILE_ADD=1
     fi
     #echo "LOG_FILE_ADD=$LOG_FILE_ADD"
-
     # -------------------------------------------------------------------
     # LOG_FILE_DT - 1 добавлять к имени файла префикс DATETIME_STAMP
     if [ -z "$LOG_FILE_DT" ] ; then
         LOG_FILE_DT=0
     fi
     #echo "LOG_FILE_DT=$LOG_FILE_DT"
-
     # -------------------------------------------------------------------
     # LOG_DIR - Каталог журнала [каталог]
     if [ -z "$LOG_DIR" ] ; then
@@ -280,7 +266,6 @@ function __SET_LOG () {
         echo 'ERROR: Каталог '"$LOG_DIR"' не существует...'
         exit 1
     fi
-
     # -------------------------------------------------------------------
     # LOG_FILENAME - Файл журнала [имя]
     if [ -z "$LOG_FILENAME" ] ; then
@@ -297,14 +282,12 @@ function __SET_LOG () {
             fi
         fi
     fi
-
     if [ "$LOG_FILENAME_FORMAT" = FILENAME ] ; then
         if [[ "$LOG_FILE_DT" -eq 1 ]] ; then
             LOG_FILENAME="$DATETIME_STAMP"_"$LOG_FILENAME"
         fi
     fi
     #echo LOG_FILENAME: $LOG_FILENAME
-
     # -------------------------------------------------------------------
     # LOG_FULLFILENAME - Файл журнала [каталог+имя+расширение]
     if [ -z "$REPO_NAME" ] ; then

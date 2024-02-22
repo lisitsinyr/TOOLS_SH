@@ -80,7 +80,7 @@ function MAIN_SET () {
         echo DEBUG: $FUNCNAME ... >$(tty)
     fi
 
-    __SET_VAR_DEFAULT 0
+    __SET_VAR_DEFAULT $DEBUG
     __SET_VAR_SCRIPT $SCRIPT_FULLFILENAME
     __SET_VAR_PROJECTS
     __SET_CHECK_REPO
@@ -117,6 +117,7 @@ function MAIN_CHECK_PARAMETR () {
 
     P1=P1_default
     #Check_P P1 $1
+
     Check_P P1 TEST
     AddLog $loAll $TEXT P1: $P1
     AddLog $loAll $INFO P1: $P1

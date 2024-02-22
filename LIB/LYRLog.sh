@@ -181,9 +181,7 @@ function FormatStr () {
     Llevel=$1
     Lmessage="$2 $3 $4 $5 $6 $7 $8 $9"
     printf -v asctime '%(%Y/%m/%d %H:%M:%S)T' -1
-
     SHORTLevel $Llevel
-
     case "$Llevel" in
     $NOTSET)
         Linfo='NOTSET'
@@ -233,6 +231,7 @@ function FormatStr () {
         Linfo=''
         ;;
     esac
+
     return 0
 }
 #endfunction
@@ -265,6 +264,7 @@ function AddLog () {
     else
         echo 'ERROR' $Lout
     fi
+
     return 0
 }
 #endfunction
@@ -298,6 +298,7 @@ function AddLogFile () {
     else
         AddLog $Lout $ERROR "$LFileName"
     fi
+
     return 0
 }
 #endfunction
@@ -332,6 +333,7 @@ function StartLogFile () {
     AddLog $loAll $INFO Старт: $SCRIPT_BASEFILENAME
     AddLog $loAll $TEXT $S01
     # -------------------------------------------------------------------
+
     return 0
 }
 #endfunction

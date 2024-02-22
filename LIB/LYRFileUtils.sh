@@ -48,6 +48,7 @@ function ExtractFileDir () {
         echo $LResult               # работает всегда
         #printf $LResult
     fi
+
     return $(( $LError ))
     #echo $(( $LResult ))       # работает, если LResult 0..255
     #return $(( $LResult ))     # работает, если LResult 0..255
@@ -63,6 +64,7 @@ function ExtractFileName () {
     if [[ "$DEBUG" -eq 1 ]] ; then
         echo DEBUG: $FUNCNAME ... >$(tty)
     fi
+
     local LResult=
     LError=0
     LPath=$1
@@ -75,6 +77,7 @@ function ExtractFileName () {
     else
         echo $LResult               # работает всегда
     fi
+
     return $(( $LError ))
 }
 #endfunction
@@ -88,6 +91,7 @@ function ExtractFileNameWithoutExt () {
     if [[ "$DEBUG" -eq 1 ]] ; then
         echo DEBUG: $FUNCNAME ... >$(tty)
     fi
+
     local LResult=
     LError=0
     LFileName=$1
@@ -97,6 +101,7 @@ function ExtractFileNameWithoutExt () {
     else
         echo $LResult               # работает всегда
     fi
+
     return $(( $LError ))
 }
 #endfunction
@@ -109,6 +114,7 @@ function ExtractFileExt () {
     if [[ "$DEBUG" -eq 1 ]] ; then
         echo DEBUG: $FUNCNAME ... >$(tty)
     fi
+
     local LResult=
     LError=0
     LFileName=$1
@@ -118,6 +124,7 @@ function ExtractFileExt () {
     else
         echo $LResult               # работает всегда
     fi
+
     return $(( $LError ))
 }
 #endfunction
