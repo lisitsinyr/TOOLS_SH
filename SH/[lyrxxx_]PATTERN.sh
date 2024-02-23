@@ -22,7 +22,7 @@ function MAIN_INIT () {
     # -------------------------------------------------------------------
     # SCRIPT_FULLFILENAME - Файл скрипта [каталог+имя+расширение]
     SCRIPT_FULLFILENAME=$1
-    # echo SCRIPT_FULLFILENAME: $SCRIPT_FULLFILENAME
+    #echo SCRIPT_FULLFILENAME: $SCRIPT_FULLFILENAME
     # -------------------------------------------------------------------
     # PROJECTS_LYR_DIR - каталог проектов
     # -------------------------------------------------------------------
@@ -56,7 +56,7 @@ function MAIN_INIT () {
     #echo SCRIPTS_DIR: $SCRIPTS_DIR
     #echo LIB_SH: $LIB_SH
     if [[ ! -d "$LIB_SH" ]] ; then
-    echo ERROR: Каталог библиотеки LYR $LIB_SH не существует...
+        echo ERROR: Каталог библиотеки LYR $LIB_SH не существует...
         exit 1
     fi
     # -------------------------------------------------------------------
@@ -83,7 +83,7 @@ function MAIN_SET () {
     fi
 
     __SET_VAR_DEFAULT $DEBUG
-    __SET_VAR_SCRIPT $SCRIPT_FULLFILENAME
+    __SET_VAR_SCRIPT "$SCRIPT_FULLFILENAME"
     __SET_VAR_PROJECTS
     __SET_CHECK_REPO
     # -------------------------------------------------------------------

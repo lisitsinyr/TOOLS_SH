@@ -263,7 +263,7 @@ function AddLog () {
     #------------------------------------------------------
     Lout=$1
     Llevel=$2
-    FormatStr "$Llevel" $3 $4 $5 $6 $7 $8 $9
+    FormatStr "$Llevel" "$3" "$4" "$5" "$6" "$7" "$8" "$9"
     if [ $Lout -eq 0 ] ; then
         echo "$LOG_STR" >$(tty)
     elif [ $Lout -eq 1 ] ; then
@@ -329,7 +329,7 @@ function StartLogFile () {
 
     SETVarLog
 
-    LOG_FILESCRIPT=$SCRIPT_FILENAME
+    LOG_FILESCRIPT="$SCRIPT_FILENAME"
 
     #------------------------------------------------------
     # Открытие файла журнала
@@ -349,7 +349,7 @@ function StartLogFile () {
     #exec 3>>"$LFileName"
     # -------------------------------------------------------------------
     AddLog $loAll $TEXT $S01
-    AddLog $loAll $INFO Старт: $SCRIPT_BASEFILENAME
+    AddLog $loAll $INFO Старт: "$SCRIPT_BASEFILENAME"
     AddLog $loAll $TEXT $S01
     # -------------------------------------------------------------------
 
@@ -372,7 +372,7 @@ function StopLogFile () {
     #
     #------------------------------------------------------
     AddLog $loAll $TEXT $S01
-    AddLog $loAll $INFO Стоп: $SCRIPT_BASEFILENAME
+    AddLog $loAll $INFO Стоп: "$SCRIPT_BASEFILENAME"
     AddLog $loAll $TEXT $S01
     # -------------------------------------------------------------------
     exec 3>&-

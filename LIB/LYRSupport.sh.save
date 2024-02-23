@@ -70,29 +70,34 @@ function Pause () {
 
     if [ -z $1 ] ; then
         sleep 0s
-        return 0
-    fi
-
+    else
     if [ -z $2 ] ; then
         echo "$1s"
         sleep "$1s"
     else
-        if [ $2 = m ] ; then
-            echo "$1m"
-            sleep "$1m"
-        fi
-        if [ $2 = h ] ; then
-            echo "$1h"
-            sleep "$1h"
-        fi
-        if [ $2 = d ] ; then
-            echo "$1d"
-            sleep "$1d"
-        fi
-        if [ $2 = s ] ; then
-            echo "$1s"
-            sleep "$1s"
-        fi
+    if [ $2=m ] ; then
+        echo "$1m"
+        sleep "$1m"
+    else
+    if [ $2=h ] ; then
+        echo "$1h"
+        sleep "$1h"
+    else
+    if [ $2=d ] ; then
+        echo "$1d"
+        sleep "$1d"
+    else
+    if [ $2=s ] ; then
+        echo "$1s"
+        sleep "$1s"
+    else
+        echo "$1s"
+        sleep "$1s"
+    fi
+    fi
+    fi
+    fi
+    fi
     fi
 
     return 0
