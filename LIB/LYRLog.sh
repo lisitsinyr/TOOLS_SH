@@ -325,7 +325,12 @@ function StartLogFile () {
         echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
+    #if "%__START_LOG__%"=="1" (exit /b 0) else (set __START_LOG__=1)
+
     SETVarLog
+
+    LOG_FILESCRIPT=$SCRIPT_FILENAME
+
     #------------------------------------------------------
     # Открытие файла журнала
     #------------------------------------------------------
@@ -360,6 +365,8 @@ function StopLogFile () {
     if [[ "$DEBUG" -eq 1 ]] ; then
         echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
+
+    #if not "%LOG_FILESCRIPT%"=="%SCRIPT_FILENAME%" (exit /b 0)
 
     #------------------------------------------------------
     #
