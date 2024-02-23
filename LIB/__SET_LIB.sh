@@ -131,7 +131,7 @@ function __SET_VAR_SCRIPT () {
     # -------------------------------------------------------------------
     # Файл скрипта: каталог
     SCRIPT_FILEDIR=$(ExtractFileDir "$SCRIPT_FULLFILENAME")
-    # echo SCRIPT_FILEDIR: $SCRIPT_FILEDIR
+    #echo SCRIPT_FILEDIR: $SCRIPT_FILEDIR
     # -------------------------------------------------------------------
     # Файл скрипта: расширение
     SCRIPT_FILEEXT=$(ExtractFileExt "$SCRIPT_BASEFILENAME")
@@ -248,7 +248,7 @@ function __SET_LOG () {
     # -------------------------------------------------------------------
     # LOG_FILE_ADD - 1 добавлять к файлу, 0 - с начала файла
     if [ -z "$LOG_FILE_ADD" ] ; then
-        LOG_FILE_ADD=1
+        LOG_FILE_ADD=0
     fi
     #echo "LOG_FILE_ADD=$LOG_FILE_ADD"
     # -------------------------------------------------------------------
@@ -272,12 +272,12 @@ function __SET_LOG () {
     # LOG_FILENAME - Файл журнала [имя]
     if [ -z "$LOG_FILENAME" ] ; then
         if [ "$LOG_FILENAME_FORMAT" = FILENAME ] ; then
-            LOG_FILENAME=$SCRIPT_FILENAME
-            #echo LOG_FILENAME FILENAME: $LOG_FILENAME
+            LOG_FILENAME="$SCRIPT_FILENAME"
+            #echo LOG_FILENAME FILENAME: "$LOG_FILENAME"
         else
             if [ "$LOG_FILENAME_FORMAT" = DATETIME ] ; then
                 LOG_FILENAME=$DATETIME_STAMP
-                #echo LOG_FILENAME DATETIME: $LOG_FILENAME
+                #echo LOG_FILENAME DATETIME: "$LOG_FILENAME"
             else
                 echo 'ERROR: LOG_FILENAME not set...'
                 exit 1
@@ -297,7 +297,7 @@ function __SET_LOG () {
     else
         LOG_FULLFILENAME="$LOG_DIR"/"$REPO_NAME"_"$LOG_FILENAME.log"
     fi
-    #echo LOG_FULLFILENAME: $LOG_FULLFILENAME
+    #echo LOG_FULLFILENAME: "$LOG_FULLFILENAME"
 
     #------------------------------------------------------
     # LOG_FILESCRIPT - Файл первого скрипта [имя]

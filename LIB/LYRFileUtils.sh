@@ -37,7 +37,7 @@ function ExtractFileDir () {
 
     local LResult=
     LError=0
-    LPath=$1
+    LPath="$1"
     # fspec=/path/to/some/file.txt
     # echo ${fspec%/*}
     # fspec=/path/to/some/
@@ -67,7 +67,7 @@ function ExtractFileName () {
 
     local LResult=
     LError=0
-    LPath=$1
+    LPath="$1"
     # fspec=/path/to/some/file.txt
     # echo ${fspec##*/}
     # file.txt
@@ -94,7 +94,7 @@ function ExtractFileNameWithoutExt () {
 
     local LResult=
     LError=0
-    LFileName=$1
+    LFileName="$1"
     LResult=${LFileName%%.*}
     if [ -z "$LResult" ] ; then
         LError=1
@@ -117,7 +117,7 @@ function ExtractFileExt () {
 
     local LResult=
     LError=0
-    LFileName=$1
+    LFileName="$1"
     LResult=${LFileName#*.}
     if [ -z "$LResult" ] ; then
         LError=1
