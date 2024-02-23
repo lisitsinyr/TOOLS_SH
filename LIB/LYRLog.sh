@@ -52,38 +52,6 @@
 #   exec 1> "$LOG_FILE"  # STDOUT
 # -------------------------------------------------------------------
 
-# --------------------------------
-FORMAT='%Y-%m-%d %H:%M:%S %N'
-S01=------------------------------------------------------
-# --------------------------------
-loStandard=0
-loTextFile=1
-loAll=2
-# --------------------------------
-NOTSET=0
-DEBUG=1
-INFO=2
-WARNING=3
-ERROR=4
-CRITICAL=5
-DEBUGTEXT=11
-BEGIN=21
-END=22
-PROCESS=23
-TEXT=24
-# --------------------------------
-ctlsNOTSET=' '
-ctlsDEBUG='D'
-ctlsINFO='I'
-ctlsWARNING='W'
-ctlsERROR='E'
-ctlsCRITICAL='C'
-ctlsBEGIN='<'
-ctlsEND='>'
-ctlsPROCESS='P'
-ctlsDEBUGTEXT='T'
-ctlsTEXT=''
-
 #-------------------------------------------------
 # AddLog $loAll $NOTSET 'NOTSET'
 # AddLog $loAll $DEBUG 'DEBUG'
@@ -115,6 +83,50 @@ function LYRLog () {
     if [[ "$DEBUG" -eq 1 ]] ; then
         echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
+
+    return 0
+}
+#endfunction
+
+#--------------------------------------------------------------------------------
+# procedure SETVarLog ()
+#--------------------------------------------------------------------------------
+function SETVarLog () {
+#beginfunction
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
+    fi
+    # --------------------------------
+    FORMAT='%Y-%m-%d %H:%M:%S %N'
+    S01=------------------------------------------------------
+    # --------------------------------
+    loStandard=0
+    loTextFile=1
+    loAll=2
+    # --------------------------------
+    NOTSET=0
+    DEBUGT=1
+    INFO=2
+    WARNING=3
+    ERROR=4
+    CRITICAL=5
+    DEBUGTEXT=11
+    BEGIN=21
+    END=22
+    PROCESS=23
+    TEXT=24
+    # --------------------------------
+    ctlsNOTSET=' '
+    ctlsDEBUG='D'
+    ctlsINFO='I'
+    ctlsWARNING='W'
+    ctlsERROR='E'
+    ctlsCRITICAL='C'
+    ctlsBEGIN='<'
+    ctlsEND='>'
+    ctlsPROCESS='P'
+    ctlsDEBUGTEXT='T'
+    ctlsTEXT=''
 
     return 0
 }
@@ -313,6 +325,7 @@ function StartLogFile () {
         echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
+    SETVarLog
     #------------------------------------------------------
     # Открытие файла журнала
     #------------------------------------------------------
