@@ -113,7 +113,7 @@ ctlsTEXT=''
 function LYRLog () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: $FUNCNAME ... >$(tty)
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
     return 0
@@ -126,7 +126,7 @@ function LYRLog () {
 function SHORTLevel () {
 # beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: $FUNCNAME ... >$(tty)
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
     Llevel=$1
@@ -162,6 +162,7 @@ function SHORTLevel () {
     if [ "$Llevel" = "$PROCESS" ] ; then
         SHORTLevelName=$ctlsPROCESS
     fi
+
     return 0
 }
 # endfunction
@@ -172,7 +173,7 @@ function SHORTLevel () {
 function FormatStr () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: $FUNCNAME ... >$(tty)
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
     #------------------------------------------------------
@@ -242,7 +243,7 @@ function FormatStr () {
 function AddLog () { 
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: $FUNCNAME ... >$(tty)
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
     #------------------------------------------------------
@@ -275,7 +276,7 @@ function AddLog () {
 function AddLogFile () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: $FUNCNAME ... >$(tty)
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
     #------------------------------------------------------
@@ -309,7 +310,7 @@ function AddLogFile () {
 function StartLogFile () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: $FUNCNAME ... >$(tty)
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
     #------------------------------------------------------
@@ -344,7 +345,7 @@ function StartLogFile () {
 function StopLogFile () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: $FUNCNAME ... >$(tty)
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
     #------------------------------------------------------

@@ -85,7 +85,7 @@
 function __SET_VAR_DEFAULT () {
 # beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: $FUNCNAME ... >$(tty)
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
     # -------------------------------------------------------------------
@@ -111,7 +111,7 @@ function __SET_VAR_DEFAULT () {
 function __SET_VAR_SCRIPT () {
 # beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: $FUNCNAME ... >$(tty)
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
     # -------------------------------------------------------------------
@@ -145,7 +145,7 @@ function __SET_VAR_SCRIPT () {
 function __SET_VAR_PROJECTS () {
 # beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: $FUNCNAME ... >$(tty)
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
     # -------------------------------------------------------------------
@@ -188,7 +188,7 @@ function __SET_VAR_PROJECTS () {
 function __SET_CHECK_REPO () {
 # beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: $FUNCNAME ... >$(tty)
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
     # -------------------------------------------------------------------
@@ -224,7 +224,7 @@ function __SET_CHECK_REPO () {
 function __SET_LOG () {
 # beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: $FUNCNAME ... >$(tty)
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
     #if "%__SET_LOG__%"=="1" (echo __SET_LOG__: %__SET_LOG__% && exit /b 0) else (set __SET_LOG__=1)

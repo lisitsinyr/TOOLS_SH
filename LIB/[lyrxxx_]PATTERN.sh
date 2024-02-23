@@ -13,7 +13,7 @@ function MAIN_INIT () {
     DEBUG=$2
     #echo DEBUG: $DEBUG
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: $FUNCNAME ... >$(tty)
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
     # -------------------------------------------------------------------
@@ -68,6 +68,8 @@ function MAIN_INIT () {
     source "$LIB_SH/LYRConst.sh"
     source "$LIB_SH/LYRDateTime.sh"
     source "$LIB_SH/LYRSupport.sh"
+
+    return 0
 }
 #endfunction
 
@@ -77,7 +79,7 @@ function MAIN_INIT () {
 function MAIN_SET () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: $FUNCNAME ... >$(tty)
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
     __SET_VAR_DEFAULT $DEBUG
@@ -103,6 +105,8 @@ function MAIN_SET () {
     # LOG_FILENAME - Файл журнала [имя]
     LOG_FILENAME=
     __SET_LOG
+
+    return 0
 }
 #beginfunction
 
@@ -112,7 +116,7 @@ function MAIN_SET () {
 function MAIN_CHECK_PARAMETR () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: $FUNCNAME ... >$(tty)
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
     P1=P1_default
@@ -132,7 +136,7 @@ function MAIN_CHECK_PARAMETR () {
 function MAIN_SYNTAX () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: $FUNCNAME ... >$(tty)
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
     return 0
@@ -145,7 +149,7 @@ function MAIN_SYNTAX () {
 function MAIN () {
 #beginfunction
     if [[ "$DEBUG" -eq 1 ]] ; then
-        echo DEBUG: $FUNCNAME ... >$(tty)
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
     return 0
