@@ -66,7 +66,7 @@ function Pause () {
         echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
-    echo Pause: $1
+    #echo Pause: $1
 
     if [ -z $1 ] ; then
         sleep 0s

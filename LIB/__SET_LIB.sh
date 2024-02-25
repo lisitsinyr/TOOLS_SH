@@ -106,7 +106,7 @@ function __SET_VAR_DEFAULT () {
     # -------------------------------------------------------------------
     # SLEEP - Number[Suffix-s,m,h,d]
     SLEEP=
-    echo SLEEP: $SLEEP
+    #echo SLEEP: $SLEEP
 
     return 0
 }
