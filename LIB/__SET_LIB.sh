@@ -105,7 +105,7 @@ function __SET_VAR_DEFAULT () {
 
     # -------------------------------------------------------------------
     # SLEEP - Number[Suffix-s,m,h,d]
-    SLEEP=1s
+    SLEEP=
     echo SLEEP: $SLEEP
 
     return 0
@@ -269,9 +269,14 @@ function __SET_LOG () {
     fi
     #echo LOG_DIR: $LOG_DIR
     if [[ ! -d "$LOG_DIR" ]] ; then
-        echo 'ERROR: Dir '"$LOG_DIR"' not exist...'
-        echo 'ERROR: Каталог '"$LOG_DIR"' не существует...'
-        exit 1
+        echo INFO: Dir "$LOG_DIR" not exist...
+        echo INFO: Каталог "$LOG_DIR" не существует...
+        echo INFO: Create "$LOG_DIR" ...
+        result=$(mkdir "$LOG_DIR")
+        if [[ ! $result==0 ]] ; then
+            echo ERROR: Dir "$LOG_DIR" not created...
+            exit 1
+        fi
     fi
     # -------------------------------------------------------------------
     # LOG_FILENAME - Файл журнала [имя]
@@ -281,7 +286,7 @@ function __SET_LOG () {
             #echo LOG_FILENAME FILENAME: "$LOG_FILENAME"
         else
             if [ "$LOG_FILENAME_FORMAT" = DATETIME ] ; then
-                LOG_FILENAME=$DATETIME_STAMP
+                LOG_FILENAME="$DATETIME_STAMP"
                 #echo LOG_FILENAME DATETIME: "$LOG_FILENAME"
             else
                 echo 'ERROR: LOG_FILENAME not set...'
