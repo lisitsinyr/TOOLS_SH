@@ -33,6 +33,7 @@ function MAIN_INIT () {
     # LIB_SH - каталог библиотеки скриптов
     # -------------------------------------------------------------------
     UNAME=$(uname -n)
+    echo UNAME: $UNAME
     if [[ -z "$LIB_SH" ]] ; then
         case "$UNAME" in
             'ASUS-W10P')
