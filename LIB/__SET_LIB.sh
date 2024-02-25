@@ -103,6 +103,11 @@ function __SET_VAR_DEFAULT () {
     DATETIME_STAMP=$(printf "%(%Y%m%d%H%M%S)T")
     #echo DATETIME_STAMP [YYYYMMDDHHMMSS]: $DATETIME_STAMP
 
+    # -------------------------------------------------------------------
+    # SLEEP - Number[Suffix-s,m,h,d]
+    SLEEP=1s
+    echo SLEEP: $SLEEP
+
     return 0
 }
 # endfunction

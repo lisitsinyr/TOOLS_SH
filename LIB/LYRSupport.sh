@@ -51,14 +51,14 @@ function PressAnyKey () {
     # -s hides the user's input
     # -r causes the string to be interpreted "raw" (without considering backslash escapes)
 
-    read -n 1 -s -r -p "Press any key to continue"
+    read -n 1 -s -r -p $'Press any key to continue ...\n'
 
     return 0
 }
 #endfunction
 
 #--------------------------------------------------------------------------------
-# procedure Pause (Number, Suffix)
+# procedure Pause (SLEEP)
 #--------------------------------------------------------------------------------
 function Pause () {
 #beginfunction
@@ -66,33 +66,12 @@ function Pause () {
         echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
-    echo Pause: $1 $2
+    echo Pause: $1
 
     if [ -z $1 ] ; then
         sleep 0s
-        return 0
-    fi
-
-    if [ -z $2 ] ; then
-        echo "$1s"
-        sleep "$1s"
     else
-        if [ $2 = m ] ; then
-            echo "$1m"
-            sleep "$1m"
-        fi
-        if [ $2 = h ] ; then
-            echo "$1h"
-            sleep "$1h"
-        fi
-        if [ $2 = d ] ; then
-            echo "$1d"
-            sleep "$1d"
-        fi
-        if [ $2 = s ] ; then
-            echo "$1s"
-            sleep "$1s"
-        fi
+        sleep "$1"
     fi
 
     return 0
