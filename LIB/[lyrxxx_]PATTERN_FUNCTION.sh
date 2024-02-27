@@ -1,6 +1,6 @@
 #!/bin/bash
 # -----------------------------------------------
-# [lyrxxx_]PATTERN_FUNC.sh
+# [lyrxxx_]PATTERN_FUNCTION.sh
 # -----------------------------------------------
 
 #--------------------------------------------------------------------------------
@@ -12,7 +12,7 @@ function FUNC_01 () {
         echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
-    AddLog $loAll $INFO Вызов FUNC_01 ...
+    AddLog $loAll $INFO Вызов $FUNCNAME ...
 
     return 0
 }
