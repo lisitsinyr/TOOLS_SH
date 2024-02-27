@@ -156,9 +156,8 @@ function MAIN () {
     # -------------------------------------------------------------------
     # запуск скриптов
     # -------------------------------------------------------------------
-    source "$PROJECTS_DIR/TOOLS_SH/LIB/[lyrxxx_]PATTERN_EMPTY.sh"
-
-    PATTERN_EMPTY
+    source "$PROJECTS_DIR"/"TOOLS_SH/LIB/[lyrxxx_]PATTERN_FUNCTION.sh"
+    FUNC_01
 
     #Pause "$SLEEP"
     #PressAnyKey

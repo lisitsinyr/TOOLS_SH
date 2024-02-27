@@ -33,7 +33,7 @@ function MAIN_INIT () {
     # LIB_SH - каталог библиотеки скриптов
     # -------------------------------------------------------------------
     UNAME=$(uname -n)
-    echo UNAME: $UNAME
+    #echo UNAME: $UNAME
     if [[ -z "$LIB_SH" ]] ; then
         case "$UNAME" in
             'ASUS-W10P')
@@ -52,10 +52,10 @@ function MAIN_INIT () {
         PROJECTS_DIR="$PROJECTS_LYR_DIR/CHECK_LIST/01_OS/03_UNIX/$PROJECTS"
         LIB_SH="$SCRIPTS_DIR/LIB"
     fi
-    echo PROJECTS_LYR_DIR: $PROJECTS_LYR_DIR
-    echo PROJECTS_DIR: $PROJECTS_DIR
-    echo SCRIPTS_DIR: $SCRIPTS_DIR
-    echo LIB_SH: $LIB_SH
+    #echo PROJECTS_LYR_DIR: $PROJECTS_LYR_DIR
+    #echo PROJECTS_DIR: $PROJECTS_DIR
+    #echo SCRIPTS_DIR: $SCRIPTS_DIR
+    #echo LIB_SH: $LIB_SH
     if [[ ! -d "$LIB_SH" ]] ; then
         echo ERROR: Каталог библиотеки LYR $LIB_SH не существует...
         exit 1
@@ -145,6 +145,24 @@ function MAIN_SYNTAX () {
 #endfunction
 
 #--------------------------------------------------------------------------------
+# procedure MAIN_FUNC ()
+#--------------------------------------------------------------------------------
+function MAIN_FUNC {
+#beginfunction
+    AddLog $loAll $TEXT '--------------------------------------'
+    AddLog $loAll $TEXT 'MAIN_FUNC ...'
+    AddLog $loAll $TEXT '--------------------------------------'
+    # -------------------------------------------------------------------
+    # запуск скриптов
+    # -------------------------------------------------------------------
+    source "$PROJECTS_DIR"/"TOOLS_SH/LIB/[lyrxxx_]PATTERN_FUNCTION.sh"
+    FUNC_01
+
+    return 0
+}
+#endfunction
+
+#--------------------------------------------------------------------------------
 # procedure MAIN ()
 #--------------------------------------------------------------------------------
 function MAIN () {
@@ -153,12 +171,7 @@ function MAIN () {
         echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
-    # -------------------------------------------------------------------
-    # запуск скриптов
-    # -------------------------------------------------------------------
-    source "$PROJECTS_DIR/TOOLS_SH/LIB/[lyrxxx_]PATTERN_EMPTY.sh"
-
-    PATTERN_EMPTY
+    MAIN_FUNC
 
     #Pause "$SLEEP"
     #PressAnyKey
