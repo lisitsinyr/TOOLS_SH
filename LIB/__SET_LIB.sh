@@ -306,6 +306,7 @@ function __SET_LOG () {
         fi
     fi
     #echo LOG_FILENAME: $LOG_FILENAME
+
     # -------------------------------------------------------------------
     # LOG_FULLFILENAME - Файл журнала [каталог+имя+расширение]
     if [ -z "$REPO_NAME" ] ; then
