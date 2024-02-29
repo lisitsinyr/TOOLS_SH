@@ -104,7 +104,9 @@ function MAIN_SET () {
     LOG_DIR=
     # -------------------------------------------------------------------
     # LOG_FILENAME - Файл журнала [имя]
-    LOG_FILENAME=
+    if [ -z "$LOG_FILENAME" ] ; then
+        LOG_FILENAME=
+    fi
     __SET_LOG
 
     return 0
@@ -155,8 +157,8 @@ function MAIN_FUNC {
     # -------------------------------------------------------------------
     # запуск скриптов
     # -------------------------------------------------------------------
-    source "$PROJECTS_DIR"/"TOOLS_SH/LIB/[lyrxxx_]PATTERN_FUNCTION.sh"
-    FUNC_01
+    #source "$PROJECTS_DIR"/"TOOLS_SH/LIB/[lyrxxx_]PATTERN_FUNCTION.sh"
+    #FUNC_01
 
     return 0
 }
@@ -183,7 +185,12 @@ function MAIN () {
 #--------------------------------------------------------------------------------
 #
 #--------------------------------------------------------------------------------
-    MAIN_INIT "$0" 0
+    if [[ "$FULL" -eq 1 ]] ; then
+        MAIN_INIT "$1" 0
+    else
+        MAIN_INIT "$0" 0
+    fi
+
     MAIN_SET
     StartLogFile
     #DIR_SAVE=$CURRENT_DIR
@@ -192,6 +199,4 @@ function MAIN () {
     MAIN
     StopLogFile
     #cd $DIR_SAVE
-
-exit 0
 #--------------------------------------------------------------------------------

@@ -104,7 +104,9 @@ function MAIN_SET () {
     LOG_DIR=
     # -------------------------------------------------------------------
     # LOG_FILENAME - Файл журнала [имя]
-    LOG_FILENAME=
+    if [ -z "$LOG_FILENAME" ] ; then
+        LOG_FILENAME=
+    fi
     __SET_LOG
 
     return 0
