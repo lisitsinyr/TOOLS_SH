@@ -82,7 +82,6 @@ function ExtractFileName () {
 }
 #endfunction
 
-
 #-------------------------------------------------------------------------------
 # function ExtractFileNameWithoutExt (AFileName)
 #-------------------------------------------------------------------------------
@@ -95,13 +94,12 @@ function ExtractFileNameWithoutExt () {
     local LResult=
     LError=0
     LFileName="$1"
-    LResult=${LFileName%%.*}
+    LResult=${LFileName%.*}
     if [ -z "$LResult" ] ; then
         LError=1
     else
         echo $LResult               # работает всегда
     fi
-
     return $(( $LError ))
 }
 #endfunction

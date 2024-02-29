@@ -247,7 +247,7 @@ function __SET_LOG () {
     if [[ -z "$LOG_DT_FORMAT" ]] ; then
         LOG_DT_FORMAT=$LOG_DT_FORMAT_DEFAULT
     fi
-    # echo "LOG_DT_FORMAT=$LOG_DT_FORMAT"
+    #echo "LOG_DT_FORMAT=$LOG_DT_FORMAT"
     # -------------------------------------------------------------------
     # LOG_FILENAME_FORMAT - Формат имени файла журнала [FILENAME,DATETIME,...]
     # set LOG_FILENAME_FORMAT=
@@ -289,11 +289,11 @@ function __SET_LOG () {
     if [ -z "$LOG_FILENAME" ] ; then
         if [ "$LOG_FILENAME_FORMAT" = FILENAME ] ; then
             LOG_FILENAME="$SCRIPT_FILENAME"
-            echo LOG_FILENAME FILENAME: "$LOG_FILENAME"
+            #echo LOG_FILENAME _FILENAME_: "$LOG_FILENAME"
         else
             if [ "$LOG_FILENAME_FORMAT" = DATETIME ] ; then
                 LOG_FILENAME="$DATETIME_STAMP"
-                echo LOG_FILENAME DATETIME: "$LOG_FILENAME"
+                #echo LOG_FILENAME _DATETIME_: "$LOG_FILENAME"
             else
                 echo 'ERROR: LOG_FILENAME not set...'
                 exit 1
@@ -305,7 +305,7 @@ function __SET_LOG () {
             LOG_FILENAME="$DATETIME_STAMP"_"$LOG_FILENAME"
         fi
     fi
-    echo LOG_FILENAME: $LOG_FILENAME
+    #echo LOG_FILENAME: $LOG_FILENAME
     # -------------------------------------------------------------------
     # LOG_FULLFILENAME - Файл журнала [каталог+имя+расширение]
     if [ -z "$REPO_NAME" ] ; then
@@ -313,7 +313,7 @@ function __SET_LOG () {
     else
         LOG_FULLFILENAME="$LOG_DIR"/"$REPO_NAME"_"$LOG_FILENAME.log"
     fi
-    echo LOG_FULLFILENAME: "$LOG_FULLFILENAME"
+    #echo LOG_FULLFILENAME: "$LOG_FULLFILENAME"
 
     #------------------------------------------------------
     # LOG_FILESCRIPT - Файл первого скрипта [имя]
