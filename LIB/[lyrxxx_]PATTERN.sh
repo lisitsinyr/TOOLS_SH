@@ -155,8 +155,8 @@ function MAIN_FUNC {
     # -------------------------------------------------------------------
     # запуск скриптов
     # -------------------------------------------------------------------
-    source "$PROJECTS_DIR"/"TOOLS_SH/LIB/[lyrxxx_]PATTERN_FUNCTION.sh"
-    FUNC_01
+    #source "$PROJECTS_DIR"/"TOOLS_SH/LIB/[lyrxxx_]PATTERN_FUNCTION.sh"
+    #FUNC_01
 
     return 0
 }
