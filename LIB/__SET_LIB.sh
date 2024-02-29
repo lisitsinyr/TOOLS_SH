@@ -236,6 +236,12 @@ function __SET_LOG () {
 
     #if "%__SET_LOG__%"=="1" (echo __SET_LOG__: %__SET_LOG__% && exit /b 0) else (set __SET_LOG__=1)
 
+    if [ "$__SET_LOG__" -eq 1 ] ; then
+        return 0
+    else
+        __SET_LOG__=1
+    fi
+
     #------------------------------------------------------
     # LOG_DT_FORMAT -
     if [[ -z "$LOG_DT_FORMAT" ]] ; then
