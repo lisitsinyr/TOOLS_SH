@@ -234,14 +234,6 @@ function __SET_LOG () {
         echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
-    #if "%__SET_LOG__%"=="1" (echo __SET_LOG__: %__SET_LOG__% && exit /b 0) else (set __SET_LOG__=1)
-
-    #if [[ "$__SET_LOG__" -eq 1 ]] ; then
-    #    return 0
-    #else
-    #    __SET_LOG__=1
-    #fi
-
     #------------------------------------------------------
     # LOG_DT_FORMAT -
     if [[ -z "$LOG_DT_FORMAT" ]] ; then
@@ -250,7 +242,6 @@ function __SET_LOG () {
     #echo "LOG_DT_FORMAT=$LOG_DT_FORMAT"
     # -------------------------------------------------------------------
     # LOG_FILENAME_FORMAT - Формат имени файла журнала [FILENAME,DATETIME,...]
-    # set LOG_FILENAME_FORMAT=
     if [ -z "$LOG_FILENAME_FORMAT" ] ; then
         LOG_FILENAME_FORMAT=FILENAME
         #LOG_FILENAME_FORMAT=DATETIME
@@ -289,11 +280,9 @@ function __SET_LOG () {
     if [ -z "$LOG_FILENAME" ] ; then
         if [ "$LOG_FILENAME_FORMAT" = FILENAME ] ; then
             LOG_FILENAME="$SCRIPT_FILENAME"
-            #echo LOG_FILENAME _FILENAME_: "$LOG_FILENAME"
         else
             if [ "$LOG_FILENAME_FORMAT" = DATETIME ] ; then
                 LOG_FILENAME="$DATETIME_STAMP"
-                #echo LOG_FILENAME _DATETIME_: "$LOG_FILENAME"
             else
                 echo 'ERROR: LOG_FILENAME not set...'
                 exit 1
@@ -313,6 +302,7 @@ function __SET_LOG () {
         LOG_FULLFILENAME="$LOG_DIR"/"$LOG_FILENAME.log"
     else
         LOG_FULLFILENAME="$LOG_DIR"/"$REPO_NAME"_"$LOG_FILENAME.log"
+        LOG_FULLFILENAME="$LOG_DIR"/"$LOG_FILENAME.log"
     fi
     #echo LOG_FULLFILENAME: "$LOG_FULLFILENAME"
 

@@ -325,8 +325,6 @@ function StartLogFile () {
         echo DEBUG: procedure $FUNCNAME ... >$(tty)
     fi
 
-    #if "%__START_LOG__%"=="1" (exit /b 0) else (set __START_LOG__=1)
-
     SETVarLog
 
     LOG_FILESCRIPT="$SCRIPT_FILENAME"
@@ -335,7 +333,6 @@ function StartLogFile () {
     # Открытие файла журнала
     #------------------------------------------------------
     LFileName="$LOG_FULLFILENAME"
-    echo "LFileName: $LFileName"
     if [[ "$LOG_FILE_ADD" -eq 0 ]] ; then
         if [ -r "$LFileName" ] ; then
             rm "$LFileName"
@@ -346,7 +343,6 @@ function StartLogFile () {
             touch "$LFileName"
         fi
     fi
-    #exec 3>>"$LFileName"
     # -------------------------------------------------------------------
     AddLog $loAll $TEXT $S01
     AddLog $loAll $INFO Старт: "$SCRIPT_BASEFILENAME"
