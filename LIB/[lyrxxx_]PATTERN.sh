@@ -89,24 +89,22 @@ function MAIN_SET () {
     __SET_CHECK_REPO
     # -------------------------------------------------------------------
     # LOG_DT_FORMAT -
-    LOG_DT_FORMAT=
+    # LOG_DT_FORMAT=
     # -------------------------------------------------------------------
     # LOG_FILENAME_FORMAT - Формат имени файла журнала [FILENAME,DATETIME,...]
-    LOG_FILENAME_FORMAT=
+    # LOG_FILENAME_FORMAT=
     # -------------------------------------------------------------------
-    # LOG_FILE_ADD - Параметры журнала [1]
-    LOG_FILE_ADD=1
+    # LOG_FILE_ADD - Параметры журнала [0]
+    if [ -z "$LOG_FILE_ADD" ] ; then LOG_FILE_ADD=0 ; fi
     # -------------------------------------------------------------------
     # LOG_FILE_DT - Параметры журнала [0]
-    LOG_FILE_DT=0
+    if [ -z "$LOG_FILE_DT" ] ; then LOG_FILE_ADD=0 ; fi
     # -------------------------------------------------------------------
     # LOG_DIR - Каталог журнала [каталог]
-    LOG_DIR=
+    # LOG_DIR=
     # -------------------------------------------------------------------
     # LOG_FILENAME - Файл журнала [имя]
-    if [ -z "$LOG_FILENAME" ] ; then
-        LOG_FILENAME=
-    fi
+    # LOG_FILENAME=
     __SET_LOG
 
     return 0
@@ -190,6 +188,8 @@ function MAIN () {
     else
         MAIN_INIT "$0" 0
     fi
+
+    #__SET_LOG__=0
 
     MAIN_SET
     StartLogFile

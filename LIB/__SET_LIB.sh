@@ -53,7 +53,7 @@
 #     LOG_DT_FORMAT=
 # LOG_FILENAME_FORMAT - Формат имени файла журнала [FILENAME,DATETIME,...]
 #     LOG_FILENAME_FORMAT=
-# LOG_FILE_ADD - Параметры журнала [1]
+# LOG_FILE_ADD - Параметры журнала [0]
 #     LOG_FILE_ADD=  
 # LOG_FILE_DT - Параметры журнала [0]
 #     LOG_FILE_DT=
@@ -235,11 +235,12 @@ function __SET_LOG () {
     fi
 
     #if "%__SET_LOG__%"=="1" (echo __SET_LOG__: %__SET_LOG__% && exit /b 0) else (set __SET_LOG__=1)
-    if [[ "$__SET_LOG__" -eq 1 ]] ; then
-        return 0
-    else
-        __SET_LOG__=1
-    fi
+
+    #if [[ "$__SET_LOG__" -eq 1 ]] ; then
+    #    return 0
+    #else
+    #    __SET_LOG__=1
+    #fi
 
     #------------------------------------------------------
     # LOG_DT_FORMAT -

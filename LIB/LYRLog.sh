@@ -334,10 +334,10 @@ function StartLogFile () {
     #------------------------------------------------------
     # Открытие файла журнала
     #------------------------------------------------------
-    if [[ "$LOG_FILE_ADD" -eq 1 ]] ; then
-        LFileName="$LOG_FULLFILENAME"
+    LFileName="$LOG_FULLFILENAME"
+    echo "LFileName: $LFileName"
+    if [[ "$LOG_FILE_ADD" -eq 0 ]] ; then
         if [ -r "$LFileName" ] ; then
-            #echo "LFileName: $LFileName"
             rm "$LFileName"
         fi
         touch "$LFileName"
