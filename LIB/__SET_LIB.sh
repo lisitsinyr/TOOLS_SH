@@ -92,12 +92,14 @@ function __SET_VAR_DEFAULT () {
 
     # -------------------------------------------------------------------
     # LOG_DT_FORMAT_DEFAULT -
+    #------------------------------------------------------
     #LOG_DT_FORMAT_DEFAULT='%Y%m%d%H%M%S'
     LOG_DT_FORMAT_DEFAULT='%Y%m%d'
     #echo LOG_DT_FORMAT_DEFAULT: $LOG_DT_FORMAT_DEFAULT
     
     # -------------------------------------------------------------------
     # DATETIME_STAMP - формат имени файла журнала [YYYYMMDDHHMMSS]
+    #------------------------------------------------------
     #DATETIME_STAMP=$(YYYYMMDDHHMMSS)
     #DATETIME_STAMP=$(DateTime $LOG_DT_FORMAT)
     DATETIME_STAMP=$(printf "%(%Y%m%d%H%M%S)T")
@@ -105,6 +107,7 @@ function __SET_VAR_DEFAULT () {
 
     # -------------------------------------------------------------------
     # SLEEP - Number[Suffix-s,m,h,d]
+    #------------------------------------------------------
     SLEEP=
     #echo SLEEP: $SLEEP
 
@@ -123,23 +126,28 @@ function __SET_VAR_SCRIPT () {
 
     # -------------------------------------------------------------------
     # Файл скрипта: каталог+имя+расширение
+    #------------------------------------------------------
     SCRIPT_FULLFILENAME="$1"
     #echo SCRIPT_FULLFILENAME: $SCRIPT_FULLFILENAME
     # -------------------------------------------------------------------
     # Файл скрипта: имя+расширение
+    #------------------------------------------------------
     SCRIPT_BASEFILENAME=$(ExtractFileName "$SCRIPT_FULLFILENAME")
     #echo SCRIPT_BASEFILENAME: $SCRIPT_BASEFILENAME
     # -------------------------------------------------------------------
     # Файл скрипта: имя
+    #------------------------------------------------------
     SCRIPT_FILENAME=$(ExtractFileNameWithoutExt "$SCRIPT_BASEFILENAME")
     #echo SCRIPT_FILENAME: $SCRIPT_FILENAME
     # -------------------------------------------------------------------
     # Файл скрипта: каталог
+    #------------------------------------------------------
     SCRIPT_FILEDIR=$(ExtractFileDir "$SCRIPT_FULLFILENAME")
     #echo SCRIPT_FILEDIR: $SCRIPT_FILEDIR
     # -------------------------------------------------------------------
     # Файл скрипта: расширение
     SCRIPT_FILEEXT=$(ExtractFileExt "$SCRIPT_BASEFILENAME")
+    #------------------------------------------------------
     #echo SCRIPT_FILEEXT: $SCRIPT_FILEEXT
 
     return 0
@@ -157,31 +165,38 @@ function __SET_VAR_PROJECTS () {
 
     # -------------------------------------------------------------------
     # PROJECTS - проект
+    #------------------------------------------------------
     #PROJECTS=
     #echo PROJECTS: $PROJECTS
     # -------------------------------------------------------------------
     # PROJECTS_LYR_DIR -
+    #------------------------------------------------------
     #PROJECTS_LYR_DIR=
     #echo PROJECTS_LYR_DIR: $PROJECTS_LYR_DIR
     # -------------------------------------------------------------------
     # PROJECTS_DIR -
+    #------------------------------------------------------
     #PROJECTS_DIR=
     #echo PROJECTS_DIR: $PROJECTS_DIR
     # -------------------------------------------------------------------
     # CURRENT_SYSTEM -
+    #------------------------------------------------------
     CURRENT_SYSTEM=$(uname -a)
     #echo CURRENT_SYSTEM: $CURRENT_SYSTEM
     # -------------------------------------------------------------------
     # UNAME - COMPUTERNAME
+    #------------------------------------------------------
     UNAME=$(uname -n)
     #echo UNAME: $UNAME
     # -------------------------------------------------------------------
     # USERNAME - USERNAME
+    #------------------------------------------------------
     USERNAME=$(whoami)
     #echo USERNAME: $USERNAME
 
     # -------------------------------------------------------------------
     # CURRENT_DIR - Текущий каталог
+    #------------------------------------------------------
     CURRENT_DIR=$(pwd)
     #echo CURRENT_DIR: CURRENT_DIR
 
@@ -200,14 +215,17 @@ function __SET_CHECK_REPO () {
 
     # -------------------------------------------------------------------
     # REPO_NAME - Имя репозитария
+    #------------------------------------------------------
     REPO_NAME=""
     #echo REPO_NAME: $REPO_NAME
     # -------------------------------------------------------------------
     # REPO_INI - Файл с параметрами репозитария
+    #------------------------------------------------------
     REPO_INI='REPO.ini'
     #echo REPO_INI [REPO.ini]: $REPO_INI
     # -------------------------------------------------------------------
     # Проверка существования файла REPO.ini
+    #------------------------------------------------------
     #if not exist %REPO_INI% (
     #    echo INFO: File %REPO_INI% not exist
     #    # exit /b 1
@@ -236,12 +254,14 @@ function __SET_LOG () {
 
     #------------------------------------------------------
     # LOG_DT_FORMAT -
+    #------------------------------------------------------
     if [[ -z "$LOG_DT_FORMAT" ]] ; then
         LOG_DT_FORMAT=$LOG_DT_FORMAT_DEFAULT
     fi
     #echo "LOG_DT_FORMAT=$LOG_DT_FORMAT"
     # -------------------------------------------------------------------
     # LOG_FILENAME_FORMAT - Формат имени файла журнала [FILENAME,DATETIME,...]
+    #------------------------------------------------------
     if [ -z "$LOG_FILENAME_FORMAT" ] ; then
         LOG_FILENAME_FORMAT=FILENAME
         #LOG_FILENAME_FORMAT=DATETIME
@@ -249,18 +269,21 @@ function __SET_LOG () {
     #echo LOG_FILENAME_FORMAT [FILENAME,DATETIME,...]: $LOG_FILENAME_FORMAT
     # -------------------------------------------------------------------
     # LOG_FILE_ADD - 1 добавлять к файлу, 0 - с начала файла
+    #------------------------------------------------------
     if [ -z "$LOG_FILE_ADD" ] ; then
         LOG_FILE_ADD=0
     fi
     #echo "LOG_FILE_ADD=$LOG_FILE_ADD"
     # -------------------------------------------------------------------
     # LOG_FILE_DT - 1 добавлять к имени файла префикс DATETIME_STAMP
+    #------------------------------------------------------
     if [ -z "$LOG_FILE_DT" ] ; then
         LOG_FILE_DT=0
     fi
     #echo "LOG_FILE_DT=$LOG_FILE_DT"
     # -------------------------------------------------------------------
     # LOG_DIR - Каталог журнала [каталог]
+    #------------------------------------------------------
     if [ -z "$LOG_DIR" ] ; then
         LOG_DIR="$PROJECTS_LYR_DIR/LOGS"
     fi
@@ -277,6 +300,7 @@ function __SET_LOG () {
     fi
     # -------------------------------------------------------------------
     # LOG_FILENAME - Файл журнала [имя]
+    #------------------------------------------------------
     if [ -z "$LOG_FILENAME" ] ; then
         if [ "$LOG_FILENAME_FORMAT" = FILENAME ] ; then
             LOG_FILENAME="$SCRIPT_FILENAME"
@@ -298,6 +322,7 @@ function __SET_LOG () {
 
     # -------------------------------------------------------------------
     # LOG_FULLFILENAME - Файл журнала [каталог+имя+расширение]
+    #------------------------------------------------------
     if [ -z "$REPO_NAME" ] ; then
         LOG_FULLFILENAME="$LOG_DIR"/"$LOG_FILENAME.log"
     else

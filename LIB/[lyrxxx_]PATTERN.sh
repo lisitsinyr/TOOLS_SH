@@ -18,48 +18,60 @@ function MAIN_INIT () {
 
     # -------------------------------------------------------------------
     # PROJECTS - проект
-    PROJECTS='PROJECTS_UNIX'
     # -------------------------------------------------------------------
-    # SCRIPT_FULLFILENAME - Файл скрипта [каталог+имя+расширение]
-    SCRIPT_FULLFILENAME=$1
-    #echo SCRIPT_FULLFILENAME: $SCRIPT_FULLFILENAME
+    PROJECTS='PROJECTS_UNIX'
+
     # -------------------------------------------------------------------
     # PROJECTS_LYR_DIR - каталог проектов
     # -------------------------------------------------------------------
-    # PROJECTS_DIR - каталог проекта
-    # -------------------------------------------------------------------
     # SCRIPTS_DIR - каталог скриптов
     # -------------------------------------------------------------------
-    # LIB_SH - каталог библиотеки скриптов
+    # SCRIPT_FULLFILENAME - Файл скрипта [каталог+имя+расширение]
     # -------------------------------------------------------------------
     UNAME=$(uname -n)
     #echo UNAME: $UNAME
-    if [[ -z "$LIB_SH" ]] ; then
-        case "$UNAME" in
-            'ASUS-W10P')
-                PROJECTS_LYR_DIR='/d/PROJECTS_LYR'
-                SCRIPTS_DIR='/d/PROJECTS_LYR/CHECK_LIST/01_OS/03_UNIX/PROJECTS_UNIX/TOOLS_SH'
-                ;;
-            'ASUS-U2204-VB' | 'ASUS-U2204-VM' | 'ASUS-U2310-VB' | 'ASUS-U2310-VB' | 'ASUS-U2310')
-                PROJECTS_LYR_DIR='/home/lyr/PROJECTS_LYR'
-                SCRIPTS_DIR='/home/lyr/PROJECTS_LYR/CHECK_LIST/01_OS/03_UNIX/PROJECTS_UNIX/TOOLS_SH'
+    case "$UNAME" in
+        'ASUS-W10P')
+            PROJECTS_LYR_DIR='/d/PROJECTS_LYR'
+            SCRIPTS_DIR='/d/PROJECTS_LYR/CHECK_LIST/01_OS/03_UNIX/PROJECTS_UNIX/TOOLS_SH'
+            if [[ -z "$SCRIPT_FULLFILENAME" ]] ; then
+                SCRIPT_FULLFILENAME=$(cygpath "$1")
+            fi
             ;;
-            *)
-                echo "ERROR: Компьютер не определен...!"
-                exit 1
-                ;;
-        esac
-        PROJECTS_DIR="$PROJECTS_LYR_DIR/CHECK_LIST/01_OS/03_UNIX/$PROJECTS"
-        LIB_SH="$SCRIPTS_DIR/LIB"
-    fi
+        'ASUS-U2204-VB' | 'ASUS-U2204-VM' | 'ASUS-U2310-VB' | 'ASUS-U2310-VB' | 'ASUS-U2310')
+            PROJECTS_LYR_DIR='/home/lyr/PROJECTS_LYR'
+            SCRIPTS_DIR='/home/lyr/PROJECTS_LYR/CHECK_LIST/01_OS/03_UNIX/PROJECTS_UNIX/TOOLS_SH'
+            if [[ -z "$SCRIPT_FULLFILENAME" ]] ; then
+                SCRIPT_FULLFILENAME=$1
+            fi
+        ;;
+        *)
+            echo "ERROR: Компьютер не определен...!"
+            exit 1
+            ;;
+    esac
     #echo PROJECTS_LYR_DIR: $PROJECTS_LYR_DIR
-    #echo PROJECTS_DIR: $PROJECTS_DIR
     #echo SCRIPTS_DIR: $SCRIPTS_DIR
-    #echo LIB_SH: $LIB_SH
+    #echo SCRIPT_FULLFILENAME: $SCRIPT_FULLFILENAME
+
+    # -------------------------------------------------------------------
+    # PROJECTS_DIR - каталог проекта
+    # -------------------------------------------------------------------
+    PROJECTS_DIR="$PROJECTS_LYR_DIR/CHECK_LIST/01_OS/03_UNIX/$PROJECTS"
+    #echo PROJECTS_DIR: $PROJECTS_DIR
+    
+    # -------------------------------------------------------------------
+    # LIB_SH - каталог библиотеки скриптов
+    # -------------------------------------------------------------------
+    if [[ -z "$LIB_SH" ]] ; then
+        LIB_SH="$SCRIPTS_DIR/LIB"
+        #echo LIB_SH: $LIB_SH
+    fi
     if [[ ! -d "$LIB_SH" ]] ; then
         echo ERROR: Каталог библиотеки LYR $LIB_SH не существует...
         exit 1
     fi
+
     # -------------------------------------------------------------------
     # запуск скриптов БИБЛИОТЕКИ LYR
     # -------------------------------------------------------------------
@@ -105,11 +117,12 @@ function MAIN_SET () {
     # -------------------------------------------------------------------
     # LOG_FILENAME - Файл журнала [имя]
     # LOG_FILENAME=
+    #if [ -z "$LOG_FILENAME" ] ; then LOG_FILENAME=TEST ; fi
     __SET_LOG
 
     return 0
 }
-#beginfunction
+#endfunction
 
 #--------------------------------------------------------------------------------
 # procedure MAIN_CHECK_PARAMETR ()
@@ -183,14 +196,7 @@ function MAIN () {
 #--------------------------------------------------------------------------------
 #
 #--------------------------------------------------------------------------------
-    if [[ "$FULL" -eq 1 ]] ; then
-        MAIN_INIT "$1" 0
-    else
-        MAIN_INIT "$0" 0
-    fi
-
-    #__SET_LOG__=0
-
+    MAIN_INIT "$0" 0
     MAIN_SET
     StartLogFile
     #DIR_SAVE=$CURRENT_DIR
@@ -199,4 +205,5 @@ function MAIN () {
     MAIN
     StopLogFile
     #cd $DIR_SAVE
+    #PressAnyKey
 #--------------------------------------------------------------------------------
