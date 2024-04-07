@@ -4,14 +4,14 @@
 # -------------------------------------------------------------------
 
 #:begin
-echo '---------------------------------------------'
-echo ' install_grub '
-echo '---------------------------------------------'
-sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+    # --------------------------------------------------------------------------------
+    # install_grub
+    # --------------------------------------------------------------------------------
+    sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 
-sudo apt-get update
+    sudo apt-get update
 
-sudo apt install grub-customizer
+    sudo apt install grub-customizer
 
 #:Exit
 

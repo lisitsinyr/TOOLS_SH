@@ -4,9 +4,9 @@
 # -------------------------------------------------------------------
 
 #:begin
-echo '---------------------------------'
-echo ' sudo systemctl restart smbd '
-echo '---------------------------------'
-sudo systemctl restart smbd
+    # --------------------------------------------
+    # sudo systemctl restart smbd
+    # --------------------------------------------
+    sudo systemctl restart smbd
 
 #:Exit

@@ -4,11 +4,11 @@
 # -------------------------------------------------------------------
 
 #:begin
-echo '---------------------------------------------'
-echo ' Перед установкой Step 1: Update Ubuntu '
-echo '---------------------------------------------'
-sudo apt update && sudo apt upgrade
-#sudo apt update
-#sudo apt upgrade
+    # --------------------------------------------
+    # Перед установкой Step 1: Update Ubuntu
+    # --------------------------------------------
+    sudo apt update && sudo apt upgrade
+    #sudo apt update
+    #sudo apt upgrade
 
 #:Exit
