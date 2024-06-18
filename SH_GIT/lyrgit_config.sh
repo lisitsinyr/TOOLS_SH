@@ -52,13 +52,11 @@
 #                           with --get, use default value when missing entry
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '----------------------------------------------'
-echo ' git config --list --show-origin --show-scope'
-echo '----------------------------------------------'
-git config --list --show-origin --show-scope > ~/DATA/GIT/GIT_CONFIG_list_so_ss_current
-#:end
+#begin
+    echo '----------------------------------------------'
+    echo ' git config --list --show-origin --show-scope'
+    echo '----------------------------------------------'
+    git config --list --show-origin --show-scope > ~/DATA/GIT/GIT_CONFIG_list_so_ss_current
 
-exit 0
-
-#:exit
+    exit 0
+#end
