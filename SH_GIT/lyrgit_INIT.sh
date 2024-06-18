@@ -25,62 +25,61 @@
 #                           specify the hash algorithm to use
 # ----------------------------------------------------------------------------
 
-# -------------------------------------------------------------------
-#:begin
-# -------------------------------------------------------------------
-echo '---------------------------------------------------------------------------'
-echo ' Инициализация репозитария в текущем катологе или в заданном каталоге'
-echo '---------------------------------------------------------------------------'
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    PathName="$1"
-else
-    PathName=""
-    read -p "PathName: " PathName
-fi
-if [ ! -z "$PathName" ]; then
-    if [ -d "$PathName" ]; then
-        echo "$PathName" 'not exist'
-        rm -R "$PathName"
+#begin
+    echo '---------------------------------------------------------------------------'
+    echo ' Инициализация репозитария в текущем катологе или в заданном каталоге'
+    echo '---------------------------------------------------------------------------'
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        PathName="$1"
     else
-        echo "$PathName" 'not exist'
+        PathName=""
+        read -p "PathName: " PathName
     fi
-    mkdir "$PathName"
-    cd "$PathName"
-    echo 'goto' "$PathName"
-fi
-pwd
+    if [ ! -z "$PathName" ]; then
+        if [ -d "$PathName" ]; then
+            echo "$PathName" 'not exist'
+            rm -R "$PathName"
+        else
+            echo "$PathName" 'not exist'
+        fi
+        mkdir "$PathName"
+        cd "$PathName"
+        echo 'goto' "$PathName"
+    fi
+    pwd
 
-echo 'Check 2 parametr'
-if [ -n "$2" ]; then
-    Comment="$2"
-else
-    Comment=""
-    read -p "Comment: " Comment
-fi
-if [ -z $Comment ]; then
-    echo 'Parametr $Comment not specified'
-    set Comment='Git Bash commit update'
-    echo $Comment
-fi
+    echo 'Check 2 parametr'
+    if [ -n "$2" ]; then
+        Comment="$2"
+    else
+        Comment=""
+        read -p "Comment: " Comment
+    fi
+    if [ -z $Comment ]; then
+        echo 'Parametr $Comment not specified'
+        set Comment='Git Bash commit update'
+        echo $Comment
+    fi
 
-#:GIT_create_Repository
+    #GIT_create_Repository
 
-git config --global init.defaultBranch main
+    git config --global init.defaultBranch main
 
-touch .gitignore
-chmod 664 .gitignore
+    touch .gitignore
+    chmod 664 .gitignore
 
-touch .gitmodules
-chmod 664 .gitmodules
+    touch .gitmodules
+    chmod 664 .gitmodules
 
-touch README.md
-chmod 664 README.md
-echo '*' >> README.md
+    touch README.md
+    chmod 664 README.md
+    echo '*' >> README.md
 
-git init
-git add --all
-git commit -m "$Comment"
-git branch -M main
+    git init
+    git add --all
+    git commit -m "$Comment"
+    git branch -M main
 
-#:Exit
+    exit 0
+#end

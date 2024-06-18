@@ -66,43 +66,44 @@
 # ----------------------------------------------------------------------------
 
 #:begin
-echo '---------------------------------------------'
-echo ' git clone $GlobalRepository'
-echo ' git clone $GlobalRepository $PathName'
-echo '---------------------------------------------'
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    GlobalRepository="$1"
-else
-    GlobalRepository=""
-    read -p "GlobalRepository: " GlobalRepository
-fi
-# -------------------------------------------------------------------
-if [ ! -z "$GlobalRepository" ]; then
-    echo 'Check 2 parametr'
-    if [ -n "$2" ]; then
-        PathName="$2"
+    echo '---------------------------------------------'
+    echo ' git clone $GlobalRepository'
+    echo ' git clone $GlobalRepository $PathName'
+    echo '---------------------------------------------'
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        GlobalRepository="$1"
     else
-        PathName=""
-        read -p "PathName: " PathName
+        GlobalRepository=""
+        read -p "GlobalRepository: " GlobalRepository
     fi
-
-    if [ ! -z "$PathName" ]; then
-        if [ -d "$PathName" ]; then
-            echo "$PathName" 'does exist'
-            pwd
-        echo "$GlobalRepository" "$PathName"
-            git clone "$GlobalRepository" "$PathName"
+    # -------------------------------------------------------------------
+    if [ ! -z "$GlobalRepository" ]; then
+        echo 'Check 2 parametr'
+        if [ -n "$2" ]; then
+            PathName="$2"
         else
-            echo "$PathName" 'not exist'
+            PathName=""
+            read -p "PathName: " PathName
+        fi
+
+        if [ ! -z "$PathName" ]; then
+            if [ -d "$PathName" ]; then
+                echo "$PathName" 'does exist'
+                pwd
+            echo "$GlobalRepository" "$PathName"
+                git clone "$GlobalRepository" "$PathName"
+            else
+                echo "$PathName" 'not exist'
+            fi
+        else
+            pwd
+            echo "$GlobalRepository"
+            git clone "$GlobalRepository"
         fi
     else
-        pwd
-        echo "$GlobalRepository"
-        git clone "$GlobalRepository"
+        echo 'Parametr $GlobalRepository not specified'
     fi
-else
-    echo 'Parametr $GlobalRepository not specified'
-fi
 
-#:Exit
+    exit 0
+#end

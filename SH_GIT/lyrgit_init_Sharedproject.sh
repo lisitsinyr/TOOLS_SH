@@ -23,10 +23,11 @@
 #                           specify the hash algorithm to use
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo ' git init -bare -share sharedproject.git'
-echo '---------------------------------------------'
-git init -bare -share sharedproject.git
+#begin
+    echo '---------------------------------------------'
+    echo ' git init -bare -share sharedproject.git'
+    echo '---------------------------------------------'
+    git init -bare -share sharedproject.git
 
-#:exit
+    exit 0
+#end

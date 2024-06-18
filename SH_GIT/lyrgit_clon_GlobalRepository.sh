@@ -66,23 +66,24 @@
 #                           a URI for downloading bundles before fetching from origin #ote
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo ' git clone $GlobalRepository'
-echo '---------------------------------------------'
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    GlobalRepository="$1"
-else
-    GlobalRepository=""
-    read -p "GlobalRepository: " GlobalRepository
-fi
-if [ -z "$GlobalRepository" ]; then
-    echo 'Parametr $GlobalRepository not specified'
-fi
+#begin
+    echo '---------------------------------------------'
+    echo ' git clone $GlobalRepository'
+    echo '---------------------------------------------'
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        GlobalRepository="$1"
+    else
+        GlobalRepository=""
+        read -p "GlobalRepository: " GlobalRepository
+    fi
+    if [ -z "$GlobalRepository" ]; then
+        echo 'Parametr $GlobalRepository not specified'
+    fi
 
-if [ ! -z "$GlobalRepository" ]; then
-    git clone "$GlobalRepository"
-fi
+    if [ ! -z "$GlobalRepository" ]; then
+        git clone "$GlobalRepository"
+    fi
 
-#:Exit
+    exit 0
+#end
