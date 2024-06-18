@@ -33,10 +33,11 @@
 #     --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
 # -------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo ' git add -A .'
-echo '---------------------------------------------'
-git add -A .
+#begin
+    echo '---------------------------------------------'
+    echo ' git add -A .'
+    echo '---------------------------------------------'
+    git add -A .
 
-#:exit
+    exit 0
+#end
