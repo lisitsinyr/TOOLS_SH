@@ -31,13 +31,11 @@
 #                           detect renames, optionally set similarity index
 # -------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo ' git status --long'
-echo '---------------------------------------------'
-git status --long
-#:end
-
-exit 0
-
-#:exit
+#begin
+    echo '---------------------------------------------'
+    echo ' git status --long'
+    echo '---------------------------------------------'
+    git status --long
+    
+    exit 0
+#end

@@ -65,22 +65,23 @@
 #                           apply all changes, even those already present upstream
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo ' git rebase $upstream_branch'
-echo ---------------------------------------------
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    upstream_branch="$1"
-else
-    branch=""
-    read -p "upstream_branch: " upstream_branch
-fi
+#begin
+    echo '---------------------------------------------'
+    echo ' git rebase $upstream_branch'
+    echo ---------------------------------------------
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        upstream_branch="$1"
+    else
+        branch=""
+        read -p "upstream_branch: " upstream_branch
+    fi
 
-if [ ! -z "$upstream_branch" ]; then
-    git rebase "$upstream_branch"
-else
-   echo 'Parametr $upstream_branch not specified'
-fi
+    if [ ! -z "$upstream_branch" ]; then
+        git rebase "$upstream_branch"
+    else
+       echo 'Parametr $upstream_branch not specified'
+    fi
 
-#:exit
+    exit 0
+#end

@@ -52,10 +52,11 @@
 #                           with --get, use default value when missing entry
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------------------'
-echo ' git config --global core.excludesfile .gitignore_global'
-echo '---------------------------------------------------------'
-git config --global core.excludesfile .gitignore_global
+#begin
+    echo '---------------------------------------------------------'
+    echo ' git config --global core.excludesfile .gitignore_global'
+    echo '---------------------------------------------------------'
+    git config --global core.excludesfile .gitignore_global
 
-#:exit
+    exit 0
+#end

@@ -5,17 +5,15 @@
 # ***SET_global
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo ' SET_global'
-echo '---------------------------------------------'
-git config --global user.name "lisitsinyr"
+#begin
+    echo '---------------------------------------------'
+    echo ' SET_global'
+    echo '---------------------------------------------'
+    git config --global user.name "lisitsinyr"
 
-git config --global user.email "lisitsinyr@gmail.com"
+    git config --global user.email "lisitsinyr@gmail.com"
 
-git config --list > ~/DATA/GIT/GIT_CONFIG_set_list_global
-#:end
-
-exit 0
-
-#:exit
+    git config --list > ~/DATA/GIT/GIT_CONFIG_set_list_global
+    
+    exit 0
+#end

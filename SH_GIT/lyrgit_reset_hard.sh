@@ -31,10 +31,11 @@
 #     --[no-]stdin          DEPRECATED (use --pathspec-from-file=- instead): read paths from <stdin>
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '----------------------------------------------'
-echo ' git reset --hard'
-echo '----------------------------------------------'
-git reset --hard
+#begin
+    echo '----------------------------------------------'
+    echo ' git reset --hard'
+    echo '----------------------------------------------'
+    git reset --hard
 
-#:exit
+    exit 0
+#end

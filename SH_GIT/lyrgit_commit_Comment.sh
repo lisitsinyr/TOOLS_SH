@@ -69,22 +69,23 @@
 #                           with --pathspec-from-file, pathspec elements are separated with NUL character
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo 'git commit -a -m $Comment'
-echo ---------------------------------------------
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    Comment="$1"
-else
-    Comment=""
-    read -p "Comment: " Comment
-fi
+#begin
+    echo '---------------------------------------------'
+    echo 'git commit -a -m $Comment'
+    echo ---------------------------------------------
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        Comment="$1"
+    else
+        Comment=""
+        read -p "Comment: " Comment
+    fi
 
-if [ ! -z "$Comment" ]; then
-    git commit -a -m "$Comment"
-else
-   echo 'Parametr $Comment not specified'
-fi
+    if [ ! -z "$Comment" ]; then
+        git commit -a -m "$Comment"
+    else
+       echo 'Parametr $Comment not specified'
+    fi
 
-#:exit
+    exit 0
+#end

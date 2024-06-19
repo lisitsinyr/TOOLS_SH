@@ -23,13 +23,11 @@
 #     -v, --verbose         be verbose; must be placed before a subcommand
 # -------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo ' git remote -v'
-echo '---------------------------------------------'
-git remote -v
-#:end
-
-exit 0
-
-#:exit
+#begin
+    echo '---------------------------------------------'
+    echo ' git remote -v'
+    echo '---------------------------------------------'
+    git remote -v
+    
+    exit 0
+#end

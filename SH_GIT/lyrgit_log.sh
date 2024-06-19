@@ -20,10 +20,11 @@
 #     -L <range:file>       trace the evolution of line range <start>,<end> or function :<funcname> in <file>
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo 'git log'
-echo '---------------------------------------------'
-git log
+#begin
+    echo '---------------------------------------------'
+    echo 'git log'
+    echo '---------------------------------------------'
+    git log
 
-#:exit
+    exit 0
+#end

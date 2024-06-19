@@ -5,10 +5,11 @@
 # git version [--build-options]
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo ' git version --build-options'
-echo '---------------------------------------------'
-git version --build-options
+#begin
+    echo '---------------------------------------------'
+    echo ' git version --build-options'
+    echo '---------------------------------------------'
+    git version --build-options
 
-#:Exit
+    exit 0
+#end

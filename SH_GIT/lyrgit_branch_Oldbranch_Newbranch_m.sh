@@ -58,33 +58,34 @@
 #                           format to use for the output
 # --------------------------------------------------------------------------------------
 
-#:begin
-echo '--------------------------------------------------'
-echo ' git branch -m $OldBranch $NewBranch'
-echo '--------------------------------------------------'
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    OldBranch="$1"
-else
-    OldBranch=""
-    read -p "OldBranch: " OldBranch
-fi
-if [ -z "$Remote" ]; then
-   echo 'Parametr $OldBranch not specified'
-fi
-echo 'Check 2 parametr'
-if [ -n "$2" ]; then
-    NewBranch="$2"
-else
-    NewBranch=""
-    read -p "Newbranch: " NewBranch
-fi
-if [ -z "$NewBranch" ]; then
-   echo 'Parametr $NewBranch not specified'
-fi
+#begin
+    echo '--------------------------------------------------'
+    echo ' git branch -m $OldBranch $NewBranch'
+    echo '--------------------------------------------------'
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        OldBranch="$1"
+    else
+        OldBranch=""
+        read -p "OldBranch: " OldBranch
+    fi
+    if [ -z "$Remote" ]; then
+       echo 'Parametr $OldBranch not specified'
+    fi
+    echo 'Check 2 parametr'
+    if [ -n "$2" ]; then
+        NewBranch="$2"
+    else
+        NewBranch=""
+        read -p "Newbranch: " NewBranch
+    fi
+    if [ -z "$NewBranch" ]; then
+       echo 'Parametr $NewBranch not specified'
+    fi
 
-if [ ! -z "$OldBranch" && ! -z "$NewBranch" ]; then
-    git branch -m "$OldBranch" "$NewBranch"
-fi
+    if [ ! -z "$OldBranch" && ! -z "$NewBranch" ]; then
+        git branch -m "$OldBranch" "$NewBranch"
+    fi
 
-#:exit
+    exit 0
+#end

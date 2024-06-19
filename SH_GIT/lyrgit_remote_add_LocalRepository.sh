@@ -21,33 +21,34 @@
 #     -v, --[no-]verbose    be verbose; must be placed before a subcommand
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '-----------------------------------------------------'
-echo ' git remote add $LocalRepository $GlobalRepository'
-echo '-----------------------------------------------------'
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    LocalRepository="$1"
-else
-    LocalRepository=""
-    read -p "LocalRepository: " LocalRepository
-fi
-if [ -z "$LocalRepository" ]; then
-   echo 'Parametr $LocalRepository not specified'
-fi
-echo 'Check 2 parametr'
-if [ -n "$2" ]; then
-    GlobalRepository="$2"
-else
-    GlobalRepository=""
-    read -p "GlobalRepository: " GlobalRepository
-fi
-if [ -z "$GlobalRepository" ]; then
-   echo 'Parametr $GlobalRepository not specified'
-fi
+#begin
+    echo '-----------------------------------------------------'
+    echo ' git remote add $LocalRepository $GlobalRepository'
+    echo '-----------------------------------------------------'
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        LocalRepository="$1"
+    else
+        LocalRepository=""
+        read -p "LocalRepository: " LocalRepository
+    fi
+    if [ -z "$LocalRepository" ]; then
+       echo 'Parametr $LocalRepository not specified'
+    fi
+    echo 'Check 2 parametr'
+    if [ -n "$2" ]; then
+        GlobalRepository="$2"
+    else
+        GlobalRepository=""
+        read -p "GlobalRepository: " GlobalRepository
+    fi
+    if [ -z "$GlobalRepository" ]; then
+       echo 'Parametr $GlobalRepository not specified'
+    fi
 
-if [ ! -z "$LocalRepository" && ! -z "$GlobalRepository" ]; then
-    git remote add "$LocalRepository" "$GlobalRepository"
-fi
+    if [ ! -z "$LocalRepository" && ! -z "$GlobalRepository" ]; then
+        git remote add "$LocalRepository" "$GlobalRepository"
+    fi
 
-#:exit
+    exit 0
+#end

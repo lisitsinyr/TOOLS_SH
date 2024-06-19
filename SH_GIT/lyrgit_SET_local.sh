@@ -5,17 +5,15 @@
 # ***SET_local
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo ' SET_local'
-echo '---------------------------------------------'
-git config --global user.name "lisitsinyr"
+#begin
+    echo '---------------------------------------------'
+    echo ' SET_local'
+    echo '---------------------------------------------'
+    git config --global user.name "lisitsinyr"
 
-git config --global user.email "lisitsinyr@gmail.com"
+    git config --global user.email "lisitsinyr@gmail.com"
 
-git config --list > ~/DATA/GIT/GIT_CONFIG_set_list_local
-#:end
-
-exit 0
-
-#:exit
+    git config --list > ~/DATA/GIT/GIT_CONFIG_set_list_local
+    
+    exit 0
+#end

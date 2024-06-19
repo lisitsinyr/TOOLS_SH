@@ -52,22 +52,23 @@
 #                           with --get, use default value when missing entry
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '----------------------------------------------'
-echo ' git config --global user.email $UserEmail'
-echo '----------------------------------------------'
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    UserEmail="$1"
-else
-    UserEmail=""
-    read -p "UserEmail: " UserEmail
-fi
+#begin
+    echo '----------------------------------------------'
+    echo ' git config --global user.email $UserEmail'
+    echo '----------------------------------------------'
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        UserEmail="$1"
+    else
+        UserEmail=""
+        read -p "UserEmail: " UserEmail
+    fi
 
-if [ ! -z "$UserEmail" ]; then
-    git config --global user.email "$UserEmail"
-else
-   echo 'Parametr $UserEmail not specified'
-fi
+    if [ ! -z "$UserEmail" ]; then
+        git config --global user.email "$UserEmail"
+    else
+       echo 'Parametr $UserEmail not specified'
+    fi
 
-#:exit
+    exit 0
+#end

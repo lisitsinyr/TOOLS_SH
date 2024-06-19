@@ -52,14 +52,15 @@
 #                           with --get, use default value when missing entry
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '-----------------------------------------------------'
-echo ' git config --list --show-origin'
-echo '-----------------------------------------------------'
-# git config --list                        > ./GIT_CONFIG_list_so_so
-git config --list --show-origin          > ./GIT_CONFIG_list_so_so_current
-# git config --list --show-origin --global > ./GIT_CONFIG_list_so_so_global
-# git config --list --show-origin --local  > ./GIT_CONFIG_list_so_so_local
-# git config --list --show-origin --system > ./GIT_CONFIG_list_so_so_system
+#begin
+    echo '-----------------------------------------------------'
+    echo ' git config --list --show-origin'
+    echo '-----------------------------------------------------'
+    # git config --list                        > ./GIT_CONFIG_list_so_so
+    git config --list --show-origin          > ./GIT_CONFIG_list_so_so_current
+    # git config --list --show-origin --global > ./GIT_CONFIG_list_so_so_global
+    # git config --list --show-origin --local  > ./GIT_CONFIG_list_so_so_local
+    # git config --list --show-origin --system > ./GIT_CONFIG_list_so_so_system
 
-#:exit
+    exit 0
+#end

@@ -40,13 +40,11 @@
 #                           with --pathspec-from-file, pathspec elements are separated with NUL character
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo ' git checkout .'
-echo '---------------------------------------------'
-git checkout .
-#:end
-
-exit 0
-
-#:exit
+#begin
+    echo '---------------------------------------------'
+    echo ' git checkout .'
+    echo '---------------------------------------------'
+    git checkout .
+    
+    exit 0
+#end

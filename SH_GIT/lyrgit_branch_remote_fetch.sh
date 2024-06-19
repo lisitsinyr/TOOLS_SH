@@ -58,33 +58,34 @@
 #                           format to use for the output
 # --------------------------------------------------------------------------------------
 
-#:begin
-echo '--------------------------------------------------'
-echo ' git branch $remote $fetch'
-echo '--------------------------------------------------'
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    remote="$1"
-else
-    remote=""
-    read -p "remote: " remote
-fi
-if [ -z "$remote" ]; then
-   echo 'Parametr $remote not specified'
-fi
-echo 'Check 2 parametr'
-if [ -n "$2" ]; then
-    fetch="$2"
-else
-    fetch=""
-    read -p "fetch: " fetch
-fi
-if [ -z "$fetch" ]; then
-   echo 'Parametr $fetch not specified'
-fi
+#begin
+    echo '--------------------------------------------------'
+    echo ' git branch $remote $fetch'
+    echo '--------------------------------------------------'
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        remote="$1"
+    else
+        remote=""
+        read -p "remote: " remote
+    fi
+    if [ -z "$remote" ]; then
+       echo 'Parametr $remote not specified'
+    fi
+    echo 'Check 2 parametr'
+    if [ -n "$2" ]; then
+        fetch="$2"
+    else
+        fetch=""
+        read -p "fetch: " fetch
+    fi
+    if [ -z "$fetch" ]; then
+       echo 'Parametr $fetch not specified'
+    fi
 
-if [ ! -z "$remote" && ! -z "$fetch" ]; then
-    git branch "$remote" "$fetch"
-fi
+    if [ ! -z "$remote" && ! -z "$fetch" ]; then
+        git branch "$remote" "$fetch"
+    fi
 
-#:exit
+    exit 0
+#end

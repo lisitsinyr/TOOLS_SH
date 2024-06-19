@@ -31,22 +31,23 @@
 #     --[no-]stdin          DEPRECATED (use --pathspec-from-file=- instead): read paths from <stdin>
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '----------------------------------------------'
-echo ' git reset HEAD $FileNames'
-echo '----------------------------------------------'
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    FileNames="$1"
-else
-    FileNames=""
-    read -p "FileNames: " FileNames
-fi
+#begin
+    echo '----------------------------------------------'
+    echo ' git reset HEAD $FileNames'
+    echo '----------------------------------------------'
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        FileNames="$1"
+    else
+        FileNames=""
+        read -p "FileNames: " FileNames
+    fi
 
-if [ ! -z "$FileNames" ]; then
-    git reset HEAD "$FileNames"
-else
-   echo 'Parametr $UserEmail not specified'
-fi
+    if [ ! -z "$FileNames" ]; then
+        git reset HEAD "$FileNames"
+    else
+       echo 'Parametr $UserEmail not specified'
+    fi
 
-#:exit
+    exit 0
+#end

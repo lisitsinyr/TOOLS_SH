@@ -21,34 +21,35 @@
 #     -v, --[no-]verbose    be verbose; must be placed before a subcommand
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '-----------------------------------------------------'
-echo ' git remote rename $Repository_old $Repository_new'
-echo '-----------------------------------------------------'
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    Repository_old="$1"
-else
-    Repository_old=""
-    read -p "Repository_old: " Repository_old
-fi
-if [ -z "$Repository_old" ]; then
-   echo 'Parametr $Repository_old not specified'
-fi
+#begin
+    echo '-----------------------------------------------------'
+    echo ' git remote rename $Repository_old $Repository_new'
+    echo '-----------------------------------------------------'
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        Repository_old="$1"
+    else
+        Repository_old=""
+        read -p "Repository_old: " Repository_old
+    fi
+    if [ -z "$Repository_old" ]; then
+       echo 'Parametr $Repository_old not specified'
+    fi
 
-echo 'Check 2 parametr'
-if [ -n "$2" ]; then
-    Repository_new="$2"
-else
-    Repository_new=""
-    read -p "Repository_new: " Repository_new
-fi
-if [ -z "$Repository_new" ]; then
-   echo 'Parametr $Repository_new not specified'
-fi
+    echo 'Check 2 parametr'
+    if [ -n "$2" ]; then
+        Repository_new="$2"
+    else
+        Repository_new=""
+        read -p "Repository_new: " Repository_new
+    fi
+    if [ -z "$Repository_new" ]; then
+       echo 'Parametr $Repository_new not specified'
+    fi
 
-if [ ! -z "$LocalRepository" && ! -z "$GlobalRepository" ]; then
-    git remote rename "$Repository_old" "$Repository_new"
-fi
+    if [ ! -z "$LocalRepository" && ! -z "$GlobalRepository" ]; then
+        git remote rename "$Repository_old" "$Repository_new"
+    fi
 
-#:exit
+    exit 0
+#end

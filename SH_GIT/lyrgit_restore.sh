@@ -31,10 +31,11 @@
 #                           with --pathspec-from-file, pathspec elements are separated with NUL character
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo ' git restore'
-echo '---------------------------------------------'
-git restore
+#begin
+    echo '---------------------------------------------'
+    echo ' git restore'
+    echo '---------------------------------------------'
+    git restore
 
-#:exit
+    exit 0
+#end

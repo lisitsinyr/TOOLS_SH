@@ -40,34 +40,32 @@
 #     -6, --ipv6            use IPv6 addresses only
 # -------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo ' Отправить изменения'
-echo '     git add --all'
-echo '     git commit -m "$Comment"'
-echo '     git push -u origin main'
-echo '---------------------------------------------'
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    Comment="$1"
-else
-    Comment=""
-    read -p "Comment: " Comment
-fi
+#begin
+    echo '---------------------------------------------'
+    echo ' Отправить изменения'
+    echo '     git add --all'
+    echo '     git commit -m "$Comment"'
+    echo '     git push -u origin main'
+    echo '---------------------------------------------'
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        Comment="$1"
+    else
+        Comment=""
+        read -p "Comment: " Comment
+    fi
 
-if [ -z "$Comment" ]; then
-    echo 'Parametr $Comment not specified'
-    set Comment='Git Bash commit update'
-fi
+    if [ -z "$Comment" ]; then
+        echo 'Parametr $Comment not specified'
+        set Comment='Git Bash commit update'
+    fi
 
-if [ ! -z "$Comment" ]; then
-    echo $Comment
-    git add --all
-    git commit -m "$Comment"
-    git push -u origin main
-fi
-#:end
-
-exit 0
-
-#:exit
+    if [ ! -z "$Comment" ]; then
+        echo $Comment
+        git add --all
+        git commit -m "$Comment"
+        git push -u origin main
+    fi
+    
+    exit 0
+#end

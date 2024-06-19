@@ -69,10 +69,11 @@
 #                           with --pathspec-from-file, pathspec elements are separated with NUL character
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '--------------------------------------------------'
-echo ' git commit -a'
-echo '--------------------------------------------------'
-git commit -a
+#begin
+    echo '--------------------------------------------------'
+    echo ' git commit -a'
+    echo '--------------------------------------------------'
+    git commit -a
 
-#:exit
+    exit 0
+#end

@@ -58,23 +58,24 @@
 #                           format to use for the output
 # --------------------------------------------------------------------------------------
 
-#:begin
-echo '--------------------------------------------------'
-echo ' git branch origin $fetch'
-echo '--------------------------------------------------'
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    fetch="$1"
-else
-    fetch=""
-    read -p "fetch: " fetch
-fi
-if [ -z "$fetch" ]; then
-   echo 'Parametr $fetch not specified'
-fi
+#begin
+    echo '--------------------------------------------------'
+    echo ' git branch origin $fetch'
+    echo '--------------------------------------------------'
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        fetch="$1"
+    else
+        fetch=""
+        read -p "fetch: " fetch
+    fi
+    if [ -z "$fetch" ]; then
+       echo 'Parametr $fetch not specified'
+    fi
 
-if [ ! -z "$fetch" ]; then
-    git branch origin "$fetch"
-fi
+    if [ ! -z "$fetch" ]; then
+        git branch origin "$fetch"
+    fi
 
-#:exit
+    exit 0
+#end

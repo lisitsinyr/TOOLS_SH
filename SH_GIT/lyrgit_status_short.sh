@@ -29,13 +29,14 @@
 #                           detect renames, optionally set similarity index
 # -------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo 'git status --short'
-echo '---------------------------------------------'
-git status --short
+#begin
+    echo '---------------------------------------------'
+    echo 'git status --short'
+    echo '---------------------------------------------'
+    git status --short
 
-# показать информацию о branch
-# git status --branch
+    # показать информацию о branch
+    # git status --branch
 
-#:exit
+    exit 0
+#end

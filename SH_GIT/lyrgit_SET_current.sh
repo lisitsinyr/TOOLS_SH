@@ -5,17 +5,15 @@
 # ***SET_current
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo ' SET_current'
-echo '---------------------------------------------'
-git config user.name "lisitsinyr"
+#begin
+    echo '---------------------------------------------'
+    echo ' SET_current'
+    echo '---------------------------------------------'
+    git config user.name "lisitsinyr"
 
-git config user.email "lisitsinyr@gmail.com"
+    git config user.email "lisitsinyr@gmail.com"
 
-git config --list > ~/DATA/GIT/GIT_CONFIG_set_list_current
-#:end
-
-exit 0
-
-#:exit
+    git config --list > ~/DATA/GIT/GIT_CONFIG_set_list_current
+    
+    exit 0
+#end

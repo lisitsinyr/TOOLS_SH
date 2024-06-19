@@ -29,22 +29,23 @@
 #     --[no-]reference      use the 'reference' format to refer to commits
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '----------------------------------------------'
-echo ' git revert $commite'
-echo '----------------------------------------------'
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    commite="$1"
-else
-    commite=""
-    read -p "commite: " commite
-fi
+#begin
+    echo '----------------------------------------------'
+    echo ' git revert $commite'
+    echo '----------------------------------------------'
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        commite="$1"
+    else
+        commite=""
+        read -p "commite: " commite
+    fi
 
-if [ ! -z "$commite" ]; then
-    git revert "$commite"
-else
-   echo 'Parametr $UserEmail not specified'
-fi
+    if [ ! -z "$commite" ]; then
+        git revert "$commite"
+    else
+       echo 'Parametr $UserEmail not specified'
+    fi
 
-#:exit
+    exit 0
+#end

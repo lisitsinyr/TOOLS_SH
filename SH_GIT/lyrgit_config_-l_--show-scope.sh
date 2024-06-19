@@ -52,14 +52,15 @@
 #                           with --get, use default value when missing entry
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '-----------------------------------------------------'
-echo ' git config -l --show-scope'
-echo '-----------------------------------------------------'
-# git config -l                       > ./GIT_CONFIG_l_ss_ss
-git config -l --show-scope          > ./GIT_CONFIG_l_ss_ss_current
-# git config -l --show-scope --global > ./GIT_CONFIG_l_ss_ss_global
-# git config -l --show-scope --local  > ./GIT_CONFIG_l_ss_ss_local
-# git config -l --show-scope --system > ./GIT_CONFIG_l_ss_ss_system
+#begin
+    echo '-----------------------------------------------------'
+    echo ' git config -l --show-scope'
+    echo '-----------------------------------------------------'
+    # git config -l                       > ./GIT_CONFIG_l_ss_ss
+    git config -l --show-scope          > ./GIT_CONFIG_l_ss_ss_current
+    # git config -l --show-scope --global > ./GIT_CONFIG_l_ss_ss_global
+    # git config -l --show-scope --local  > ./GIT_CONFIG_l_ss_ss_local
+    # git config -l --show-scope --system > ./GIT_CONFIG_l_ss_ss_system
 
-#:exit
+    exit 0
+#end

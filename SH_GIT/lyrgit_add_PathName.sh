@@ -33,27 +33,28 @@
 #     --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
 # -------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo ' git add $PathName'
-echo '---------------------------------------------'
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    PathName="$1"
-else
-    PathName=""
-    read -p "PathName: " PathName
-fi
-
-if [ ! -z "$PathName" ]; then
-    if [ -d "$PathName" ]; then
-        echo "$PathName" 'not exist'
-        git add "$PathName"
+#begin
+    echo '---------------------------------------------'
+    echo ' git add $PathName'
+    echo '---------------------------------------------'
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        PathName="$1"
     else
-        echo "$PathName" 'not exist'
+        PathName=""
+        read -p "PathName: " PathName
     fi
-else
-    echo 'Parametr $PathName not specified'
-fi
 
-#:exit
+    if [ ! -z "$PathName" ]; then
+        if [ -d "$PathName" ]; then
+            echo "$PathName" 'not exist'
+            git add "$PathName"
+        else
+            echo "$PathName" 'not exist'
+        fi
+    else
+        echo 'Parametr $PathName not specified'
+    fi
+
+    exit 0
+#end

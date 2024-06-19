@@ -31,23 +31,24 @@
 #     --[no-]stdin          DEPRECATED (use --pathspec-from-file=- instead): read paths from <stdin>
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '--------------------------------------------------'
-echo ' git reset origin $branch'
-echo '--------------------------------------------------'
-echo Check 1 parametr
-if [ -n "$1" ]; then
-    branch="$1"
-else
-    branch=""
-    read -p "branch: " branch
-fi
-if [ -z "$branch" ]; then
-   echo 'Parametr $branch not specified'
-fi
+#begin
+    echo '--------------------------------------------------'
+    echo ' git reset origin $branch'
+    echo '--------------------------------------------------'
+    echo Check 1 parametr
+    if [ -n "$1" ]; then
+        branch="$1"
+    else
+        branch=""
+        read -p "branch: " branch
+    fi
+    if [ -z "$branch" ]; then
+       echo 'Parametr $branch not specified'
+    fi
 
-if [ ! -z "$branch" ]; then
-    git reset origin "$branch"
-fi
+    if [ ! -z "$branch" ]; then
+        git reset origin "$branch"
+    fi
 
-#:exit
+    exit 0
+#end

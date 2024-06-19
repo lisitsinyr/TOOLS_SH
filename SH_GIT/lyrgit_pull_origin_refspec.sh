@@ -69,23 +69,24 @@
 #     --[no-]set-upstream   set upstream for git pull/fetch
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '--------------------------------------------------'
-echo ' git pull origin $refspec'
-echo '--------------------------------------------------'
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    refspec="$1"
-else
-    refspec=""
-    read -p "refspec: " refspec
-fi
-if [ -z "$refspec" ]; then
-   echo 'Parametr $refspec not specified'
-fi
+#begin
+    echo '--------------------------------------------------'
+    echo ' git pull origin $refspec'
+    echo '--------------------------------------------------'
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        refspec="$1"
+    else
+        refspec=""
+        read -p "refspec: " refspec
+    fi
+    if [ -z "$refspec" ]; then
+       echo 'Parametr $refspec not specified'
+    fi
 
-if [ -z "$refspec" ]; then
-    git pull origin "$refspec"
-fi
+    if [ -z "$refspec" ]; then
+        git pull origin "$refspec"
+    fi
 
-#:exit
+    exit 0
+#end

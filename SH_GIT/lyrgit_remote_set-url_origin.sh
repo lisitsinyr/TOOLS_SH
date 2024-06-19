@@ -21,28 +21,26 @@
 #     -v, --[no-]verbose    be verbose; must be placed before a subcommand
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '-----------------------------------------------------'
-echo ' git remote set-url origin $GlobalRepository'
-echo '-----------------------------------------------------'
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    GlobalRepository="$1"
-else
-    GlobalRepository=""
-    read -p "GlobalRepository: " GlobalRepository
-fi
-if [ -z "$GlobalRepository" ]; then
-   echo 'Parametr $GlobalRepository not specified'
-fi
+#begin
+    echo '-----------------------------------------------------'
+    echo ' git remote set-url origin $GlobalRepository'
+    echo '-----------------------------------------------------'
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        GlobalRepository="$1"
+    else
+        GlobalRepository=""
+        read -p "GlobalRepository: " GlobalRepository
+    fi
+    if [ -z "$GlobalRepository" ]; then
+       echo 'Parametr $GlobalRepository not specified'
+    fi
 
-if [ ! -z "$GlobalRepository" ]; then
-    git remote -v
-    git remote set-url origin "$GlobalRepository"
-    git remote -v
-fi
-#:end
-
-exit 0
-
-#:exit
+    if [ ! -z "$GlobalRepository" ]; then
+        git remote -v
+        git remote set-url origin "$GlobalRepository"
+        git remote -v
+    fi
+    
+    exit 0
+#end

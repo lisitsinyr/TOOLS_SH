@@ -21,10 +21,11 @@
 #     -v, --[no-]verbose    be verbose; must be placed before a subcommand
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '-----------------------------------------------------'
-echo ' git remote show origin'
-echo '-----------------------------------------------------'
-git remote show origin
+#begin
+    echo '-----------------------------------------------------'
+    echo ' git remote show origin'
+    echo '-----------------------------------------------------'
+    git remote show origin
 
-#:exit
+    exit 0
+#end

@@ -51,22 +51,23 @@
 #                           sorting and filtering are case insensitive
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo ' git tag $Tag'
-echo '---------------------------------------------'
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    Tag="$1"
-else
-    Tag=""
-    read -p "Tag: " Tag
-fi
+#begin
+    echo '---------------------------------------------'
+    echo ' git tag $Tag'
+    echo '---------------------------------------------'
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        Tag="$1"
+    else
+        Tag=""
+        read -p "Tag: " Tag
+    fi
 
-if [ ! -z "$Tag" ]; then
-    git tag "$Tag"
-else
-   echo 'Parametr $Tag not specified'
-fi
+    if [ ! -z "$Tag" ]; then
+        git tag "$Tag"
+    else
+       echo 'Parametr $Tag not specified'
+    fi
 
-#:exit
+    exit 0
+#end

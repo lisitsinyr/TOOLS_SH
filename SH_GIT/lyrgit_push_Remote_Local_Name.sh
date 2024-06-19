@@ -40,43 +40,44 @@
 #     -6, --ipv6            use IPv6 addresses only
 # -------------------------------------------------------------------
 
-#:begin
-echo '--------------------------------------------------'
-echo ' git Name --track $remote $Local:$Name'
-echo '--------------------------------------------------'
-echo 'Check 1 parametr'
-if [ -n "$1" ]; then
-    remote="$1"
-else
-    remote=""
-    read -p "remote: " remote
-fi
-if [ -z "$remote" ]; then
-   echo 'Parametr $remote not specified'
-fi
-echo 'Check 2 parametr'
-if [ -n "$2" ]; then
-    Local="$2"
-else
-    Local=""
-    read -p "Local: " Local
-fi
-if [ -z "$Local" ]; then
-   echo 'Parametr $Local not specified'
-fi
-echo 'Check 3 parametr'
-if [ -n "$3" ]; then
-    Name="$3"
-else
-    Name=""
-    read -p "Name: " Name
-fi
-if [ -z "$Name" ]; then
-   echo 'Parametr $Name not specified'
-fi
+#begin
+    echo '--------------------------------------------------'
+    echo ' git Name --track $remote $Local:$Name'
+    echo '--------------------------------------------------'
+    echo 'Check 1 parametr'
+    if [ -n "$1" ]; then
+        remote="$1"
+    else
+        remote=""
+        read -p "remote: " remote
+    fi
+    if [ -z "$remote" ]; then
+       echo 'Parametr $remote not specified'
+    fi
+    echo 'Check 2 parametr'
+    if [ -n "$2" ]; then
+        Local="$2"
+    else
+        Local=""
+        read -p "Local: " Local
+    fi
+    if [ -z "$Local" ]; then
+       echo 'Parametr $Local not specified'
+    fi
+    echo 'Check 3 parametr'
+    if [ -n "$3" ]; then
+        Name="$3"
+    else
+        Name=""
+        read -p "Name: " Name
+    fi
+    if [ -z "$Name" ]; then
+       echo 'Parametr $Name not specified'
+    fi
 
-if [ ! -z "$remote" && ! -z "$branch" && ! -z "$Name" ]; then
-    git Name --track "$remote" "$Local":"$Name"
-fi
+    if [ ! -z "$remote" && ! -z "$branch" && ! -z "$Name" ]; then
+        git Name --track "$remote" "$Local":"$Name"
+    fi
 
-#:exit
+    exit 0
+#end

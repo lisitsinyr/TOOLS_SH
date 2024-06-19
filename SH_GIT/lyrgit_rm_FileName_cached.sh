@@ -21,27 +21,28 @@
 #                           with --pathspec-from-file, pathspec elements are separated with NUL character
 # ----------------------------------------------------------------------------
 
-#:begin
-echo '---------------------------------------------'
-echo ' git rm -cached $FileName'
-echo '---------------------------------------------'
-echo Check 1 parametr
-if [ -n "$1" ]; then
-    FileName="$1"
-else
-    FileName=""
-    read -p "FileName: " FileName
-fi
-
-if [ ! -z "$FileName" ]; then
-    if [ -f "$FileName" ]; then
-        echo "$FileName" 'not exist'
-        git rm -cached "$FileName"
+#begin
+    echo '---------------------------------------------'
+    echo ' git rm -cached $FileName'
+    echo '---------------------------------------------'
+    echo Check 1 parametr
+    if [ -n "$1" ]; then
+        FileName="$1"
     else
-        echo "$FileName" 'not exist'
+        FileName=""
+        read -p "FileName: " FileName
     fi
-else
-    echo 'Parametr $FileName not specified'
-fi
 
-#:exit
+    if [ ! -z "$FileName" ]; then
+        if [ -f "$FileName" ]; then
+            echo "$FileName" 'not exist'
+            git rm -cached "$FileName"
+        else
+            echo "$FileName" 'not exist'
+        fi
+    else
+        echo 'Parametr $FileName not specified'
+    fi
+
+    exit 0
+#
