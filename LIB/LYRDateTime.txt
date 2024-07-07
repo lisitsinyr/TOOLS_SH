@@ -1,0 +1,6 @@
+procedure LYRDateTime ()
+
+function YYYYMMDDHHMMSS () -> YYYYMMDDHHMMSS
+
+function DateTime (AFORMAT) -> DateTime
+    AFORMAT
