@@ -88,7 +88,7 @@ function MAIN_CHECK_PARAMETR () {
     # -------------------------------------
     O1=O1_default
     PN_CAPTION=O1
-    Read_P O1
+    Read_P O1 O1
     echo O1:$O1
     #AddLog $loAll $TEXT O1:$O1
     #AddLog $loAll $INFO O1:$O1
@@ -138,17 +138,17 @@ function MAIN_FUNC {
     echo ---------------------------------------------------------------
     echo ...git add --all
     echo ---------------------------------------------------------------
-    #git add --all
+    git add --all
     
     echo ---------------------------------------------------------------
     echo ...git commit -m "$Comment"
     echo ---------------------------------------------------------------
-    #git commit -m "$Comment"
+    git commit -m "$Comment"
 
     echo ---------------------------------------------------------------
     echo ...git push -u origin main
     echo ---------------------------------------------------------------
-    #git push -u origin main
+    git push -u origin main
 
     return 0
 }
