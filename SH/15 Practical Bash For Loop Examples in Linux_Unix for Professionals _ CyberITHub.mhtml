@@ -1,91 +1,94 @@
 From: <Saved by Blink>
-Snapshot-Content-Location: https://www.cyberithub.com/passwordless-ssh-login-using-ssh-keygen/
-Subject: Passwordless ssh login using ssh keygen in 6 Easy steps | CyberITHub
-Date: Fri, 12 Jan 2024 10:29:57 +0400
+Snapshot-Content-Location: https://www.cyberithub.com/bash-for-loop-examples-in-linux-unix/
+Subject: 15 Practical Bash For Loop Examples in Linux/Unix for Professionals | CyberITHub
+Date: Wed, 10 Jan 2024 10:09:34 +0400
 MIME-Version: 1.0
 Content-Type: multipart/related;
 	type="text/html";
-	boundary="----MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----"
+	boundary="----MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----"
 
 
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/html
-Content-ID: <frame-BD25956092BAAC2F9758C481317D0967@mhtml.blink>
+Content-ID: <frame-FC82EB80716664FA976F3F06DCAB539B@mhtml.blink>
 Content-Transfer-Encoding: quoted-printable
-Content-Location: https://www.cyberithub.com/passwordless-ssh-login-using-ssh-keygen/
+Content-Location: https://www.cyberithub.com/bash-for-loop-examples-in-linux-unix/
 
 <!DOCTYPE html><html lang=3D"en-US" prefix=3D"og: https://ogp.me/ns#" style=
 =3D"display: block;"><head><meta http-equiv=3D"Content-Type" content=3D"tex=
 t/html; charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/css" href=3D=
-"cid:css-41aef602-be94-4ba5-a306-ae7062ce43be@mhtml.blink" /><link rel=3D"s=
-tylesheet" type=3D"text/css" href=3D"cid:css-687c8e6d-fa61-467a-b68b-a81036=
-d337ef@mhtml.blink" /><link rel=3D"stylesheet" type=3D"text/css" href=3D"ci=
-d:css-09d04847-505c-4e32-be36-03f1bf93b44c@mhtml.blink" /><link rel=3D"styl=
-esheet" type=3D"text/css" href=3D"cid:css-6a2fb928-fb23-4e30-b287-56ff9236f=
-85e@mhtml.blink" /><link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:c=
-ss-4a1d63e7-9baa-4ad7-87ee-117b87d6253c@mhtml.blink" /><link rel=3D"stylesh=
-eet" type=3D"text/css" href=3D"cid:css-3a5a651c-3a4c-477d-bb34-08377392c404=
+"cid:css-18fe18e9-5f49-4930-ab03-56ac26832b72@mhtml.blink" /><link rel=3D"s=
+tylesheet" type=3D"text/css" href=3D"cid:css-fb43ba99-4d36-4d63-b909-11e19d=
+8c5f28@mhtml.blink" /><link rel=3D"stylesheet" type=3D"text/css" href=3D"ci=
+d:css-7f4a7963-cd8d-4880-9b7f-411cf3f52897@mhtml.blink" /><link rel=3D"styl=
+esheet" type=3D"text/css" href=3D"cid:css-9b93fbb1-f92a-4762-b133-ccb28b4c3=
+5b5@mhtml.blink" /><link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:c=
+ss-b268bfb0-44bc-46df-b567-7725fa8a4749@mhtml.blink" /><link rel=3D"stylesh=
+eet" type=3D"text/css" href=3D"cid:css-74f17576-5ac5-4a87-9903-9808028d9ad8=
 @mhtml.blink" /><link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-=
-b278aeaa-ecc1-4630-9408-1ca984cc8ef1@mhtml.blink" /><link rel=3D"stylesheet=
-" type=3D"text/css" href=3D"cid:css-b61b6cd0-8230-45be-a892-7b6edb5546f9@mh=
-tml.blink" /><link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-4c5=
-02f66-cc68-4f9b-a3c2-04da1edd2d20@mhtml.blink" /><link rel=3D"stylesheet" t=
-ype=3D"text/css" href=3D"cid:css-f2598c08-90cb-4973-8a6d-22f916638e5f@mhtml=
-.blink" /><link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-b83de7=
-76-6916-485c-b337-70ff85d9c329@mhtml.blink" /><link rel=3D"stylesheet" type=
-=3D"text/css" href=3D"cid:css-ad7b5d06-7a71-49ed-95a3-b14ef0402501@mhtml.bl=
-ink" /><link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-9288761e-=
-ed36-422a-b38c-3aeedb825fae@mhtml.blink" />
+a6ed0657-b457-4f88-9094-2132ba28d4bb@mhtml.blink" /><link rel=3D"stylesheet=
+" type=3D"text/css" href=3D"cid:css-e69f3ffd-f6f4-4b2a-8a77-132dd573798c@mh=
+tml.blink" /><link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-651=
+6cde3-5437-4f46-994f-e16e62898c8c@mhtml.blink" /><link rel=3D"stylesheet" t=
+ype=3D"text/css" href=3D"cid:css-6a3cfc5c-ea83-42f8-a08d-70ef325eaec0@mhtml=
+.blink" /><link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-913a2c=
+eb-fed3-43e2-9359-5f74606bf563@mhtml.blink" /><link rel=3D"stylesheet" type=
+=3D"text/css" href=3D"cid:css-6462f63d-0914-4739-a618-8dd068c4c75d@mhtml.bl=
+ink" /><link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-20cc7b1f-=
+5119-43fa-8861-5dd18a0cec22@mhtml.blink" />
 =09
 	<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1=
 ">
 <!-- Search Engine Optimization by Rank Math - https://rankmath.com/ -->
-<title>Passwordless ssh login using ssh keygen in 6 Easy steps | CyberITHub=
-</title>
+<title>15 Practical Bash For Loop Examples in Linux/Unix for Professionals =
+| CyberITHub</title>
 <meta name=3D"description" content=3D"In this article, I will take you thro=
-ugh 6 Simple Steps to setup passwordless ssh login using ssh keygen. SSH is=
- a network protocol that allows one computer">
+ugh 15 Practical Bash for loop Examples in Linux/Unix for Beginners. If you=
+ are using Bash Scripting in Linux from long">
 <meta name=3D"robots" content=3D"follow, index, max-snippet:-1, max-video-p=
 review:-1, max-image-preview:large">
-<link rel=3D"canonical" href=3D"https://www.cyberithub.com/passwordless-ssh=
--login-using-ssh-keygen/">
+<link rel=3D"canonical" href=3D"https://www.cyberithub.com/bash-for-loop-ex=
+amples-in-linux-unix/">
 <meta property=3D"og:locale" content=3D"en_US">
 <meta property=3D"og:type" content=3D"article">
-<meta property=3D"og:title" content=3D"Passwordless ssh login using ssh key=
-gen in 6 Easy steps | CyberITHub">
+<meta property=3D"og:title" content=3D"15 Practical Bash For Loop Examples =
+in Linux/Unix for Professionals | CyberITHub">
 <meta property=3D"og:description" content=3D"In this article, I will take y=
-ou through 6 Simple Steps to setup passwordless ssh login using ssh keygen.=
- SSH is a network protocol that allows one computer">
-<meta property=3D"og:url" content=3D"https://www.cyberithub.com/passwordles=
-s-ssh-login-using-ssh-keygen/">
+ou through 15 Practical Bash for loop Examples in Linux/Unix for Beginners.=
+ If you are using Bash Scripting in Linux from long">
+<meta property=3D"og:url" content=3D"https://www.cyberithub.com/bash-for-lo=
+op-examples-in-linux-unix/">
 <meta property=3D"og:site_name" content=3D"CyberITHub">
 <meta property=3D"article:publisher" content=3D"https://www.facebook.com/cy=
 berithub">
-<meta property=3D"article:section" content=3D"Linux">
+<meta property=3D"article:section" content=3D"Scripting">
+<meta property=3D"og:updated_time" content=3D"2021-03-09T00:50:22+05:30">
 <meta property=3D"og:image" content=3D"https://www.cyberithub.com/wp-conten=
-t/uploads/2020/01/passwordless.jpg">
+t/uploads/2020/06/bashfor.jpg">
 <meta property=3D"og:image:secure_url" content=3D"https://www.cyberithub.co=
-m/wp-content/uploads/2020/01/passwordless.jpg">
+m/wp-content/uploads/2020/06/bashfor.jpg">
 <meta property=3D"og:image:width" content=3D"560">
 <meta property=3D"og:image:height" content=3D"315">
-<meta property=3D"og:image:alt" content=3D"ssh keygen">
+<meta property=3D"og:image:alt" content=3D"bash for loop">
 <meta property=3D"og:image:type" content=3D"image/jpeg">
-<meta property=3D"article:published_time" content=3D"2020-01-13T01:59:53+05=
+<meta property=3D"article:published_time" content=3D"2020-09-06T20:05:33+05=
 :30">
+<meta property=3D"article:modified_time" content=3D"2021-03-09T00:50:22+05:=
+30">
 <meta name=3D"twitter:card" content=3D"summary_large_image">
-<meta name=3D"twitter:title" content=3D"Passwordless ssh login using ssh ke=
-ygen in 6 Easy steps | CyberITHub">
+<meta name=3D"twitter:title" content=3D"15 Practical Bash For Loop Examples=
+ in Linux/Unix for Professionals | CyberITHub">
 <meta name=3D"twitter:description" content=3D"In this article, I will take =
-you through 6 Simple Steps to setup passwordless ssh login using ssh keygen=
-. SSH is a network protocol that allows one computer">
+you through 15 Practical Bash for loop Examples in Linux/Unix for Beginners=
+. If you are using Bash Scripting in Linux from long">
 <meta name=3D"twitter:site" content=3D"@CyberITHub">
 <meta name=3D"twitter:creator" content=3D"@CyberITHub">
 <meta name=3D"twitter:image" content=3D"https://www.cyberithub.com/wp-conte=
-nt/uploads/2020/01/passwordless.jpg">
+nt/uploads/2020/06/bashfor.jpg">
 <meta name=3D"twitter:label1" content=3D"Written by">
 <meta name=3D"twitter:data1" content=3D"cyberithub">
 <meta name=3D"twitter:label2" content=3D"Time to read">
-<meta name=3D"twitter:data2" content=3D"5 minutes">
+<meta name=3D"twitter:data2" content=3D"10 minutes">
 
 <!-- /Rank Math WordPress SEO plugin -->
 
@@ -98,9 +101,9 @@ t">
 <link rel=3D"alternate" type=3D"application/rss+xml" title=3D"CyberITHub =
 =C2=BB Comments Feed" href=3D"https://www.cyberithub.com/comments/feed/">
 <link rel=3D"alternate" type=3D"application/rss+xml" title=3D"CyberITHub =
-=C2=BB Passwordless ssh login using ssh keygen in 6 Easy steps Comments Fee=
-d" href=3D"https://www.cyberithub.com/passwordless-ssh-login-using-ssh-keyg=
-en/feed/">
+=C2=BB 15 Practical Bash For Loop Examples in Linux/Unix for Professionals =
+Comments Feed" href=3D"https://www.cyberithub.com/bash-for-loop-examples-in=
+-linux-unix/feed/">
 <!-- cyberithub.com is managing ads with Advanced Ads --><!--noptimize-->
 		<!--/noptimize--><link rel=3D"stylesheet" id=3D"mediaelement-css" href=3D=
 "https://www.cyberithub.com/wp-includes/js/mediaelement/mediaelementplayer-=
@@ -124,21 +127,23 @@ rithub.com/wp-content/themes/generatepress_child/style.css" media=3D"all">
 <link rel=3D"stylesheet" id=3D"tablepress-default-css" href=3D"https://www.=
 cyberithub.com/wp-content/plugins/tablepress/css/build/default.css" media=
 =3D"all">
+<link rel=3D"stylesheet" id=3D"generate-blog-images-css" href=3D"https://ww=
+w.cyberithub.com/wp-content/plugins/gp-premium/blog/functions/css/featured-=
+images.min.css" media=3D"all">
 <link rel=3D"stylesheet" id=3D"generate-secondary-nav-css" href=3D"https://=
 www.cyberithub.com/wp-content/plugins/gp-premium/secondary-nav/functions/cs=
 s/main.min.css" media=3D"all">
 
-<link rel=3D"shortlink" href=3D"https://www.cyberithub.com/?p=3D2882">
+<link rel=3D"shortlink" href=3D"https://www.cyberithub.com/?p=3D8910">
 =09
 		<link rel=3D"pingback" href=3D"https://www.cyberithub.com/xmlrpc.php">
-<link rel=3D"prefetch" href=3D"https://www.cyberithub.com/category/programm=
-ing/node-js/"></head><body class=3D"post-template-default single single-pos=
-t postid-2882 single-format-standard wp-custom-logo wp-embed-responsive pos=
-t-image-above-header post-image-aligned-center secondary-nav-above-header s=
-econdary-nav-aligned-left sticky-menu-fade both-sidebars nav-below-header s=
-eparate-containers nav-search-enabled header-aligned-center dropdown-hover =
-aa-prefix-cyber-" itemtype=3D"https://schema.org/Blog" itemscope=3D""><h1 s=
-tyle=3D"display:none">Cyberithub</h1>
+</head><body class=3D"post-template-default single single-post postid-8910 =
+single-format-standard wp-custom-logo wp-embed-responsive post-image-above-=
+header post-image-aligned-center secondary-nav-above-header secondary-nav-a=
+ligned-left sticky-menu-fade both-sidebars nav-below-header separate-contai=
+ners nav-search-enabled header-aligned-center dropdown-hover featured-image=
+-active aa-prefix-cyber-" itemtype=3D"https://schema.org/Blog" itemscope=3D=
+""><h1 style=3D"display:none">Cyberithub</h1>
 <link rel=3D"apple-touch-icon" sizes=3D"180x180" href=3D"https://www.cyberi=
 thub.com/apple-touch-icon.png">
 <link rel=3D"icon" type=3D"image/png" sizes=3D"32x32" href=3D"https://www.c=
@@ -164,10 +169,10 @@ m/wp-content/uploads/2021/06/favicon.jpg">
 
 
 	<a class=3D"screen-reader-text skip-link" href=3D"https://www.cyberithub.c=
-om/passwordless-ssh-login-using-ssh-keygen/#content" title=3D"Skip to conte=
-nt">Skip to content</a>			<nav id=3D"secondary-navigation" class=3D"seconda=
-ry-navigation sub-menu-left" itemtype=3D"https://schema.org/SiteNavigationE=
-lement" itemscope=3D"itemscope">
+om/bash-for-loop-examples-in-linux-unix/#content" title=3D"Skip to content"=
+>Skip to content</a>			<nav id=3D"secondary-navigation" class=3D"secondary-=
+navigation sub-menu-left" itemtype=3D"https://schema.org/SiteNavigationElem=
+ent" itemscope=3D"itemscope">
 				<div class=3D"inside-navigation grid-container grid-parent">
 										<button class=3D"menu-toggle secondary-menu-toggle">
 						<span class=3D"gp-icon icon-menu-bars"><svg viewBox=3D"0 0 512 512" a=
@@ -341,21 +346,23 @@ gory/programming/java/">Java</a></li>
 </ul>
 </li>
 <li id=3D"menu-item-55" class=3D"menu-item menu-item-type-taxonomy menu-ite=
-m-object-category menu-item-has-children menu-item-55"><a href=3D"https://w=
-ww.cyberithub.com/category/scripting/">Scripting<span role=3D"presentation"=
- class=3D"dropdown-menu-toggle"><span class=3D"gp-icon icon-arrow"><svg vie=
-wBox=3D"0 0 330 512" aria-hidden=3D"true" xmlns=3D"http://www.w3.org/2000/s=
-vg" width=3D"1em" height=3D"1em"><path d=3D"M305.913 197.085c0 2.266-1.133 =
-4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1=
-.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.81=
-6 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815=
- 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.=
-515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6=
-.515z"></path></svg></span></span></a>
+m-object-category current-post-ancestor current-menu-parent current-post-pa=
+rent menu-item-has-children menu-item-55"><a href=3D"https://www.cyberithub=
+.com/category/scripting/">Scripting<span role=3D"presentation" class=3D"dro=
+pdown-menu-toggle"><span class=3D"gp-icon icon-arrow"><svg viewBox=3D"0 0 3=
+30 512" aria-hidden=3D"true" xmlns=3D"http://www.w3.org/2000/svg" width=3D"=
+1em" height=3D"1em"><path d=3D"M305.913 197.085c0 2.266-1.133 4.815-2.833 6=
+.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.=
+832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515=
+l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 =
+2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.8=
+15 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z"></path=
+></svg></span></span></a>
 <ul class=3D"sub-menu">
 	<li id=3D"menu-item-56" class=3D"menu-item menu-item-type-taxonomy menu-it=
-em-object-category menu-item-56"><a href=3D"https://www.cyberithub.com/cate=
-gory/scripting/bash/">Bash</a></li>
+em-object-category current-post-ancestor current-menu-parent current-post-p=
+arent menu-item-56"><a href=3D"https://www.cyberithub.com/category/scriptin=
+g/bash/">Bash</a></li>
 	<li id=3D"menu-item-57" class=3D"menu-item menu-item-type-taxonomy menu-it=
 em-object-category menu-item-57"><a href=3D"https://www.cyberithub.com/cate=
 gory/scripting/javascript/">JavaScript</a></li>
@@ -413,22 +420,21 @@ m/category/devops/monitoring/">Monitoring</a></li>
 m-object-category menu-item-46"><a href=3D"https://www.cyberithub.com/categ=
 ory/interview-questions/">Interview Questions</a></li>
 <li id=3D"menu-item-1151" class=3D"menu-item menu-item-type-taxonomy menu-i=
-tem-object-category current-post-ancestor menu-item-has-children menu-item-=
-1151"><a href=3D"https://www.cyberithub.com/category/more/">MORE<span role=
-=3D"presentation" class=3D"dropdown-menu-toggle"><span class=3D"gp-icon ico=
-n-arrow"><svg viewBox=3D"0 0 330 512" aria-hidden=3D"true" xmlns=3D"http://=
-www.w3.org/2000/svg" width=3D"1em" height=3D"1em"><path d=3D"M305.913 197.0=
-85c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.5=
-15 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832=
--6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.=
-832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.6=
-99 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.=
-833 4.249 2.833 6.515z"></path></svg></span></span></a>
+tem-object-category menu-item-has-children menu-item-1151"><a href=3D"https=
+://www.cyberithub.com/category/more/">MORE<span role=3D"presentation" class=
+=3D"dropdown-menu-toggle"><span class=3D"gp-icon icon-arrow"><svg viewBox=
+=3D"0 0 330 512" aria-hidden=3D"true" xmlns=3D"http://www.w3.org/2000/svg" =
+width=3D"1em" height=3D"1em"><path d=3D"M305.913 197.085c0 2.266-1.133 4.81=
+5-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133=
+-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.=
+832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.1=
+33 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-=
+2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515=
+z"></path></svg></span></span></a>
 <ul class=3D"sub-menu">
 	<li id=3D"menu-item-1111" class=3D"menu-item menu-item-type-taxonomy menu-=
-item-object-category current-post-ancestor current-menu-parent current-post=
--parent menu-item-1111"><a href=3D"https://www.cyberithub.com/category/more=
-/linux/">Linux</a></li>
+item-object-category menu-item-1111"><a href=3D"https://www.cyberithub.com/=
+category/more/linux/">Linux</a></li>
 	<li id=3D"menu-item-19563" class=3D"menu-item menu-item-type-taxonomy menu=
 -item-object-category menu-item-19563"><a href=3D"https://www.cyberithub.co=
 m/category/more/windows/">Windows</a></li>
@@ -451,22 +457,22 @@ category/more/security/">Security</a></li>
 </li>
 </ul></div><div class=3D"menu-bar-items"><span class=3D"menu-bar-item searc=
 h-item"><a aria-label=3D"Open Search Bar" href=3D"https://www.cyberithub.co=
-m/passwordless-ssh-login-using-ssh-keygen/#"><span class=3D"gp-icon icon-se=
-arch"><svg viewBox=3D"0 0 512 512" aria-hidden=3D"true" xmlns=3D"http://www=
-.w3.org/2000/svg" width=3D"1em" height=3D"1em"><path fill-rule=3D"evenodd" =
-clip-rule=3D"evenodd" d=3D"M208 48c-88.366 0-160 71.634-160 160s71.634 160 =
-160 160 160-71.634 160-160S296.366 48 208 48zM0 208C0 93.125 93.125 0 208 0=
-s208 93.125 208 208c0 48.741-16.765 93.566-44.843 129.024l133.826 134.018c9=
-.366 9.379 9.355 24.575-.025 33.941-9.379 9.366-24.575 9.355-33.941-.025L33=
-7.238 370.987C301.747 399.167 256.839 416 208 416 93.125 416 0 322.875 0 20=
-8z"></path></svg><svg viewBox=3D"0 0 512 512" aria-hidden=3D"true" xmlns=3D=
-"http://www.w3.org/2000/svg" width=3D"1em" height=3D"1em"><path d=3D"M71.02=
-9 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373=
--9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l=
-151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-3=
-3.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.37=
-2-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372=
--24.569 0-33.942z"></path></svg></span></a></span></div>			</div>
+m/bash-for-loop-examples-in-linux-unix/#"><span class=3D"gp-icon icon-searc=
+h"><svg viewBox=3D"0 0 512 512" aria-hidden=3D"true" xmlns=3D"http://www.w3=
+.org/2000/svg" width=3D"1em" height=3D"1em"><path fill-rule=3D"evenodd" cli=
+p-rule=3D"evenodd" d=3D"M208 48c-88.366 0-160 71.634-160 160s71.634 160 160=
+ 160 160-71.634 160-160S296.366 48 208 48zM0 208C0 93.125 93.125 0 208 0s20=
+8 93.125 208 208c0 48.741-16.765 93.566-44.843 129.024l133.826 134.018c9.36=
+6 9.379 9.355 24.575-.025 33.941-9.379 9.366-24.575 9.355-33.941-.025L337.2=
+38 370.987C301.747 399.167 256.839 416 208 416 93.125 416 0 322.875 0 208z"=
+></path></svg><svg viewBox=3D"0 0 512 512" aria-hidden=3D"true" xmlns=3D"ht=
+tp://www.w3.org/2000/svg" width=3D"1em" height=3D"1em"><path d=3D"M71.029 7=
+1.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.=
+372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151=
+.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.9=
+42 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9=
+.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24=
+.569 0-33.942z"></path></svg></span></a></span></div>			</div>
 		</nav>
 	=09
 	<div class=3D"site grid-container container hfeed" id=3D"page">
@@ -475,28 +481,35 @@ s208 93.125 208 208c0 48.741-16.765 93.566-44.843 129.024l133.826 134.018c9=
 	<div class=3D"content-area" id=3D"primary">
 		<main class=3D"site-main" id=3D"main">
 		=09
-<article id=3D"post-2882" class=3D"post-2882 post type-post status-publish =
-format-standard hentry category-linux" itemtype=3D"https://schema.org/Creat=
-iveWork" itemscope=3D"">
+<article id=3D"post-8910" class=3D"post-8910 post type-post status-publish =
+format-standard has-post-thumbnail hentry category-scripting category-bash"=
+ itemtype=3D"https://schema.org/CreativeWork" itemscope=3D"">
 	<div class=3D"inside-article">
-					<header class=3D"entry-header" aria-label=3D"Content">
-				<h1 class=3D"entry-title" itemprop=3D"headline">Passwordless ssh login =
-using ssh keygen in 6 Easy steps</h1>		<div class=3D"entry-meta">
-			<span class=3D"posted-on"><time class=3D"entry-date published" datetime=
-=3D"2020-01-13T01:59:53+05:30" itemprop=3D"datePublished">January 13, 2020<=
-/time></span> <span class=3D"byline">by <span class=3D"author vcard" itempr=
-op=3D"author" itemtype=3D"https://schema.org/Person" itemscope=3D""><a clas=
-s=3D"url fn n" href=3D"https://www.cyberithub.com/author/cyberithub/" title=
-=3D"View all posts by cyberithub" rel=3D"author" itemprop=3D"url"><span cla=
-ss=3D"author-name" itemprop=3D"name">cyberithub</span></a></span></span> 		=
-</div>
+		<div class=3D"featured-image  page-header-image-single">
+				<img width=3D"560" height=3D"315" src=3D"https://www.cyberithub.com/wp-=
+content/uploads/2020/06/bashfor.jpg" class=3D"attachment-full size-full" al=
+t=3D"15 Practical Bash For Loop Examples in Linux/Unix for Professionals 1"=
+ itemprop=3D"image" decoding=3D"async" fetchpriority=3D"high">
+			</div>			<header class=3D"entry-header" aria-label=3D"Content">
+				<h1 class=3D"entry-title" itemprop=3D"headline">15 Practical Bash For L=
+oop Examples in Linux/Unix for Professionals</h1>		<div class=3D"entry-meta=
+">
+			<span class=3D"posted-on"><time class=3D"updated" datetime=3D"2021-03-09=
+T00:50:22+05:30" itemprop=3D"dateModified">March 9, 2021</time><time class=
+=3D"entry-date published" datetime=3D"2020-09-06T20:05:33+05:30" itemprop=
+=3D"datePublished">September 6, 2020</time></span> <span class=3D"byline">b=
+y <span class=3D"author vcard" itemprop=3D"author" itemtype=3D"https://sche=
+ma.org/Person" itemscope=3D""><a class=3D"url fn n" href=3D"https://www.cyb=
+erithub.com/author/cyberithub/" title=3D"View all posts by cyberithub" rel=
+=3D"author" itemprop=3D"url"><span class=3D"author-name" itemprop=3D"name">=
+cyberithub</span></a></span></span> 		</div>
 					</header>
 		=09
 		<div class=3D"entry-content" itemprop=3D"text">
 			<div id=3D"ez-toc-container" class=3D"ez-toc-v2_0_60 counter-hierarchy e=
 z-toc-counter ez-toc-light-blue ez-toc-container-direction">
 <p class=3D"ez-toc-title">Table of Contents</p>
-<label for=3D"ez-toc-cssicon-toggle-item-657d19c1a8d3a" class=3D"ez-toc-css=
+<label for=3D"ez-toc-cssicon-toggle-item-657cb6fbe8e52" class=3D"ez-toc-css=
 icon-toggle-label"><span class=3D""><span class=3D"eztoc-hide" style=3D"dis=
 play:none;">Toggle</span><span class=3D"ez-toc-icon-toggle-span"><svg style=
 =3D"fill: #999;color:#999" xmlns=3D"http://www.w3.org/2000/svg" class=3D"li=
@@ -510,297 +523,572 @@ version=3D"1.2" baseProfile=3D"tiny"><path d=3D"M18.2 9.3l-6.2-6.3-6.2 6.3c=
 -.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-=
 .3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z"></path></svg></span>=
 </span></label><input type=3D"checkbox" id=3D"ez-toc-cssicon-toggle-item-65=
-7d19c1a8d3a" aria-label=3D"Toggle"><nav><ul class=3D"ez-toc-list ez-toc-lis=
-t-level-1"><ul class=3D"ez-toc-list-level-3"><li class=3D"ez-toc-heading-le=
-vel-3"><a class=3D"ez-toc-link ez-toc-heading-1" href=3D"https://www.cyberi=
-thub.com/passwordless-ssh-login-using-ssh-keygen/#What_is_SSH" title=3D"Wha=
-t is SSH">What is SSH</a></li><li class=3D"ez-toc-page-1 ez-toc-heading-lev=
-el-3"><a class=3D"ez-toc-link ez-toc-heading-2" href=3D"https://www.cyberit=
-hub.com/passwordless-ssh-login-using-ssh-keygen/#Types_of_SSH_Authenticatio=
-n" title=3D"Types of SSH Authentication">Types of SSH Authentication</a></l=
+7cb6fbe8e52" aria-label=3D"Toggle"><nav><ul class=3D"ez-toc-list ez-toc-lis=
+t-level-1"><li class=3D"ez-toc-page-1 ez-toc-heading-level-2"><a class=3D"e=
+z-toc-link ez-toc-heading-1" href=3D"https://www.cyberithub.com/bash-for-lo=
+op-examples-in-linux-unix/#Bash_For_Loop_Syntax" title=3D"Bash For Loop Syn=
+tax">Bash For Loop Syntax</a></li><li class=3D"ez-toc-page-1 ez-toc-heading=
+-level-2"><a class=3D"ez-toc-link ez-toc-heading-2" href=3D"https://www.cyb=
+erithub.com/bash-for-loop-examples-in-linux-unix/#Bash_For_Loop_Examples_in=
+_LinuxUnix" title=3D"Bash For Loop Examples in Linux/Unix">Bash For Loop Ex=
+amples in Linux/Unix</a><ul class=3D"ez-toc-list-level-3"><li class=3D"ez-t=
+oc-heading-level-3"><a class=3D"ez-toc-link ez-toc-heading-3" href=3D"https=
+://www.cyberithub.com/bash-for-loop-examples-in-linux-unix/#Example_1_How_t=
+o_Sync_Time_in_multiple_servers_using_Bash_For_Loop_in_Linux" title=3D"Exam=
+ple 1: How to Sync Time in multiple servers using Bash For Loop in Linux">E=
+xample 1: How to Sync Time in multiple servers using Bash For Loop in Linux=
+</a></li><li class=3D"ez-toc-page-1 ez-toc-heading-level-3"><a class=3D"ez-=
+toc-link ez-toc-heading-4" href=3D"https://www.cyberithub.com/bash-for-loop=
+-examples-in-linux-unix/#Example_2_How_to_Check_next_5_CPU_Load_Average_usi=
+ng_Bash_For_Loop_in_Linux" title=3D"Example 2: How to Check next 5 CPU Load=
+ Average using Bash For Loop in Linux">Example 2: How to Check next 5 CPU L=
+oad Average using Bash For Loop in Linux</a></li><li class=3D"ez-toc-page-1=
+ ez-toc-heading-level-3"><a class=3D"ez-toc-link ez-toc-heading-5" href=3D"=
+https://www.cyberithub.com/bash-for-loop-examples-in-linux-unix/#Example_3_=
+How_to_check_the_processes_using_maximum_swap_memory_in_Linux" title=3D"Exa=
+mple 3: How to check the processes using maximum swap memory in Linux">Exam=
+ple 3: How to check the processes using maximum swap memory in Linux</a></l=
 i><li class=3D"ez-toc-page-1 ez-toc-heading-level-3"><a class=3D"ez-toc-lin=
-k ez-toc-heading-3" href=3D"https://www.cyberithub.com/passwordless-ssh-log=
-in-using-ssh-keygen/#How_SSH_Keygen_Authentication_Works" title=3D"How SSH =
-Keygen Authentication Works ?">How SSH Keygen Authentication Works ?</a></l=
-i><li class=3D"ez-toc-page-1 ez-toc-heading-level-3"><a class=3D"ez-toc-lin=
-k ez-toc-heading-4" href=3D"https://www.cyberithub.com/passwordless-ssh-log=
-in-using-ssh-keygen/#What_is_SSH_without_password_login" title=3D"What is S=
-SH without password login ?">What is SSH without password login ?</a></li><=
+k ez-toc-heading-6" href=3D"https://www.cyberithub.com/bash-for-loop-exampl=
+es-in-linux-unix/#Example_4_How_to_convert_all_rows_into_columns_based_on_C=
+olon_separator" title=3D"Example 4: How to convert all rows into columns ba=
+sed on Colon(:) separator">Example 4: How to convert all rows into columns =
+based on Colon(:) separator</a></li><li class=3D"ez-toc-page-1 ez-toc-headi=
+ng-level-3"><a class=3D"ez-toc-link ez-toc-heading-7" href=3D"https://www.c=
+yberithub.com/bash-for-loop-examples-in-linux-unix/#Example_5_How_to_conver=
+t_all_rows_into_columns_based_on_Comma_field_separator" title=3D"Example 5:=
+ How to convert all rows into columns based on Comma(,) field separator">Ex=
+ample 5: How to convert all rows into columns based on Comma(,) field separ=
+ator</a></li><li class=3D"ez-toc-page-1 ez-toc-heading-level-3"><a class=3D=
+"ez-toc-link ez-toc-heading-8" href=3D"https://www.cyberithub.com/bash-for-=
+loop-examples-in-linux-unix/#Example_6_How_to_Check_the_OS_Version_of_Multi=
+ple_Servers_using_bash_for_loop_in_Linux" title=3D"Example 6: How to Check =
+the OS Version of Multiple Servers using bash for loop in Linux">Example 6:=
+ How to Check the OS Version of Multiple Servers using bash for loop in Lin=
+ux</a></li><li class=3D"ez-toc-page-1 ez-toc-heading-level-3"><a class=3D"e=
+z-toc-link ez-toc-heading-9" href=3D"https://www.cyberithub.com/bash-for-lo=
+op-examples-in-linux-unix/#Example_7_How_to_Check_the_Memory_Stats_using_ba=
+sh_for_loop_in_Linux" title=3D"Example 7: How to Check the Memory Stats usi=
+ng bash for loop in Linux">Example 7: How to Check the Memory Stats using b=
+ash for loop in Linux</a></li><li class=3D"ez-toc-page-1 ez-toc-heading-lev=
+el-3"><a class=3D"ez-toc-link ez-toc-heading-10" href=3D"https://www.cyberi=
+thub.com/bash-for-loop-examples-in-linux-unix/#Example_8_How_to_Find_the_Pr=
+ivate_IP_of_AWS_EC2_Instance_using_bash_for_loop" title=3D"Example 8: How t=
+o Find the Private IP of AWS EC2 Instance using bash for loop">Example 8: H=
+ow to Find the Private IP of AWS EC2 Instance using bash for loop</a></li><=
 li class=3D"ez-toc-page-1 ez-toc-heading-level-3"><a class=3D"ez-toc-link e=
-z-toc-heading-5" href=3D"https://www.cyberithub.com/passwordless-ssh-login-=
-using-ssh-keygen/#What_is_SSH_Keygen" title=3D"What is SSH Keygen">What is =
-SSH Keygen</a></li><li class=3D"ez-toc-page-1 ez-toc-heading-level-3"><a cl=
-ass=3D"ez-toc-link ez-toc-heading-6" href=3D"https://www.cyberithub.com/pas=
-swordless-ssh-login-using-ssh-keygen/#What_is_SSH_keygen_RSA_login_algorith=
-m" title=3D"What is SSH keygen RSA login algorithm ?">What is SSH keygen RS=
-A login algorithm ?</a></li><li class=3D"ez-toc-page-1 ez-toc-heading-level=
--3"><a class=3D"ez-toc-link ez-toc-heading-7" href=3D"https://www.cyberithu=
-b.com/passwordless-ssh-login-using-ssh-keygen/#What_is_SSH_key_login" title=
-=3D"What is SSH key login ?">What is SSH key login ?</a></li></ul><li class=
-=3D"ez-toc-page-1 ez-toc-heading-level-2"><a class=3D"ez-toc-link ez-toc-he=
-ading-8" href=3D"https://www.cyberithub.com/passwordless-ssh-login-using-ss=
-h-keygen/#Passwordless_SSH_Login_using_SSH_keygen" title=3D"Passwordless SS=
-H Login using SSH keygen">Passwordless SSH Login using SSH keygen</a><ul cl=
-ass=3D"ez-toc-list-level-3"><li class=3D"ez-toc-heading-level-3"><a class=
-=3D"ez-toc-link ez-toc-heading-9" href=3D"https://www.cyberithub.com/passwo=
-rdless-ssh-login-using-ssh-keygen/#Step_1_Prerequisites" title=3D"Step 1: P=
-rerequisites">Step 1: Prerequisites</a></li><li class=3D"ez-toc-page-1 ez-t=
-oc-heading-level-3"><a class=3D"ez-toc-link ez-toc-heading-10" href=3D"http=
-s://www.cyberithub.com/passwordless-ssh-login-using-ssh-keygen/#Step_2_Crea=
-te_Authentication_Keys_using_SSH_keygen_RSA" title=3D"Step 2: Create Authen=
-tication Keys using SSH keygen RSA">Step 2: Create Authentication Keys usin=
-g SSH keygen RSA</a></li><li class=3D"ez-toc-page-1 ez-toc-heading-level-3"=
-><a class=3D"ez-toc-link ez-toc-heading-11" href=3D"https://www.cyberithub.=
-com/passwordless-ssh-login-using-ssh-keygen/#Step_3_Create_ssh_directory_on=
-_remote_Server" title=3D"Step 3: Create .ssh directory on remote Server">St=
-ep 3: Create .ssh directory on remote Server</a></li><li class=3D"ez-toc-pa=
-ge-1 ez-toc-heading-level-3"><a class=3D"ez-toc-link ez-toc-heading-12" hre=
-f=3D"https://www.cyberithub.com/passwordless-ssh-login-using-ssh-keygen/#St=
-ep_4_Copy_Public_Key_to_remote_Server_SSH_authorized_keys" title=3D"Step 4:=
- Copy Public Key to remote Server SSH authorized_keys">Step 4: Copy Public =
-Key to remote Server SSH authorized_keys</a></li><li class=3D"ez-toc-page-1=
- ez-toc-heading-level-3"><a class=3D"ez-toc-link ez-toc-heading-13" href=3D=
-"https://www.cyberithub.com/passwordless-ssh-login-using-ssh-keygen/#Step_5=
-_Set_SSH_key_Permissions_on_Remote_Machine" title=3D"Step 5: Set SSH key Pe=
-rmissions on Remote Machine">Step 5: Set SSH key Permissions on Remote Mach=
-ine</a></li><li class=3D"ez-toc-page-1 ez-toc-heading-level-3"><a class=3D"=
-ez-toc-link ez-toc-heading-14" href=3D"https://www.cyberithub.com/passwordl=
-ess-ssh-login-using-ssh-keygen/#Step_6_Check_passwordless_ssh_login_authent=
-ication_to_Remote_Server" title=3D"Step 6: Check passwordless ssh login aut=
-hentication to Remote Server">Step 6: Check passwordless ssh login authenti=
-cation to Remote Server</a></li></ul></li></ul></nav></div>
-<p>In this article, I will take you through 6 Simple Steps to setup passwor=
-dless ssh login using ssh keygen. SSH is a network protocol that allows one=
- computer to connect to another computer over an unsecure network like Inte=
-rnet.Without encryption,data transfer over the Internet in a plain text for=
-m makes it easier for somebody to intercept important information like user=
- name and password and then use it.However ssh provides a mechansim where a=
-ll the data will be encrypted through a tunnel and hence allows you to conn=
-ect to a remote machine securely, transfer data securely and even allow you=
- launch command for the remote machine safely.</p>
-<h3><span class=3D"ez-toc-section" id=3D"What_is_SSH"></span><span style=3D=
-"color: #000080;">What is SSH</span><span class=3D"ez-toc-section-end"></sp=
-an></h3>
-<p>SSH is also known as secure shell or secure socket shell protocol which =
-is mainly used to connect to remote server securely. ssh connection by defa=
-ult always happens on port 22. Although you have an option to change this p=
-ort from sshd_config configuration file but usually it is not recommended t=
-o.</p>
-<h3><span class=3D"ez-toc-section" id=3D"Types_of_SSH_Authentication"></spa=
-n><span style=3D"color: #000080;">Types of SSH Authentication</span><span c=
-lass=3D"ez-toc-section-end"></span></h3>
-<ul>
-<li><strong>Password Based Authentication</strong></li>
-<li><strong>Key Based Authentication</strong></li>
-</ul>
-<h3><span class=3D"ez-toc-section" id=3D"How_SSH_Keygen_Authentication_Work=
-s"></span><span style=3D"color: #000080;">How SSH Keygen Authentication Wor=
-ks ?</span><span class=3D"ez-toc-section-end"></span></h3>
-<p>SSH primarily works on a Client Server Model. In this model, you will ha=
-ve a public/private key pair which can be generated through tools like ssh =
-keygen on linux. Then your public key will always be stored in Server and c=
-lient which is usually a computer makes contact with ssh server and provide=
- id of the key pair it wants to prove his identity. The ssh server then cre=
-ates a challenge which is encrypted by the public key and sent back to the =
-client.You as a client then take back the challenge decrypt it with the pri=
-vate key and send original channel back to ssh server. Once the negotiation=
- is complete,connection is established now between client and server succes=
-sfully.</p>
-<h3><span class=3D"ez-toc-section" id=3D"What_is_SSH_without_password_login=
-"></span><span style=3D"color: #000080;">What is SSH without password login=
- ?</span><span class=3D"ez-toc-section-end"></span></h3>
-<p>SSH without password login means whenever you try to login to remote ser=
-ver using secure shell(ssh), you need not to be given any ssh password. Thi=
-s is mostly required when you want to perform some task on multiple servers=
- by connecting the servers through ssh.</p>
-<h3><span class=3D"ez-toc-section" id=3D"What_is_SSH_Keygen"></span><span s=
-tyle=3D"color: #000080;">What is SSH Keygen</span><span class=3D"ez-toc-sec=
-tion-end"></span></h3>
-<p>As per <strong><a href=3D"http://man7.org/linux/man-pages/man1/ssh-keyge=
-n.1.html" target=3D"_blank" rel=3D"noopener noreferrer">ssh keygen man page=
-,</a></strong> ssh-keygen generates, manages and converts authentication ke=
-ys for ssh(1). ssh-keygen can create keys for use by SSH protocol versions =
-1 and 2. Protocol 1 should not be used and is only offered to support legac=
-y devices. It suffers from a number of cryptographic weaknesses and doesn't=
- support many of the advanced features available for protocol 2.</p>
-<h3><span class=3D"ez-toc-section" id=3D"What_is_SSH_keygen_RSA_login_algor=
-ithm"></span><span style=3D"color: #000080;">What is SSH keygen RSA login a=
-lgorithm ?</span><span class=3D"ez-toc-section-end"></span></h3>
-<p>It means ssh keygen tool uses rsa login algorithm to generate public/pri=
-vate rsa login key pair. As per <strong><a href=3D"https://docstore.mik.ua/=
-orelly/networking_2ndEd/ssh/ch03_09.htm" target=3D"_blank" rel=3D"noopener =
-noreferrer">RSA Documentation</a></strong>, The Rivest-Shamir-Adleman publi=
-c-key algorithm (RSA) is the most widely used asymmetric cipher. It derives=
- its security from the difficulty of factoring large integers that are the =
-product of two large primes of roughly equal size. Factoring is widely beli=
-eved to be intractable (i.e., infeasible, admitting no efficient, polynomia=
-l-time solution), although this isn't proven. RSA can be used for both encr=
-yption and signatures.</p>
-<h3><span class=3D"ez-toc-section" id=3D"What_is_SSH_key_login"></span><spa=
-n style=3D"color: #000080;">What is SSH key login ?</span><span class=3D"ez=
--toc-section-end"></span></h3>
-<p>This is another method of authentication in which you do not require any=
- password to be given for authentication. It will be based on private key a=
-uthentication where you already have public key added to your server.</p>
-<p><img fetchpriority=3D"high" decoding=3D"async" class=3D"aligncenter size=
--full wp-image-2891" src=3D"https://www.cyberithub.com/wp-content/uploads/2=
-020/01/passwordless.jpg" alt=3D"Passwordless ssh login using ssh keygen in =
-6 Easy steps 1" width=3D"560" height=3D"315"></p>
-<h2><span class=3D"ez-toc-section" id=3D"Passwordless_SSH_Login_using_SSH_k=
-eygen"></span><span style=3D"color: #000080;">Passwordless SSH Login using =
-SSH keygen</span><span class=3D"ez-toc-section-end"></span></h2>
-<p><span style=3D"color: #ff0000;"><strong>Also Read:</strong></span> <a hr=
-ef=3D"https://www.cyberithub.com/how-to-enable-ssh-on-ubuntu18-04-17-04-16-=
-04/" target=3D"_blank" rel=3D"noopener noreferrer"><strong>How to Install o=
-r Enable ssh on ubuntu</strong></a></p>
-<h3><span class=3D"ez-toc-section" id=3D"Step_1_Prerequisites"></span><span=
- style=3D"color: #000080;">Step 1: Prerequisites</span><span class=3D"ez-to=
-c-section-end"></span></h3>
-<p><span style=3D"color: #800000;"><strong>Ubuntu 18.04: 192.168.0.105</str=
-ong></span></p>
-<p><span style=3D"color: #800000;"><strong>CentOS 7: 192.168.0.106</strong>=
-</span></p>
-<h3><span class=3D"ez-toc-section" id=3D"Step_2_Create_Authentication_Keys_=
-using_SSH_keygen_RSA"></span><span style=3D"color: #000080;">Step 2: Create=
- Authentication Keys using SSH keygen RSA</span><span class=3D"ez-toc-secti=
-on-end"></span></h3>
-<p>In the beginning you need to create a public/private key pair using rsa =
-algorithm by running <code>ssh-keygen -t rsa</code> command.</p>
-<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">ssh-keygen -t rsa<=
+z-toc-heading-11" href=3D"https://www.cyberithub.com/bash-for-loop-examples=
+-in-linux-unix/#Example_9_How_to_Create_a_File_in_Multiple_Servers_using_Ba=
+sh_For_Loop_in_Linux" title=3D"Example 9: How to Create a File in Multiple =
+Servers using Bash For Loop in Linux">Example 9: How to Create a File in Mu=
+ltiple Servers using Bash For Loop in Linux</a></li><li class=3D"ez-toc-pag=
+e-1 ez-toc-heading-level-3"><a class=3D"ez-toc-link ez-toc-heading-12" href=
+=3D"https://www.cyberithub.com/bash-for-loop-examples-in-linux-unix/#Exampl=
+e_10_How_to_start_an_application_in_multiple_Linux_Servers" title=3D"Exampl=
+e 10: How to start an application in multiple Linux Servers">Example 10: Ho=
+w to start an application in multiple Linux Servers</a></li><li class=3D"ez=
+-toc-page-1 ez-toc-heading-level-3"><a class=3D"ez-toc-link ez-toc-heading-=
+13" href=3D"https://www.cyberithub.com/bash-for-loop-examples-in-linux-unix=
+/#Example_11_How_to_check_disk_space_of_multiple_Linux_Servers" title=3D"Ex=
+ample 11: How to check disk space of multiple Linux Servers">Example 11: Ho=
+w to check disk space of multiple Linux Servers</a></li><li class=3D"ez-toc=
+-page-1 ez-toc-heading-level-3"><a class=3D"ez-toc-link ez-toc-heading-14" =
+href=3D"https://www.cyberithub.com/bash-for-loop-examples-in-linux-unix/#Ex=
+ample_12_How_to_Check_Kernel_Version_of_Multiple_Linux_Servers" title=3D"Ex=
+ample 12: How to Check Kernel Version of Multiple Linux Servers">Example 12=
+: How to Check Kernel Version of Multiple Linux Servers</a></li><li class=
+=3D"ez-toc-page-1 ez-toc-heading-level-3"><a class=3D"ez-toc-link ez-toc-he=
+ading-15" href=3D"https://www.cyberithub.com/bash-for-loop-examples-in-linu=
+x-unix/#Example_13_How_to_Find_the_total_number_of_CPUs_in_Multiple_Servers=
+_using_bash_for_loop_in_Linux" title=3D"Example 13: How to Find the total n=
+umber of CPUs in Multiple Servers using bash for loop in Linux">Example 13:=
+ How to Find the total number of CPUs in Multiple Servers using bash for lo=
+op in Linux</a></li><li class=3D"ez-toc-page-1 ez-toc-heading-level-3"><a c=
+lass=3D"ez-toc-link ez-toc-heading-16" href=3D"https://www.cyberithub.com/b=
+ash-for-loop-examples-in-linux-unix/#Example_14_How_to_Check_SELinux_Status=
+_in_Multiple_Servers_using_bash_for_loop_in_Linux" title=3D"Example 14: How=
+ to Check SELinux Status in Multiple Servers using bash for loop in Linux">=
+Example 14: How to Check SELinux Status in Multiple Servers using bash for =
+loop in Linux</a></li><li class=3D"ez-toc-page-1 ez-toc-heading-level-3"><a=
+ class=3D"ez-toc-link ez-toc-heading-17" href=3D"https://www.cyberithub.com=
+/bash-for-loop-examples-in-linux-unix/#Example_15_How_to_Check_the_Service_=
+Status_in_Multiple_Servers_using_bash_for_loop_in_Linux" title=3D"Example 1=
+5: How to Check the Service Status in Multiple Servers using bash for loop =
+in Linux">Example 15: How to Check the Service Status in Multiple Servers u=
+sing bash for loop in Linux</a></li></ul></li></ul></nav></div>
+<p>In this article, I will take you through 15 Practical Bash for loop Exam=
+ples in Linux/Unix for Beginners. If you are using Bash Scripting in Linux =
+from long time then you might be aware of bash for loop and its usages. So =
+in this article I thought to explain some real world examples which will he=
+lp you understand some of the use cases that you might encounter.</p>
+<p>For Loop is used in <a href=3D"https://www.cyberithub.com/how-to-print-a=
+rray-in-bash-script/">Bash Scripting</a> to run the same piece of code mult=
+iple times. You can either run same piece of code in the same Server multip=
+le times or same code multiple times in multiple Servers. It can be used ei=
+ther <a href=3D"https://www.cyberithub.com/install-all-dependent-packages-o=
+n-centos-7/">way depends</a> on your requirement. We will understand more a=
+bout its usages as we go through this article.</p>
+<h2><span class=3D"ez-toc-section" id=3D"Bash_For_Loop_Syntax"></span><span=
+ style=3D"color: #000080;">Bash For Loop Syntax</span><span class=3D"ez-toc=
+-section-end"></span></h2>
+<pre><span style=3D"color: #00ff00;">for varname in list;do command1;comman=
+d2;done</span></pre>
+<p>or</p>
+<pre><span style=3D"color: #00ff00;">for varname in list
+do
+  command1
+  command2
+  .........
+done</span></pre>
+<p>or</p>
+<pre><span style=3D"color: #00ff00;">for var in $(cat file1);do command1;co=
+mmand2;done</span></pre>
+<p>or</p>
+<pre><span style=3D"color: #00ff00;">for var in $(cat file1)
+do
+  command1
+  command2
+  .........
+done</span></pre>
+<p>or</p>
+<pre><span style=3D"color: #00ff00;">for variable in server1 server2;do com=
+mand1;command2;done</span></pre>
+<p>or</p>
+<pre><span style=3D"color: #00ff00;">for variable in server1 server2
+do
+  command1
+  command2
+  .........
+done</span></pre>
+<p><img decoding=3D"async" class=3D"aligncenter wp-image-8916 size-full" sr=
+c=3D"https://www.cyberithub.com/wp-content/uploads/2020/06/bashfor.jpg" alt=
+=3D"15 Practical Bash For Loop Examples in Linux/Unix for Professionals" wi=
+dth=3D"560" height=3D"315"></p>
+<h2><span class=3D"ez-toc-section" id=3D"Bash_For_Loop_Examples_in_LinuxUni=
+x"></span><span style=3D"color: #000080;">Bash For Loop Examples in Linux/U=
+nix</span><span class=3D"ez-toc-section-end"></span></h2>
+<p><span style=3D"color: #000080;"><strong>Also Read: <span style=3D"color:=
+ #ff0000;"><a style=3D"color: #ff0000;" href=3D"https://www.cyberithub.com/=
+drop-flush-clear-cache-memory-ram-in-linux/" target=3D"_blank" rel=3D"noope=
+ner noreferrer">How to Drop/Flush/Clear Cache Memory or RAM in Linux (RedHa=
+t/CentOS 7/8)</a></span></strong></span></p>
+<h3><span class=3D"ez-toc-section" id=3D"Example_1_How_to_Sync_Time_in_mult=
+iple_servers_using_Bash_For_Loop_in_Linux"></span><span style=3D"color: #00=
+0080;">Example 1: How to Sync Time in multiple servers using Bash For Loop =
+in Linux</span><span class=3D"ez-toc-section-end"></span></h3>
+<p>If you want to sync time in multiple servers using bash for loop in Linu=
+x then you can use below loop. In this example, we have provided the IP of =
+all Servers in server.txt and then going to every server using for loop and=
+ setting the <a href=3D"https://www.cyberithub.com/set-time-linux-date-comm=
+and-examples/">time to 16:08:00 using date command</a> as shown below.</p>
+<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">for a in $(cat ser=
+ver.txt);do ssh root@$a date +%T -s "16:08:00";done</span></pre>
+<div class=3D"secnote">
+<p><span class=3D"content-note">NOTE:</span></p>
+<div class=3D"para">Please note that here I have already enabled passwordle=
+ss authentication between Servers to avoid any password prompt. So do not b=
+e surprise if you run any of the commands given in this article and it ask =
+you to provide the authentication password. To Know more about setting up P=
+asswordless authentication, you can check <span style=3D"color: #ff0000;"><=
+strong><a style=3D"color: #ff0000;" href=3D"https://www.cyberithub.com/pass=
+wordless-ssh-login-using-ssh-keygen/" target=3D"_blank" rel=3D"noopener nor=
+eferrer">Passwordless ssh login using ssh keygen in 6 Easy Steps</a>.</stro=
+ng></span></div>
+</div>
+<h3><span class=3D"ez-toc-section" id=3D"Example_2_How_to_Check_next_5_CPU_=
+Load_Average_using_Bash_For_Loop_in_Linux"></span><span style=3D"color: #00=
+0080;">Example 2: How to Check next 5 CPU Load Average using Bash For Loop =
+in Linux</span><span class=3D"ez-toc-section-end"></span></h3>
+<p>If you want to check next 5 CPU Load Average using bash for loop in Linu=
+x then you need to loop through each of the sequence from 1 to 5 and displa=
+y the load average using <code>cat /proc/loadavg</code> for every sequence =
+as shown below.</p>
+<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">for i in $(seq 5);=
+do cat /proc/loadavg;sleep 3;done</span>
+<span style=3D"color: #ffff00;">0.00 0.01 0.05 2/141 25158
+0.00 0.01 0.05 2/141 25160
+0.00 0.01 0.05 2/141 25162
+0.00 0.01 0.05 2/141 25164
+0.00 0.01 0.05 2/141 25166</span></pre>
+<h3><span class=3D"ez-toc-section" id=3D"Example_3_How_to_check_the_process=
+es_using_maximum_swap_memory_in_Linux"></span><span style=3D"color: #000080=
+;">Example 3: How to check the processes using maximum swap memory in Linux=
+</span><span class=3D"ez-toc-section-end"></span></h3>
+<p>If you want to check the processes using maximum swap memory in linux th=
+en you can use below bash for loop. In this example, we are using <code>awk=
+</code> and <code>sort</code> tool with bash for loop to check the processe=
+s using swap memory as shown below.</p>
+<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">for file in /proc/=
+*/status ; do awk '/VmSwap|Name/{printf $2 " " $3}END{ print ""}' $file; do=
+ne | sort -k 2 -n -r | less</span>
+<span style=3D"color: #ffff00;">xprtiod
+xfs-reclaim/sda
+xfs-reclaim/dm-
+xfs_mru_cache
+xfs-log/sda1
+xfs-log/dm-0
+xfs-eofblocks/s
+xfs-eofblocks/d
+xfs-data/sda1
+xfs-data/dm-0
+xfs-conv/sda1
+xfs-conv/dm-0
+xfs-cil/sda1
+xfs-cil/dm-0
+xfs-buf/sda1
+xfs-buf/dm-0
+xfsalloc
+xfsaild/sda1
+xfsaild/dm-0
+writeback
+watchdogd
+watchdog/0
+vsftpd 0 kB
+tuned 0 kB
+ttm_swap
+systemd-udevd 0 kB
+systemd-logind 0 kB
+systemd-journal 0 kB
+systemd 0 kB
+sshd 0 kB
+sshd 0 kB
+sort 0 kB
+sleep 0 kB
+scsi_tmf_4
+scsi_tmf_3
+scsi_tmf_2</span></pre>
+<h3><span class=3D"ez-toc-section" id=3D"Example_4_How_to_convert_all_rows_=
+into_columns_based_on_Colon_separator"></span><span style=3D"color: #000080=
+;">Example 4: How to convert all rows into columns based on Colon(:) separa=
+tor</span><span class=3D"ez-toc-section-end"></span></h3>
+<p>You can also use bash for loop to convert all rows into columns based on=
+ <code>Colon Separator(:)</code> as shown below. In this example, we are cr=
+eating a file testfile.txt and converting its rows to columns using <a href=
+=3D"https://www.cyberithub.com/cut-command-in-linux-unix-with-examples/">cu=
+t and paste command</a> with for loop. Firstly we need to create a <a href=
+=3D"https://www.cyberithub.com/linux-copy-file-command-examples/">file test=
+file.txt using vi testfile.txt command</a>.</p>
+<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">vi testfile.txt</s=
+pan>
+<span style=3D"color: #ffff00;">Hi:you:there
+This:is:CYBERITHUB
+hello:world:example</span></pre>
+<p>Then we need to run below bash for loop from <code>i=3D1 to i&lt;=3D3</c=
+ode> to convert the rows into columns.</p>
+<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">for ((i=3D1;i&lt;=
+=3D3;i++)); do cut -d: -f "$i" testfile.txt | paste -sd: ; done | column -t=
+ -s:</span>
+<span style=3D"color: #ffff00;">Hi      This     hello
+you      is      world
+there CYBERITHUB example</span></pre>
+<h3><span class=3D"ez-toc-section" id=3D"Example_5_How_to_convert_all_rows_=
+into_columns_based_on_Comma_field_separator"></span><span style=3D"color: #=
+000080;">Example 5: How to convert all rows into columns based on Comma(,) =
+field separator</span><span class=3D"ez-toc-section-end"></span></h3>
+<p>Like above example, you can also use bash for loop to convert all rows i=
+nto columns based on <code>Comma(,)</code> as shown below. In this example,=
+ we are creating a file <code>testfile.txt</code> and converting its rows t=
+o columns using <code>cut</code>, <code>column</code> and <code>paste</code=
+> command with bash for loop as specified below. First let's create the fil=
+e <code>testfile.txt</code> using <code>vi</code> editor.</p>
+<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">vi testfile.txt</s=
+pan>
+<span style=3D"color: #ffff00;">Hi,you,there
+This,is,CYBERITHUB
+hello,world,example</span></pre>
+<p>Then we need to run below bash for loop from <code>i=3D1 to i&lt;=3D3</c=
+ode> to convert the rows into columns.</p>
+<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">for ((i=3D1;i&lt;=
+=3D3;i++)); do cut -d, -f "$i" testfile.txt | paste -sd, ; done | column -t=
+ -s,</span>
+<span style=3D"color: #ffff00;">Hi&nbsp; &nbsp; &nbsp; &nbsp;This&nbsp; &nb=
+sp; &nbsp;hello
+you&nbsp; &nbsp; &nbsp; &nbsp;is&nbsp; &nbsp; &nbsp; world
+there CYBERITHUB example</span></pre>
+<h3><span class=3D"ez-toc-section" id=3D"Example_6_How_to_Check_the_OS_Vers=
+ion_of_Multiple_Servers_using_bash_for_loop_in_Linux"></span><span style=3D=
+"color: #000080;">Example 6: How to Check the OS Version of Multiple Server=
+s using bash for loop in Linux</span><span class=3D"ez-toc-section-end"></s=
+pan></h3>
+<p>If you want to check the OS Version of multiple servers using bash for l=
+oop in one line then you need to run below command. In this example, we are=
+ looping through 14.188.134.26 and 14.188.21.242 servers and running <a hre=
+f=3D"https://www.cyberithub.com/examples-cat-command-in-linux-unix/">cat /e=
+tc/redhat-release command</a> in each Server as specified below.</p>
+<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">for i in 14.188.13=
+4.26 14.188.21.242;do echo ********OS Version of $i********;cat /etc/redhat=
+-release;done</span>
+<span style=3D"color: #ffff00;">********OS Version of 14.188.134.26********=
+</span>
+<span style=3D"color: #00ffff;">CentOS Linux release 7.8.2003 (Core)</span>
+<span style=3D"color: #ffff00;">********OS Version of 14.188.21.242********=
+</span>
+<span style=3D"color: #00ffff;">CentOS Linux release 7.8.2003 (Core)</span>=
+</pre>
+<h3><span class=3D"ez-toc-section" id=3D"Example_7_How_to_Check_the_Memory_=
+Stats_using_bash_for_loop_in_Linux"></span><span style=3D"color: #000080;">=
+Example 7: How to Check the Memory Stats using bash for loop in Linux</span=
+><span class=3D"ez-toc-section-end"></span></h3>
+<p>If you want to check the memory stats of multiple servers in one line th=
+en you can use below bash for loop. In this example we are checking the mem=
+ory stats of Servers <code>14.188.134.26</code> and <code>14.188.21.242</co=
+de> by looping through each of the server and running <code>free -g</code> =
+command as shown below.</p>
+<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">for i in 14.188.13=
+4.26 14.188.21.242;do echo ********Memory Stats of $i********;free -g;done<=
 /span>
-Generating public/private rsa key pair.
-Enter file in which to save the key (/root/.ssh/id_rsa):
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /root/.ssh/id_rsa.
-Your public key has been saved in /root/.ssh/id_rsa.pub.
-The key fingerprint is:
-SHA256:8jmxYUbWNBkEKZzrn/gMoRYjYOWOaoNxfeBwn135edw root@localhost
-The key's randomart image is:
-+---[RSA 2048]----+
-| . . ..+=3Do |
-| o + .o.o |
-|....o oo + |
-|..o=3D o.=3D . . o . |
-|..o.=3D.* S o o E|
-|oo . =3D.* =3D . |
-|oo o .o=3D. |
-|. .. .oo. |
-| .o |
-+----[SHA256]-----+</pre>
-<p>If you want to check all the cipher supported by ssh, you can check that=
- by running <code>ssh -Q cipher</code> command.</p>
-<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">ssh -Q cipher</spa=
+<span style=3D"color: #ffff00;">********Memory Stats of 14.188.134.26******=
+**</span>
+<span style=3D"color: #00ffff;">     total used free shared buff/cache avai=
+lable
+Mem:  31    20    5     0       4         9
+Swap: 0      0    0</span>
+<span style=3D"color: #ffff00;">********Memory Stats of 14.188.21.242******=
+**</span>
+<span style=3D"color: #00ffff;">     total used  free shared buff/cache ava=
+ilable
+Mem:  31    20    5      0       4         9
+Swap:  0     0    0</span></pre>
+<h3><span class=3D"ez-toc-section" id=3D"Example_8_How_to_Find_the_Private_=
+IP_of_AWS_EC2_Instance_using_bash_for_loop"></span><span style=3D"color: #0=
+00080;">Example 8: How to Find the Private IP of AWS EC2 Instance using bas=
+h for loop</span><span class=3D"ez-toc-section-end"></span></h3>
+<p>If you want to find the Private IP of AWS EC2 instance then you can use =
+below bash for loop. In this example, we are looping through each of the AW=
+S <a href=3D"https://www.cyberithub.com/for-beginners-create-an-ec2-instanc=
+e-in-aws/">EC2 instance</a> using their public IP and checking the ip of in=
+terface eth0 to find the private IP using ip addr sh | grep -i eth0 | grep =
+-i inet command.</p>
+<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">for i in 14.188.13=
+4.26 14.188.21.242;do echo ********Private IP of $i********;ip addr sh | gr=
+ep -i eth0 | grep -i inet;done</span>
+<span style=3D"color: #ffff00;">********Private IP of 14.188.134.26********=
+</span>
+<span style=3D"color: #00ffff;">inet 172.31.14.87/20 brd 172.31.15.255 scop=
+e global dynamic eth0</span>
+<span style=3D"color: #ffff00;">********Private IP of 14.188.21.242********=
+</span>
+<span style=3D"color: #00ffff;">inet 172.31.14.87/20 brd 172.31.15.255 scop=
+e global dynamic eth0</span></pre>
+<h3><span class=3D"ez-toc-section" id=3D"Example_9_How_to_Create_a_File_in_=
+Multiple_Servers_using_Bash_For_Loop_in_Linux"></span><span style=3D"color:=
+ #000080;">Example 9: How to Create a File in Multiple Servers using Bash F=
+or Loop in Linux</span><span class=3D"ez-toc-section-end"></span></h3>
+<p>You can create a file in multiple servers using bash for loop in a singl=
+e line as shown below. In this example, we are creating a file test.txt in =
+server1 and server2 by looping through each server and running <a href=3D"h=
+ttps://www.cyberithub.com/touch-command-in-linux/">touch test.txt command</=
+a> as specified below.</p>
+<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">for i in server1 s=
+erver2;do ssh -q $i "touch test.txt;sleep 2";done</span></pre>
+<h3><span class=3D"ez-toc-section" id=3D"Example_10_How_to_start_an_applica=
+tion_in_multiple_Linux_Servers"></span><span style=3D"color: #000080;">Exam=
+ple 10: How to start an application in multiple Linux Servers</span><span c=
+lass=3D"ez-toc-section-end"></span></h3>
+<p>If you want to start an application in a bunch of servers without manual=
+ly login to each servers then you can use below bash for loop. In this exam=
+ple, we are starting an application /opt/app/start.sh &gt; /dev/null in ser=
+ver1 and server2 and then <a href=3D"https://www.cyberithub.com/how-to-chec=
+k-elasticsearch-cluster-health-status-in-linux/">checking the status</a> us=
+ing /opt/app/status.sh as shown below.</p>
+<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">for i in server1 s=
+erver2;do ssh -q *****$i*****;ssh -q $i "/opt/app/start.sh &gt; /dev/null;e=
+cho "App is starting...";sleep 60;/opt/app/status.sh";done</span></pre>
+<h3><span class=3D"ez-toc-section" id=3D"Example_11_How_to_check_disk_space=
+_of_multiple_Linux_Servers"></span><span style=3D"color: #000080;">Example =
+11: How to check disk space of multiple Linux Servers</span><span class=3D"=
+ez-toc-section-end"></span></h3>
+<p>If you want to check the disk space is multiple Linux servers then you c=
+an use below bash for loop. In this <a href=3D"https://www.cyberithub.com/p=
+ython-for-loop-examples/">example we are looping</a> through all the server=
+s of Servers.list and checking the disk space of /opt/backup and /opt/log u=
+sing df -h /opt/backup /opt/log command.</p>
+<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">for i in $(cat Ser=
+vers.list);do ssh $i 'df -h /opt/backup /opt/log';done</span></pre>
+<h3><span class=3D"ez-toc-section" id=3D"Example_12_How_to_Check_Kernel_Ver=
+sion_of_Multiple_Linux_Servers"></span><span style=3D"color: #000080;">Exam=
+ple 12: How to Check Kernel Version of Multiple Linux Servers</span><span c=
+lass=3D"ez-toc-section-end"></span></h3>
+<p>If you want to <a href=3D"https://www.cyberithub.com/unix-linux-uname-co=
+mmand-examples-check-kernel-version/">check the Kernel Version</a> of Multi=
+ple Linux Servers then you need to use below for loop. In this example we a=
+re <a href=3D"https://www.cyberithub.com/check-if-server-is-physical-or-vir=
+tual-linux/">checking the Kernel version of 14.188.134.26 and 14.188.21.242=
+ servers</a> using uname -r command with for loop as shown below.</p>
+<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">for i in 14.188.13=
+4.26 14.188.21.242;do echo ********Kernel Version of $i********;uname -r;do=
+ne</span>
+<span style=3D"color: #ffff00;">********Kernel Version of 14.188.134.26****=
+****</span>
+<span style=3D"color: #00ffff;">3.10.0-1127.18.2.el7.x86_64</span>
+<span style=3D"color: #ffff00;">********Kernel Version of 14.188.21.242****=
+****</span>
+<span style=3D"color: #00ffff;">3.10.0-1127.18.2.el7.x86_64</span></pre>
+<h3><span class=3D"ez-toc-section" id=3D"Example_13_How_to_Find_the_total_n=
+umber_of_CPUs_in_Multiple_Servers_using_bash_for_loop_in_Linux"></span><spa=
+n style=3D"color: #000080;">Example 13: How to Find the total number of CPU=
+s in Multiple Servers using bash for loop in Linux</span><span class=3D"ez-=
+toc-section-end"></span></h3>
+<p>If you want to find the total number of CPU cores in multiple servers th=
+en you can use below bash for loop. In this example, we are looping through=
+ Server <code>14.188.134.26.54</code> and <code>14.188.21.242</code> and ru=
+nning <code>lscpu</code> command in each of the server to find the total nu=
+mber of cores.</p>
+<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">for i in 14.188.13=
+4.26 14.188.21.242;do echo ********Number of CPUs in $i********;lscpu | gre=
+p -v list | grep -v NUMA | grep -i "CPU(s)";done</span>
+<span style=3D"color: #ffff00;">********Number of CPUs in 14.188.134.26****=
+****</span>
+<span style=3D"color: #00ffff;">CPU(s): 8</span>
+<span style=3D"color: #ffff00;">********Number of CPUs in 14.188.21.242****=
+****</span>
+<span style=3D"color: #00ffff;">CPU(s): 8</span></pre>
+<h3><span class=3D"ez-toc-section" id=3D"Example_14_How_to_Check_SELinux_St=
+atus_in_Multiple_Servers_using_bash_for_loop_in_Linux"></span><span style=
+=3D"color: #000080;">Example 14: How to Check SELinux Status in Multiple Se=
+rvers using bash for loop in Linux</span><span class=3D"ez-toc-section-end"=
+></span></h3>
+<p>You can also use bash for loop to check the SELinux status in multiple s=
+ervers. In this <a href=3D"https://www.cyberithub.com/c-sharp-for-loop/">ex=
+ample we are checking the status of selinux by looping</a> through 14.188.1=
+34.26 and 14.188.21.242 servers and running sestatus command as shown below=
+.</p>
+<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">for i in 14.188.13=
+4.26 14.188.21.242;do echo ********SELinux Status in $i********;sestatus;do=
+ne</span>
+<span style=3D"color: #ffff00;">********SELinux Status in 14.188.134.26****=
+****</span>
+<span style=3D"color: #00ffff;">SELinux status: enabled
+SELinuxfs mount: /sys/fs/selinux
+SELinux root directory: /etc/selinux
+Loaded policy name: targeted
+Current mode: enforcing
+Mode from config file: enforcing
+Policy MLS status: enabled
+Policy deny_unknown status: allowed
+Max kernel policy version: 31</span>
+<span style=3D"color: #ffff00;">********SELinux Status in 14.188.21.242****=
+****</span>
+<span style=3D"color: #00ffff;">SELinux status: enabled
+SELinuxfs mount: /sys/fs/selinux
+SELinux root directory: /etc/selinux
+Loaded policy name: targeted
+Current mode: enforcing
+Mode from config file: enforcing
+Policy MLS status: enabled
+Policy deny_unknown status: allowed
+Max kernel policy version: 31</span></pre>
+<h3><span class=3D"ez-toc-section" id=3D"Example_15_How_to_Check_the_Servic=
+e_Status_in_Multiple_Servers_using_bash_for_loop_in_Linux"></span><span sty=
+le=3D"color: #000080;">Example 15: How to Check the Service Status in Multi=
+ple Servers using bash for loop in Linux</span><span class=3D"ez-toc-sectio=
+n-end"></span></h3>
+<p>You can also use bash for loop to check the service status in multiple s=
+ervers. In this example we are checking the status of iptables service by l=
+ooping through <code>14.188.134.26</code> and <code>14.188.21.242</code> se=
+rvers and running <code>systemctl&nbsp; status iptables</code> command as s=
+hown below.</p>
+<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">for i in 14.188.13=
+4.26 14.188.21.242;do echo ********IPTABLES Status in $i********;systemctl =
+status iptables;done</span>
+<span style=3D"color: #ffff00;">********IPTABLES Status in 14.188.134.26***=
+*****</span>
+<span style=3D"color: #00ffff;">=E2=97=8F iptables.service - IPv4 firewall =
+with iptables</span>
+<span style=3D"color: #00ffff;">Loaded: loaded (/usr/lib/systemd/system/ipt=
+ables.service; enabled; vendor preset: disabled)</span>
+<span style=3D"color: #00ffff;">Active: active (exited) since Sat 2020-09-0=
+5 20:38:20 UTC; 1h 0min ago</span>
+<span style=3D"color: #00ffff;">Process: 612 ExecStart=3D/usr/libexec/iptab=
+les/iptables.init start (code=3Dexited, status=3D0/SUCCESS)</span>
+<span style=3D"color: #00ffff;">Main PID: 612 (code=3Dexited, status=3D0/SU=
+CCESS)</span>
+<span style=3D"color: #00ffff;">Tasks: 0</span>
+<span style=3D"color: #00ffff;">Memory: 0B</span>
+<span style=3D"color: #00ffff;">CGroup: /system.slice/iptables.service</spa=
 n>
-3des-cbc
-blowfish-cbc
-cast128-cbc
-arcfour
-arcfour128
-arcfour256
-aes128-cbc
-aes192-cbc
-aes256-cbc
-rijndael-cbc@lysator.liu.se
-aes128-ctr
-aes192-ctr
-aes256-ctr
-aes128-gcm@openssh.com
-aes256-gcm@openssh.com
-chacha20-poly1305@openssh.com</pre>
-<p>If you want to check all the Key supported by ssh, you can check that by=
- using <code>ssh -Q key</code> command.</p>
-<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">ssh -Q key</span>
-ssh-ed25519
-ssh-ed25519-cert-v01@openssh.com
-ssh-rsa
-ssh-dss
-ecdsa-sha2-nistp256
-ecdsa-sha2-nistp384
-ecdsa-sha2-nistp521
-ssh-rsa-cert-v01@openssh.com
-ssh-dss-cert-v01@openssh.com
-ecdsa-sha2-nistp256-cert-v01@openssh.com
-ecdsa-sha2-nistp384-cert-v01@openssh.com
-ecdsa-sha2-nistp521-cert-v01@openssh.com</pre>
-<h3><span class=3D"ez-toc-section" id=3D"Step_3_Create_ssh_directory_on_rem=
-ote_Server"></span><span style=3D"color: #000080;">Step 3: Create .ssh dire=
-ctory on remote Server</span><span class=3D"ez-toc-section-end"></span></h3=
->
-<p>Now you need to create a hidden .ssh directory under user home directory=
- in remote server using <code>ssh test@192.168.0.105 mkdir -p .ssh</code> c=
-ommand. Notice that here user home directory will be <code>/home/test</code=
-> directory under which .ssh directory will be created.</p>
-<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">ssh test@192.168.0=
-.105 mkdir -p .ssh</span>
-test@192.168.0.105's password:</pre>
-<p>You can go to remote server and verify if .ssh directory created under /=
-home/test directory or not.</p>
-<pre>test@localhost:~$ <span style=3D"color: #00ff00;">pwd</span>
-/home/test
-test@localhost:~$ <span style=3D"color: #00ff00;">ls -lrtd .ssh/</span>
-drwx------ 2 test test 4096 Jan 12 18:38 .ssh/</pre>
-<h3><span class=3D"ez-toc-section" id=3D"Step_4_Copy_Public_Key_to_remote_S=
-erver_SSH_authorized_keys"></span><span style=3D"color: #000080;">Step 4: C=
-opy Public Key to remote Server SSH authorized_keys</span><span class=3D"ez=
--toc-section-end"></span></h3>
-<p>Once .ssh directory created, now you need to copy your public key to a f=
-ile known as <code>authorized_keys</code> under .ssh directory in the remot=
-e server as shown below.</p>
-<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">cat ~/.ssh/id_rsa.=
-pub | ssh test@192.168.0.105 'cat &gt;&gt; .ssh/authorized_keys'</span>
-test@192.168.0.105's password:</pre>
-<h3><span class=3D"ez-toc-section" id=3D"Step_5_Set_SSH_key_Permissions_on_=
-Remote_Machine"></span><span style=3D"color: #000080;">Step 5: Set SSH key =
-Permissions on Remote Machine</span><span class=3D"ez-toc-section-end"></sp=
-an></h3>
-<p>Once public key is copied, you need to make sure appropriate permission =
-are assigned to the file ssh authorized_keys.</p>
-<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">ssh test@192.168.0=
-.105 "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"</span></pre>
-<h3><span class=3D"ez-toc-section" id=3D"Step_6_Check_passwordless_ssh_logi=
-n_authentication_to_Remote_Server"></span><span style=3D"color: #000080;">S=
-tep 6: Check passwordless ssh login authentication to Remote Server</span><=
-span class=3D"ez-toc-section-end"></span></h3>
-<p>Once permission is also changed, it is now time to test the ssh without =
-password authentication. To do that run <code>ssh test@192.168.0.105</code>=
- command. Here you can notice that there is no password authentication now =
-requires to connect to remote Server. You are directly login as test User t=
-o the remote machine.</p>
-<pre>[root@localhost ~]# <span style=3D"color: #00ff00;">ssh test@192.168.0=
-.105</span>
-Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 5.0.0-37-generic x86_64)
 
-* Documentation: https://help.ubuntu.com
-* Management: https://landscape.canonical.com
-* Support: https://ubuntu.com/advantage
+<span style=3D"color: #00ffff;">Sep 05 20:38:20 ip-172-31-14-87.us-west-2.c=
+ompute.internal systemd[1]: Starting IPv4 firewall with iptables...</span>
+<span style=3D"color: #00ffff;">Sep 05 20:38:20 ip-172-31-14-87.us-west-2.c=
+ompute.internal iptables.init[612]: iptables: Applying firewall rules: [ OK=
+ ]</span>
+<span style=3D"color: #00ffff;">Sep 05 20:38:20 ip-172-31-14-87.us-west-2.c=
+ompute.internal iptables.init[612]: touch: cannot touch =E2=80=98/var/lock/=
+subsys/iptables=E2=80=99: No such file or directory</span>
+<span style=3D"color: #00ffff;">Sep 05 20:38:20 ip-172-31-14-87.us-west-2.c=
+ompute.internal systemd[1]: Started IPv4 firewall with iptables.</span>
+<span style=3D"color: #ffff00;">********IPTABLES Status in 14.188.21.242***=
+*****</span>
+<span style=3D"color: #00ffff;">=E2=97=8F iptables.service - IPv4 firewall =
+with iptables</span>
+<span style=3D"color: #00ffff;">Loaded: loaded (/usr/lib/systemd/system/ipt=
+ables.service; enabled; vendor preset: disabled)</span>
+<span style=3D"color: #00ffff;">Active: active (exited) since Sat 2020-09-0=
+5 20:38:20 UTC; 1h 0min ago</span>
+<span style=3D"color: #00ffff;">Process: 612 ExecStart=3D/usr/libexec/iptab=
+les/iptables.init start (code=3Dexited, status=3D0/SUCCESS)</span>
+<span style=3D"color: #00ffff;">Main PID: 612 (code=3Dexited, status=3D0/SU=
+CCESS)</span>
+<span style=3D"color: #00ffff;">Tasks: 0</span>
+<span style=3D"color: #00ffff;">Memory: 0B</span>
+<span style=3D"color: #00ffff;">CGroup: /system.slice/iptables.service</spa=
+n>
 
-* Overheard at KubeCon: "microk8s.status just blew my mind".
-
-https://microk8s.io/docs/commands#microk8s.status
-
-* Canonical Livepatch is available for installation.
-- Reduce system reboots and improve kernel security. Activate at:
-https://ubuntu.com/livepatch
-
-116 packages can be updated.
-1 update is a security update.
-
-Your Hardware Enablement Stack (HWE) is supported until April 2023.
-Last login: Sun Jan 12 18:17:00 2020 from 192.168.0.106
-test@localhost:~$</pre>
+<span style=3D"color: #00ffff;">Sep 05 20:38:20 ip-172-31-14-87.us-west-2.c=
+ompute.internal systemd[1]: Starting IPv4 firewall with iptables...</span>
+<span style=3D"color: #00ffff;">Sep 05 20:38:20 ip-172-31-14-87.us-west-2.c=
+ompute.internal iptables.init[612]: iptables: Applying firewall rules: [ OK=
+ ]</span>
+<span style=3D"color: #00ffff;">Sep 05 20:38:20 ip-172-31-14-87.us-west-2.c=
+ompute.internal iptables.init[612]: touch: cannot touch =E2=80=98/var/lock/=
+subsys/iptables=E2=80=99: No such file or directory</span>
+<span style=3D"color: #00ffff;">Sep 05 20:38:20 ip-172-31-14-87.us-west-2.c=
+ompute.internal systemd[1]: Started IPv4 firewall with iptables.</span></pr=
+e>
 <p>&nbsp;</p>
-<p><strong>Popular Searches</strong></p>
-<ul>
-<li>ssh without password</li>
-<li>ssh password</li>
-<li>rsa login</li>
-<li>key login</li>
-</ul>
-<p><span style=3D"color: #ff0000;"><strong>Also Read:</strong></span> <stro=
-ng><a href=3D"https://www.golinuxcloud.com/check-top-memory-cpu-consuming-p=
-rocess-script/" target=3D"_blank" rel=3D"noopener noreferrer">Shell Script =
-to check CPU or Memory Consuming Processes</a></strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style=3D"color: #000080;"><strong>Recommended Posts:-</strong></sp=
+an></p>
+<p><span style=3D"color: #ff0000;"><strong><a style=3D"color: #ff0000;" hre=
+f=3D"https://www.cyberithub.com/iproute2-tools-examples-manage-network-linu=
+x/" target=3D"_blank" rel=3D"noopener noreferrer">10 Useful iproute2 tools =
+examples to Manage Network Connections in Linux</a></strong></span></p>
+<p><span style=3D"color: #ff0000;"><strong><a style=3D"color: #ff0000;" hre=
+f=3D"https://www.cyberithub.com/list-all-running-services-under-systemd-in-=
+linux/" target=3D"_blank" rel=3D"noopener noreferrer">6 Popular Methods to =
+List All Running Services Under Systemd in Linux</a></strong></span></p>
+<p><span style=3D"color: #ff0000;"><strong><a style=3D"color: #ff0000;" hre=
+f=3D"https://www.cyberithub.com/unix-linux-find-files-and-directories-owned=
+-by-a-particular-user/" target=3D"_blank" rel=3D"noopener noreferrer">Unix/=
+Linux Find Files and Directories Owned By a Particular User(5 Useful Exampl=
+es)</a></strong></span></p>
+<p><span style=3D"color: #ff0000;"><strong><a style=3D"color: #ff0000;" hre=
+f=3D"https://www.cyberithub.com/examples-of-ulimit-command-in-linux-unix/" =
+target=3D"_blank" rel=3D"noopener noreferrer">33 Practical Examples of ulim=
+it command in Linux/Unix for Professionals</a></strong></span></p>
+<p><span style=3D"color: #ff0000;"><strong><a style=3D"color: #ff0000;" hre=
+f=3D"https://www.cyberithub.com/install-nodejs-ubuntu/" target=3D"_blank" r=
+el=3D"noopener noreferrer">Install Node.js in 6 Easy Steps on Ubuntu 18.04<=
+/a></strong></span></p>
+<p><span style=3D"color: #ff0000;"><strong><a style=3D"color: #ff0000;" hre=
+f=3D"https://www.cyberithub.com/install-nvm-for-node-js/" target=3D"_blank"=
+ rel=3D"noopener noreferrer">How to Install NVM for Node.js on Ubuntu 18.04=
+</a></strong></span></p>
+<p><a href=3D"https://www.cyberithub.com/how-to-limit-cpu-usage-process-cpu=
+limit/" target=3D"_blank" rel=3D"noopener noreferrer"><span style=3D"color:=
+ #ff0000;"><strong>How to Limit CPU Limit of a Process Using CPULimit in Li=
+nux (RHEL/CentOS 7/8)</strong></span></a></p>
+<p><span style=3D"color: #ff0000;"><strong><a style=3D"color: #ff0000;" hre=
+f=3D"https://www.cyberithub.com/install-rust-programming-language-in-linux/=
+" target=3D"_blank" rel=3D"noopener noreferrer">How to Install Rust Program=
+ming Language in Linux Using 6 Best Steps</a></strong></span></p>
+<p><span style=3D"color: #ff0000;"><strong><a style=3D"color: #ff0000;" hre=
+f=3D"https://www.cyberciti.biz/faq/linux-which-process-is-using-swap/" targ=
+et=3D"_blank" rel=3D"noopener noreferrer">Bash For Loop Examples to Check P=
+rocesses using Swap Memory in Linux</a></strong></span></p>
 		</div>
 
 				<footer class=3D"entry-meta" aria-label=3D"Entry meta">
@@ -810,9 +1098,10 @@ iewBox=3D"0 0 512 512" aria-hidden=3D"true" xmlns=3D"http://www.w3.org/2000=
 h110.014a48 48 0 0143.592 27.907l12.349 26.791A16 16 0 00228.486 128H464c26=
 .51 0 48 21.49 48 48v224c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V=
 112z"></path></svg></span><span class=3D"screen-reader-text">Categories </s=
-pan><a href=3D"https://www.cyberithub.com/category/more/linux/" rel=3D"cate=
-gory tag">Linux</a></span> 		<nav id=3D"nav-below" class=3D"post-navigation=
-" aria-label=3D"Posts">
+pan><a href=3D"https://www.cyberithub.com/category/scripting/" rel=3D"categ=
+ory tag">Scripting</a>, <a href=3D"https://www.cyberithub.com/category/scri=
+pting/bash/" rel=3D"category tag">Bash</a></span> 		<nav id=3D"nav-below" c=
+lass=3D"post-navigation" aria-label=3D"Posts">
 			<div class=3D"nav-previous"><span class=3D"gp-icon icon-arrow-left"><svg=
  viewBox=3D"0 0 192 512" aria-hidden=3D"true" xmlns=3D"http://www.w3.org/20=
 00/svg" width=3D"1em" height=3D"1em" fill-rule=3D"evenodd" clip-rule=3D"eve=
@@ -824,21 +1113,22 @@ c1.7 1.7 2.832 4.247 2.832 6.513 0 2.265-1.133 4.813-2.832 6.512L161.43 394=
 l131.994-131.947c1.7-1.699 4.249-2.831 6.515-2.831 2.265 0 4.815 1.132 6.51=
 4 2.831l14.163 14.157c1.7 1.7 2.832 3.965 2.832 6.513z" fill-rule=3D"nonzer=
 o"></path></svg></span><span class=3D"prev"><a href=3D"https://www.cyberith=
-ub.com/zfs-file-system-commands/" rel=3D"prev">Top 31 ZFS File System Comma=
-nds Every Unix Admin Should Know</a></span></div><div class=3D"nav-next"><s=
-pan class=3D"gp-icon icon-arrow-right"><svg viewBox=3D"0 0 192 512" aria-hi=
-dden=3D"true" xmlns=3D"http://www.w3.org/2000/svg" width=3D"1em" height=3D"=
-1em" fill-rule=3D"evenodd" clip-rule=3D"evenodd" stroke-linejoin=3D"round" =
-stroke-miterlimit=3D"1.414"><path d=3D"M178.425 256.001c0 2.266-1.133 4.815=
--2.832 6.515L43.599 394.509c-1.7 1.7-4.248 2.833-6.514 2.833s-4.816-1.133-6=
-.515-2.833l-14.163-14.162c-1.699-1.7-2.832-3.966-2.832-6.515 0-2.266 1.133-=
-4.815 2.832-6.515l111.317-111.316L16.407 144.685c-1.699-1.7-2.832-4.249-2.8=
-32-6.515s1.133-4.815 2.832-6.515l14.163-14.162c1.7-1.7 4.249-2.833 6.515-2.=
-833s4.815 1.133 6.514 2.833l131.994 131.993c1.7 1.7 2.832 4.249 2.832 6.515=
-z" fill-rule=3D"nonzero"></path></svg></span><span class=3D"next"><a href=
-=3D"https://www.cyberithub.com/create-and-configure-zone-in-solaris/" rel=
-=3D"next">How to create and configure Zone in Solaris 11</a></span></div>		=
-</nav>
+ub.com/find-command-list-all-files-and-directories-with-777-permissions-in-=
+linux/" rel=3D"prev">12 Easy Find Command Examples to List all files and di=
+rectories with 777 Permissions in Linux</a></span></div><div class=3D"nav-n=
+ext"><span class=3D"gp-icon icon-arrow-right"><svg viewBox=3D"0 0 192 512" =
+aria-hidden=3D"true" xmlns=3D"http://www.w3.org/2000/svg" width=3D"1em" hei=
+ght=3D"1em" fill-rule=3D"evenodd" clip-rule=3D"evenodd" stroke-linejoin=3D"=
+round" stroke-miterlimit=3D"1.414"><path d=3D"M178.425 256.001c0 2.266-1.13=
+3 4.815-2.832 6.515L43.599 394.509c-1.7 1.7-4.248 2.833-6.514 2.833s-4.816-=
+1.133-6.515-2.833l-14.163-14.162c-1.699-1.7-2.832-3.966-2.832-6.515 0-2.266=
+ 1.133-4.815 2.832-6.515l111.317-111.316L16.407 144.685c-1.699-1.7-2.832-4.=
+249-2.832-6.515s1.133-4.815 2.832-6.515l14.163-14.162c1.7-1.7 4.249-2.833 6=
+.515-2.833s4.815 1.133 6.514 2.833l131.994 131.993c1.7 1.7 2.832 4.249 2.83=
+2 6.515z" fill-rule=3D"nonzero"></path></svg></span><span class=3D"next"><a=
+ href=3D"https://www.cyberithub.com/install-openssh-server-on-ubuntu-20-04-=
+to-enable-ssh/" rel=3D"next">5 Easy Steps to Install Openssh-Server on Ubun=
+tu 20.04 to Enable SSH</a></span></div>		</nav>
 				</footer>
 			</div>
 </article>
@@ -849,20 +1139,20 @@ z" fill-rule=3D"nonzero"></path></svg></span><span class=3D"next"><a href=
 		<div id=3D"respond" class=3D"comment-respond">
 		<h3 id=3D"reply-title" class=3D"comment-reply-title">Leave a Comment <sma=
 ll><a rel=3D"nofollow" id=3D"cancel-comment-reply-link" href=3D"https://www=
-.cyberithub.com/passwordless-ssh-login-using-ssh-keygen/#respond" style=3D"=
-display:none;">Cancel reply</a></small></h3><form action=3D"https://www.cyb=
-erithub.com/wp-comments-post.php" method=3D"post" id=3D"commentform" class=
-=3D"comment-form" novalidate=3D""><p class=3D"comment-form-comment"><label =
-for=3D"comment" class=3D"screen-reader-text">Comment</label><textarea autoc=
-omplete=3D"new-password" id=3D"comment" name=3D"cac11c5d52" cols=3D"45" row=
-s=3D"8" required=3D""></textarea><textarea id=3D"a349c69e28780a5186e2761a69=
-fe6143" aria-label=3D"hp-comment" aria-hidden=3D"true" name=3D"comment" aut=
-ocomplete=3D"new-password" style=3D"padding:0 !important;clip:rect(1px, 1px=
-, 1px, 1px) !important;position:absolute !important;white-space:nowrap !imp=
-ortant;height:1px !important;width:1px !important;overflow:hidden !importan=
-t;" tabindex=3D"-1"></textarea></p><label for=3D"author" class=3D"screen-re=
-ader-text">Name</label><input placeholder=3D"Name *" id=3D"author" name=3D"=
-author" type=3D"text" value=3D"" size=3D"30" required=3D"">
+.cyberithub.com/bash-for-loop-examples-in-linux-unix/#respond" style=3D"dis=
+play:none;">Cancel reply</a></small></h3><form action=3D"https://www.cyberi=
+thub.com/wp-comments-post.php" method=3D"post" id=3D"commentform" class=3D"=
+comment-form" novalidate=3D""><p class=3D"comment-form-comment"><label for=
+=3D"comment" class=3D"screen-reader-text">Comment</label><textarea autocomp=
+lete=3D"new-password" id=3D"comment" name=3D"cac11c5d52" cols=3D"45" rows=
+=3D"8" required=3D""></textarea><textarea id=3D"a42eba766cd3c85e80c64c0069f=
+314ef" aria-label=3D"hp-comment" aria-hidden=3D"true" name=3D"comment" auto=
+complete=3D"new-password" style=3D"padding:0 !important;clip:rect(1px, 1px,=
+ 1px, 1px) !important;position:absolute !important;white-space:nowrap !impo=
+rtant;height:1px !important;width:1px !important;overflow:hidden !important=
+;" tabindex=3D"-1"></textarea></p><label for=3D"author" class=3D"screen-rea=
+der-text">Name</label><input placeholder=3D"Name *" id=3D"author" name=3D"a=
+uthor" type=3D"text" value=3D"" size=3D"30" required=3D"">
 <label for=3D"email" class=3D"screen-reader-text">Email</label><input place=
 holder=3D"Email *" id=3D"email" name=3D"email" type=3D"email" value=3D"" si=
 ze=3D"30" required=3D"">
@@ -1060,8 +1350,9 @@ et_text widget inner-padding widget_custom_html"><div class=3D"textwidget c=
 ustom-html-widget"><div class=3D"buy-me-a-coffee"><a href=3D"https://www.bu=
 ymeacoffee.com/cyberithub" target=3D"_blank" rel=3D"nofollow noopener"><img=
  width=3D"250" height=3D"56" alt=3D"Buy CyberITHub a Coffee" src=3D"https:/=
-/www.cyberithub.com/wp-content/uploads/coffee.png" class=3D"lazyloaded" dat=
-a-ll-status=3D"loaded"></a></div></div></aside>
+/www.cyberithub.com/wp-content/uploads/coffee.png" data-src=3D"https://www.=
+cyberithub.com/wp-content/uploads/coffee.png" class=3D" lazyloaded " data-l=
+l-status=3D"loaded"></a></div></div></aside>
 		<aside id=3D"recent-posts-2" class=3D"widget inner-padding widget_recent_=
 entries">
 		<h2 class=3D"widget-title">Recent Posts</h2>
@@ -1267,9 +1558,9 @@ ma.org/WPFooter" itemscope=3D"">
 		</div>
 
 <a title=3D"Scroll back to top" aria-label=3D"Scroll back to top" rel=3D"no=
-follow" href=3D"https://www.cyberithub.com/passwordless-ssh-login-using-ssh=
--keygen/#" class=3D"generate-back-to-top generate-back-to-top__show" data-s=
-croll-speed=3D"400" data-start-scroll=3D"300">
+follow" href=3D"https://www.cyberithub.com/bash-for-loop-examples-in-linux-=
+unix/#" class=3D"generate-back-to-top" data-scroll-speed=3D"400" data-start=
+-scroll=3D"300">
 					<span class=3D"gp-icon icon-arrow-up"><svg viewBox=3D"0 0 330 512" ari=
 a-hidden=3D"true" xmlns=3D"http://www.w3.org/2000/svg" width=3D"1em" height=
 =3D"1em" fill-rule=3D"evenodd" clip-rule=3D"evenodd" stroke-linejoin=3D"rou=
@@ -1313,25 +1604,25 @@ ssets/js/classList.min.js" id=3D"generate-classlist-js"></script>
 
 </body></html><!-- This website is like a Rocket, isn't it? Performance opt=
 imized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@17026=
-97409 -->
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+72124 -->
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
-Content-Location: cid:css-41aef602-be94-4ba5-a306-ae7062ce43be@mhtml.blink
+Content-Location: cid:css-18fe18e9-5f49-4930-ab03-56ac26832b72@mhtml.blink
 
 @charset "utf-8";
 =0A
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
-Content-Location: cid:css-687c8e6d-fa61-467a-b68b-a81036d337ef@mhtml.blink
+Content-Location: cid:css-fb43ba99-4d36-4d63-b909-11e19d8c5f28@mhtml.blink
 
 @charset "utf-8";
 =0A
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
-Content-Location: cid:css-09d04847-505c-4e32-be36-03f1bf93b44c@mhtml.blink
+Content-Location: cid:css-7f4a7963-cd8d-4880-9b7f-411cf3f52897@mhtml.blink
 
 @charset "utf-8";
 
@@ -1342,10 +1633,10 @@ div#ez-toc-container .ez-toc-title { font-weight: 500; }
 div#ez-toc-container ul li { font-size: 95%; }
 
 div#ez-toc-container nav ul ul li ul li { }
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
-Content-Location: cid:css-6a2fb928-fb23-4e30-b287-56ff9236f85e@mhtml.blink
+Content-Location: cid:css-9b93fbb1-f92a-4762-b133-ccb28b4c35b5@mhtml.blink
 
 @charset "utf-8";
 
@@ -1703,10 +1994,10 @@ ent:not(:first-child), .entry-summary:not(:first-child), footer.entry-meta =
 
 .post-image-above-header .inside-article div.featured-image, .post-image-ab=
 ove-header .inside-article div.post-image { margin-bottom: 1.9em; }
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
-Content-Location: cid:css-4a1d63e7-9baa-4ad7-87ee-117b87d6253c@mhtml.blink
+Content-Location: cid:css-b268bfb0-44bc-46df-b567-7725fa8a4749@mhtml.blink
 
 @charset "utf-8";
 
@@ -1758,34 +2049,34 @@ lor: rgb(255, 255, 255); background-color: rgb(71, 71, 71); }
   .secondary-menu-bar-items .menu-bar-item:hover > a { background: none; co=
 lor: rgb(255, 255, 255); }
 }
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
-Content-Location: cid:css-3a5a651c-3a4c-477d-bb34-08377392c404@mhtml.blink
+Content-Location: cid:css-74f17576-5ac5-4a87-9903-9808028d9ad8@mhtml.blink
 
 @charset "utf-8";
 
 img#wpstats { display: none; }
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
-Content-Location: cid:css-b278aeaa-ecc1-4630-9408-1ca984cc8ef1@mhtml.blink
+Content-Location: cid:css-a6ed0657-b457-4f88-9094-2132ba28d4bb@mhtml.blink
 
 @charset "utf-8";
 
 .recentcomments a { display: inline !important; padding: 0px !important; ma=
 rgin: 0px !important; }
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
-Content-Location: cid:css-b61b6cd0-8230-45be-a892-7b6edb5546f9@mhtml.blink
+Content-Location: cid:css-e69f3ffd-f6f4-4b2a-8a77-132dd573798c@mhtml.blink
 
 @charset "utf-8";
 =0A
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
-Content-Location: cid:css-4c502f66-cc68-4f9b-a3c2-04da1edd2d20@mhtml.blink
+Content-Location: cid:css-6516cde3-5437-4f46-994f-e16e62898c8c@mhtml.blink
 
 @charset "utf-8";
 
@@ -2408,10 +2699,10 @@ s.pw"], :root a[href*=3D"//softboxik1.ru/"], :root a[href^=3D"http://li.blo=
 gtrottr.com/click?"], :root a[href^=3D"https://webroutetrk.com/"], :root a[=
 href^=3D"https://mercurybest.com/"], :root a[href*=3D"/sarimsolus.com/"] { =
 display: none !important; }
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
-Content-Location: cid:css-f2598c08-90cb-4973-8a6d-22f916638e5f@mhtml.blink
+Content-Location: cid:css-6a3cfc5c-ea83-42f8-a08d-70ef325eaec0@mhtml.blink
 
 @charset "utf-8";
 
@@ -2421,10 +2712,10 @@ n-left: -100px !important; width: 200px !important; border: 2px solid rgba(=
 
 .en-markup-crop-options div div:first-of-type { margin-left: 0px !important=
 ; }
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
-Content-Location: cid:css-b83de776-6916-485c-b337-70ff85d9c329@mhtml.blink
+Content-Location: cid:css-913a2ceb-fed3-43e2-9359-5f74606bf563@mhtml.blink
 
 @charset "utf-8";
 
@@ -2483,10 +2774,10 @@ align: right; }
 p.comment-notice { border: 1px solid rgb(255, 212, 153); background-color: =
 rgb(255, 244, 229); border-radius: 5px; padding: 10px; margin: 10px 0px; fo=
 nt-size: small; }
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
-Content-Location: cid:css-ad7b5d06-7a71-49ed-95a3-b14ef0402501@mhtml.blink
+Content-Location: cid:css-6462f63d-0914-4739-a618-8dd068c4c75d@mhtml.blink
 
 @charset "utf-8";
 
@@ -2511,10 +2802,10 @@ tured-image, body.single-post .featured-image, .site-header.featured-image =
 .entry-content a { text-decoration: underline; }
 
 .buy-me-a-coffee { text-align: center; }
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
-Content-Location: cid:css-9288761e-ed36-422a-b38c-3aeedb825fae@mhtml.blink
+Content-Location: cid:css-20cc7b1f-5119-43fa-8861-5dd18a0cec22@mhtml.blink
 
 @charset "utf-8";
 
@@ -2614,7 +2905,7 @@ x; }
   #mailpoet_form_2 .mailpoet_form_column:last-child .mailpoet_paragraph:las=
 t-child { margin-bottom: 0px; }
 }
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
 Content-Location: https://www.cyberithub.com/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css
@@ -2923,7 +3214,7 @@ display: none; }
 
 .mejs-cannotplay a, .mejs-cannotplay p { display: inline-block; padding: 0p=
 x 15px; width: 100%; }
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
 Content-Location: https://www.cyberithub.com/wp-includes/js/mediaelement/wp-mediaelement.min.css
@@ -3069,7 +3360,7 @@ em .wp-playlist-item-title { overflow: hidden; text-overflow: ellipsis; whi=
 te-space: nowrap; }
 
 .wp-audio-playlist .me-cannotplay span { padding: 5px 15px; }
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
 Content-Location: https://www.cyberithub.com/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css
@@ -3239,7 +3530,7 @@ splay: none; }
 
 .ez-toc-icon-toggle-span { display: flex; align-items: center; width: 35px;=
  height: 30px; justify-content: center; direction: ltr; }
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
 Content-Location: https://www.cyberithub.com/wp-content/themes/generatepress/assets/css/components/comments.min.css
@@ -3309,7 +3600,7 @@ px; }
 .comment-content .reply { font-size: 85%; }
 
 #cancel-comment-reply-link { padding-left: 10px; }
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
 Content-Location: https://www.cyberithub.com/wp-content/themes/generatepress/assets/css/main.min.css
@@ -3994,7 +4285,7 @@ t: 0px; margin-left: 0px; }
 @media (min-width: 1025px) {
   .hide-on-desktop { display: none !important; }
 }
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
 Content-Location: https://www.cyberithub.com/wp-content/themes/generatepress_child/style.css
@@ -4059,7 +4350,7 @@ translateX(-50%); width: fit-content; height: fit-content; }
 .tablepress tbody tr:first-child, td:first-child { font-weight: bold; }
 
 .tablepress tbody td { border: 1px solid rgb(0, 0, 0) !important; }
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
 Content-Location: https://www.cyberithub.com/wp-content/plugins/tablepress/css/build/default.css
@@ -4216,7 +4507,86 @@ x; }
 .tablepress .sorting:hover, .tablepress .sorting_asc, .tablepress .sorting_=
 desc { background-color: var(--head-active-bg-color); color: var(--head-act=
 ive-text-color); }
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://www.cyberithub.com/wp-content/plugins/gp-premium/blog/functions/css/featured-images.min.css
+
+@charset "utf-8";
+
+.post-image-above-header .inside-article .featured-image, .post-image-above=
+-header .inside-article .post-image { margin-top: 0px; margin-bottom: 2em; =
+}
+
+.post-image-aligned-left .inside-article .featured-image, .post-image-align=
+ed-left .inside-article .post-image { margin-top: 0px; margin-right: 2em; f=
+loat: left; text-align: left; }
+
+.post-image-aligned-center .featured-image, .post-image-aligned-center .pos=
+t-image { text-align: center; }
+
+.post-image-aligned-right .inside-article .featured-image, .post-image-alig=
+ned-right .inside-article .post-image { margin-top: 0px; margin-left: 2em; =
+float: right; text-align: right; }
+
+.post-image-below-header.post-image-aligned-center .inside-article .feature=
+d-image, .post-image-below-header.post-image-aligned-left .inside-article .=
+featured-image, .post-image-below-header.post-image-aligned-left .inside-ar=
+ticle .post-image, .post-image-below-header.post-image-aligned-right .insid=
+e-article .featured-image, .post-image-below-header.post-image-aligned-righ=
+t .inside-article .post-image { margin-top: 2em; }
+
+.post-image-aligned-left > .featured-image, .post-image-aligned-right > .fe=
+atured-image { float: none; margin-left: auto; margin-right: auto; }
+
+.post-image-aligned-left .featured-image { text-align: left; }
+
+.post-image-aligned-right .featured-image { text-align: right; }
+
+.post-image-aligned-left .inside-article::after, .post-image-aligned-left .=
+inside-article::before, .post-image-aligned-right .inside-article::after, .=
+post-image-aligned-right .inside-article::before { content: ""; display: ta=
+ble; }
+
+.post-image-aligned-left .inside-article::after, .post-image-aligned-right =
+.inside-article::after { clear: both; }
+
+.one-container.post-image-above-header .no-featured-image-padding.generate-=
+columns .inside-article .post-image, .one-container.post-image-above-header=
+ .page-header + .no-featured-image-padding .inside-article .post-image { ma=
+rgin-top: 0px; }
+
+.one-container.both-right.post-image-aligned-center .no-featured-image-padd=
+ing .featured-image, .one-container.both-right.post-image-aligned-center .n=
+o-featured-image-padding .post-image, .one-container.right-sidebar.post-ima=
+ge-aligned-center .no-featured-image-padding .featured-image, .one-containe=
+r.right-sidebar.post-image-aligned-center .no-featured-image-padding .post-=
+image { margin-right: 0px; }
+
+.one-container.both-left.post-image-aligned-center .no-featured-image-paddi=
+ng .featured-image, .one-container.both-left.post-image-aligned-center .no-=
+featured-image-padding .post-image, .one-container.left-sidebar.post-image-=
+aligned-center .no-featured-image-padding .featured-image, .one-container.l=
+eft-sidebar.post-image-aligned-center .no-featured-image-padding .post-imag=
+e { margin-left: 0px; }
+
+.one-container.both-sidebars.post-image-aligned-center .no-featured-image-p=
+adding .featured-image, .one-container.both-sidebars.post-image-aligned-cen=
+ter .no-featured-image-padding .post-image { margin-left: 0px; margin-right=
+: 0px; }
+
+.one-container.post-image-aligned-center .no-featured-image-padding.generat=
+e-columns .featured-image, .one-container.post-image-aligned-center .no-fea=
+tured-image-padding.generate-columns .post-image { margin-left: 0px; margin=
+-right: 0px; }
+
+@media (max-width: 768px) {
+  body:not(.post-image-aligned-center) .featured-image, body:not(.post-imag=
+e-aligned-center) .inside-article .featured-image, body:not(.post-image-ali=
+gned-center) .inside-article .post-image { margin-right: 0px; margin-left: =
+0px; float: none; text-align: center; }
+}
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
 Content-Location: https://www.cyberithub.com/wp-content/plugins/gp-premium/secondary-nav/functions/css/main.min.css
@@ -4425,7 +4795,7 @@ in-left: auto; }
 
 .secondary-nav-aligned-center .secondary-navigation.has-top-bar .inside-nav=
 igation { display: block; }
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: image/jpeg
 Content-Transfer-Encoding: base64
 Content-Location: https://www.cyberithub.com/wp-content/uploads/2019/08/cropped-Progressive-Image.jpg
@@ -4555,300 +4925,379 @@ WZTz9NYcS+7dKgUlShyCVX58sGmt8la0REAk+9e+VNMKnTZ0OPW57Myl05ttMVDEh9G5bak9Ja2S
 dgICbm3iB64rlCmrxESMu1tipA5AqKtNXcsmVEMxclT3V+Lp8yy75Xvt47d8RkXM14NZ2gj+WRBA
 x0slK//Z
 
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: image/jpeg
 Content-Transfer-Encoding: base64
-Content-Location: https://www.cyberithub.com/wp-content/uploads/2020/01/passwordless.jpg
+Content-Location: https://www.cyberithub.com/wp-content/uploads/2020/06/bashfor.jpg
 
-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
-a3OZWF6uZh8Q51Hf/D/+duugSumOJtxAub/4Nilxzx084/5O/E4YlWJji+nx0Jmk6YntKxfTxK/5
-exqavrmVnq2twmTGoSob6FHMMwy46P8Axx/+HrCKcTjzKawTzLCsGOY7lSjZiYmau+j629QzA6V+
-ZzLw1qe3Q6e+YiNO49RanfRriZqzImfEyng6NcdH0jrqfHSuDPTnVeJVnEbtHLCXUJwdWuOjKxfX
-bmcX0PMZWL6mp5ntEwxIXq2ORrYsT9Qq+r9T77+T7b+R+u/yH33+Rtx6X/xLnH3ek++/k+6/k+2/
-kU+74n338nncfWp9t/Jd9XxPsv5PS/rtPtv5MX3fqfbfyfefyHj/AL7R+2/yfbfyfdfyfZfyH/vv
-5MP+7+T7b+T7L+T7b+T7b+T7b+T77+T7L+T7L+T7b+T7b+T7b+T+Hb+R2H3ekL/z/RHZ9HtLW32/
-/Eo+74n238n238i33fE+m/k+y/k+y/k+2/k+m/k+2/k+2/k+y/k+2/k+2/kwVj+u0+y/kIrWhVf1
-ByGfuEfPTvAcDPYjfPPTDy/NP1nwQxxN4x6vTFy7mDXTviCkrG89oC4C2NXKjuJ6e3Qu49untCuY
-mo9DpVQy0dOYV6dMxRWbjrHvDeJ69OOncxHvvrxC5WY+Ya3uO8dO0ftzHE9ppy1m4BFtFyl1kd+l
-z9t+U+k7/wDALehxKmqn1XefqvgiY2RiYuX4lY8ahVdpubtX/wBgdyDnRK7dGxp30vh1Atorph3F
-8S2g3Wp8/wDXiHUA7nXe+l0doapeldL6V8cS31xzBpydN9ETDjpvpT/x69TDcfSuv7b8p9p3j2ro
-Mdq0HoSu0SfZdyH8b4OuQL56XL+ImcNx88wrAH3TeGGlx0qvWYhVanGszfvBqpknESq61ePHLHtd
-xO0C+lagcdpdFVndwFFrBOcwy5Go7eIBZ56jDcrpzNcRUE4j0UCdum+YYZjkx0xXTT0yNzFZu+Id
-ex5flPpO8CuBa3Ud9Fs9sQPeVmBPpZn6r4IXxGYjKeGYGB+IU3c8dql+txmJz05jS3xP3AznEetf
-ma4xBk179UxOYObiMgeDBFXXiJGsxQxubFuCmkdBr/k9I+kq/EcLW78wUp26c09KeYq7damXM51H
-pQrv1rr+2/KfSd4KaUvoSqCBnOIZe8y1/wDtH6tPgl8jOJtl+Z+oOe8MYiqusTH/ALDG5WLjuBZV
-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
-8RCf/9k=
+/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDABEMDQ8NCxEPDg8TEhEVGiscGhgYGjUmKB8rPzdCQT43
+PDtFTmNURUleSzs8VnZXXmdqb3BvQ1N6g3lsgmNtb2v/2wBDARITExoXGjMcHDNrRzxHa2tra2tr
+a2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2v/wgARCAE7AjADASEA
+AhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAECAwQF/8QAGAEBAQEBAQAAAAAAAAAAAAAAAAEC
+AwT/2gAMAwEAAhADEAAAAfMbyUAgoCC2WKRKAEFgogVSFhVEFEQtWJAEoCCgRiFoIACqgsLBRAgF
+EFIAsArQSWUIKCxJSCAAAsqqCWICqsllQUC4pYtEQAAQtRShQESkFWRKQQUQAVqCiCyhREFAFEAC
+QpKXGwlCqlCwAllCCwsCAACK0ZHbIAACWCgCUAIhRABbEBaAAlABIsAUll48dSIym5Nsu/kLLAAC
+CiUCgEjNAFJdRIJa1JQBSAlJQLESV2Rz6wM8dxsl38gWABBRKCFABApcUVTUTNIWiywBAlsAUiLB
+1xo1gbMd5mxd/JAFApAAABLBVgBVJCS2QFaAqZaypRIUhaiHZHPgQZzplsl38YBBVgAAAoCBYM7M
+aMVTFIBdDUsiWUCyJVIgHZHPgRWV3mbZd3IQAAKS1MokAAABaliFVMWaBVUIAIEoEA7I59YtZN5m
+yXdykAolgoUEQFCUpEAtZSzFnUZKS0WAESqBKRAXrOfWEZzpltl28pASllG7bzzp1buezLny1enT
+iY7NNPRXPdXpcc6cel6cMTXt6Rp561zeujnzLlt04cs89666sOU59u7t1YmqdNVYktkOuNGurDOb
+y2S7uSLKsgpT0dXnx1+Rq+ju5TyO7vpOc5+3TzvUPKy731eDzZ1ejq8/Qzx90cPfm+PPR09fyuWH
+pacvThy9Rz7zn6TR24njvT0QoiHZHPrqwyajYbuSUsAFPReXG3yel9mefPn6/Vvs2cc8Hp6ac8Ty
+svZv19Hjxxel0vm9fWYdHFjjm+dj6t+x5HHN9Y8nq3cunjnyuntrZnxmeiOG+nYIEOw59YRk3JtN
+3KSiAKd+zzYcmm3l3e3Vzm9lw9fW8PonnO19LzuWb3au2efHD29r5vozXlXpv1sPJz553vTeM87d
+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
+PUvTCmkzJHVGj3y9plj7aRkTtP0WuPQpzhxPfL2EoXGj3taDJH2UhdNr2rp/oa36kWX62i0i6LLG
+akWJ309LL/e97Vul0ZDFqVmWPtv6L1zRm7TD20P5TN3GZXSIx0Toh8jMnayOK1Zl4tIxxcZUZuxk
+/iQneJmPtW57Vul0I/krgS7eJ/D/ALMz4oxO5Mn3MycW2Z+FENU56mQ+RmTtZH8n6MsNS4GKbvSz
+N2Mn8SH7dSMfauWt0uhDLpVGWVxS+ytE0NaslMS05OA+Lkf0X/ky9Y+jnomzXrg2RzaVRkk4tMg9
+WS0Zuxk/iRnXRmPtW57Vv0R+ikNJlFIpGlFL00x+jSjRH6KsSS6DVlLoNJ73tXnPauXmbUeAuhb/
+AC0ObWWi3+WiLf5GiLf5GiEmm0zDbVvlvauXn7BdD+8ZF7mJ3kTIfKyPys/iFUhKlXLe1cvP2Ecs
+Oh/eErySRh7xNRyuzG7yNk1+ST/wYpao8t7V05coKSpiwRTs0LVqFBKWoWNKWoniUyEFBUiEFDoQ
+godOW9q6ec9q857V5z2rzn02rzntXK1I1ItGpEZ3dkpcOA8haIS1KzUi1yntXKr+YRVujG6dsrgP
+q6KX/g0rr/oXVGN0nQq4URStcp7VzXG3fgvbxLZbLZbLZb+i39Fv6Lf0Wy2Wy39Fstlstlstlv6L
+Zb+i2Wy2Wy2WzicfDr/h/wD/xAAzEAABAgMGAwgCAgIDAAAAAAAAAQIRMTMDECFxkaISIJIwMkBB
+UFGBoSJhYoITQlJwgP/aAAgBAQAGPwKZMmTvnfMmTJ3TJkyZMnfMmTJkyd0yd0yd07pkyd07pk7p
+k7pkyZMndMndMmTJkyZMmTJkyf8A2tAxtLPUq2epUs9SpZ6lSy1KllqVLPqKlnqVLPqKtnqVbLUq
+WWpUsuoqWfUVLLUq2epVsuoq2epUsuoqWepUs9SpZ9RVs9SpZ6lSy1KtnqVbLqKll1FSz6irZdRV
+suoqWXUVbLUqWXUVbPqKtlqVbLUq2XUVLLUqWfUVLLUqWepUs+oq2fUVLLUq2WpVsuoq2fUVLPqK
+llqVbPqKtn1FWy1KllqVLLqKll1FWy6irZdRUstSrZalWy1MLSz1Ic7cx/rrB2fO3Mf66wdnztzH
++utHZ87cx/rrB2fO3Mf66wdnztzHeusHZ87cx3ZYHkYpdBCKwugh5GIiIY3Rv8jyIKQRInlfhCB5
+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
 
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul----
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE----
 Content-Type: image/png
 Content-Transfer-Encoding: base64
 Content-Location: https://www.cyberithub.com/wp-content/uploads/coffee.png
@@ -4923,4 +5372,4 @@ LZXy3vAIzVQlQNMjIL9+AA+iDdnuj8/w2InWYxum7Opi8Eb9PtV6bKtQYo1pG0D+AvltVf/P4Kyv
 BzG/HuzH64F9P/5b9xfk//1/Re4Ygnk5oi8vyF3LeD/ue8gLcudU3o97L/N+3L2dF+T+D70hd5AJ
 P96I4/24i13vx30wez3upNvrcS/u3pa7+fd+3A/EPwA=
 
-------MultipartBoundary--AcPyJ5m52e2ErkBmLBJWgCivWOj7C4PGPefd9ySEul------
+------MultipartBoundary--BZsMfMf9hTo6cbHnalvlamG1HAVK6zjDfNwdrRFNBE------
