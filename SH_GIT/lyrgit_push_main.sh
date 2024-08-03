@@ -91,7 +91,7 @@ function MAIN_CHECK_PARAMETR () {
     PN_CAPTION=O1
     Read_P O1 O1
     echo O1:$O1
-    #AddLog $loAll $TEXT O1:$O1
+    #AddLog $loAll $tlsTEXT O1:$O1
     #AddLog $loAll $INFO O1:$O1
     if [[ ! -z "$O1" ]] ; then
         OPTION="$OPTION --O1 $O1"
@@ -109,7 +109,7 @@ function MAIN_CHECK_PARAMETR () {
     PN_CAPTION=Comment
     Read_P Comment "$Comment"
     echo Comment:$Comment
-    #AddLog $loAll $TEXT Comment:$Comment
+    #AddLog $loAll $tlsTEXT Comment:$Comment
     #AddLog $loAll $INFO Comment:$Comment
     if [[ ! -z "$Comment" ]] ; then
         ARGS="$ARGS $Comment"
@@ -129,9 +129,9 @@ function MAIN_CHECK_PARAMETR () {
 #--------------------------------------------------------------------------------
 function MAIN_FUNC {
 #beginfunction
-    AddLog $loAll $TEXT '--------------------------------------'
-    AddLog $loAll $TEXT 'MAIN_FUNC ...'
-    AddLog $loAll $TEXT '--------------------------------------'
+    AddLog $loAll $tlsTEXT '--------------------------------------'
+    AddLog $loAll $tlsTEXT 'MAIN_FUNC ...'
+    AddLog $loAll $tlsTEXT '--------------------------------------'
 
     # -------------------------------------------------------------------
     # запуск скриптов
