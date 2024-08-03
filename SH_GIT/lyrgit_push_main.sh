@@ -4,7 +4,7 @@
 # -----------------------------------------------
 
 # -----------------------------------------------
-# procedure MAIN_INIT ()
+# 01.MAIN_INIT ()
 # -----------------------------------------------
 function MAIN_INIT () {
 #beginfunction
@@ -20,18 +20,23 @@ function MAIN_INIT () {
     echo UNAME:$UNAME
     case "$UNAME" in
         'ASUS-W10P')
-            PROJECTS_LYR_DIR='/d/PROJECTS_LYR'
-            SCRIPTS_DIR='/d/PROJECTS_LYR/CHECK_LIST/01_OS/03_UNIX/PROJECTS_UNIX/TOOLS_SRC_SH'
+            PROJECTS_LYR_ROOT=/d
+            PROJECTS_LYR_ROOT=/d/WORK/UBU
+            PROJECTS_LYR_DIR=$PROJECTS_LYR_ROOT/PROJECTS_LYR
+            SCRIPTS_DIR=$PROJECTS_LYR_DIR/CHECK_LIST/01_OS/03_UNIX/PROJECTS_UNIX/TOOLS_SRC_SH
+            SCRIPTS_DIR=/d/PROJECTS_LYR/CHECK_LIST/01_OS/03_UNIX/PROJECTS_UNIX/TOOLS_SRC_SH
             ;;
         'ASUS-U2204-VB' | 'ASUS-U2204-VM' | 'ASUS-U2404-VB' | 'ASUS-U2404-VM' | 'ASUS-U2310')
-            PROJECTS_LYR_DIR='/home/lyr/PROJECTS_LYR'
-            SCRIPTS_DIR='/home/lyr/PROJECTS_LYR/CHECK_LIST/01_OS/03_UNIX/PROJECTS_UNIX/TOOLS_SRC_SH'
+            PROJECTS_LYR_ROOT=/home/lyr
+            PROJECTS_LYR_DIR=$PROJECTS_LYR_ROOT/PROJECTS_LYR
+            SCRIPTS_DIR=$PROJECTS_LYR_DIR/CHECK_LIST/01_OS/03_UNIX/PROJECTS_UNIX/TOOLS_SRC_SH
         ;;
         *)
             echo "ERROR: Компьютер не определен...!"
             exit 1
             ;;
     esac
+    echo PROJECTS_LYR_ROOT:$PROJECTS_LYR_ROOT
     echo PROJECTS_LYR_DIR:$PROJECTS_LYR_DIR
     echo SCRIPTS_DIR:$SCRIPTS_DIR
 
@@ -50,20 +55,23 @@ function MAIN_INIT () {
     # -------------------------------------------------------------------
     # запуск скриптов БИБЛИОТЕКИ LYR
     # -------------------------------------------------------------------
-    source "$LIB_SH/LYRConst.sh"
     source "$LIB_SH/LYRFileUtils.sh"
+    source "$LIB_SH/LYRConst.sh"
     source "$LIB_SH/LYRLog.sh"
     source "$LIB_SH/LYRConst.sh"
     source "$LIB_SH/LYRDateTime.sh"
     source "$LIB_SH/LYRSupport.sh"
     source "$LIB_SH/LYRParserINI.sh"
+    source "$LIB_SH/LUConsole.sh"
+
+    #PressAnyKey
 
     return 0
 }
 #endfunction
 
 # -----------------------------------------------
-# procedure MAIN_SET ()
+# 02.MAIN_SET ()
 # -----------------------------------------------
 function MAIN_SET () {
 #beginfunction
@@ -76,7 +84,7 @@ function MAIN_SET () {
 #endfunction
 
 #--------------------------------------------------------------------------------
-# procedure MAIN_CHECK_PARAMETR ()
+# 03.MAIN_CHECK_PARAMETR ()
 #--------------------------------------------------------------------------------
 function MAIN_CHECK_PARAMETR () {
 #beginfunction
@@ -92,7 +100,7 @@ function MAIN_CHECK_PARAMETR () {
     Read_P O1 O1
     echo O1:$O1
     #AddLog $loAll $tlsTEXT O1:$O1
-    #AddLog $loAll $INFO O1:$O1
+    #AddLog $loAll $tlsINFO O1:$O1
     if [[ ! -z "$O1" ]] ; then
         OPTION="$OPTION --O1 $O1"
     else
@@ -125,10 +133,14 @@ function MAIN_CHECK_PARAMETR () {
 #endfunction
 
 #--------------------------------------------------------------------------------
-# procedure MAIN_FUNC ()
+# 04.MAIN_FUNC ()
 #--------------------------------------------------------------------------------
 function MAIN_FUNC {
 #beginfunction
+    if [[ "$DEBUG" -eq 1 ]] ; then
+        echo DEBUG: procedure $FUNCNAME ... >$(tty)
+    fi
+
     AddLog $loAll $tlsTEXT '--------------------------------------'
     AddLog $loAll $tlsTEXT 'MAIN_FUNC ...'
     AddLog $loAll $tlsTEXT '--------------------------------------'
@@ -170,6 +182,7 @@ function MAIN () {
     DEBUG=0
 
     # -------------------------------------------------------------------
+    # 01.MAIN_INIT
     # SCRIPTS_DIR - Каталог скриптов
     # LIB_BAT - каталог библиотеки скриптов
     # SCRIPTS_DIR_KIX - Каталог скриптов KIX
@@ -181,21 +194,30 @@ function MAIN () {
     echo Read_N:$Read_N
 
     SET_LIB "$0"
+
     #echo CURRENT_DIR:$CURRENT_DIR
-    echo SCRIPT_FULLFILENAME:$SCRIPT_FULLFILENAME
+    #echo SCRIPT_FULLFILENAME:$SCRIPT_FULLFILENAME
+    #PressAnyKey
 
     StartLogFile
 
-    #PressAnyKey
-
     OK=yes
+    # -------------------------------------------------------------------
+    # 02.MAIN_SET
+    # -------------------------------------------------------------------
     MAIN_SET
 
+    # -------------------------------------------------------------------
+    # 03.MAIN_CHECK_PARAMETR
+    # -------------------------------------------------------------------
     if [[ ! -z "$OK" ]] ; then #if defined OK if not defined Read_N (
         MAIN_CHECK_PARAMETR
     fi
 
     OK=yes
+    # -------------------------------------------------------------------
+    # 04.MAIN_FUNC
+    # -------------------------------------------------------------------
     if [[ ! -z "$OK" ]] ; then
         MAIN_FUNC
         #Pause "$SLEEP"
